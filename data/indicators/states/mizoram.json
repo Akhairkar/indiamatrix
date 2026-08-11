@@ -1,9 +1,9 @@
 {
-  "_readme": "Headline indicators for Maharashtra State Profile.",
-  "id": "maharashtra",
+  "_readme": "Headline indicators for Mizoram State Profile.",
+  "id": "mizoram",
   "name": {
-    "en": "Maharashtra",
-    "hi": "महाराष्ट्र"
+    "en": "Mizoram",
+    "hi": "मिज़ोरम"
   },
   "indicators": [
     {
@@ -15,12 +15,12 @@
       },
       "unit": "count",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "mizoram",
       "year": 2011,
-      "value": 112374333,
+      "value": 1097206,
       "display": {
-        "en": "11.24 Crore",
-        "hi": "11.24 करोड़"
+        "en": "10.9 Lakh",
+        "hi": "10.9 लाख"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
@@ -38,12 +38,12 @@
       },
       "unit": "%",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "mizoram",
       "year": 2011,
-      "value": 82.34,
+      "value": 91.33,
       "display": {
-        "en": "82.34%",
-        "hi": "82.34%"
+        "en": "91.33%",
+        "hi": "91.33%"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",

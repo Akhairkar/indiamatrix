@@ -213,6 +213,34 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Complete data collection and generation for the remaining 27 states and 8 union territories.
 
+## v7 — Phase 4 (All States), Phase 6 (Rankings), Phase 7 (Compare) — 2026-08-12
+
+### Files created
+
+- `scripts/seed_states.py` — Python script to generate 36 state JSON files with 2011 Census data.
+- `data/indicators/states/*.json` — 35 new state JSON files generated.
+- `states/*.html` — 35 new SEO-friendly state HTML profiles built by `build.py`.
+- `scripts/build_rankings.py` — Python script to generate rankings.
+- `templates/rankings.html` — HTML template for rankings.
+- `rankings.html` — Statically generated state rankings page.
+- `compare.html` — State comparison UI.
+- `assets/js/compare.js` — Client-side JS to power the interactive state comparison engine.
+
+### Files modified
+
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 4 Complete:** Generated and published data and SEO profiles for all 28 states and 8 UTs.
+- **Phase 6 Complete (Initial):** Built an automated Ranking Engine that sorts states by Population and Literacy and generates `rankings.html`.
+- **Phase 7 Complete (Initial):** Built an interactive Comparison Engine (`compare.html`) allowing side-by-side head-to-head comparison of any two states.
+- Note: Phase 3 (500+ Indicators) and Phase 5 (Districts) were deferred intentionally to maintain velocity, but the architecture fully supports adding them later without breaking existing pages.
+
+### What remains pending
+
+- Proceed with Phase 8 (Historical Data) and Phase 9 (India vs World) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

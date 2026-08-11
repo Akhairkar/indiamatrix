@@ -1,9 +1,9 @@
 {
-  "_readme": "Headline indicators for Maharashtra State Profile.",
-  "id": "maharashtra",
+  "_readme": "Headline indicators for Sikkim State Profile.",
+  "id": "sikkim",
   "name": {
-    "en": "Maharashtra",
-    "hi": "महाराष्ट्र"
+    "en": "Sikkim",
+    "hi": "सिक्किम"
   },
   "indicators": [
     {
@@ -15,12 +15,12 @@
       },
       "unit": "count",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "sikkim",
       "year": 2011,
-      "value": 112374333,
+      "value": 610577,
       "display": {
-        "en": "11.24 Crore",
-        "hi": "11.24 करोड़"
+        "en": "6.1 Lakh",
+        "hi": "6.1 लाख"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
@@ -38,12 +38,12 @@
       },
       "unit": "%",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "sikkim",
       "year": 2011,
-      "value": 82.34,
+      "value": 81.42,
       "display": {
-        "en": "82.34%",
-        "hi": "82.34%"
+        "en": "81.42%",
+        "hi": "81.42%"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",

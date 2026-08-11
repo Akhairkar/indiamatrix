@@ -1,9 +1,9 @@
 {
-  "_readme": "Headline indicators for Maharashtra State Profile.",
-  "id": "maharashtra",
+  "_readme": "Headline indicators for Arunachal Pradesh State Profile.",
+  "id": "arunachal-pradesh",
   "name": {
-    "en": "Maharashtra",
-    "hi": "महाराष्ट्र"
+    "en": "Arunachal Pradesh",
+    "hi": "अरुणाचल प्रदेश"
   },
   "indicators": [
     {
@@ -15,12 +15,12 @@
       },
       "unit": "count",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "arunachal-pradesh",
       "year": 2011,
-      "value": 112374333,
+      "value": 1383727,
       "display": {
-        "en": "11.24 Crore",
-        "hi": "11.24 करोड़"
+        "en": "13.8 Lakh",
+        "hi": "13.8 लाख"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
@@ -38,12 +38,12 @@
       },
       "unit": "%",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "arunachal-pradesh",
       "year": 2011,
-      "value": 82.34,
+      "value": 65.38,
       "display": {
-        "en": "82.34%",
-        "hi": "82.34%"
+        "en": "65.38%",
+        "hi": "65.38%"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",

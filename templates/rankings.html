@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rankings | IndiaMetrix</title>
+<meta name="description" content="State rankings for key indicators across India.">
+<link rel="canonical" href="https://www.indiametrix.in/rankings.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rankings | IndiaMetrix">
+<meta property="og:description" content="State rankings for key indicators across India.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta name="theme-color" content="#0D1424">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.ranking-table th, .ranking-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.ranking-table th {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-faint);
+  background: rgba(255,255,255,0.02);
+}
+.ranking-table tr:last-child td {
+  border-bottom: none;
+}
+.ranking-table td {
+  font-size: 16px;
+}
+.ranking-rank {
+  font-family: var(--font-mono);
+  color: var(--teal);
+  font-weight: 600;
+  width: 60px;
+}
+.ranking-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--saffron"></div>
+  <div class="bg-glow bg-glow--teal"></div>
+  <div class="bg-dotmap"></div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/" aria-label="IndiaMetrix home">
+      <span class="brand-mark" aria-hidden="true">IM</span>
+      <span class="brand-text">
+        <span class="brand-name">IndiaMetrix</span>
+        <span class="brand-tag" data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="/#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
+      <a href="/rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="/compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
+      <a href="/#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
+      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
+      </div>
+      <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section" style="padding-top:56px;">
+    <div class="wrap">
+      <p class="eyebrow" data-en="State Rankings" data-hi="राज्य रैंकिंग">State Rankings</p>
+      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="India Rankings" data-hi="भारत रैंकिंग">India Rankings</h1>
+      <p class="section-sub" style="max-width:60ch;" data-en="Compare performance across states on key indicators." data-hi="प्रमुख संकेतकों पर राज्यों के प्रदर्शन की तुलना करें।">Compare performance across states on key indicators.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px; padding-bottom:32px;">
+    <div class="wrap">
+      
+      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Most Populated States (2011)" data-hi="सर्वाधिक आबादी वाले राज्य (2011)">Most Populated States (2011)</h2>
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th class="ranking-rank">#</th>
+            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+            <th data-en="Population" data-hi="जनसंख्या">Population</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- BUILD_INJECT:rankings_population -->
+          <!-- END_BUILD_INJECT -->
+        </tbody>
+      </table>
+
+      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Highest Literacy Rate (2011)" data-hi="उच्चतम साक्षरता दर (2011)">Highest Literacy Rate (2011)</h2>
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th class="ranking-rank">#</th>
+            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+            <th data-en="Literacy Rate" data-hi="साक्षरता दर">Literacy Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- BUILD_INJECT:rankings_literacy -->
+          <!-- END_BUILD_INJECT -->
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">IndiaMetrix</span>
+      <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
+    </nav>
+    <p class="footer-copy">© 2026 IndiaMetrix.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

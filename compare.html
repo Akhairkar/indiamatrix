@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare States | IndiaMetrix</title>
+<meta name="description" content="Compare key indicators between Indian states and union territories.">
+<link rel="canonical" href="https://www.indiametrix.in/compare.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compare States | IndiaMetrix">
+<meta property="og:description" content="Compare key indicators between Indian states and union territories.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta name="theme-color" content="#0D1424">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.compare-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.compare-select {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  flex: 1;
+  min-width: 200px;
+}
+.compare-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+.compare-btn:hover {
+  opacity: 0.9;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 600px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.compare-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.compare-state-name {
+  font-size: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.ind-row {
+  margin-bottom: 16px;
+}
+.ind-label {
+  font-size: 14px;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+.ind-val {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+.diff-val {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-weight: 600;
+}
+.diff-better {
+  background: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+}
+.diff-worse {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--saffron"></div>
+  <div class="bg-glow bg-glow--teal"></div>
+  <div class="bg-dotmap"></div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/" aria-label="IndiaMetrix home">
+      <span class="brand-mark" aria-hidden="true">IM</span>
+      <span class="brand-text">
+        <span class="brand-name">IndiaMetrix</span>
+        <span class="brand-tag" data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="/#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
+      <a href="/rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="/compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
+      <a href="/#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
+      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
+      </div>
+      <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section" style="padding-top:56px;">
+    <div class="wrap">
+      <p class="eyebrow" data-en="Compare Data" data-hi="डेटा की तुलना करें">Compare Data</p>
+      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="Compare States" data-hi="राज्यों की तुलना करें">Compare States</h1>
+      <p class="section-sub" style="max-width:60ch;" data-en="Select two states to compare their key indicators head-to-head." data-hi="प्रमुख संकेतकों की आमने-सामने तुलना करने के लिए दो राज्यों का चयन करें।">Select two states to compare their key indicators head-to-head.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:16px; padding-bottom:32px;">
+    <div class="wrap">
+      
+      <div class="compare-controls">
+        <select id="state1" class="compare-select">
+          <option value="" disabled selected data-en="Select State 1" data-hi="राज्य 1 चुनें">Select State 1</option>
+        </select>
+        <select id="state2" class="compare-select">
+          <option value="" disabled selected data-en="Select State 2" data-hi="राज्य 2 चुनें">Select State 2</option>
+        </select>
+        <button id="compareBtn" class="compare-btn" data-en="Compare" data-hi="तुलना करें">Compare</button>
+      </div>
+
+      <div id="compare-results" class="compare-grid" style="display:none;" aria-live="polite">
+        <!-- Results will be injected here by JS -->
+      </div>
+      <p id="compare-error" style="color:var(--e-red); display:none;" data-en="Could not load data for one or both states." data-hi="एक या दोनों राज्यों के लिए डेटा लोड नहीं हो सका।">Could not load data for one or both states.</p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">IndiaMetrix</span>
+      <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
+    </nav>
+    <p class="footer-copy">© 2026 IndiaMetrix.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/compare.js"></script>
+</body>
+</html>

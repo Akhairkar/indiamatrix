@@ -1,9 +1,9 @@
 {
-  "_readme": "Headline indicators for Maharashtra State Profile.",
-  "id": "maharashtra",
+  "_readme": "Headline indicators for Goa State Profile.",
+  "id": "goa",
   "name": {
-    "en": "Maharashtra",
-    "hi": "महाराष्ट्र"
+    "en": "Goa",
+    "hi": "गोवा"
   },
   "indicators": [
     {
@@ -15,12 +15,12 @@
       },
       "unit": "count",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "goa",
       "year": 2011,
-      "value": 112374333,
+      "value": 1458545,
       "display": {
-        "en": "11.24 Crore",
-        "hi": "11.24 करोड़"
+        "en": "14.5 Lakh",
+        "hi": "14.5 लाख"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
@@ -38,12 +38,12 @@
       },
       "unit": "%",
       "geography_level": "state",
-      "geography_id": "maharashtra",
+      "geography_id": "goa",
       "year": 2011,
-      "value": 82.34,
+      "value": 88.7,
       "display": {
-        "en": "82.34%",
-        "hi": "82.34%"
+        "en": "88.7%",
+        "hi": "88.7%"
       },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
