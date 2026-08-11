@@ -1,0 +1,2020 @@
+{
+  "states": [
+    {
+      "_readme": "Headline indicators for Andaman & Nicobar State Profile.",
+      "id": "andaman-nicobar",
+      "name": {
+        "en": "Andaman & Nicobar",
+        "hi": "अंडमान और निकोबार"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "andaman-nicobar",
+          "year": 2011,
+          "value": 380581,
+          "display": {
+            "en": "3.8 Lakh",
+            "hi": "3.8 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "andaman-nicobar",
+          "year": 2011,
+          "value": 86.63,
+          "display": {
+            "en": "86.63%",
+            "hi": "86.63%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Andhra Pradesh State Profile.",
+      "id": "andhra-pradesh",
+      "name": {
+        "en": "Andhra Pradesh",
+        "hi": "आंध्र प्रदेश"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "andhra-pradesh",
+          "year": 2011,
+          "value": 49577103,
+          "display": {
+            "en": "4.95 Crore",
+            "hi": "4.95 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "andhra-pradesh",
+          "year": 2011,
+          "value": 67.02,
+          "display": {
+            "en": "67.02%",
+            "hi": "67.02%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Arunachal Pradesh State Profile.",
+      "id": "arunachal-pradesh",
+      "name": {
+        "en": "Arunachal Pradesh",
+        "hi": "अरुणाचल प्रदेश"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "arunachal-pradesh",
+          "year": 2011,
+          "value": 1383727,
+          "display": {
+            "en": "13.8 Lakh",
+            "hi": "13.8 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "arunachal-pradesh",
+          "year": 2011,
+          "value": 65.38,
+          "display": {
+            "en": "65.38%",
+            "hi": "65.38%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Assam State Profile.",
+      "id": "assam",
+      "name": {
+        "en": "Assam",
+        "hi": "असम"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "assam",
+          "year": 2011,
+          "value": 31205576,
+          "display": {
+            "en": "3.12 Crore",
+            "hi": "3.12 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "assam",
+          "year": 2011,
+          "value": 72.19,
+          "display": {
+            "en": "72.19%",
+            "hi": "72.19%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Bihar State Profile.",
+      "id": "bihar",
+      "name": {
+        "en": "Bihar",
+        "hi": "बिहार"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "bihar",
+          "year": 2011,
+          "value": 104099452,
+          "display": {
+            "en": "10.4 Crore",
+            "hi": "10.4 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "bihar",
+          "year": 2011,
+          "value": 61.8,
+          "display": {
+            "en": "61.8%",
+            "hi": "61.8%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Chandigarh State Profile.",
+      "id": "chandigarh",
+      "name": {
+        "en": "Chandigarh",
+        "hi": "चंडीगढ़"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "chandigarh",
+          "year": 2011,
+          "value": 1055450,
+          "display": {
+            "en": "10.5 Lakh",
+            "hi": "10.5 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "chandigarh",
+          "year": 2011,
+          "value": 86.05,
+          "display": {
+            "en": "86.05%",
+            "hi": "86.05%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Chhattisgarh State Profile.",
+      "id": "chhattisgarh",
+      "name": {
+        "en": "Chhattisgarh",
+        "hi": "छत्तीसगढ़"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "chhattisgarh",
+          "year": 2011,
+          "value": 25545198,
+          "display": {
+            "en": "2.55 Crore",
+            "hi": "2.55 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "chhattisgarh",
+          "year": 2011,
+          "value": 70.28,
+          "display": {
+            "en": "70.28%",
+            "hi": "70.28%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Dadra & Nagar Haveli and Daman & Diu State Profile.",
+      "id": "dadra-nagar-haveli-daman-diu",
+      "name": {
+        "en": "Dadra & Nagar Haveli and Daman & Diu",
+        "hi": "दादरा और नगर हवेली तथा दमन और दीव"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "dadra-nagar-haveli-daman-diu",
+          "year": 2011,
+          "value": 585764,
+          "display": {
+            "en": "5.8 Lakh",
+            "hi": "5.8 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "dadra-nagar-haveli-daman-diu",
+          "year": 2011,
+          "value": 76.24,
+          "display": {
+            "en": "76.24%",
+            "hi": "76.24%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Delhi State Profile.",
+      "id": "delhi",
+      "name": {
+        "en": "Delhi",
+        "hi": "दिल्ली"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "delhi",
+          "year": 2011,
+          "value": 16787941,
+          "display": {
+            "en": "1.67 Crore",
+            "hi": "1.67 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "delhi",
+          "year": 2011,
+          "value": 86.21,
+          "display": {
+            "en": "86.21%",
+            "hi": "86.21%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Goa State Profile.",
+      "id": "goa",
+      "name": {
+        "en": "Goa",
+        "hi": "गोवा"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "goa",
+          "year": 2011,
+          "value": 1458545,
+          "display": {
+            "en": "14.5 Lakh",
+            "hi": "14.5 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "goa",
+          "year": 2011,
+          "value": 88.7,
+          "display": {
+            "en": "88.7%",
+            "hi": "88.7%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Gujarat State Profile.",
+      "id": "gujarat",
+      "name": {
+        "en": "Gujarat",
+        "hi": "गुजरात"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "gujarat",
+          "year": 2011,
+          "value": 60439692,
+          "display": {
+            "en": "6.04 Crore",
+            "hi": "6.04 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "gujarat",
+          "year": 2011,
+          "value": 78.03,
+          "display": {
+            "en": "78.03%",
+            "hi": "78.03%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Haryana State Profile.",
+      "id": "haryana",
+      "name": {
+        "en": "Haryana",
+        "hi": "हरियाणा"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "haryana",
+          "year": 2011,
+          "value": 25351462,
+          "display": {
+            "en": "2.53 Crore",
+            "hi": "2.53 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "haryana",
+          "year": 2011,
+          "value": 75.55,
+          "display": {
+            "en": "75.55%",
+            "hi": "75.55%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Himachal Pradesh State Profile.",
+      "id": "himachal-pradesh",
+      "name": {
+        "en": "Himachal Pradesh",
+        "hi": "हिमाचल प्रदेश"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "himachal-pradesh",
+          "year": 2011,
+          "value": 6864602,
+          "display": {
+            "en": "68.6 Lakh",
+            "hi": "68.6 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "himachal-pradesh",
+          "year": 2011,
+          "value": 82.8,
+          "display": {
+            "en": "82.8%",
+            "hi": "82.8%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Jammu & Kashmir State Profile.",
+      "id": "jammu-kashmir",
+      "name": {
+        "en": "Jammu & Kashmir",
+        "hi": "जम्मू और कश्मीर"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "jammu-kashmir",
+          "year": 2011,
+          "value": 12267032,
+          "display": {
+            "en": "1.22 Crore",
+            "hi": "1.22 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "jammu-kashmir",
+          "year": 2011,
+          "value": 67.16,
+          "display": {
+            "en": "67.16%",
+            "hi": "67.16%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Jharkhand State Profile.",
+      "id": "jharkhand",
+      "name": {
+        "en": "Jharkhand",
+        "hi": "झारखंड"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "jharkhand",
+          "year": 2011,
+          "value": 32988134,
+          "display": {
+            "en": "3.29 Crore",
+            "hi": "3.29 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "jharkhand",
+          "year": 2011,
+          "value": 66.41,
+          "display": {
+            "en": "66.41%",
+            "hi": "66.41%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Karnataka State Profile.",
+      "id": "karnataka",
+      "name": {
+        "en": "Karnataka",
+        "hi": "कर्नाटक"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "karnataka",
+          "year": 2011,
+          "value": 61095297,
+          "display": {
+            "en": "6.1 Crore",
+            "hi": "6.1 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "karnataka",
+          "year": 2011,
+          "value": 75.36,
+          "display": {
+            "en": "75.36%",
+            "hi": "75.36%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Kerala State Profile.",
+      "id": "kerala",
+      "name": {
+        "en": "Kerala",
+        "hi": "केरल"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "kerala",
+          "year": 2011,
+          "value": 33406061,
+          "display": {
+            "en": "3.34 Crore",
+            "hi": "3.34 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "kerala",
+          "year": 2011,
+          "value": 94.0,
+          "display": {
+            "en": "94.0%",
+            "hi": "94.0%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Ladakh State Profile.",
+      "id": "ladakh",
+      "name": {
+        "en": "Ladakh",
+        "hi": "लद्दाख"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "ladakh",
+          "year": 2011,
+          "value": 274000,
+          "display": {
+            "en": "2.7 Lakh",
+            "hi": "2.7 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "ladakh",
+          "year": 2011,
+          "value": 74.27,
+          "display": {
+            "en": "74.27%",
+            "hi": "74.27%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Lakshadweep State Profile.",
+      "id": "lakshadweep",
+      "name": {
+        "en": "Lakshadweep",
+        "hi": "लक्षद्वीप"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "lakshadweep",
+          "year": 2011,
+          "value": 64473,
+          "display": {
+            "en": "64.4 Thousand",
+            "hi": "64.4 हज़ार"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "lakshadweep",
+          "year": 2011,
+          "value": 91.85,
+          "display": {
+            "en": "91.85%",
+            "hi": "91.85%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Madhya Pradesh State Profile.",
+      "id": "madhya-pradesh",
+      "name": {
+        "en": "Madhya Pradesh",
+        "hi": "मध्य प्रदेश"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "madhya-pradesh",
+          "year": 2011,
+          "value": 72626809,
+          "display": {
+            "en": "7.26 Crore",
+            "hi": "7.26 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "madhya-pradesh",
+          "year": 2011,
+          "value": 69.32,
+          "display": {
+            "en": "69.32%",
+            "hi": "69.32%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Maharashtra State Profile.",
+      "id": "maharashtra",
+      "name": {
+        "en": "Maharashtra",
+        "hi": "महाराष्ट्र"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "maharashtra",
+          "year": 2011,
+          "value": 112374333,
+          "display": {
+            "en": "11.24 Crore",
+            "hi": "11.24 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "maharashtra",
+          "year": 2011,
+          "value": 82.34,
+          "display": {
+            "en": "82.34%",
+            "hi": "82.34%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Manipur State Profile.",
+      "id": "manipur",
+      "name": {
+        "en": "Manipur",
+        "hi": "मणिपुर"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "manipur",
+          "year": 2011,
+          "value": 2855794,
+          "display": {
+            "en": "28.5 Lakh",
+            "hi": "28.5 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "manipur",
+          "year": 2011,
+          "value": 76.94,
+          "display": {
+            "en": "76.94%",
+            "hi": "76.94%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Meghalaya State Profile.",
+      "id": "meghalaya",
+      "name": {
+        "en": "Meghalaya",
+        "hi": "मेघालय"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "meghalaya",
+          "year": 2011,
+          "value": 2966889,
+          "display": {
+            "en": "29.6 Lakh",
+            "hi": "29.6 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "meghalaya",
+          "year": 2011,
+          "value": 74.43,
+          "display": {
+            "en": "74.43%",
+            "hi": "74.43%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Mizoram State Profile.",
+      "id": "mizoram",
+      "name": {
+        "en": "Mizoram",
+        "hi": "मिज़ोरम"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "mizoram",
+          "year": 2011,
+          "value": 1097206,
+          "display": {
+            "en": "10.9 Lakh",
+            "hi": "10.9 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "mizoram",
+          "year": 2011,
+          "value": 91.33,
+          "display": {
+            "en": "91.33%",
+            "hi": "91.33%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Nagaland State Profile.",
+      "id": "nagaland",
+      "name": {
+        "en": "Nagaland",
+        "hi": "नागालैंड"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "nagaland",
+          "year": 2011,
+          "value": 1978502,
+          "display": {
+            "en": "19.7 Lakh",
+            "hi": "19.7 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "nagaland",
+          "year": 2011,
+          "value": 79.55,
+          "display": {
+            "en": "79.55%",
+            "hi": "79.55%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Odisha State Profile.",
+      "id": "odisha",
+      "name": {
+        "en": "Odisha",
+        "hi": "ओडिशा"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "odisha",
+          "year": 2011,
+          "value": 41974218,
+          "display": {
+            "en": "4.19 Crore",
+            "hi": "4.19 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "odisha",
+          "year": 2011,
+          "value": 72.87,
+          "display": {
+            "en": "72.87%",
+            "hi": "72.87%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Puducherry State Profile.",
+      "id": "puducherry",
+      "name": {
+        "en": "Puducherry",
+        "hi": "पुडुचेरी"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "puducherry",
+          "year": 2011,
+          "value": 1247953,
+          "display": {
+            "en": "12.4 Lakh",
+            "hi": "12.4 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "puducherry",
+          "year": 2011,
+          "value": 85.85,
+          "display": {
+            "en": "85.85%",
+            "hi": "85.85%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Punjab State Profile.",
+      "id": "punjab",
+      "name": {
+        "en": "Punjab",
+        "hi": "पंजाब"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "punjab",
+          "year": 2011,
+          "value": 27743338,
+          "display": {
+            "en": "2.77 Crore",
+            "hi": "2.77 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "punjab",
+          "year": 2011,
+          "value": 75.84,
+          "display": {
+            "en": "75.84%",
+            "hi": "75.84%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Rajasthan State Profile.",
+      "id": "rajasthan",
+      "name": {
+        "en": "Rajasthan",
+        "hi": "राजस्थान"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "rajasthan",
+          "year": 2011,
+          "value": 68548437,
+          "display": {
+            "en": "6.85 Crore",
+            "hi": "6.85 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "rajasthan",
+          "year": 2011,
+          "value": 66.11,
+          "display": {
+            "en": "66.11%",
+            "hi": "66.11%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Sikkim State Profile.",
+      "id": "sikkim",
+      "name": {
+        "en": "Sikkim",
+        "hi": "सिक्किम"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "sikkim",
+          "year": 2011,
+          "value": 610577,
+          "display": {
+            "en": "6.1 Lakh",
+            "hi": "6.1 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "sikkim",
+          "year": 2011,
+          "value": 81.42,
+          "display": {
+            "en": "81.42%",
+            "hi": "81.42%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Tamil Nadu State Profile.",
+      "id": "tamil-nadu",
+      "name": {
+        "en": "Tamil Nadu",
+        "hi": "तमिलनाडु"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "tamil-nadu",
+          "year": 2011,
+          "value": 72147030,
+          "display": {
+            "en": "7.21 Crore",
+            "hi": "7.21 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "tamil-nadu",
+          "year": 2011,
+          "value": 80.09,
+          "display": {
+            "en": "80.09%",
+            "hi": "80.09%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Telangana State Profile.",
+      "id": "telangana",
+      "name": {
+        "en": "Telangana",
+        "hi": "तेलंगाना"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "telangana",
+          "year": 2011,
+          "value": 35003674,
+          "display": {
+            "en": "3.5 Crore",
+            "hi": "3.5 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "telangana",
+          "year": 2011,
+          "value": 66.54,
+          "display": {
+            "en": "66.54%",
+            "hi": "66.54%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Tripura State Profile.",
+      "id": "tripura",
+      "name": {
+        "en": "Tripura",
+        "hi": "त्रिपुरा"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "tripura",
+          "year": 2011,
+          "value": 3673917,
+          "display": {
+            "en": "36.7 Lakh",
+            "hi": "36.7 लाख"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "tripura",
+          "year": 2011,
+          "value": 87.22,
+          "display": {
+            "en": "87.22%",
+            "hi": "87.22%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Uttar Pradesh State Profile.",
+      "id": "uttar-pradesh",
+      "name": {
+        "en": "Uttar Pradesh",
+        "hi": "उत्तर प्रदेश"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "uttar-pradesh",
+          "year": 2011,
+          "value": 199812341,
+          "display": {
+            "en": "19.98 Crore",
+            "hi": "19.98 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "uttar-pradesh",
+          "year": 2011,
+          "value": 67.68,
+          "display": {
+            "en": "67.68%",
+            "hi": "67.68%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for Uttarakhand State Profile.",
+      "id": "uttarakhand",
+      "name": {
+        "en": "Uttarakhand",
+        "hi": "उत्तराखंड"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "uttarakhand",
+          "year": 2011,
+          "value": 10086292,
+          "display": {
+            "en": "1.0 Crore",
+            "hi": "1.0 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "uttarakhand",
+          "year": 2011,
+          "value": 78.82,
+          "display": {
+            "en": "78.82%",
+            "hi": "78.82%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    },
+    {
+      "_readme": "Headline indicators for West Bengal State Profile.",
+      "id": "west-bengal",
+      "name": {
+        "en": "West Bengal",
+        "hi": "पश्चिम बंगाल"
+      },
+      "indicators": [
+        {
+          "id": "population",
+          "category": "population",
+          "name": {
+            "en": "Population",
+            "hi": "जनसंख्या"
+          },
+          "unit": "count",
+          "geography_level": "state",
+          "geography_id": "west-bengal",
+          "year": 2011,
+          "value": 91276115,
+          "display": {
+            "en": "9.12 Crore",
+            "hi": "9.12 करोड़"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "literacy-rate",
+          "category": "education",
+          "name": {
+            "en": "Literacy Rate",
+            "hi": "साक्षरता दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "west-bengal",
+          "year": 2011,
+          "value": 76.26,
+          "display": {
+            "en": "76.26%",
+            "hi": "76.26%"
+          },
+          "source_id": "census-india",
+          "source_url": "https://censusindia.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "Census 2011.",
+          "is_estimate": false
+        }
+      ]
+    }
+  ]
+}

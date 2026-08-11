@@ -143,7 +143,7 @@ Editorial-style stories such as "How India's literacy changed over time," "Which
 states are growing fastest?," "How India's population changed," "India's digital
 transformation." Every story must cite verified data and sources.
 
-## Phase 11 — Data Explorer — PENDING — FUTURE SESSION
+## Phase 11 — Data Explorer — ✅ DONE (2026-08-12)
 
 Search indicators, filter by state/district, select years, compare entities, download data.
 

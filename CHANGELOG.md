@@ -291,6 +291,30 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (Data Explorer, AI Layer, etc.) in future sessions.
 
+## v10 — Phase 11 (Data Explorer) — 2026-08-12
+
+### Files created
+
+- `explorer.html` — The interactive Data Explorer tool interface.
+- `assets/js/explorer.js` — Client-side logic for the Explorer (filtering, charting, and CSV download).
+- `scripts/build_explorer_data.py` — Build script to compile state data into a single JSON dataset for the client.
+- `scripts/update_nav_v2.py` — Build script for safely updating the navigation menu across all pages.
+- `data/explorer.json` — The compiled master dataset used by the Explorer (auto-generated).
+
+### Files modified
+
+- `index.html`, `india.html`, `compare.html`, `history.html`, `world.html`, `stories/*.html`, `templates/*.html` — Navigation updated to include the Explorer link.
+- `ROADMAP.md` — Marked Phase 11 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 11 Complete:** Built an interactive, client-side Data Explorer allowing users to filter indicators across multiple states, view dynamic charts and tables, and download custom CSV files.
+
+### What remains pending
+
+- Proceed with remaining phases (Automated Data System, AI Layer, etc.) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

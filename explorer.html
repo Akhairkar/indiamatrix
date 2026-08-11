@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Explorer | IndiaMetrix</title>
+<meta name="description" content="Search, filter, and compare data across Indian states. Download custom datasets instantly.">
+<link rel="canonical" href="https://www.indiametrix.in/explorer.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data Explorer | IndiaMetrix">
+<meta property="og:description" content="Search, filter, and compare data across Indian states. Download custom datasets instantly.">
+<meta property="og:url" content="https://www.indiametrix.in/explorer.html">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta name="theme-color" content="#0D1424">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .explorer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 900px) {
+    .explorer-grid {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+  .explorer-controls {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    height: fit-content;
+  }
+  .explorer-group {
+    margin-bottom: 24px;
+  }
+  .explorer-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .explorer-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .explorer-group select[multiple] {
+    height: 300px;
+  }
+  .explorer-group select:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+  .explorer-viz {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .explorer-viz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .explorer-table-container {
+    margin-top: 32px;
+    overflow-x: auto;
+  }
+  .explorer-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .explorer-table th, .explorer-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .explorer-table th {
+    font-weight: 600;
+    color: var(--text-faint);
+  }
+  .explorer-table tbody tr:hover {
+    background: rgba(255,255,255,0.02);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--saffron"></div>
+  <div class="bg-glow bg-glow--teal"></div>
+  <div class="bg-dotmap"></div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="./" aria-label="IndiaMetrix home">
+      <span class="brand-mark" aria-hidden="true">IM</span>
+      <span class="brand-text">
+        <span class="brand-name">IndiaMetrix</span>
+        <span class="brand-tag" data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <a href="./#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
+      <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
+      <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
+      <a href="world.html" data-en="World" data-hi="विश्व">World</a>
+      <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
+      <a href="./#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
+      </div>
+      <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section" style="padding-top:56px;">
+    <div class="wrap">
+      <p class="eyebrow" data-en="Interactive Tool" data-hi="इंटरैक्टिव टूल">Interactive Tool</p>
+      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="Data Explorer" data-hi="डेटा एक्सप्लोरर">Data Explorer</h1>
+      <p class="section-sub" style="max-width:60ch;" data-en="Filter, visualize, and download custom datasets across all states and indicators." data-hi="सभी राज्यों और संकेतकों में कस्टम डेटासेट फ़िल्टर, विज़ुअलाइज़ और डाउनलोड करें।">Filter, visualize, and download custom datasets across all states and indicators.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:16px; padding-bottom:64px;">
+    <div class="wrap explorer-grid">
+      
+      <!-- Controls Column -->
+      <aside class="explorer-controls">
+        <div class="explorer-group">
+          <label for="indicator-select" data-en="Select Indicator" data-hi="संकेतक चुनें">Select Indicator</label>
+          <select id="indicator-select">
+            <option value="population" data-en="Population" data-hi="जनसंख्या">Population</option>
+            <option value="gdp-current-usd" data-en="GDP (USD)" data-hi="जीडीपी (USD)">GDP (USD)</option>
+            <option value="literacy-rate" data-en="Literacy Rate (%)" data-hi="साक्षरता दर (%)">Literacy Rate (%)</option>
+            <option value="unemployment-rate" data-en="Unemployment Rate (%)" data-hi="बेरोज़गारी दर (%)">Unemployment Rate (%)</option>
+            <option value="life-expectancy" data-en="Life Expectancy (Years)" data-hi="जीवन प्रत्याशा (वर्ष)">Life Expectancy (Years)</option>
+            <option value="internet-users" data-en="Internet Users (%)" data-hi="इंटरनेट उपयोगकर्ता (%)">Internet Users (%)</option>
+          </select>
+        </div>
+        
+        <div class="explorer-group">
+          <label for="state-select" data-en="Select States (Hold Ctrl/Cmd for multiple)" data-hi="राज्य चुनें (एकाधिक के लिए Ctrl/Cmd दबाए रखें)">Select States (Hold Ctrl/Cmd for multiple)</label>
+          <select id="state-select" multiple>
+            <option value="all" selected data-en="All States / UTs" data-hi="सभी राज्य / केंद्र शासित प्रदेश">All States / UTs</option>
+            <!-- Injected via JS -->
+          </select>
+        </div>
+
+        <button id="download-btn" class="btn btn-outline" style="width: 100%; display:flex; justify-content:center; gap:8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-en="Download CSV" data-hi="CSV डाउनलोड करें">Download CSV</span>
+        </button>
+      </aside>
+
+      <!-- Visualization Column -->
+      <div class="explorer-viz">
+        <div class="explorer-viz-header">
+          <div>
+            <h2 id="viz-title" style="font-size: 20px; margin-bottom: 8px;">Indicator Name</h2>
+            <p id="viz-source" style="font-size: 12px; color: var(--text-faint); font-family: var(--font-mono);">Source: Loading...</p>
+          </div>
+        </div>
+
+        <div style="position:relative; height:400px; width:100%;">
+          <canvas id="explorerChart"></canvas>
+        </div>
+
+        <div class="explorer-table-container">
+          <table class="explorer-table">
+            <thead>
+              <tr>
+                <th data-en="Entity" data-hi="इकाई">Entity</th>
+                <th data-en="Value" data-hi="मूल्य">Value</th>
+                <th data-en="Data Year" data-hi="डेटा वर्ष">Data Year</th>
+              </tr>
+            </thead>
+            <tbody id="viz-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name">IndiaMetrix</span>
+      <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="/#" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="/#" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
+      <a href="/#" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="/#" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="/#" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="/#" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
+      <a href="/#" data-en="Corrections" data-hi="सुधार">Corrections</a>
+    </nav>
+
+    <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
+    <p class="footer-copy">© 2026 IndiaMetrix.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/explorer.js"></script>
+</body>
+</html>
