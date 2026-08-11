@@ -267,6 +267,30 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (Data Stories, Data Explorer, AI Layer, etc.) in future sessions.
 
+## v9 — Phase 10 (Data Stories) — 2026-08-12
+
+### Files created
+
+- `stories/population.html` — Editorial story on India's changing population.
+- `stories/literacy.html` — Editorial story on India's literacy journey.
+- `stories/growth.html` — Editorial story on economic divergence among states.
+- `assets/js/stories.js` — Client-side logic for rendering Chart.js graphs inside stories.
+
+### Files modified
+
+- `index.html` — Wired the `#stories` section to link to the new story pages instead of showing "Coming soon" badges.
+- `ROADMAP.md` — Marked Phase 10 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 10 Complete:** Built an editorial Data Stories module with 3 long-form, bilingual stories.
+- Integrated historical charts directly into the reading experience using existing `data/history.json`.
+
+### What remains pending
+
+- Proceed with remaining phases (Data Explorer, AI Layer, etc.) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
