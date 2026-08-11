@@ -1,23 +1,27 @@
 # NEXT_SESSION.md
 
-## Completed this session
+## Completed so far
 
-- Homepage (`index.html`) — all sections from the brief: header/nav, hero with search UI,
-  India at a Glance, Explore India, Categories (18), Compare preview, Rankings preview,
-  Data Stories preview, Why IndiaMetrix, Trust/source section, footer
-- Responsive, mobile-first design (`assets/css/style.css`), down to small phone widths
-- Hindi / English UI switcher (`assets/js/main.js`), all copy translated, persisted via
-  `localStorage`
-- Initial on-page SEO: single H1, semantic heading hierarchy, meta description, canonical
-  tag, Open Graph tags, JSON-LD `WebSite` schema, accessible nav, skip link, focus states
-- No fabricated statistics — every indicator value is explicitly labelled as a placeholder
-- `ROADMAP.md` — full 18-phase long-term plan
-- `README.md`, `CHANGELOG.md`, `.gitignore`
+**Session 1 — Homepage:**
+- Full homepage (`index.html`, `assets/css/style.css`, `assets/js/main.js`) — bilingual
+  EN/HI, all sections from the brief, no fabricated statistics, basic on-page SEO.
+
+**Session 2 — Phase 1 Foundation (partial):**
+- `ARCHITECTURE.md` — decision to stay static HTML/CSS/JS until Phase 3, with a clear
+  trigger for when to revisit.
+- `DATA_MODEL.md` — indicator record schema, source record schema, planned URL
+  architecture for every future page type, and the non-negotiable rule that `value` is
+  never fabricated.
+- `data/sources.json` — registry of 11 real official/verified data publishers (Census of
+  India, MoSPI, RBI, NITI Aayog, data.gov.in, MoHFW, NCRB, MoEFCC, MeitY, World Bank, UN
+  Data). Registry only — no indicator values populated yet.
 
 ## Pending — every module not built yet
 
-- Phase 1 — Foundation (architecture, data model, source registry, URL architecture)
-- Phase 2 — India Overview (real dashboard, replacing placeholders)
+- Phase 1 remainder — design system extraction into a documented component library;
+  core reusable components (data card, chart wrapper, ranking row, comparison table,
+  source citation badge) — build these alongside Phase 2's first real page.
+- Phase 2 — India Overview (real dashboard, replacing homepage placeholders)
 - Phase 3 — Indicators database (target 500–1,000+, real sourced data)
 - Phase 4 — State profiles (28 states + 8 UTs)
 - Phase 5 — District profiles
@@ -40,26 +44,28 @@ Full detail on every phase lives in `ROADMAP.md` — read it before starting new
 
 ## Recommended next step
 
-Start **Phase 1 — Foundation**, specifically in this order:
+Start the **India Overview page** (Phase 2), scoped small:
 
-1. Decide and document the project's technical architecture (stay static HTML/CSS/JS a
-   while longer, or move to a static site generator / lightweight framework — this
-   decision should be made once, deliberately, before more pages are built).
-2. Define the data model for an indicator (fields: id, category, name, unit, value, year,
-   geography, source, source URL, last updated, methodology notes).
-3. Build the source registry as a simple structured file (e.g. `data/sources.json`)
-   listing official data sources IndiaMetrix intends to use, with license/attribution
-   notes — this unblocks every later phase.
-4. Only after the data model and source registry exist, start Phase 2 (India Overview)
-   using real, verified data — do not wire the homepage's placeholder cards to fabricated
-   numbers.
+1. Build a single new static page, `india.html` (or repurpose the homepage's "India at a
+   Glance" section into a full page) — reuse the existing design tokens and CSS from
+   Phase 0, don't restyle.
+2. Pick 4–6 headline indicators to actually populate with real numbers (population, GDP,
+   literacy rate, life expectancy are natural starting points) using the schema in
+   `DATA_MODEL.md`. Store them as a small JSON file (e.g. `data/indicators/india-overview.json`)
+   rather than hardcoding numbers in HTML, so Phase 3 can reuse the same file pattern.
+3. Every value must have a `source_id` that exists in `data/sources.json` (add more
+   source entries first if a needed one is missing) and a real `year` — never today's
+   date.
+4. Update the homepage's "India at a Glance" cards to link to this new page once it
+   exists (don't wire them to fabricated numbers).
+5. Do not start Phase 3 (the full indicators database) in the same session as this —
+   keep the India Overview page as its own scoped unit of work.
 
 ## Session rules going forward
 
 - Do not attempt multiple phases in a single session — usage limits are real.
 - From this point on, **do not re-deliver the entire project ZIP**. Only ZIP the files
-  that changed in a given session (see `CHANGELOG.md` for the convention), e.g.
-  `indiametrix-changes-v2.zip` containing only the modified/added files. Record any
+  that changed in a given session (see `CHANGELOG.md` for the convention). Record any
   deletions in `CHANGELOG.md` instead of including them in the ZIP.
 - Update `ROADMAP.md` phase statuses as work completes.
 - Never present fabricated statistics as real, live, or official.

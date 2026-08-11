@@ -1,6 +1,7 @@
 # IndiaMetrix — Master Roadmap
 
-> **CURRENT SESSION STATUS: HOMEPAGE ONLY**
+> **CURRENT SESSION STATUS: PHASE 1 FOUNDATION (partial) — architecture decision, data
+> model, and source registry done. Homepage (Phase 0) was completed in the prior session.**
 > **ALL OTHER MODULES: PENDING FOR FUTURE SESSIONS**
 
 IndiaMetrix is an independent India Data Intelligence Platform. It is **not** a metals/rates
@@ -38,25 +39,25 @@ should read this file before writing code, and update it as phases are completed
 
 ---
 
-## Phase 1 — Foundation — PENDING — FUTURE SESSION
+## Phase 1 — Foundation — IN PROGRESS
 
-- Formal project architecture (decide: static site generator vs. framework vs. current
-  plain HTML approach as the project grows)
-- Design system extraction (tokens already defined in `style.css` — promote to a
-  documented, reusable system: color, type, spacing, component library)
-- Data model (indicator, source, state, district, year, value, unit, methodology)
-- Source registry (canonical list of official/verified data sources with URLs, license,
-  update frequency)
-- SEO architecture (URL patterns, templating rules, sitemap strategy)
-- URL architecture, e.g.:
-  - `/states/maharashtra`
-  - `/districts/maharashtra/nagpur`
-  - `/indicators/literacy-rate`
-  - `/rankings/gdp`
-  - `/compare/maharashtra-vs-gujarat`
-  - `/compare/india-vs-china`
-- Core reusable components (data card, chart wrapper, ranking row, comparison table,
-  source citation badge)
+- ✅ **DONE (2026-08-11)** — Architecture decision recorded: stay static HTML/CSS/JS for
+  now, revisit at Phase 3. See `ARCHITECTURE.md`.
+- ✅ **DONE (2026-08-11)** — Data model documented (indicator + source record shape,
+  field rules on fabricated values, `year` handling). See `DATA_MODEL.md`.
+- ✅ **DONE (2026-08-11)** — Source registry created with 11 real official/verified
+  publishers (Census of India, MoSPI, RBI, NITI Aayog, data.gov.in, MoHFW, NCRB,
+  MoEFCC, MeitY, World Bank, UN Data). See `data/sources.json`. No indicator values are
+  populated yet — registry only.
+- ✅ **DONE (2026-08-11)** — URL architecture decided and documented in
+  `DATA_MODEL.md` → "Planned URL patterns" (states, districts, indicators, rankings,
+  comparisons, stories — English slugs, language switched client-side, not split into
+  `/hi/` routes).
+- ⏳ PENDING — Design system extraction (tokens already defined in `style.css` —
+  promote to a documented, reusable component library as real pages are built).
+- ⏳ PENDING — Core reusable components (data card, chart wrapper, ranking row,
+  comparison table, source citation badge) — build these when Phase 2 needs its first
+  real page, not before.
 
 ## Phase 2 — India Overview — PENDING — FUTURE SESSION
 

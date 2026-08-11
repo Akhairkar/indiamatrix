@@ -1,0 +1,104 @@
+{
+  "_readme": "Registry of official/verified sources IndiaMetrix intends to use. No indicator data is populated from these yet — this is a reference list for Phase 2 onward. Add entries here before wiring any indicator to a source_id.",
+  "sources": [
+    {
+      "id": "census-india",
+      "name": "Census of India",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/",
+      "category": ["population", "social-development"],
+      "update_frequency": "decennial",
+      "notes": "Most recent full census: 2011. The 2021 census was delayed."
+    },
+    {
+      "id": "mospi",
+      "name": "Ministry of Statistics and Programme Implementation (MoSPI)",
+      "publisher": "Government of India",
+      "url": "https://www.mospi.gov.in/",
+      "category": ["economy", "employment", "poverty", "social-development"],
+      "update_frequency": "varies by survey",
+      "notes": "Publishes NSS/PLFS surveys, GDP estimates, and national accounts data."
+    },
+    {
+      "id": "rbi",
+      "name": "Reserve Bank of India",
+      "publisher": "Reserve Bank of India",
+      "url": "https://www.rbi.org.in/",
+      "category": ["banking-finance", "economy"],
+      "update_frequency": "varies (monthly/quarterly/annual)",
+      "notes": "Publishes banking, credit, inflation and monetary data."
+    },
+    {
+      "id": "niti-aayog",
+      "name": "NITI Aayog",
+      "publisher": "Government of India",
+      "url": "https://www.niti.gov.in/",
+      "category": ["governance", "social-development", "sdg"],
+      "update_frequency": "varies",
+      "notes": "Publishes the SDG India Index and policy/indicator dashboards."
+    },
+    {
+      "id": "data-gov-in",
+      "name": "Open Government Data (OGD) Platform India",
+      "publisher": "Government of India",
+      "url": "https://www.data.gov.in/",
+      "category": ["government-governance", "economy", "infrastructure"],
+      "update_frequency": "varies by dataset",
+      "notes": "Aggregator of datasets published by various ministries."
+    },
+    {
+      "id": "moh-family-welfare",
+      "name": "Ministry of Health and Family Welfare",
+      "publisher": "Government of India",
+      "url": "https://main.mohfw.gov.in/",
+      "category": ["healthcare", "women-children"],
+      "update_frequency": "varies",
+      "notes": "Publishes NFHS survey data and health statistics."
+    },
+    {
+      "id": "ncrb",
+      "name": "National Crime Records Bureau",
+      "publisher": "Ministry of Home Affairs, Government of India",
+      "url": "https://ncrb.gov.in/",
+      "category": ["crime-safety"],
+      "update_frequency": "annual",
+      "notes": "Publishes 'Crime in India' annual reports."
+    },
+    {
+      "id": "moef-cc",
+      "name": "Ministry of Environment, Forest and Climate Change",
+      "publisher": "Government of India",
+      "url": "https://moefcc.gov.in/",
+      "category": ["environment"],
+      "update_frequency": "varies",
+      "notes": "Forest cover and environmental reporting."
+    },
+    {
+      "id": "meity",
+      "name": "Ministry of Electronics and Information Technology",
+      "publisher": "Government of India",
+      "url": "https://www.meity.gov.in/",
+      "category": ["digital-india"],
+      "update_frequency": "varies",
+      "notes": "Digital India programme data and reports."
+    },
+    {
+      "id": "world-bank",
+      "name": "World Bank Open Data",
+      "publisher": "World Bank Group",
+      "url": "https://data.worldbank.org/",
+      "category": ["india-vs-world", "economy", "poverty", "healthcare", "education"],
+      "update_frequency": "annual",
+      "notes": "Used for India-vs-World country comparisons; internationally standardized."
+    },
+    {
+      "id": "un-data",
+      "name": "United Nations Data (UN Statistics Division)",
+      "publisher": "United Nations",
+      "url": "https://data.un.org/",
+      "category": ["india-vs-world", "population", "social-development"],
+      "update_frequency": "varies",
+      "notes": "Used for cross-country demographic and development comparisons."
+    }
+  ]
+}
