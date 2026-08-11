@@ -21,13 +21,14 @@ fabricated statistics, basic on-page SEO.
   placeholder cards were deliberately left untouched (still "Data coming soon") to keep
   this session scoped — see rationale in `ROADMAP.md` Phase 2.
 
+**Session 4 — Phase 2 Deepening & Tooling:**
+- Added pre-push audit script (`scripts/audit.py` & `scripts/pre-push`) to automatically validate indicator JSON files before every push.
+- Deepened Phase 2 by adding a Historical Trend chart for Population to `india.html`, driven by `data/indicators/india-population-history.json` and Chart.js.
+
 ## Pending — every module not built yet
 
-- Phase 1 remainder — design system extraction into a documented component library;
-  reusable components (chart wrapper, ranking row, comparison table, source citation
-  badge as a real component rather than inline HTML).
-- Phase 2 remainder — historical trend charts for the six indicators; expanding beyond
-  six indicators once Phase 3 exists.
+- Phase 1 remainder — design system extraction into a documented component library.
+- Phase 2 remainder — historical trend charts for the remaining five indicators; expanding beyond six indicators once Phase 3 exists.
 - Phase 3 — Indicators database (target 500–1,000+, real sourced data)
 - Phase 4 — State profiles (28 states + 8 UTs)
 - Phase 5 — District profiles
@@ -43,27 +44,15 @@ fabricated statistics, basic on-page SEO.
 - Phase 15 — Full SEO system (sitemap, robots.txt, structured data at scale)
 - Phase 16 — Internal linking engine
 - Phase 17 — Trust / data provenance system at the indicator level
-- Phase 18 — AdSense readiness pages (About, Privacy, Terms, Disclaimer, Methodology,
-  Sources, Contact, Corrections)
+- Phase 18 — AdSense readiness pages
 
 Full detail on every phase lives in `ROADMAP.md` — read it before starting new work.
 
 ## Recommended next step
 
-Two reasonable directions — pick one, keep the session scoped to it:
+**Start Phase 4 narrowly:** build a single state profile page (e.g. `states/maharashtra.html`) using the same JSON-plus-render pattern established in `data/indicators/india-overview.json` and `assets/js/india-overview.js` — reuse that pattern rather than inventing a new one. This will prove the architecture works for states.
 
-**Option A — Deepen Phase 2:** add one historical trend chart (e.g. India's population
-over the last few decades) to `india.html`, sourced the same way as the current six
-indicators. This is the natural next increment on the page just built.
-
-**Option B — Start Phase 4 narrowly:** build a single state profile page (e.g.
-`states/maharashtra.html`) using the same JSON-plus-render pattern established in
-`data/indicators/india-overview.json` and `assets/js/india-overview.js` — reuse that
-pattern rather than inventing a new one.
-
-Do not start the full Phase 3 indicators database yet — that's a large, multi-session
-effort and should wait until the JSON-plus-render pattern has been proven on a couple
-more pages first.
+Do not start the full Phase 3 indicators database yet — that's a large, multi-session effort and should wait until the JSON-plus-render pattern has been proven on a couple more pages first.
 
 ## Session rules going forward
 

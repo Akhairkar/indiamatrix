@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# This is a pre-push hook that runs the audit script before pushing.
+# It prevents pushing if the audit fails.
+
+echo "Running pre-push audit..."
+python scripts/audit.py
+if [ $? -ne 0 ]; then
+    echo "Push aborted due to audit failure."
+    exit 1
+fi
+
+exit 0

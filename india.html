@@ -79,6 +79,19 @@
     </div>
   </section>
 
+  <section class="section" style="padding-top:32px; padding-bottom:32px;">
+    <div class="wrap">
+      <h2 style="font-size:clamp(20px,3vw,28px); margin-bottom:16px;" data-en="Historical Trend" data-hi="ऐतिहासिक रुझान">Historical Trend</h2>
+      <div style="background:var(--panel-bg); border:1px solid var(--border); border-radius:12px; padding:24px;">
+        <h3 id="chart-title" style="margin-bottom:8px;" data-en="Population Trend" data-hi="जनसंख्या का रुझान">Population Trend</h3>
+        <p id="chart-source" style="font-size:12px; color:var(--text-faint); margin-bottom:24px; font-family:var(--font-mono);"></p>
+        <div style="position:relative; height:300px; width:100%;">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section trust" style="padding-top:8px;">
     <div class="wrap trust-inner">
       <p class="trust-disclaimer" data-en="Every figure above links to its official source. IndiaMetrix does not estimate or fabricate values — where a newer official figure is not yet available, the most recent verified figure is shown with its true data year." data-hi="ऊपर हर आंकड़ा अपने आधिकारिक स्रोत से जुड़ा है। IndiaMetrix कोई भी मूल्य अनुमानित या गढ़ता नहीं है — जहां नया आधिकारिक आंकड़ा अभी उपलब्ध नहीं है, वहां सबसे हालिया सत्यापित आंकड़ा उसके वास्तविक डेटा वर्ष के साथ दिखाया गया है।">Every figure above links to its official source. IndiaMetrix does not estimate or fabricate values — where a newer official figure is not yet available, the most recent verified figure is shown with its true data year.</p>
@@ -109,6 +122,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/india-overview.js"></script>
 </body>

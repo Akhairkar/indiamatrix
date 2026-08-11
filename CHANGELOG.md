@@ -140,8 +140,44 @@ It does **not** include `assets/css/style.css`, `assets/js/main.js`, `data/sourc
 `ARCHITECTURE.md`, `DATA_MODEL.md`, or `README.md`, since those were not touched this
 session.
 
+## v4 — Phase 2 Deepening & Tooling — 2026-08-11
+
+### Files created
+
+- `scripts/audit.py` — pre-push hook script to validate JSON structure and data fields
+- `scripts/pre-push` — git hook to trigger the audit
+- `data/indicators/india-population-history.json` — 10-year historical trend data for India's population from World Bank
+
+### Files modified
+
+- `india.html` — added Chart.js CDN and `<canvas>` container for historical trend chart
+- `assets/js/india-overview.js` — added logic to fetch history JSON and render line chart using Chart.js, with language switching support
+- `CHANGELOG.md` — this file
+- `NEXT_SESSION.md` — updated for the next session
+
+### What changed
+
+- Implemented an "auto-audit before push" automation using a git `pre-push` hook that checks for missing fields or fabricated data in indicator JSONs.
+- Completed "Option A" from the previous session's recommendations: added a real, sourced historical trend chart (Population) to the `india.html` page.
+
+### What remains pending
+
+- Start Phase 4 narrowly (a single state profile) or continue adding more historical charts to Phase 2.
+
+### This session's delivery ZIP
+
+Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
+- `scripts/audit.py` (new)
+- `scripts/pre-push` (new)
+- `data/indicators/india-population-history.json` (new)
+- `india.html` (modified)
+- `assets/js/india-overview.js` (modified)
+- `CHANGELOG.md` (modified)
+- `NEXT_SESSION.md` (modified)
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
 Do not re-zip the entire project. If a file is deleted, record it here under "Files
 deleted" instead of including it in the ZIP.
+
