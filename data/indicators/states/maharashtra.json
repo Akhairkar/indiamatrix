@@ -1,0 +1,41 @@
+{
+  "_readme": "Headline indicators for Maharashtra State Profile.",
+  "id": "maharashtra",
+  "name": { "en": "Maharashtra", "hi": "महाराष्ट्र" },
+  "indicators": [
+    {
+      "id": "population",
+      "category": "population",
+      "name": { "en": "Population", "hi": "जनसंख्या" },
+      "unit": "count",
+      "geography_level": "state",
+      "geography_id": "maharashtra",
+      "year": 2011,
+      "value": 112374333,
+      "display": { "en": "11.24 crore", "hi": "11.24 करोड़" },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-12",
+      "last_updated": "2026-08-12",
+      "methodology_note": "Census 2011.",
+      "is_estimate": false
+    },
+    {
+      "id": "literacy-rate",
+      "category": "education",
+      "name": { "en": "Literacy Rate", "hi": "साक्षरता दर" },
+      "unit": "%",
+      "geography_level": "state",
+      "geography_id": "maharashtra",
+      "year": 2011,
+      "value": 82.34,
+      "display": { "en": "82.34%", "hi": "82.34%" },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-12",
+      "last_updated": "2026-08-12",
+      "methodology_note": "Census 2011.",
+      "is_estimate": false
+    }
+  ]
+}

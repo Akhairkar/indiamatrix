@@ -191,9 +191,27 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - **Major Architectural Update:** Transitioned from client-side JSON fetching to a static HTML build process (`scripts/build.py`) for better SEO (Google Console indexing), while keeping bilingual switching fully functional via data attributes.
 
+## v6 — Phase 4 Start: State Profiles — 2026-08-12
+
+### Files created
+
+- `templates/state.html` — HTML template for state profiles.
+- `data/indicators/states/maharashtra.json` — Verified data for Maharashtra (Population and Literacy).
+- `states/maharashtra.html` — The statically generated state profile page.
+
+### Files modified
+
+- `scripts/build.py` — Updated to iterate over `states/*.json` and generate state profiles.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- Started **Phase 4 (State Profiles)**.
+- Generated the first SEO-friendly, statically built state profile for Maharashtra.
+
 ### What remains pending
 
-- Start Phase 4 (State Profiles) using the new static build architecture.
+- Complete data collection and generation for the remaining 27 states and 8 union territories.
 
 ## Future session convention
 
