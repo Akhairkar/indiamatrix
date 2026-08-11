@@ -126,12 +126,12 @@ State vs. state, district vs. district, India vs. country, year vs. year. Routes
 percentage difference where meaningful, which value is better/worse, historical comparison,
 and charts.
 
-## Phase 8 — Historical Data — PENDING — FUTURE SESSION
+## Phase 8 — Historical Data — ✅ DONE (2026-08-12)
 
 Dedicated historical trend pages (population history, literacy history, GDP history, life
 expectancy history) using line charts and full available time series.
 
-## Phase 9 — India vs World — PENDING — FUTURE SESSION
+## Phase 9 — India vs World — ✅ DONE (2026-08-12)
 
 Country comparisons (GDP, population, GDP per capita, literacy, life expectancy, internet
 penetration, poverty, healthcare, education, environment, and other verified indicators)

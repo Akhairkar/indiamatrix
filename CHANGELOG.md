@@ -241,6 +241,32 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with Phase 8 (Historical Data) and Phase 9 (India vs World) in future sessions.
 
+## v8 — Phase 8 (History) and Phase 9 (World) — 2026-08-12
+
+### Files created
+
+- `scripts/seed_history_world.py` — Python script to generate historical and world JSON data.
+- `data/history.json` & `data/world.json` — Verified data for history and world comparisons.
+- `history.html` & `world.html` — New dedicated pages.
+- `assets/js/history.js` & `assets/js/world.js` — Client-side logic for rendering Chart.js graphs.
+- `scripts/update_nav.py` — Python script to batch update navigation links across the project.
+
+### Files modified
+
+- `index.html`, `india.html`, `compare.html`, `history.html`, `world.html`, `templates/rankings.html`, `templates/state.html` — Updated to include "History" and "World" links in the primary navigation.
+- `ROADMAP.md` — Marked Phase 8 and 9 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 8 Complete:** Created a dedicated `history.html` page to trace India's long-term trends (Population, GDP, Life Expectancy) using line charts.
+- **Phase 9 Complete:** Created a dedicated `world.html` page to benchmark India against major global economies (China, USA, World Avg) using bar charts.
+- **Navigation Update:** Ensured the main navigation consistently points to all existing modules across the entire site.
+
+### What remains pending
+
+- Proceed with remaining phases (Data Stories, Data Explorer, AI Layer, etc.) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

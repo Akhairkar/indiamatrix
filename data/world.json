@@ -1,0 +1,31 @@
+{
+  "comparisons": [
+    {
+      "id": "gdp",
+      "name": "GDP (Trillion USD)",
+      "source": "World Bank, 2023",
+      "india": 3.5,
+      "china": 17.7,
+      "usa": 27.3,
+      "world": 105.4
+    },
+    {
+      "id": "population",
+      "name": "Population (Billions)",
+      "source": "World Bank, 2023",
+      "india": 1.43,
+      "china": 1.41,
+      "usa": 0.33,
+      "world": 8.02
+    },
+    {
+      "id": "life_expectancy",
+      "name": "Life Expectancy (Years)",
+      "source": "World Bank, 2022",
+      "india": 72.0,
+      "china": 78.2,
+      "usa": 76.3,
+      "world": 71.3
+    }
+  ]
+}
