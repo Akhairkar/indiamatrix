@@ -74,7 +74,46 @@
 
   <section class="section" style="padding-top:16px;">
     <div class="wrap">
-      <div class="glance-grid" id="overview-grid" aria-live="polite"></div>
+      <div class="glance-grid" id="overview-grid" aria-live="polite">
+        <!-- BUILD_INJECT:overview_cards -->
+        <article class="glance-card" data-indicator-id="population">
+          <h3 data-en="Population" data-hi="जनसंख्या">Population</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="1.45 billion" data-hi="1.45 अरब">1.45 billion</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2024" data-hi="डेटा वर्ष: 2024">Data year: 2024</p>
+          <a href="https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IN" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: World Bank &rarr;" data-hi="स्रोत: World Bank &rarr;">Source: World Bank &rarr;</a>
+        </article>
+        <article class="glance-card" data-indicator-id="gdp-current-usd">
+          <h3 data-en="GDP" data-hi="जीडीपी">GDP</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="$3.91 trillion" data-hi="$3.91 ट्रिलियन">$3.91 trillion</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2024" data-hi="डेटा वर्ष: 2024">Data year: 2024</p>
+          <a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IN" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: World Bank &rarr;" data-hi="स्रोत: World Bank &rarr;">Source: World Bank &rarr;</a>
+        </article>
+        <article class="glance-card" data-indicator-id="literacy-rate">
+          <h3 data-en="Literacy Rate" data-hi="साक्षरता दर">Literacy Rate</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="74.04%" data-hi="74.04%">74.04%</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2011" data-hi="डेटा वर्ष: 2011">Data year: 2011</p>
+          <a href="https://censusindia.gov.in/" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: Census of India &rarr;" data-hi="स्रोत: Census of India &rarr;">Source: Census of India &rarr;</a>
+        </article>
+        <article class="glance-card" data-indicator-id="unemployment-rate">
+          <h3 data-en="Unemployment Rate" data-hi="बेरोज़गारी दर">Unemployment Rate</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="3.1%" data-hi="3.1%">3.1%</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2025" data-hi="डेटा वर्ष: 2025">Data year: 2025</p>
+          <a href="https://www.mospi.gov.in/" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: MoSPI (PLFS) &rarr;" data-hi="स्रोत: MoSPI (PLFS) &rarr;">Source: MoSPI (PLFS) &rarr;</a>
+        </article>
+        <article class="glance-card" data-indicator-id="life-expectancy">
+          <h3 data-en="Life Expectancy" data-hi="जीवन प्रत्याशा">Life Expectancy</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="72.0 years" data-hi="72.0 वर्ष">72.0 years</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2023" data-hi="डेटा वर्ष: 2023">Data year: 2023</p>
+          <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IN" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: World Bank &rarr;" data-hi="स्रोत: World Bank &rarr;">Source: World Bank &rarr;</a>
+        </article>
+        <article class="glance-card" data-indicator-id="internet-users">
+          <h3 data-en="Internet Users" data-hi="इंटरनेट उपयोगकर्ता">Internet Users</h3>
+          <p class="glance-value" style="color:var(--text); font-size:22px; font-family:var(--font-mono); font-weight:600; margin-bottom:10px;" data-en="55.9%" data-hi="55.9%">55.9%</p>
+          <p style="font-size:12px; color:var(--text-faint); margin:0 0 4px; font-family:var(--font-mono);" data-en="Data year: 2022" data-hi="डेटा वर्ष: 2022">Data year: 2022</p>
+          <a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=IN" target="_blank" rel="noopener" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);" data-en="Source: World Bank &rarr;" data-hi="स्रोत: World Bank &rarr;">Source: World Bank &rarr;</a>
+        </article>
+      <!-- END_BUILD_INJECT -->
+      </div>
       <p id="overview-error" class="preview-note" style="display:none; margin-top:22px;" data-en="Indicator data could not be loaded right now." data-hi="अभी संकेतक डेटा लोड नहीं हो सका।">Indicator data could not be loaded right now.</p>
     </div>
   </section>

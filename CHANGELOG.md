@@ -175,6 +175,26 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 - `CHANGELOG.md` (modified)
 - `NEXT_SESSION.md` (modified)
 
+## v5 — Phase 2 Completion & SEO Build System — 2026-08-12
+
+### Files created
+
+- `scripts/build.py` — Python script to statically generate HTML from JSON for SEO.
+
+### Files modified
+
+- `india.html` — Updated to include data injected directly into HTML (pre-rendered) instead of empty `div`.
+- `assets/js/india-overview.js` — Removed the client-side JSON fetching for overview cards since they are now pre-rendered.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Major Architectural Update:** Transitioned from client-side JSON fetching to a static HTML build process (`scripts/build.py`) for better SEO (Google Console indexing), while keeping bilingual switching fully functional via data attributes.
+
+### What remains pending
+
+- Start Phase 4 (State Profiles) using the new static build architecture.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
