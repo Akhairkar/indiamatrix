@@ -4,13 +4,19 @@
     {
       "id": "population",
       "category": "population",
-      "name": { "en": "Population", "hi": "जनसंख्या" },
+      "name": {
+        "en": "Population",
+        "hi": "जनसंख्या"
+      },
       "unit": "count",
       "geography_level": "country",
       "geography_id": "india",
-      "year": 2024,
-      "value": 1450935791,
-      "display": { "en": "1.45 billion", "hi": "1.45 अरब" },
+      "year": "2025",
+      "value": 1463865525,
+      "display": {
+        "en": "1.46 billion",
+        "hi": "1.46 अरब"
+      },
       "source_id": "world-bank",
       "source_url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IN",
       "last_checked": "2026-08-11",
@@ -21,13 +27,19 @@
     {
       "id": "gdp-current-usd",
       "category": "economy",
-      "name": { "en": "GDP", "hi": "जीडीपी" },
+      "name": {
+        "en": "GDP",
+        "hi": "जीडीपी"
+      },
       "unit": "USD",
       "geography_level": "country",
       "geography_id": "india",
-      "year": 2024,
-      "value": 3912690000000,
-      "display": { "en": "$3.91 trillion", "hi": "$3.91 ट्रिलियन" },
+      "year": "2025",
+      "value": 3956067115771.63,
+      "display": {
+        "en": "$3.96 trillion",
+        "hi": "$3.96 ट्रिलियन"
+      },
       "source_id": "world-bank",
       "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IN",
       "last_checked": "2026-08-11",
@@ -38,13 +50,19 @@
     {
       "id": "literacy-rate",
       "category": "education",
-      "name": { "en": "Literacy Rate", "hi": "साक्षरता दर" },
+      "name": {
+        "en": "Literacy Rate",
+        "hi": "साक्षरता दर"
+      },
       "unit": "%",
       "geography_level": "country",
       "geography_id": "india",
       "year": 2011,
       "value": 74.04,
-      "display": { "en": "74.04%", "hi": "74.04%" },
+      "display": {
+        "en": "74.04%",
+        "hi": "74.04%"
+      },
       "source_id": "census-india",
       "source_url": "https://censusindia.gov.in/",
       "last_checked": "2026-08-11",
@@ -55,13 +73,19 @@
     {
       "id": "unemployment-rate",
       "category": "employment",
-      "name": { "en": "Unemployment Rate", "hi": "बेरोज़गारी दर" },
+      "name": {
+        "en": "Unemployment Rate",
+        "hi": "बेरोज़गारी दर"
+      },
       "unit": "%",
       "geography_level": "country",
       "geography_id": "india",
       "year": 2025,
       "value": 3.1,
-      "display": { "en": "3.1%", "hi": "3.1%" },
+      "display": {
+        "en": "3.1%",
+        "hi": "3.1%"
+      },
       "source_id": "mospi",
       "source_url": "https://www.mospi.gov.in/",
       "last_checked": "2026-08-11",
@@ -72,13 +96,19 @@
     {
       "id": "life-expectancy",
       "category": "healthcare",
-      "name": { "en": "Life Expectancy", "hi": "जीवन प्रत्याशा" },
+      "name": {
+        "en": "Life Expectancy",
+        "hi": "जीवन प्रत्याशा"
+      },
       "unit": "years",
       "geography_level": "country",
       "geography_id": "india",
       "year": 2023,
       "value": 72.0,
-      "display": { "en": "72.0 years", "hi": "72.0 वर्ष" },
+      "display": {
+        "en": "72.0 years",
+        "hi": "72.0 वर्ष"
+      },
       "source_id": "world-bank",
       "source_url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IN",
       "last_checked": "2026-08-11",
@@ -89,13 +119,19 @@
     {
       "id": "internet-users",
       "category": "digital-india",
-      "name": { "en": "Internet Users", "hi": "इंटरनेट उपयोगकर्ता" },
+      "name": {
+        "en": "Internet Users",
+        "hi": "इंटरनेट उपयोगकर्ता"
+      },
       "unit": "%",
       "geography_level": "country",
       "geography_id": "india",
       "year": 2022,
       "value": 55.9,
-      "display": { "en": "55.9%", "hi": "55.9%" },
+      "display": {
+        "en": "55.9%",
+        "hi": "55.9%"
+      },
       "source_id": "world-bank",
       "source_url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=IN",
       "last_checked": "2026-08-11",

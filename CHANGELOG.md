@@ -315,6 +315,29 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (Automated Data System, AI Layer, etc.) in future sessions.
 
+## v11 — Phase 12 (Automated Data System) — 2026-08-12
+
+### Files created
+
+- `scripts/adapters/base_adapter.py` — Base class for official data fetchers.
+- `scripts/adapters/worldbank_adapter.py` — Real API adapter that fetches India's latest Population and GDP from the World Bank.
+- `scripts/run_pipeline.py` — The master controller that runs adapters, updates JSON data, triggers the audit, and rebuilds the HTML site if data changed.
+- `.github/workflows/daily_update.yml` — A GitHub Actions workflow running on a daily cron schedule to execute `run_pipeline.py` and auto-commit changes.
+
+### Files modified
+
+- `ROADMAP.md` — Marked Phase 12 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 12 Complete:** Set up the end-to-end Automated Data System pipeline. 
+- Integrated real-time World Bank API polling for automated GDP and Population updates, eliminating the need for manual data entry for these indicators.
+
+### What remains pending
+
+- Proceed with remaining phases (Data Validation, AI Layer, etc.) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

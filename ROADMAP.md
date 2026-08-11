@@ -147,7 +147,7 @@ transformation." Every story must cite verified data and sources.
 
 Search indicators, filter by state/district, select years, compare entities, download data.
 
-## Phase 12 — Automated Data System — PENDING — FUTURE SESSION
+## Phase 12 — Automated Data System — ✅ DONE (2026-08-12)
 
 ```
 Official Source → Daily Check → Detect New/Changed Data → Fetch → Validate → Store
