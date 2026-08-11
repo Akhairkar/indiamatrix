@@ -2,26 +2,32 @@
 
 ## Completed so far
 
-**Session 1 — Homepage:**
-- Full homepage (`index.html`, `assets/css/style.css`, `assets/js/main.js`) — bilingual
-  EN/HI, all sections from the brief, no fabricated statistics, basic on-page SEO.
+**Session 1 — Homepage:** full homepage, bilingual EN/HI, all brief sections, no
+fabricated statistics, basic on-page SEO.
 
-**Session 2 — Phase 1 Foundation (partial):**
-- `ARCHITECTURE.md` — decision to stay static HTML/CSS/JS until Phase 3, with a clear
-  trigger for when to revisit.
-- `DATA_MODEL.md` — indicator record schema, source record schema, planned URL
-  architecture for every future page type, and the non-negotiable rule that `value` is
-  never fabricated.
-- `data/sources.json` — registry of 11 real official/verified data publishers (Census of
-  India, MoSPI, RBI, NITI Aayog, data.gov.in, MoHFW, NCRB, MoEFCC, MeitY, World Bank, UN
-  Data). Registry only — no indicator values populated yet.
+**Session 2 — Phase 1 Foundation (partial):** `ARCHITECTURE.md`, `DATA_MODEL.md`,
+`data/sources.json` (11 real official sources).
+
+**Session 3 — Phase 2 India Overview (started):**
+- `india.html` — a real India Overview page with six sourced headline indicators:
+  population, GDP, literacy rate, unemployment rate, life expectancy, internet users.
+- `data/indicators/india-overview.json` — the six indicator records, each with a real
+  value, true data year, `source_id` matching `data/sources.json`, source URL, and a
+  methodology note. Sources used: World Bank (population, GDP, life expectancy,
+  internet users), Census of India (literacy rate), MoSPI/PLFS (unemployment rate).
+- `assets/js/india-overview.js` — fetches the JSON and renders the cards, including a
+  live language re-render on EN/HI switch.
+- Homepage's "India at a Glance" section now links to `india.html`; the homepage's own
+  placeholder cards were deliberately left untouched (still "Data coming soon") to keep
+  this session scoped — see rationale in `ROADMAP.md` Phase 2.
 
 ## Pending — every module not built yet
 
 - Phase 1 remainder — design system extraction into a documented component library;
-  core reusable components (data card, chart wrapper, ranking row, comparison table,
-  source citation badge) — build these alongside Phase 2's first real page.
-- Phase 2 — India Overview (real dashboard, replacing homepage placeholders)
+  reusable components (chart wrapper, ranking row, comparison table, source citation
+  badge as a real component rather than inline HTML).
+- Phase 2 remainder — historical trend charts for the six indicators; expanding beyond
+  six indicators once Phase 3 exists.
 - Phase 3 — Indicators database (target 500–1,000+, real sourced data)
 - Phase 4 — State profiles (28 states + 8 UTs)
 - Phase 5 — District profiles
@@ -44,22 +50,20 @@ Full detail on every phase lives in `ROADMAP.md` — read it before starting new
 
 ## Recommended next step
 
-Start the **India Overview page** (Phase 2), scoped small:
+Two reasonable directions — pick one, keep the session scoped to it:
 
-1. Build a single new static page, `india.html` (or repurpose the homepage's "India at a
-   Glance" section into a full page) — reuse the existing design tokens and CSS from
-   Phase 0, don't restyle.
-2. Pick 4–6 headline indicators to actually populate with real numbers (population, GDP,
-   literacy rate, life expectancy are natural starting points) using the schema in
-   `DATA_MODEL.md`. Store them as a small JSON file (e.g. `data/indicators/india-overview.json`)
-   rather than hardcoding numbers in HTML, so Phase 3 can reuse the same file pattern.
-3. Every value must have a `source_id` that exists in `data/sources.json` (add more
-   source entries first if a needed one is missing) and a real `year` — never today's
-   date.
-4. Update the homepage's "India at a Glance" cards to link to this new page once it
-   exists (don't wire them to fabricated numbers).
-5. Do not start Phase 3 (the full indicators database) in the same session as this —
-   keep the India Overview page as its own scoped unit of work.
+**Option A — Deepen Phase 2:** add one historical trend chart (e.g. India's population
+over the last few decades) to `india.html`, sourced the same way as the current six
+indicators. This is the natural next increment on the page just built.
+
+**Option B — Start Phase 4 narrowly:** build a single state profile page (e.g.
+`states/maharashtra.html`) using the same JSON-plus-render pattern established in
+`data/indicators/india-overview.json` and `assets/js/india-overview.js` — reuse that
+pattern rather than inventing a new one.
+
+Do not start the full Phase 3 indicators database yet — that's a large, multi-session
+effort and should wait until the JSON-plus-render pattern has been proven on a couple
+more pages first.
 
 ## Session rules going forward
 
@@ -68,4 +72,5 @@ Start the **India Overview page** (Phase 2), scoped small:
   that changed in a given session (see `CHANGELOG.md` for the convention). Record any
   deletions in `CHANGELOG.md` instead of including them in the ZIP.
 - Update `ROADMAP.md` phase statuses as work completes.
-- Never present fabricated statistics as real, live, or official.
+- Never present fabricated statistics as real, live, or official — every new indicator
+  value needs a real `source_id`, real `source_url`, and true `year`.

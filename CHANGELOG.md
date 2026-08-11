@@ -88,6 +88,58 @@ Per the "changes only" rule, `indiametrix-changes-v2.zip` contains only:
 It does **not** include `index.html`, `assets/`, or `README.md`, since those were not
 touched this session.
 
+## v3 — Phase 2 India Overview (started) — 2026-08-11
+
+### Files created
+
+- `india.html` — a real India Overview page with six sourced headline indicators
+  (population, GDP, literacy rate, unemployment rate, life expectancy, internet users)
+- `data/indicators/india-overview.json` — the six indicator records, each with a real
+  value, true data year, source, source URL, and methodology note
+- `assets/js/india-overview.js` — fetches the JSON and renders indicator cards, with
+  live re-render on language switch
+
+### Files modified
+
+- `index.html` — homepage's "India at a Glance" section now links to `india.html`;
+  placeholder cards in that section were intentionally left untouched
+- `ROADMAP.md` — Phase 2 status updated to "in progress" with details of what was built
+- `NEXT_SESSION.md` — rewritten to offer two scoped next-step options (a historical
+  chart, or one state profile page)
+
+### What changed
+
+- Six real, sourced statistics now exist on the platform for the first time, each
+  citing an official publisher already listed in `data/sources.json`:
+  - Population: 1.45 billion (2024, World Bank)
+  - GDP: $3.91 trillion (2024, World Bank)
+  - Literacy rate: 74.04% (2011, Census of India)
+  - Unemployment rate: 3.1% (2025, MoSPI/PLFS)
+  - Life expectancy: 72.0 years (2023, World Bank)
+  - Internet users: 55.9% (2022, World Bank/ITU)
+- No value was estimated or invented; every figure traces to a real, checkable source
+  with the correct data year (which is not the same as today's date).
+
+### What remains pending
+
+- Everything in `ROADMAP.md` Phases 2 (remainder) through 18. See `NEXT_SESSION.md` for
+  the two recommended next-step options.
+
+### This session's delivery ZIP
+
+Per the "changes only" rule, `indiametrix-changes-v3.zip` contains only:
+- `india.html` (new)
+- `data/indicators/india-overview.json` (new)
+- `assets/js/india-overview.js` (new)
+- `index.html` (modified)
+- `ROADMAP.md` (modified)
+- `NEXT_SESSION.md` (modified)
+- `CHANGELOG.md` (modified)
+
+It does **not** include `assets/css/style.css`, `assets/js/main.js`, `data/sources.json`,
+`ARCHITECTURE.md`, `DATA_MODEL.md`, or `README.md`, since those were not touched this
+session.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

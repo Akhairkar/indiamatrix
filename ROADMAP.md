@@ -1,7 +1,8 @@
 # IndiaMetrix — Master Roadmap
 
-> **CURRENT SESSION STATUS: PHASE 1 FOUNDATION (partial) — architecture decision, data
-> model, and source registry done. Homepage (Phase 0) was completed in the prior session.**
+> **CURRENT SESSION STATUS: PHASE 2 IN PROGRESS — a real, sourced India Overview page
+> (`india.html`) is live with six headline indicators. Phase 1 Foundation (architecture,
+> data model, source registry) and Phase 0 (homepage) were completed in prior sessions.**
 > **ALL OTHER MODULES: PENDING FOR FUTURE SESSIONS**
 
 IndiaMetrix is an independent India Data Intelligence Platform. It is **not** a metals/rates
@@ -59,12 +60,21 @@ should read this file before writing code, and update it as phases are completed
   comparison table, source citation badge) — build these when Phase 2 needs its first
   real page, not before.
 
-## Phase 2 — India Overview — PENDING — FUTURE SESSION
+## Phase 2 — India Overview — IN PROGRESS
 
-- India dashboard page (real data, replacing homepage placeholders)
-- Key indicators module wired to the data model
-- Historical trend charts (time series)
-- Data cards fed by real, sourced values
+- ✅ **DONE (2026-08-11)** — `india.html` built: a real India Overview page with six
+  sourced headline indicators (population, GDP, literacy rate, unemployment rate, life
+  expectancy, internet users), each rendered from `data/indicators/india-overview.json`
+  with a data year, source name/link, and methodology note per the `DATA_MODEL.md`
+  schema. No fabricated values — every figure traces to an official publisher already
+  listed in `data/sources.json` (World Bank, Census of India, MoSPI/PLFS).
+- ✅ **DONE (2026-08-11)** — Homepage's "India at a Glance" section links out to
+  `india.html`; the homepage cards themselves remain explicit placeholders, as decided
+  in the prior session — they were not wired to real numbers to keep this session
+  scoped.
+- ⏳ PENDING — Historical trend charts (time series) for these same indicators.
+- ⏳ PENDING — Expand beyond the six starting indicators toward the full India
+  dashboard once Phase 3's indicator database exists.
 
 ## Phase 3 — Indicators (Target 500–1,000+, quality over quantity) — PENDING — FUTURE SESSION
 
