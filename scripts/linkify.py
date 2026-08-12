@@ -29,7 +29,7 @@ def linkify_html(html, keywords):
     tokens = re.split(r'(<!--.*?-->|<[^>]*>)', html, flags=re.DOTALL)
     
     # Tags we do NOT want to inject links inside
-    ignore_tags = {'a', 'script', 'style', 'button', 'option', 'title', 'h1', 'h2', 'h3', 'nav', 'header', 'footer'}
+    ignore_tags = {'a', 'script', 'style', 'button', 'option', 'title', 'h1', 'nav', 'header', 'footer'}
     current_ignored_tag = None
     
     sorted_kws = sorted(keywords.keys(), key=len, reverse=True)

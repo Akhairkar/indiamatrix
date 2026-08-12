@@ -1,0 +1,23 @@
+{
+  "id": "2-1_access-cft-tot",
+  "category": "economy",
+  "name": {
+    "en": "Access to Clean Fuels and Technologies for cooking (% of total population)",
+    "hi": "Access to Clean Fuels and Technologies for cooking (% of total population)"
+  },
+  "unit": "",
+  "geography_level": "country",
+  "geography_id": "india",
+  "year": "2016",
+  "value": 41.04,
+  "display": {
+    "en": "41.04",
+    "hi": "41.04"
+  },
+  "source_id": "world-bank",
+  "source_url": "https://data.worldbank.org/indicator/2.1_ACCESS.CFT.TOT",
+  "last_checked": "2026-08-12",
+  "last_updated": "2026-08-12",
+  "methodology_note": "",
+  "is_estimate": false
+}

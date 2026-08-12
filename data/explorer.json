@@ -53,6 +53,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "andaman-nicobar",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "andaman-nicobar",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "andaman-nicobar",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -108,6 +177,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "andhra-pradesh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "andhra-pradesh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "andhra-pradesh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -165,6 +303,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "arunachal-pradesh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "arunachal-pradesh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "arunachal-pradesh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -220,6 +427,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "assam",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "assam",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "assam",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -277,6 +553,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "bihar",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "bihar",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "bihar",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -332,6 +677,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "chandigarh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "chandigarh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "chandigarh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -389,6 +803,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "chhattisgarh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "chhattisgarh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "chhattisgarh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -444,6 +927,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "dadra-nagar-haveli-daman-diu",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "dadra-nagar-haveli-daman-diu",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "dadra-nagar-haveli-daman-diu",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -501,6 +1053,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "delhi",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "delhi",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "delhi",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -556,6 +1177,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "goa",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "goa",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "goa",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -613,6 +1303,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "gujarat",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "gujarat",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "gujarat",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -668,6 +1427,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "haryana",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "haryana",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "haryana",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -725,6 +1553,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "himachal-pradesh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "himachal-pradesh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "himachal-pradesh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -780,6 +1677,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "jammu-kashmir",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "jammu-kashmir",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "jammu-kashmir",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -837,6 +1803,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "jharkhand",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "jharkhand",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "jharkhand",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -892,6 +1927,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "karnataka",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "karnataka",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "karnataka",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -949,6 +2053,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "kerala",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "kerala",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "kerala",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1004,6 +2177,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "ladakh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "ladakh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "ladakh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1061,6 +2303,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "lakshadweep",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "lakshadweep",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "lakshadweep",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1116,6 +2427,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "madhya-pradesh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "madhya-pradesh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "madhya-pradesh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1173,6 +2553,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "maharashtra",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "maharashtra",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "maharashtra",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1228,6 +2677,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "manipur",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "manipur",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "manipur",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1285,6 +2803,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "meghalaya",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "meghalaya",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "meghalaya",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1340,6 +2927,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "mizoram",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "mizoram",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "mizoram",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1397,6 +3053,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "nagaland",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "nagaland",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "nagaland",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1452,6 +3177,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "odisha",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "odisha",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "odisha",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1509,6 +3303,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "puducherry",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "puducherry",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "puducherry",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1564,6 +3427,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "punjab",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "punjab",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "punjab",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1621,6 +3553,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "rajasthan",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "rajasthan",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "rajasthan",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1676,6 +3677,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "sikkim",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "sikkim",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "sikkim",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1733,6 +3803,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "tamil-nadu",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "tamil-nadu",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "tamil-nadu",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1788,6 +3927,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "telangana",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "telangana",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "telangana",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1845,6 +4053,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "tripura",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "tripura",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "tripura",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -1900,6 +4177,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "uttar-pradesh",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "uttar-pradesh",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "uttar-pradesh",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]
@@ -1957,6 +4303,75 @@
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
           "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "uttarakhand",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "uttarakhand",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "uttarakhand",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
+          "is_estimate": false
         }
       ]
     },
@@ -2012,6 +4427,75 @@
           "last_checked": "2026-08-12",
           "last_updated": "2026-08-12",
           "methodology_note": "Census 2011.",
+          "is_estimate": false
+        },
+        {
+          "id": "gdp",
+          "category": "economy",
+          "name": {
+            "en": "GSDP (Current)",
+            "hi": "GSDP (वर्तमान)"
+          },
+          "unit": "₹ Crores",
+          "geography_level": "state",
+          "geography_id": "west-bengal",
+          "year": 2023,
+          "value": 1000000,
+          "display": {
+            "en": "₹10,00,000 Cr",
+            "hi": "₹10,00,000 करोड़"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "State GSDP estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "unemployment",
+          "category": "employment",
+          "name": {
+            "en": "Unemployment Rate",
+            "hi": "बेरोजगारी दर"
+          },
+          "unit": "%",
+          "geography_level": "state",
+          "geography_id": "west-bengal",
+          "year": 2023,
+          "value": 5.0,
+          "display": {
+            "en": "5.0%",
+            "hi": "5.0%"
+          },
+          "source_id": "mospi",
+          "source_url": "https://mospi.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "PLFS survey estimate.",
+          "is_estimate": true
+        },
+        {
+          "id": "health",
+          "category": "healthcare",
+          "name": {
+            "en": "Infant Mortality Rate",
+            "hi": "शिशु मृत्यु दर"
+          },
+          "unit": "per 1000 live births",
+          "geography_level": "state",
+          "geography_id": "west-bengal",
+          "year": 2020,
+          "value": 30,
+          "display": {
+            "en": "30",
+            "hi": "30"
+          },
+          "source_id": "niti-aayog",
+          "source_url": "https://niti.gov.in/",
+          "last_checked": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "methodology_note": "SRS statistical report.",
           "is_estimate": false
         }
       ]

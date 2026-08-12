@@ -1,0 +1,23 @@
+{
+  "id": "1-1_access-electricity-tot",
+  "category": "economy",
+  "name": {
+    "en": "Access to electricity (% of total population)",
+    "hi": "Access to electricity (% of total population)"
+  },
+  "unit": "",
+  "geography_level": "country",
+  "geography_id": "india",
+  "year": "2016",
+  "value": 84.5268173217773,
+  "display": {
+    "en": "84.5268173217773",
+    "hi": "84.5268173217773"
+  },
+  "source_id": "world-bank",
+  "source_url": "https://data.worldbank.org/indicator/1.1_ACCESS.ELECTRICITY.TOT",
+  "last_checked": "2026-08-12",
+  "last_updated": "2026-08-12",
+  "methodology_note": "Access to electricity is the percentage of population with access to electricity.",
+  "is_estimate": false
+}

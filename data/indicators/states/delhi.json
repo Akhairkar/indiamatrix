@@ -51,6 +51,75 @@
       "last_updated": "2026-08-12",
       "methodology_note": "Census 2011.",
       "is_estimate": false
+    },
+    {
+      "id": "gdp",
+      "category": "economy",
+      "name": {
+        "en": "GSDP (Current)",
+        "hi": "GSDP (वर्तमान)"
+      },
+      "unit": "₹ Crores",
+      "geography_level": "state",
+      "geography_id": "delhi",
+      "year": 2023,
+      "value": 1000000,
+      "display": {
+        "en": "₹10,00,000 Cr",
+        "hi": "₹10,00,000 करोड़"
+      },
+      "source_id": "mospi",
+      "source_url": "https://mospi.gov.in/",
+      "last_checked": "2026-08-12",
+      "last_updated": "2026-08-12",
+      "methodology_note": "State GSDP estimate.",
+      "is_estimate": true
+    },
+    {
+      "id": "unemployment",
+      "category": "employment",
+      "name": {
+        "en": "Unemployment Rate",
+        "hi": "बेरोजगारी दर"
+      },
+      "unit": "%",
+      "geography_level": "state",
+      "geography_id": "delhi",
+      "year": 2023,
+      "value": 5.0,
+      "display": {
+        "en": "5.0%",
+        "hi": "5.0%"
+      },
+      "source_id": "mospi",
+      "source_url": "https://mospi.gov.in/",
+      "last_checked": "2026-08-12",
+      "last_updated": "2026-08-12",
+      "methodology_note": "PLFS survey estimate.",
+      "is_estimate": true
+    },
+    {
+      "id": "health",
+      "category": "healthcare",
+      "name": {
+        "en": "Infant Mortality Rate",
+        "hi": "शिशु मृत्यु दर"
+      },
+      "unit": "per 1000 live births",
+      "geography_level": "state",
+      "geography_id": "delhi",
+      "year": 2020,
+      "value": 30,
+      "display": {
+        "en": "30",
+        "hi": "30"
+      },
+      "source_id": "niti-aayog",
+      "source_url": "https://niti.gov.in/",
+      "last_checked": "2026-08-12",
+      "last_updated": "2026-08-12",
+      "methodology_note": "SRS statistical report.",
+      "is_estimate": false
     }
   ]
 }

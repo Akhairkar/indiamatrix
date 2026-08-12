@@ -1,0 +1,4 @@
+# Core dependencies
+# No external dependencies currently used in scripts (only standard library)
+# But we can add requests here just in case future adapters need it.
+urllib3

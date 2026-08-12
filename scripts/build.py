@@ -173,7 +173,17 @@ def main():
         with open(indicator_template_path, 'r', encoding='utf-8') as f:
             indicator_template = f.read()
             
-        for ind in overview_data:
+        all_indicators = list(overview_data)
+        
+        # Add worldbank indicators
+        wb_dir = os.path.join(root_dir, 'data', 'indicators', 'worldbank')
+        if os.path.exists(wb_dir):
+            for filename in os.listdir(wb_dir):
+                if filename.endswith('.json'):
+                    with open(os.path.join(wb_dir, filename), 'r', encoding='utf-8') as f:
+                        all_indicators.append(json.load(f))
+                        
+        for ind in all_indicators:
             ind_id = ind['id']
             name_en = ind['name'].get('en', '')
             name_hi = ind['name'].get('hi', '')

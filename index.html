@@ -94,7 +94,7 @@
         <form class="search-box" role="search" onsubmit="return false;">
           <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input type="search" data-en-placeholder="Search India, a state, district, indicator or comparison..." data-hi-placeholder="भारत, राज्य, ज़िला, संकेतक या तुलना खोजें..." placeholder="Search India, a state, district, indicator or comparison..." aria-label="Search IndiaMetrix">
-          <button type="submit" data-en="Search" data-hi="खोजें">Search</button>
+          <button type="button" commandfor="search-dialog" command="show-modal" data-en="Search" data-hi="खोजें">Search</button>
         </form>
 
         <p class="search-hint">
@@ -346,13 +346,13 @@
 
     <nav class="footer-links" aria-label="Footer">
       <a href="#" data-en="About" data-hi="परिचय">About</a>
-      <a href="#" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="methodology.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="#" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="#" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
-      <a href="#" data-en="Terms" data-hi="शर्तें">Terms</a>
-      <a href="#" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="#" data-en="Corrections" data-hi="सुधार">Corrections</a>
+      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
+      <a href="contact.html" data-en="Corrections" data-hi="सुधार">Corrections</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
@@ -361,5 +361,30 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+
+<!-- Search Dialog -->
+<dialog id="search-dialog" class="im-search-dialog" closedby="any">
+  <div class="search-dialog-header">
+    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" class="search-dialog-input" placeholder="Search for states, indicators..." autofocus>
+    <button commandfor="search-dialog" command="close" class="search-dialog-close" aria-label="Close search">×</button>
+  </div>
+  <div class="search-dialog-body">
+    <p class="search-hint" style="margin-bottom: 12px; font-weight: 600;">Suggested Searches</p>
+    <ul class="search-suggestions">
+      <li><a href="india.html">India Overview</a></li>
+      <li><a href="explorer.html">Data Explorer</a></li>
+      <li><a href="compare.html">Compare States</a></li>
+      <li><a href="rankings.html">State Rankings</a></li>
+    </ul>
+  </div>
+</dialog>
+
+<!-- Invokers Polyfill -->
+<script type="module">
+  if (!('commandForElement' in HTMLButtonElement.prototype)) {
+    import('https://esm.run/invokers-polyfill');
+  }
+</script>
 </body>
 </html>

@@ -16,11 +16,15 @@ def main():
     stories_files = glob.glob(os.path.join(root_dir, "stories", "*.html"))
     
     # 4. Collect all ranking pages
-    # rankings are dynamically generated? Right now we just have rankings.html at root, 
-    # but maybe in the future rankings/*.html. Let's look for them just in case.
     rankings_files = glob.glob(os.path.join(root_dir, "rankings", "*.html"))
     
-    all_files = root_files + states_files + stories_files + rankings_files
+    # 5. Collect all indicator pages
+    indicators_files = glob.glob(os.path.join(root_dir, "indicators", "*.html"))
+    
+    # 6. Collect all district pages (they are in subfolders)
+    districts_files = glob.glob(os.path.join(root_dir, "districts", "**", "*.html"), recursive=True)
+    
+    all_files = root_files + states_files + stories_files + rankings_files + indicators_files + districts_files
     
     # Determine the date for <lastmod>
     current_date = datetime.utcnow().strftime("%Y-%m-%d")
