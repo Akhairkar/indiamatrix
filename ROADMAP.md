@@ -165,15 +165,12 @@ check, wrong-year check, unit check, source check, range validation, calculation
 validation. Failing validation blocks publishing and produces an error/validation report
 instead.
 
-## Phase 14 — AI Layer ("Ask IndiaMetrix") — PENDING — FUTURE SESSION
+## Phase 14 — AI Layer ("Ask IndiaMetrix") — ✅ DONE (2026-08-12)
 
-```
-User Question → Intent Detection → Verified Database Query → Data Retrieval
-→ AI Explanation → Answer + Source
-```
-
-The AI may generate explanations, but numerical facts must always come from the verified
-database — never invented.
+Add an AI chat interface embedded on the site (using an open LLM API or Gemini API with
+a serverless function) that uses a RAG pattern. The system prompt STRICTLY restricts
+the AI to answer ONLY using the provided `history.json` and indicator JSON files. It
+must refuse to answer generic questions outside the database. — never invented.
 
 ## Phase 15 — SEO System — PENDING — FUTURE SESSION
 

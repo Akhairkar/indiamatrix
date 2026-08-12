@@ -7,17 +7,17 @@ stories = glob.glob("stories/*.html")
 files.extend(stories)
 
 def modify_nav(content):
-    # Only insert if explorer.html is not already present
-    if "explorer.html" in content:
+    # Only insert if ask.html is not already present
+    if "ask.html" in content:
         return content
 
-    # Find world.html line and insert explorer.html after it
-    pattern = r'( *<a href="([^"]*)world\.html".*?</a>)'
+    # Find explorer.html line and insert ask.html after it
+    pattern = r'( *<a href="([^"]*)explorer\.html".*?</a>)'
     
     def rep(m):
         indent_and_line = m.group(1)
         prefix = m.group(2)
-        return indent_and_line + f'\n      <a href="{prefix}explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>'
+        return indent_and_line + f'\n      <a href="{prefix}ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>'
         
     return re.sub(pattern, rep, content)
 

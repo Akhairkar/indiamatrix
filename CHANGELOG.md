@@ -356,6 +356,28 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (AI Layer, SEO, Internal Linking) in future sessions.
 
+## v13 — Phase 14 (AI Layer) — 2026-08-12
+
+### Files created
+
+- `ask.html` — The "Ask IndiaMetrix" chat interface UI.
+- `assets/js/ask.js` — Client-side RAG logic connecting to Gemini REST API and enforcing strict data scope using `explorer.json`.
+
+### Files modified
+
+- `scripts/update_nav_v2.py` — Added "Ask AI" navigation link.
+- `index.html`, `india.html`, `compare.html`, `history.html`, `world.html`, `explorer.html`, `stories/*.html`, `templates/*.html`, and `states/*.html` — Navigation updated across the site.
+- `ROADMAP.md` — Marked Phase 14 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 14 Complete:** Implemented a client-side AI chat feature. Uses a placeholder API key (`YOUR_GEMINI_API_KEY_HERE`) ready for production configuration. The AI is strictly prompted to only answer questions based on the IndiaMetrix JSON dataset.
+
+### What remains pending
+
+- Proceed with remaining phases (SEO System, Internal Linking, Data Provenance) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
