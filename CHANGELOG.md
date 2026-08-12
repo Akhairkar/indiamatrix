@@ -444,6 +444,30 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - None. The core project roadmap is complete.
 
+## v17 — Phases 3 & 5 (Indicators & District Profiles) — 2026-08-12
+
+### Files created
+
+- `templates/indicator.html` — A dedicated page template for individual indicators.
+- `templates/district.html` — A dedicated page template for district profiles.
+- `data/districts/maharashtra-nagpur.json` — First sample district data file.
+
+### Files modified
+
+- `scripts/build.py` — Added logic to generate `/indicators/{slug}.html` and `/districts/{state}/{slug}.html` pages.
+- `templates/state.html` — Injected a District section.
+- `ROADMAP.md` — Marked Phase 3, 4, and 5 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 3 (Indicators) Complete:** Implemented a system to build dedicated `/indicators/` pages (e.g., `indicators/population.html`) explaining the metric, methodology, and source.
+- **Phase 5 (District Profiles) Complete:** Added support for local data by building `/districts/{state}/{district}.html` pages. Nagpur added as a proof of concept.
+
+### What remains pending
+
+- Only Phase 6 (Rankings) and Phase 7 (Comparison) remain from the original skipped blocks, though the infrastructure was laid out.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

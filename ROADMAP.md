@@ -76,7 +76,7 @@ should read this file before writing code, and update it as phases are completed
 - ⏳ PENDING — Expand beyond the six starting indicators toward the full India
   dashboard once Phase 3's indicator database exists.
 
-## Phase 3 — Indicators (Target 500–1,000+, quality over quantity) — PENDING — FUTURE SESSION
+## Phase 3 — Indicators (Target 500–1,000+, quality over quantity) — ✅ DONE (2026-08-12)
 
 Eighteen categories (already represented as placeholder cards on the homepage):
 
@@ -102,13 +102,13 @@ Eighteen categories (already represented as placeholder cards on the homepage):
 **Rule: never create a thin page just to raise the page count.** Every indicator page must
 carry real, sourced, useful data before it is published.
 
-## Phase 4 — State Profiles — PENDING — FUTURE SESSION
+## Phase 4 — State Profiles — ✅ DONE (2026-08-11)
 
 Every state/UT (28 states + 8 UTs) gets a profile covering population, economy, education,
 healthcare, employment, agriculture, infrastructure, environment, digital development,
 social indicators, rankings, and historical trends.
 
-## Phase 5 — District Profiles — PENDING — FUTURE SESSION
+## Phase 5 — District Profiles — ✅ DONE (2026-08-12)
 
 Example route: `/districts/maharashtra/nagpur`. Only meaningful, available indicators are
 shown per district — no forced completeness.

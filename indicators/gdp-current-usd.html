@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- BUILD_INJECT:seo -->
-<title>State Overview | IndiaMetrix</title>
-<meta name="description" content="State headline indicators.">
-<link rel="canonical" href="https://www.indiametrix.in/">
-<meta property="og:title" content="State Overview | IndiaMetrix">
-<meta property="og:description" content="State headline indicators.">
-<meta property="og:url" content="https://www.indiametrix.in/">
-<!-- END_BUILD_INJECT -->
+
+<title>GDP Data & Statistics | IndiaMetrix</title>
+<meta name="description" content="Latest data on GDP in India. Sourced from World Bank.">
+<link rel="canonical" href="https://www.indiametrix.in/indicators/gdp-current-usd.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="GDP in India | IndiaMetrix">
+<meta property="og:description" content="View the latest GDP statistics for India.">
+<meta property="og:url" content="https://www.indiametrix.in/indicators/gdp-current-usd.html">
+
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta name="theme-color" content="#0D1424">
@@ -20,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../assets/css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -30,7 +32,6 @@
   <div class="bg-grid"></div>
   <div class="bg-glow bg-glow--saffron"></div>
   <div class="bg-glow bg-glow--teal"></div>
-  <div class="bg-dotmap"></div>
 </div>
 
 <header class="site-header">
@@ -69,38 +70,27 @@
 </header>
 
 <main id="main">
-  <section class="section" style="padding-top:56px;">
+  <section class="section">
     <div class="wrap">
-      <p class="eyebrow" data-en="State Profile" data-hi="राज्य प्रोफ़ाइल">State Profile</p>
-      <!-- BUILD_INJECT:state_name -->
-      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="State Name" data-hi="राज्य का नाम">State Name</h1>
-      <!-- END_BUILD_INJECT -->
-      <p class="section-sub" style="max-width:60ch;" data-en="Headline indicators and verified statistics." data-hi="मुख्य संकेतक और सत्यापित आँकड़े।">Headline indicators and verified statistics.</p>
-    </div>
-  </section>
+      
+      <header class="page-header" style="text-align:left; margin-bottom: 40px;">
+        <h1 class="font-display" style="font-size: 48px; margin-bottom: 12px;" data-en="GDP" data-hi="जीडीपी">GDP</h1>
+        <p style="font-size: 24px; font-family: var(--font-mono); color: var(--teal);" data-en="$3.96 trillion (2025)" data-hi="$3.96 ट्रिलियन (2025)">$3.96 trillion (2025)</p>
+      </header>
+      
 
-  <section class="section" style="padding-top:16px; padding-bottom:32px;">
-    <div class="wrap">
-      <div class="glance-grid" aria-live="polite">
-        <!-- BUILD_INJECT:overview_cards -->
-        <!-- END_BUILD_INJECT -->
+      <div class="card" style="padding:32px;">
+        <h2 style="font-family: var(--font-mono); font-size:18px; color:var(--saffron); margin-bottom: 24px;" data-en="Methodology & Source" data-hi="कार्यप्रणाली और स्रोत">Methodology & Source</h2>
+        
+        <p style="margin-bottom: 12px; color:var(--text-muted);" data-en="Methodology: GDP at current US$ (nominal), World Bank World Development Indicators." data-hi="कार्यप्रणाली: GDP at current US$ (nominal), World Bank World Development Indicators.">Methodology: GDP at current US$ (nominal), World Bank World Development Indicators.</p>
+        <p style="margin-bottom: 12px; color:var(--text-muted);" data-en="Source: <a href='https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IN' target='_blank' rel='noopener' style='color:var(--teal)'>World Bank</a>" data-hi="स्रोत: <a href='https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IN' target='_blank' rel='noopener' style='color:var(--teal)'>World Bank</a>">Source: <a href='https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IN' target='_blank' rel='noopener' style='color:var(--teal)'>World Bank</a></p>
+        <p style="margin-bottom: 12px; color:var(--text-faint);" data-en="Last Updated: 2026-08-11" data-hi="अंतिम अद्यतन: 2026-08-11">Last Updated: 2026-08-11</p>
+        
       </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:16px; padding-bottom:32px;">
-    <div class="wrap">
-      <h2 style="font-family: var(--font-mono); font-size: 20px; color: var(--saffron); margin-bottom: 24px;" data-en="Districts" data-hi="जिले">Districts</h2>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <!-- BUILD_INJECT:state_districts -->
-        <!-- END_BUILD_INJECT -->
+      
+      <div style="margin-top: 40px; text-align:center;">
+        <a href="../explorer.html" class="btn" style="background:var(--surface-2); color:var(--text); text-decoration:none; display:inline-block; padding:12px 24px; border-radius:8px; font-family:var(--font-mono);" data-en="Explore more data" data-hi="और डेटा एक्सप्लोर करें">Explore more data</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section trust" style="padding-top:8px;">
-    <div class="wrap trust-inner">
-      <p class="trust-disclaimer" data-en="Every figure above links to its official source. IndiaMetrix does not estimate or fabricate values — where a newer official figure is not yet available, the most recent verified figure is shown with its true data year." data-hi="ऊपर हर आंकड़ा अपने आधिकारिक स्रोत से जुड़ा है। IndiaMetrix कोई भी मूल्य अनुमानित या गढ़ता नहीं है — जहां नया आधिकारिक आंकड़ा अभी उपलब्ध नहीं है, वहां सबसे हालिया सत्यापित आंकड़ा उसके वास्तविक डेटा वर्ष के साथ दिखाया गया है।">Every figure above links to its official source. IndiaMetrix does not estimate or fabricate values — where a newer official figure is not yet available, the most recent verified figure is shown with its true data year.</p>
     </div>
   </section>
 </main>

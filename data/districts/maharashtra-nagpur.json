@@ -1,0 +1,56 @@
+{
+  "id": "nagpur",
+  "state_id": "maharashtra",
+  "name": {
+    "en": "Nagpur",
+    "hi": "नागपुर"
+  },
+  "indicators": [
+    {
+      "id": "population",
+      "category": "population",
+      "name": {
+        "en": "Population",
+        "hi": "जनसंख्या"
+      },
+      "unit": "count",
+      "geography_level": "district",
+      "geography_id": "nagpur",
+      "year": 2011,
+      "value": 4653570,
+      "display": {
+        "en": "4.65 million",
+        "hi": "4.65 मिलियन"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-11",
+      "last_updated": "2026-08-11",
+      "methodology_note": "Census 2011 total population figure.",
+      "is_estimate": false
+    },
+    {
+      "id": "literacy-rate",
+      "category": "education",
+      "name": {
+        "en": "Literacy Rate",
+        "hi": "साक्षरता दर"
+      },
+      "unit": "%",
+      "geography_level": "district",
+      "geography_id": "nagpur",
+      "year": 2011,
+      "value": 88.39,
+      "display": {
+        "en": "88.39%",
+        "hi": "88.39%"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-11",
+      "last_updated": "2026-08-11",
+      "methodology_note": "Literacy rate as per Census 2011.",
+      "is_estimate": false
+    }
+  ]
+}
