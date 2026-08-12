@@ -378,6 +378,29 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (SEO System, Internal Linking, Data Provenance) in future sessions.
 
+## v14 — Phase 15 (SEO System) — 2026-08-12
+
+### Files created
+
+- `scripts/sitemap.py` — A Python script to automatically generate a standard `sitemap.xml` for all static and dynamically generated state pages.
+- `robots.txt` — Standard rules file that explicitly points crawlers to the new sitemap.
+
+### Files modified
+
+- `templates/state.html` — Updated to support the new dynamic `BUILD_INJECT:seo` token.
+- `scripts/build.py` — Upgraded the HTML generator to dynamically inject SEO-optimized `<title>`, `<meta name="description">`, and Open Graph (`og:`) tags for every state page.
+- `scripts/run_pipeline.py` — Automatically runs `sitemap.py` at the very end of the pipeline so the sitemap stays updated with new pages.
+- `ROADMAP.md` — Marked Phase 15 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 15 Complete:** The site is now heavily optimized for Google Search Console indexing. Har state ke page par ab uske hisab se perfect Title aur Meta Description aayega (e.g., "Maharashtra Data & Statistics | IndiaMetrix"), jisse search results mein click-through rate badhega. Sitemap generator ensures Google finds every single URL without missing anything.
+
+### What remains pending
+
+- Phase 16 (Internal Linking) and Phase 17/18 (Data Provenance & AdSense) remain.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.

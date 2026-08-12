@@ -115,15 +115,17 @@ def main():
                 # Replace in template
                 out_content = state_template
                 
-                # Title
-                title_pattern = r'(<!-- BUILD_INJECT:title -->\n).*?(<!-- END_BUILD_INJECT -->)'
-                title_repl = r'\1<title>' + state_name_en + r' Overview | IndiaMetrix</title>\n\2'
-                out_content = re.sub(title_pattern, title_repl, out_content, flags=re.DOTALL)
-                
-                # Canonical
-                canon_pattern = r'(<!-- BUILD_INJECT:canonical -->\n).*?(<!-- END_BUILD_INJECT -->)'
-                canon_repl = r'\1<link rel="canonical" href="https://www.indiametrix.in/states/' + state_id + r'.html">\n\2'
-                out_content = re.sub(canon_pattern, canon_repl, out_content, flags=re.DOTALL)
+                # SEO (Title, Description, Canonical, OG Tags)
+                seo_pattern = r'(<!-- BUILD_INJECT:seo -->\n).*?(<!-- END_BUILD_INJECT -->)'
+                seo_repl = (
+                    r'\1<title>' + state_name_en + r' Data & Statistics | IndiaMetrix</title>\n'
+                    r'<meta name="description" content="Explore population, GDP, and headline indicators for ' + state_name_en + r' on IndiaMetrix.">\n'
+                    r'<link rel="canonical" href="https://www.indiametrix.in/states/' + state_id + r'.html">\n'
+                    r'<meta property="og:title" content="' + state_name_en + r' Data & Statistics | IndiaMetrix">\n'
+                    r'<meta property="og:description" content="Explore population, GDP, and headline indicators for ' + state_name_en + r' on IndiaMetrix.">\n'
+                    r'<meta property="og:url" content="https://www.indiametrix.in/states/' + state_id + r'.html">\n\2'
+                )
+                out_content = re.sub(seo_pattern, seo_repl, out_content, flags=re.DOTALL)
                 
                 # State name
                 h1_pattern = r'(<!-- BUILD_INJECT:state_name -->\n).*?(<!-- END_BUILD_INJECT -->)'

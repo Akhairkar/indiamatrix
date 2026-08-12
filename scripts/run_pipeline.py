@@ -43,6 +43,7 @@ def main():
     
     # 4. Rebuild HTML
     run_command("python scripts/build.py", "Build HTML Pages")
+    run_command("python scripts/sitemap.py", "Generate Sitemap")
     
     print("\nPipeline completed successfully! Site is ready for deployment.")
 
