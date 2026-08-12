@@ -421,6 +421,29 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Phase 17/18 (Data Provenance & AdSense) remain.
 
+## v16 — Phases 17 & 18 (Trust & Monetization) — 2026-08-12
+
+### Files created
+
+- `methodology.html` — A dedicated page outlining data sourcing and validation rules.
+- `scripts/inject_ads.py` — A utility script used to inject Google AdSense across the static site.
+
+### Files modified
+
+- `templates/state.html`, `index.html`, `explorer.html`, `rankings.html`, `compare.html`, `world.html`, `history.html`, `ask.html`, and `stories/*.html` — Injected Google AdSense script in `<head>` and corrected footer links to point to the new Methodology page.
+- `ROADMAP.md` — Marked Phase 17 and Phase 18 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 17 Complete:** Built a transparent Methodology & Trust page. Users and search engines now have a clear understanding of the site's data provenance and rigorous validation rules.
+- **Phase 18 Complete:** Injected AdSense placeholder scripts globally to prepare the site for future monetization without requiring major structural changes.
+- **PROJECT GOALS COMPLETE!** All 18 phases of the IndiaMetrix roadmap are now fully implemented.
+
+### What remains pending
+
+- None. The core project roadmap is complete.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
