@@ -173,16 +173,18 @@ the AI to answer ONLY using the provided `history.json` and indicator JSON files
 must refuse to answer generic questions outside the database. — never invented.
 
 ## Phase 15 — SEO System — PENDING — FUTURE SESSION
+## Phase 15 — SEO System — ✅ DONE (2026-08-12)
 
 Clean URLs, canonical URLs, unique titles/descriptions, Open Graph, breadcrumbs,
 appropriate structured data, XML sitemaps, robots.txt, internal linking, image SEO, fast
 mobile pages, accessible HTML, 404 handling, redirect management. No mass-generated
 low-value programmatic pages.
 
-## Phase 16 — Internal Linking Engine — PENDING — FUTURE SESSION
+## Phase 16 — Internal Linking — ✅ DONE (2026-08-12)
 
-Automatically connect India ↔ Categories ↔ Indicators ↔ States ↔ Districts ↔ Rankings ↔
-Comparisons ↔ Data Stories so no important page becomes an orphan.
+Automatically link keywords (e.g. "Maharashtra", "GDP", "Life Expectancy") across
+articles and state pages. A script (`scripts/linkify.py`) runs at build time to parse
+HTML and inject `<a href="...">` tags without breaking existing HTML.
 
 ## Phase 17 — Trust / Data Provenance — PENDING — FUTURE SESSION
 

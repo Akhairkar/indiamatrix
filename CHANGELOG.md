@@ -401,6 +401,26 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Phase 16 (Internal Linking) and Phase 17/18 (Data Provenance & AdSense) remain.
 
+## v15 — Phase 16 (Internal Linking) — 2026-08-12
+
+### Files created
+
+- `scripts/linkify.py` — A new build tool that parses HTML text nodes and injects `<a>` tags for specified keywords like state names and major indicators.
+
+### Files modified
+
+- `scripts/run_pipeline.py` — Hooked `linkify.py` to run automatically after HTML generation.
+- `ROADMAP.md` — Marked Phase 16 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 16 Complete:** Site content is now deeply interconnected. Reading a story about growth will automatically have links to "Uttar Pradesh", "Madhya Pradesh", and "Population" pointing to their respective detailed pages. This improves SEO and user engagement.
+
+### What remains pending
+
+- Phase 17/18 (Data Provenance & AdSense) remain.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
