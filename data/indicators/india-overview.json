@@ -11,8 +11,8 @@
       "unit": "count",
       "geography_level": "country",
       "geography_id": "india",
-      "year": "2025",
-      "value": 1463865525,
+      "year": 2025,
+      "value": 1463865525.0,
       "display": {
         "en": "1.46 billion",
         "hi": "1.46 अरब"
@@ -34,7 +34,7 @@
       "unit": "USD",
       "geography_level": "country",
       "geography_id": "india",
-      "year": "2025",
+      "year": 2025,
       "value": 3956067115771.63,
       "display": {
         "en": "$3.96 trillion",

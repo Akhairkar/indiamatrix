@@ -67,8 +67,8 @@ class WorldBankAdapter(BaseAdapter):
                 # OR if the year is the same but the value was revised
                 if (int(fetched_year) > int(item['year'])) or (int(fetched_year) == int(item['year']) and float(fetched_val) != float(item['value'])):
                     print(f"[{self.name}] Updating {ind_id}: {item['value']} ({item['year']}) -> {fetched_val} ({fetched_year})")
-                    item['year'] = fetched_year
-                    item['value'] = fetched_val
+                    item['year'] = int(fetched_year)
+                    item['value'] = float(fetched_val)
                     
                     # Format value based on indicator
                     if ind_id == "population":

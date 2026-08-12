@@ -158,7 +158,7 @@ Official Source → Daily Check → Detect New/Changed Data → Fetch → Valida
 Must never fake daily updates. If a source has not released new data, the original data
 year is preserved and the page shows data year, last checked, last updated, and source.
 
-## Phase 13 — Data Validation — PENDING — FUTURE SESSION
+## Phase 13 — Data Validation — ✅ DONE (2026-08-12)
 
 Before publishing automated data: missing-value check, duplicate check, invalid-value
 check, wrong-year check, unit check, source check, range validation, calculation

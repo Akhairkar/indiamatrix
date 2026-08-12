@@ -338,6 +338,24 @@ Per the "changes only" rule, `indiametrix-changes-v4.zip` contains only:
 
 - Proceed with remaining phases (Data Validation, AI Layer, etc.) in future sessions.
 
+## v12 — Phase 13 (Data Validation) — 2026-08-12
+
+### Files modified
+
+- `scripts/audit.py` — Completely overhauled to implement strict data validation rules (missing values, duplicates, invalid values, bounds checking).
+- `data/indicators/india-overview.json` — Fixed type error (year stored as string instead of int) that was successfully caught by the new audit script!
+- `scripts/adapters/worldbank_adapter.py` — Fixed type casting for years.
+- `ROADMAP.md` — Marked Phase 13 as done.
+- `CHANGELOG.md` — this file.
+
+### What changed
+
+- **Phase 13 Complete:** The automated pipeline is now protected by strict data validation. If an adapter pulls bad data (e.g. unrealistic life expectancy, incorrect year format, out-of-bounds percentages), the pipeline halts and generates a `validation_report.md` instead of publishing corrupted data.
+
+### What remains pending
+
+- Proceed with remaining phases (AI Layer, SEO, Internal Linking) in future sessions.
+
 ## Future session convention
 
 Starting with v2, only list and package files that actually changed in that session.
