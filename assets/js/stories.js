@@ -106,6 +106,60 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      // Render Digital Internet Penetration Chart if present
+      const digCanvas = document.getElementById("digitalChart");
+      if (digCanvas && data["internet_penetration"]) {
+        const item = data["internet_penetration"];
+        new Chart(digCanvas, {
+          type: "line",
+          data: {
+            labels: item.labels,
+            datasets: [
+              {
+                label: "Internet Penetration (%)",
+                data: item.values,
+                borderColor: "#2BB7A0", // Teal
+                backgroundColor: "rgba(43, 183, 160, 0.1)",
+                borderWidth: 2,
+                pointBackgroundColor: "#F2A93B", // Saffron
+                pointRadius: 4,
+                fill: true,
+                tension: 0.3,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#1a2332",
+                titleColor: "#e2e8f0",
+                bodyColor: "#e2e8f0",
+                borderColor: "#334155",
+                borderWidth: 1,
+                callbacks: {
+                  label: function (context) {
+                    return context.parsed.y + "%";
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                grid: { color: "rgba(255,255,255,0.05)" },
+                ticks: { color: "#94a3b8" },
+              },
+              y: {
+                grid: { color: "rgba(255,255,255,0.05)" },
+                ticks: { color: "#94a3b8", callback: function (value) { return value + "%"; } },
+              },
+            },
+          },
+        });
+      }
+
     })
     .catch((error) => {
       console.error("Error loading stories chart data:", error);

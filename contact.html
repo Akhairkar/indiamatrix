@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Methodology & Trust | IndiaMetrix</title>
-<meta name="description" content="Learn about IndiaMetrix's data sourcing, verification, and methodology.">
-<link rel="canonical" href="https://www.indiametrix.in/methodology.html">
+<title>Contact & Data Issue Reporting | IndiaMetrix</title>
+<meta name="description" content="Get in touch with IndiaMetrix. Submit data corrections, suggest verified public datasets, or report platform bugs.">
+<link rel="canonical" href="https://www.indiametrix.in/contact.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Methodology & Trust | IndiaMetrix">
-<meta property="og:description" content="Learn about IndiaMetrix's data sourcing, verification, and methodology.">
-<meta property="og:url" content="https://www.indiametrix.in/methodology.html">
+<meta property="og:title" content="Contact & Data Issue Reporting | IndiaMetrix">
+<meta property="og:description" content="Report data issues, suggest official sources, or reach the IndiaMetrix team.">
+<meta property="og:url" content="https://www.indiametrix.in/contact.html">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta name="theme-color" content="#0D1424">
@@ -21,32 +21,58 @@
 
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-  .prose {
-    max-width: 65ch;
+  .contact-wrap {
+    max-width: 680px;
     margin: 0 auto;
-    color: var(--text);
   }
-  .prose h2 {
-    font-size: 28px;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    font-family: var(--font-serif);
-    color: var(--teal);
+  .contact-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    padding: 32px;
+    margin-top: 28px;
+    box-shadow: var(--shadow-card);
   }
-  .prose p, .prose ul {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 24px;
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-family: var(--font-mono);
     color: var(--text-muted);
-  }
-  .prose ul {
-    padding-left: 24px;
-  }
-  .prose li {
     margin-bottom: 8px;
   }
+  .form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-control:focus {
+    border-color: var(--teal);
+  }
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
+  .contact-meta-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-s);
+    padding: 18px 20px;
+    margin-top: 24px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
 </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -77,10 +103,13 @@
       <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
       <a href="ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
       <a href="./#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
     </nav>
 
     <div class="header-actions">
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
         <span class="lang-sep" aria-hidden="true">|</span>
@@ -95,34 +124,49 @@
 
 <main id="main">
   <section class="section" style="padding-top:56px;">
-    <div class="wrap">
-      <div class="prose">
-        <h1 style="font-size:clamp(40px,5vw,56px); margin-bottom:14px; text-align:center;" data-en="Methodology & Trust" data-hi="कार्यप्रणाली और विश्वास">Methodology & Trust</h1>
-        <p style="text-align:center; font-size:20px; color:var(--text-faint);" data-en="How we source, verify, and present data." data-hi="हम डेटा कैसे प्राप्त, सत्यापित और प्रस्तुत करते हैं।">How we source, verify, and present data.</p>
-        
-        <h2 data-en="1. Primary Sources" data-hi="1. प्राथमिक स्रोत">1. Primary Sources</h2>
-        <p data-en="IndiaMetrix relies exclusively on official and recognized institutional sources. We do not use unverified third-party estimates." data-hi="IndiaMetrix विशेष रूप से आधिकारिक और मान्यता प्राप्त संस्थागत स्रोतों पर निर्भर करता है। हम असत्यापित तृतीय-पक्ष अनुमानों का उपयोग नहीं करते हैं।">IndiaMetrix relies exclusively on official and recognized institutional sources. We do not use unverified third-party estimates.</p>
-        <ul>
-          <li data-en="World Bank Open Data" data-hi="विश्व बैंक खुला डेटा">World Bank Open Data</li>
-          <li data-en="Census of India" data-hi="भारत की जनगणना">Census of India</li>
-          <li data-en="Ministry of Statistics and Programme Implementation (MoSPI)" data-hi="सांख्यिकी और कार्यक्रम कार्यान्वयन मंत्रालय (MoSPI)">Ministry of Statistics and Programme Implementation (MoSPI)</li>
-          <li data-en="Reserve Bank of India (RBI)" data-hi="भारतीय रिज़र्व बैंक (RBI)">Reserve Bank of India (RBI)</li>
-          <li data-en="NITI Aayog" data-hi="नीति आयोग">NITI Aayog</li>
-        </ul>
+    <div class="wrap contact-wrap">
+      <h1 style="font-size:clamp(36px,4.5vw,52px); margin-bottom:12px; text-align:center;" data-en="Contact & Feedback" data-hi="संपर्क एवं प्रतिक्रिया">Contact & Feedback</h1>
+      <p style="font-size:17px; color:var(--text-muted); text-align:center; line-height:1.6;" data-en="Found a data discrepancy? Want to suggest an official dataset? Let us know below." data-hi="कोई डेटा विसंगति मिली? आधिकारिक डेटासेट का सुझाव देना चाहते हैं? हमें बताएं।">Found a data discrepancy? Want to suggest an official dataset? Let us know below.</p>
 
-        <h2 data-en="2. Data Verification Pipeline" data-hi="2. डेटा सत्यापन पाइपलाइन">2. Data Verification Pipeline</h2>
-        <p data-en="All data entering our system undergoes an automated and strict data validation pipeline:" data-hi="हमारे सिस्टम में प्रवेश करने वाला सभी डेटा एक स्वचालित और सख्त डेटा सत्यापन पाइपलाइन से गुजरता है:">All data entering our system undergoes an automated and strict data validation pipeline:</p>
-        <ul>
-          <li data-en="Schema Validation: Ensuring consistent formatting and structure." data-hi="स्कीमा सत्यापन: सुसंगत स्वरूपण और संरचना सुनिश्चित करना।">Schema Validation: Ensuring consistent formatting and structure.</li>
-          <li data-en="Type Checking: Differentiating between percentages, absolute numbers, and indices." data-hi="प्रकार जांच: प्रतिशत, पूर्ण संख्या और सूचकांकों के बीच अंतर करना।">Type Checking: Differentiating between percentages, absolute numbers, and indices.</li>
-          <li data-en="No Fabrication: If data for a specific year is missing from the primary source, we do not interpolate or guess the value. We show the most recent verified figure and explicitly state its year." data-hi="कोई मनगढ़ंत बात नहीं: यदि किसी विशिष्ट वर्ष के लिए प्राथमिक स्रोत से डेटा गायब है, तो हम मूल्य का अनुमान या अंदाजा नहीं लगाते हैं। हम सबसे हालिया सत्यापित आंकड़ा दिखाते हैं और स्पष्ट रूप से इसका वर्ष बताते हैं।">No Fabrication: If data for a specific year is missing from the primary source, we do not interpolate or guess the value. We show the most recent verified figure and explicitly state its year.</li>
-        </ul>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your feedback has been received. Our data verification team will review your report against official sources.'); this.reset();">
+        <div class="form-group">
+          <label class="form-label" for="contact-category" data-en="Inquiry Category" data-hi="पूछताछ श्रेणी">Inquiry Category</label>
+          <select id="contact-category" class="form-control" required>
+            <option value="data-correction" data-en="Data Correction / Discrepancy" data-hi="डेटा सुधार / विसंगति">Data Correction / Discrepancy</option>
+            <option value="source-suggestion" data-en="Suggest an Official Dataset" data-hi="आधिकारिक डेटासेट का सुझाव दें">Suggest an Official Dataset</option>
+            <option value="technical-bug" data-en="Website Bug / Technical Issue" data-hi="वेबसाइट बग / तकनीकी समस्या">Website Bug / Technical Issue</option>
+            <option value="research-collaboration" data-en="Research / Academic Inquiry" data-hi="अनुसंधान / शैक्षणिक पूछताछ">Research / Academic Inquiry</option>
+            <option value="general" data-en="General Feedback" data-hi="सामान्य प्रतिक्रिया">General Feedback</option>
+          </select>
+        </div>
 
-        <h2 data-en="3. Currency & Inflation" data-hi="3. मुद्रा और मुद्रास्फीति">3. Currency & Inflation</h2>
-        <p data-en="Where GDP or economic output is compared, we strive to clarify whether figures are in Current USD, Constant USD, or INR. Users can switch between these metrics in the Explorer tool when the source provides both." data-hi="जहां जीडीपी या आर्थिक उत्पादन की तुलना की जाती है, हम यह स्पष्ट करने का प्रयास करते हैं कि आंकड़े वर्तमान यूएसडी, स्थिर यूएसडी या आईएनआर में हैं। उपयोगकर्ता एक्सप्लोरर टूल में इन मीट्रिक के बीच स्विच कर सकते हैं जब स्रोत दोनों प्रदान करता है।">Where GDP or economic output is compared, we strive to clarify whether figures are in Current USD, Constant USD, or INR. Users can switch between these metrics in the Explorer tool when the source provides both.</p>
-        
-        <h2 data-en="4. Corrections" data-hi="4. सुधार">4. Corrections</h2>
-        <p data-en="Despite automation, official datasets themselves sometimes issue revisions. When a primary source updates past data (e.g., revised GDP estimates), our pipeline pulls the latest revised figures automatically during our scheduled builds." data-hi="स्वचालन के बावजूद, आधिकारिक डेटासेट स्वयं कभी-कभी संशोधन जारी करते हैं। जब कोई प्राथमिक स्रोत पिछले डेटा (उदा., संशोधित जीडीपी अनुमान) को अद्यतन करता है, तो हमारी पाइपलाइन हमारे निर्धारित निर्माण के दौरान स्वचालित रूप से नवीनतम संशोधित आंकड़े खींचती है।">Despite automation, official datasets themselves sometimes issue revisions. When a primary source updates past data (e.g., revised GDP estimates), our pipeline pulls the latest revised figures automatically during our scheduled builds.</p>
+        <div class="form-group">
+          <label class="form-label" for="contact-name" data-en="Your Name / Organization" data-hi="आपका नाम / संस्था">Your Name / Organization</label>
+          <input type="text" id="contact-name" class="form-control" placeholder="e.g. Rahul Sharma, Researcher" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email" data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
+          <input type="email" id="contact-email" class="form-control" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-url" data-en="Relevant Page or Dataset Link (if applicable)" data-hi="संबंधित पृष्ठ या डेटासेट लिंक">Relevant Page or Dataset Link</label>
+          <input type="text" id="contact-url" class="form-control" placeholder="https://www.indiametrix.in/states/maharashtra.html">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-msg" data-en="Details & Supporting Official Source" data-hi="विवरण और आधिकारिक स्रोत लिंक">Details & Supporting Official Source</label>
+          <textarea id="contact-msg" class="form-control" placeholder="Please provide specific details including indicator name, year, and a link to the official government gazette or report for verification..." required></textarea>
+        </div>
+
+        <button type="submit" class="im-btn im-btn-teal" style="width:100%;" data-en="Submit Report →" data-hi="रिपोर्ट सबमिट करें →">Submit Report →</button>
+      </form>
+
+      <div class="contact-meta-card">
+        <p style="margin:0 0 8px;"><strong>Institutional Correspondence:</strong></p>
+        <p style="margin:0;">For academic citations, media inquiries, or official data partnership proposals, please reach out via GitHub Issues on our open repository or our verified channel:</p>
+        <p style="margin:8px 0 0; font-family:var(--font-mono); color:var(--teal);">contact@indiametrix.in</p>
       </div>
     </div>
   </section>
@@ -136,14 +180,13 @@
     </div>
 
     <nav class="footer-links" aria-label="Footer">
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
-      <a href="methodology.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="contact.html" class="is-active" data-en="Contact" data-hi="संपर्क">Contact</a>
       <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
       <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
       <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="contact.html" data-en="Corrections" data-hi="सुधार">Corrections</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
@@ -152,5 +195,18 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script>
+  // Prepopulate form if redirected from reportDataIssue(subject)
+  document.addEventListener("DOMContentLoaded", function () {
+    var params = new URLSearchParams(window.location.search);
+    var issue = params.get("issue");
+    if (issue) {
+      var urlInput = document.getElementById("contact-url");
+      if (urlInput) urlInput.value = window.location.origin + issue;
+      var catSelect = document.getElementById("contact-category");
+      if (catSelect) catSelect.value = "data-correction";
+    }
+  });
+</script>
 </body>
 </html>

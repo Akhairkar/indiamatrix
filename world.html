@@ -61,6 +61,7 @@
         <span class="lang-sep" aria-hidden="true">|</span>
         <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
       </div>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">🌓</button>
       <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -82,6 +83,29 @@
       <div id="world-charts-container" style="display: flex; flex-direction: column; gap: 40px;">
         <!-- Bar charts and tables will be injected here by world.js -->
       </div>
+
+      <div style="margin-top: 40px; background: var(--panel-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+        <h2 style="font-size: 20px; margin-bottom: 12px;" data-en="Detailed World Bank Benchmarks" data-hi="विस्तृत विश्व बैंक बेंचमार्क">Detailed World Bank Benchmarks</h2>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;" data-en="Deep-dive indicator pages tracking access to essential infrastructure across India and global peers." data-hi="भारत और वैश्विक साथियों में बुनियादी ढांचे तक पहुंच पर विस्तृत संकेतक।">Deep-dive indicator pages tracking access to essential infrastructure across India and global peers.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+          <a href="indicators/1-1_access-electricity-tot.html" class="im-card" style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; background: var(--surface-1); display: block;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Access to Electricity (% Total)</div>
+            <div style="font-size: 12px; color: var(--teal);">View Breakdown & Methodology →</div>
+          </a>
+          <a href="indicators/1-2_access-electricity-rural.html" class="im-card" style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; background: var(--surface-1); display: block;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Rural Electricity Access (%)</div>
+            <div style="font-size: 12px; color: var(--teal);">View Breakdown & Methodology →</div>
+          </a>
+          <a href="indicators/1-3_access-electricity-urban.html" class="im-card" style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; background: var(--surface-1); display: block;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Urban Electricity Access (%)</div>
+            <div style="font-size: 12px; color: var(--teal);">View Breakdown & Methodology →</div>
+          </a>
+          <a href="indicators/2-1_access-cft-tot.html" class="im-card" style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; background: var(--surface-1); display: block;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Clean Cooking Fuels (% Total)</div>
+            <div style="font-size: 12px; color: var(--teal);">View Breakdown & Methodology →</div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -100,14 +124,13 @@
     </div>
 
     <nav class="footer-links" aria-label="Footer">
-      <a href="/#about" data-en="About" data-hi="परिचय">About</a>
-      <a href="/#" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
-      <a href="./methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="/#" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="/#" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
-      <a href="/#" data-en="Terms" data-hi="शर्तें">Terms</a>
-      <a href="/#" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="/#" data-en="Corrections" data-hi="सुधार">Corrections</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
+      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>

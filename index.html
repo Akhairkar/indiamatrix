@@ -59,13 +59,14 @@
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <a href="#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
       <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="districts/index.html" data-en="Districts" data-hi="ज़िले">Districts</a>
       <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
       <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
       <a href="world.html" data-en="World" data-hi="विश्व">World</a>
       <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
       <a href="ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
       <a href="#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
     </nav>
 
     <div class="header-actions">
@@ -74,6 +75,7 @@
         <span class="lang-sep" aria-hidden="true">|</span>
         <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
       </div>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">🌓</button>
       <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -134,33 +136,45 @@
       <div class="glance-grid">
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">👥</span>
-          <h3 data-en="Population" data-hi="जनसंख्या">Population</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="Population" data-hi="जनसंख्या"><a href="indicators/population.html" style="color:inherit; text-decoration:none;">Population</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="1.46 billion" data-hi="1.46 अरब">1.46 billion</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2025 Est. • World Bank</p>
+          <a href="indicators/population.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">📈</span>
-          <h3 data-en="GDP" data-hi="जीडीपी">GDP</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="GDP" data-hi="जीडीपी"><a href="indicators/gdp-current-usd.html" style="color:inherit; text-decoration:none;">GDP</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="$3.96 trillion" data-hi="$3.96 ट्रिलियन">$3.96 trillion</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2025 • World Bank</p>
+          <a href="indicators/gdp-current-usd.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">📖</span>
-          <h3 data-en="Literacy" data-hi="साक्षरता">Literacy</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="Literacy" data-hi="साक्षरता"><a href="indicators/literacy-rate.html" style="color:inherit; text-decoration:none;">Literacy</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="74.04%" data-hi="74.04%">74.04%</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2011 • Census of India</p>
+          <a href="indicators/literacy-rate.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">💼</span>
-          <h3 data-en="Unemployment" data-hi="बेरोज़गारी">Unemployment</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="Unemployment" data-hi="बेरोज़गारी"><a href="indicators/unemployment-rate.html" style="color:inherit; text-decoration:none;">Unemployment</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="3.1%" data-hi="3.1%">3.1%</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2025 • MoSPI PLFS</p>
+          <a href="indicators/unemployment-rate.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">❤️</span>
-          <h3 data-en="Life Expectancy" data-hi="जीवन प्रत्याशा">Life Expectancy</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="Life Expectancy" data-hi="जीवन प्रत्याशा"><a href="indicators/life-expectancy.html" style="color:inherit; text-decoration:none;">Life Expectancy</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="72.0 years" data-hi="72.0 वर्ष">72.0 years</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2023 • World Bank</p>
+          <a href="indicators/life-expectancy.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
         <article class="glance-card">
           <span class="glance-icon" aria-hidden="true">🌐</span>
-          <h3 data-en="Internet Users" data-hi="इंटरनेट उपयोगकर्ता">Internet Users</h3>
-          <p class="glance-value" data-en="Data coming soon" data-hi="डेटा जल्द आ रहा है">Data coming soon</p>
+          <h3 data-en="Internet Users" data-hi="इंटरनेट उपयोगकर्ता"><a href="indicators/internet-users.html" style="color:inherit; text-decoration:none;">Internet Users</a></h3>
+          <p class="glance-value" style="font-family:var(--font-mono); font-weight:700;" data-en="55.9%" data-hi="55.9%">55.9%</p>
+          <p style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">2022 • World Bank / ITU</p>
+          <a href="indicators/internet-users.html" style="font-size:12px; color:var(--teal); font-family:var(--font-mono);">View Breakdown →</a>
         </article>
       </div>
     </div>
@@ -175,10 +189,10 @@
         <p class="section-sub" data-en="From the national picture down to individual districts, IndiaMetrix is built to connect every layer of India's data." data-hi="राष्ट्रीय तस्वीर से लेकर हर ज़िले तक — IndiaMetrix भारत के डेटा की हर परत को जोड़ने के लिए बनाया गया है।">From the national picture down to individual districts, IndiaMetrix is built to connect every layer of India's data.</p>
 
         <ol class="explore-levels">
-          <li><span class="level-tag">India</span><span data-en="The national overview and headline indicators." data-hi="राष्ट्रीय अवलोकन और मुख्य संकेतक।">The national overview and headline indicators.</span></li>
-          <li><span class="level-tag" data-en="States & UTs" data-hi="राज्य व केंद्र शासित प्रदेश">States &amp; UTs</span><span data-en="28 states and 8 union territories, profiled in depth." data-hi="28 राज्य और 8 केंद्र शासित प्रदेश, विस्तृत प्रोफ़ाइल के साथ।">28 states and 8 union territories, profiled in depth.</span></li>
-          <li><span class="level-tag" data-en="Districts" data-hi="ज़िले">Districts</span><span data-en="Local data where official sources make it available." data-hi="जहां आधिकारिक स्रोत उपलब्ध हों, वहां स्थानीय डेटा।">Local data where official sources make it available.</span></li>
-          <li><span class="level-tag" data-en="Indicators" data-hi="संकेतक">Indicators</span><span data-en="500+ verified indicators across 18 categories, planned." data-hi="18 श्रेणियों में 500+ सत्यापित संकेतक, योजनाबद्ध।">500+ verified indicators across 18 categories, planned.</span></li>
+          <li><a href="india.html" class="level-tag" style="text-decoration:none; display:inline-block;">India</a><span data-en="The national overview and headline indicators." data-hi="राष्ट्रीय अवलोकन और मुख्य संकेतक।">The national overview and headline indicators.</span></li>
+          <li><a href="rankings.html" class="level-tag" style="text-decoration:none; display:inline-block;" data-en="States & UTs" data-hi="राज्य व केंद्र शासित प्रदेश">States &amp; UTs</a><span data-en="36 states and union territories, profiled in depth." data-hi="36 राज्य और केंद्र शासित प्रदेश, विस्तृत प्रोफ़ाइल के साथ।">36 states and union territories, profiled in depth.</span></li>
+          <li><a href="districts/index.html" class="level-tag" style="text-decoration:none; display:inline-block;" data-en="Districts" data-hi="ज़िले">Districts</a><span data-en="District discovery hub and verified demographic profiles." data-hi="ज़िला खोज हब और सत्यापित जनसांख्यिकी प्रोफ़ाइल।">District discovery hub and verified demographic profiles.</span></li>
+          <li><a href="explorer.html" class="level-tag" style="text-decoration:none; display:inline-block;" data-en="Indicators" data-hi="संकेतक">Indicators</a><span data-en="Verified indicators across economic, demographic and health domains." data-hi="आर्थिक, जनसांख्यिकी और स्वास्थ्य क्षेत्रों में सत्यापित संकेतक।">Verified indicators across economic, demographic and health domains.</span></li>
         </ol>
       </div>
 
@@ -273,21 +287,26 @@
       </header>
 
       <div class="story-grid">
-        <article class="story-card" style="cursor: pointer;" onclick="window.location.href='stories/population.html'">
+        <a href="stories/population.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
           <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
           <h3 data-en="India's Changing Population" data-hi="भारत की बदलती जनसंख्या">India's Changing Population</h3>
           <p data-en="How growth, ageing and migration are reshaping the country." data-hi="विकास, वृद्धावस्था और प्रवासन देश को कैसे बदल रहे हैं।">How growth, ageing and migration are reshaping the country.</p>
-        </article>
-        <article class="story-card" style="cursor: pointer;" onclick="window.location.href='stories/literacy.html'">
+        </a>
+        <a href="stories/literacy.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
           <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
           <h3 data-en="The Story of India's Literacy" data-hi="भारत की साक्षरता की कहानी">The Story of India's Literacy</h3>
           <p data-en="Decades of progress, and the gaps that remain." data-hi="दशकों की प्रगति, और शेष बचीं खाइयां।">Decades of progress, and the gaps that remain.</p>
-        </article>
-        <article class="story-card" style="cursor: pointer;" onclick="window.location.href='stories/growth.html'">
+        </a>
+        <a href="stories/growth.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
           <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
           <h3 data-en="How Indian States Compare" data-hi="भारतीय राज्यों की तुलना कैसी है">How Indian States Compare</h3>
           <p data-en="A first look at the states pulling ahead — and why." data-hi="आगे बढ़ रहे राज्यों पर एक पहली नज़र — और क्यों।">A first look at the states pulling ahead — and why.</p>
-        </article>
+        </a>
+        <a href="stories/digital.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
+          <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="Interactive" data-hi="इंटरैक्टिव">Interactive</span>
+          <h3 data-en="Digital India Revolution" data-hi="डिजिटल भारत क्रांति">Digital India Revolution</h3>
+          <p data-en="Tracking the growth of internet subscribers and mobile broadband across Indian states." data-hi="भारतीय राज्यों में इंटरनेट उपभोक्ताओं और मोबाइल ब्रॉडबैंड की वृद्धि का विश्लेषण।">Tracking the growth of internet subscribers and mobile broadband across Indian states.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -345,14 +364,13 @@
     </div>
 
     <nav class="footer-links" aria-label="Footer">
-      <a href="#" data-en="About" data-hi="परिचय">About</a>
-      <a href="methodology.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
       <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
       <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
       <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
       <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="contact.html" data-en="Corrections" data-hi="सुधार">Corrections</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>

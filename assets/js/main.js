@@ -93,4 +93,84 @@
 
     if (lang === "hi") applyLang("hi");
   }
+
+  /* ---------- Theme Management (Light / Dark) ---------- */
+  function applyTheme(theme) {
+    if (theme === "light") {
+      root.setAttribute("data-theme", "light");
+    } else if (theme === "dark") {
+      root.setAttribute("data-theme", "dark");
+    } else {
+      root.removeAttribute("data-theme");
+    }
+    try { localStorage.setItem("im-theme", theme); } catch (e) {}
+    updateThemeIcons(theme);
+  }
+
+  function updateThemeIcons(theme) {
+    var buttons = document.querySelectorAll(".theme-toggle-btn");
+    buttons.forEach(function (btn) {
+      var isLight = root.getAttribute("data-theme") === "light" || 
+        (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: light)").matches);
+      btn.innerHTML = isLight
+        ? '<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+      btn.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    });
+  }
+
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem("im-theme"); } catch (e) {}
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    updateThemeIcons("system");
+  }
+
+  document.querySelectorAll(".theme-toggle-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var current = root.getAttribute("data-theme") || 
+        (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      var next = current === "light" ? "dark" : "light";
+      applyTheme(next);
+    });
+  });
+
+  /* ---------- Citation Copier & Toast ---------- */
+  function showToast(msg) {
+    var toast = document.getElementById("im-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "im-toast";
+      toast.className = "im-toast";
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add("show");
+    setTimeout(function () {
+      toast.classList.remove("show");
+    }, 3000);
+  }
+
+  window.copyCitation = function (title, indicator, value, year, source, url) {
+    var pageUrl = window.location.href;
+    var accessDate = new Date().toISOString().split("T")[0];
+    var citationText = '"' + title + ' — ' + indicator + ': ' + value + ' (' + year + ')." Source: ' + source + ' via IndiaMetrix. Retrieved ' + accessDate + ' from ' + pageUrl;
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(citationText).then(function () {
+        showToast("Citation copied to clipboard!");
+      }).catch(function () {
+        prompt("Copy citation:", citationText);
+      });
+    } else {
+      prompt("Copy citation:", citationText);
+    }
+  };
+
+  /* ---------- Report Issue Helper ---------- */
+  window.reportDataIssue = function (subject) {
+    var contactUrl = "/contact.html?issue=" + encodeURIComponent(subject || window.location.pathname);
+    window.location.href = contactUrl;
+  };
 })();

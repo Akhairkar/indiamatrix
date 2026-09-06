@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rankings | IndiaMetrix</title>
-<meta name="description" content="State rankings for key indicators across India.">
+<title>Indian State Rankings — Economy, Literacy, Population & Demographics | IndiaMetrix</title>
+<meta name="description" content="Verified rankings of Indian states and Union Territories by GDP, literacy rate, population, unemployment, and sex ratio with official sources.">
 <link rel="canonical" href="https://www.indiametrix.in/rankings.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rankings | IndiaMetrix">
-<meta property="og:description" content="State rankings for key indicators across India.">
+<meta property="og:title" content="Indian State Rankings | IndiaMetrix">
+<meta property="og:description" content="Explore state rankings across key socio-economic indicators with full data provenance.">
+<meta property="og:url" content="https://www.indiametrix.in/rankings.html">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta name="theme-color" content="#0D1424">
@@ -20,45 +21,53 @@
 
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-.ranking-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 40px;
-  background: var(--panel-bg);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.ranking-table th, .ranking-table td {
-  padding: 16px;
-  text-align: left;
+.ranking-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
   border-bottom: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
 }
-.ranking-table th {
+.ranking-tab-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 999px;
   font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.ranking-tab-btn:hover, .ranking-tab-btn.is-active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+.ranking-section {
+  margin-bottom: 48px;
+  scroll-margin-top: 80px;
+}
+.ranking-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.ranking-source-tag {
+  font-size: 12px;
+  font-family: var(--font-mono);
   color: var(--text-faint);
-  background: rgba(255,255,255,0.02);
 }
-.ranking-table tr:last-child td {
-  border-bottom: none;
-}
-.ranking-table td {
-  font-size: 16px;
-}
-.ranking-rank {
-  font-family: var(--font-mono);
+.ranking-source-tag a {
   color: var(--teal);
-  font-weight: 600;
-  width: 60px;
-}
-.ranking-val {
-  font-family: var(--font-mono);
-  font-weight: 600;
 }
 </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -83,17 +92,20 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <a href="./#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
-      <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="rankings.html" class="is-active" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
       <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
       <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
       <a href="world.html" data-en="World" data-hi="विश्व">World</a>
       <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
       <a href="ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
       <a href="./#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
     </nav>
 
     <div class="header-actions">
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
         <span class="lang-sep" aria-hidden="true">|</span>
@@ -107,410 +119,1246 @@
 </header>
 
 <main id="main">
-  <section class="section" style="padding-top:56px;">
+  <section class="section" style="padding-top:56px; padding-bottom:16px;">
     <div class="wrap">
-      <p class="eyebrow" data-en="State Rankings" data-hi="राज्य रैंकिंग">State Rankings</p>
-      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="India Rankings" data-hi="भारत रैंकिंग">India Rankings</h1>
-      <p class="section-sub" style="max-width:60ch;" data-en="Compare performance across states on key indicators." data-hi="प्रमुख संकेतकों पर राज्यों के प्रदर्शन की तुलना करें।">Compare performance across states on key indicators.</p>
+      <p class="eyebrow" data-en="State Rankings & Benchmarks" data-hi="राज्य रैंकिंग और मानक">State Rankings & Benchmarks</p>
+      <h1 style="font-size:clamp(32px,4.5vw,48px); margin-bottom:12px;" data-en="India State Rankings" data-hi="भारत राज्य रैंकिंग">India State Rankings</h1>
+      <p class="section-sub" style="max-width:65ch;" data-en="Compare performance across all 36 Indian States and Union Territories. All rankings clearly identify the underlying reference year and official publishing agency." data-hi="सभी 36 भारतीय राज्यों और केंद्र शासित प्रदेशों के प्रदर्शन की तुलना करें। सभी रैंकिंग आधार वर्ष और आधिकारिक एजेंसी को स्पष्ट रूप से दर्शाती हैं।">Compare performance across all 36 Indian States and Union Territories. All rankings clearly identify the underlying reference year and official publishing agency.</p>
+
+      <div class="ranking-tabs">
+        <a href="#population" class="ranking-tab-btn" data-en="👥 Population" data-hi="👥 जनसंख्या">👥 Population</a>
+        <a href="#literacy" class="ranking-tab-btn" data-en="🎓 Literacy Rate" data-hi="🎓 साक्षरता">🎓 Literacy Rate</a>
+        <a href="#gsdp" class="ranking-tab-btn" data-en="📊 GSDP (Economy)" data-hi="📊 GSDP (अर्थव्यवस्था)">📊 GSDP (Economy)</a>
+        <a href="#unemployment" class="ranking-tab-btn" data-en="💼 Lowest Unemployment" data-hi="💼 न्यूनतम बेरोजगारी">💼 Lowest Unemployment</a>
+        <a href="#sex-ratio" class="ranking-tab-btn" data-en="⚖️ Sex Ratio" data-hi="⚖️ लिंगानुपात">⚖️ Sex Ratio</a>
+        <a href="#area" class="ranking-tab-btn" data-en="🗺️ Geographical Area" data-hi="🗺️ क्षेत्रफल">🗺️ Geographical Area</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:32px; padding-bottom:32px;">
+  <section class="section" style="padding-top:16px; padding-bottom:48px;">
     <div class="wrap">
       
-      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Most Populated States (2011)" data-hi="सर्वाधिक आबादी वाले राज्य (2011)">Most Populated States (2011)</h2>
-      <table class="ranking-table">
-        <thead>
+      <!-- Population Ranking -->
+      <div class="ranking-section" id="population">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Most Populous States (Census 2011)" data-hi="सर्वाधिक आबादी वाले राज्य (जनगणना 2011)">Most Populous States (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Neutral</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Population" data-hi="जनसंख्या">Population</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_population -->
           <tr>
-            <th class="ranking-rank">#</th>
-            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
-            <th data-en="Population" data-hi="जनसंख्या">Population</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- BUILD_INJECT:rankings_population -->
-          <tr>
-            <td class="ranking-rank">1</td>
-            <td><a href="states/uttar-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
-            <td class="ranking-val" data-en="19.98 Crore" data-hi="19.98 करोड़">19.98 Crore</td>
-          </tr>
-          <tr>
-            <td class="ranking-rank">2</td>
-            <td><a href="states/maharashtra.html" style="color:var(--text); text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
-            <td class="ranking-val" data-en="11.24 Crore" data-hi="11.24 करोड़">11.24 Crore</td>
-          </tr>
-          <tr>
-            <td class="ranking-rank">3</td>
-            <td><a href="states/bihar.html" style="color:var(--text); text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
-            <td class="ranking-val" data-en="10.4 Crore" data-hi="10.4 करोड़">10.4 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="19.98 Crore" data-hi="19.98 करोड़">19.98 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">4</td>
-            <td><a href="states/west-bengal.html" style="color:var(--text); text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
-            <td class="ranking-val" data-en="9.12 Crore" data-hi="9.12 करोड़">9.12 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="11.24 Crore" data-hi="11.24 करोड़">11.24 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">5</td>
-            <td><a href="states/madhya-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
-            <td class="ranking-val" data-en="7.26 Crore" data-hi="7.26 करोड़">7.26 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="10.4 Crore" data-hi="10.4 करोड़">10.4 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">6</td>
-            <td><a href="states/tamil-nadu.html" style="color:var(--text); text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
-            <td class="ranking-val" data-en="7.21 Crore" data-hi="7.21 करोड़">7.21 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="9.12 Crore" data-hi="9.12 करोड़">9.12 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">7</td>
-            <td><a href="states/rajasthan.html" style="color:var(--text); text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
-            <td class="ranking-val" data-en="6.85 Crore" data-hi="6.85 करोड़">6.85 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="7.26 Crore" data-hi="7.26 करोड़">7.26 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">8</td>
-            <td><a href="states/karnataka.html" style="color:var(--text); text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
-            <td class="ranking-val" data-en="6.1 Crore" data-hi="6.1 करोड़">6.1 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="7.21 Crore" data-hi="7.21 करोड़">7.21 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">9</td>
-            <td><a href="states/gujarat.html" style="color:var(--text); text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
-            <td class="ranking-val" data-en="6.04 Crore" data-hi="6.04 करोड़">6.04 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.85 Crore" data-hi="6.85 करोड़">6.85 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">10</td>
-            <td><a href="states/andhra-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
-            <td class="ranking-val" data-en="4.95 Crore" data-hi="4.95 करोड़">4.95 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.1 Crore" data-hi="6.1 करोड़">6.1 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">11</td>
-            <td><a href="states/odisha.html" style="color:var(--text); text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
-            <td class="ranking-val" data-en="4.19 Crore" data-hi="4.19 करोड़">4.19 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.04 Crore" data-hi="6.04 करोड़">6.04 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">12</td>
-            <td><a href="states/telangana.html" style="color:var(--text); text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
-            <td class="ranking-val" data-en="3.5 Crore" data-hi="3.5 करोड़">3.5 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.95 Crore" data-hi="4.95 करोड़">4.95 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">13</td>
-            <td><a href="states/kerala.html" style="color:var(--text); text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
-            <td class="ranking-val" data-en="3.34 Crore" data-hi="3.34 करोड़">3.34 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.19 Crore" data-hi="4.19 करोड़">4.19 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">14</td>
-            <td><a href="states/jharkhand.html" style="color:var(--text); text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
-            <td class="ranking-val" data-en="3.29 Crore" data-hi="3.29 करोड़">3.29 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.5 Crore" data-hi="3.5 करोड़">3.5 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">15</td>
-            <td><a href="states/assam.html" style="color:var(--text); text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
-            <td class="ranking-val" data-en="3.12 Crore" data-hi="3.12 करोड़">3.12 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.34 Crore" data-hi="3.34 करोड़">3.34 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">16</td>
-            <td><a href="states/punjab.html" style="color:var(--text); text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
-            <td class="ranking-val" data-en="2.77 Crore" data-hi="2.77 करोड़">2.77 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.29 Crore" data-hi="3.29 करोड़">3.29 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">17</td>
-            <td><a href="states/chhattisgarh.html" style="color:var(--text); text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
-            <td class="ranking-val" data-en="2.55 Crore" data-hi="2.55 करोड़">2.55 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.12 Crore" data-hi="3.12 करोड़">3.12 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">18</td>
-            <td><a href="states/haryana.html" style="color:var(--text); text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
-            <td class="ranking-val" data-en="2.53 Crore" data-hi="2.53 करोड़">2.53 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.77 Crore" data-hi="2.77 करोड़">2.77 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">19</td>
-            <td><a href="states/delhi.html" style="color:var(--text); text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
-            <td class="ranking-val" data-en="1.67 Crore" data-hi="1.67 करोड़">1.67 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.55 Crore" data-hi="2.55 करोड़">2.55 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">20</td>
-            <td><a href="states/jammu-kashmir.html" style="color:var(--text); text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
-            <td class="ranking-val" data-en="1.22 Crore" data-hi="1.22 करोड़">1.22 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.53 Crore" data-hi="2.53 करोड़">2.53 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">21</td>
-            <td><a href="states/uttarakhand.html" style="color:var(--text); text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
-            <td class="ranking-val" data-en="1.0 Crore" data-hi="1.0 करोड़">1.0 Crore</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.67 Crore" data-hi="1.67 करोड़">1.67 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">22</td>
-            <td><a href="states/himachal-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
-            <td class="ranking-val" data-en="68.6 Lakh" data-hi="68.6 लाख">68.6 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.22 Crore" data-hi="1.22 करोड़">1.22 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">23</td>
-            <td><a href="states/tripura.html" style="color:var(--text); text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
-            <td class="ranking-val" data-en="36.7 Lakh" data-hi="36.7 लाख">36.7 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.0 Crore" data-hi="1.0 करोड़">1.0 Crore</td>
           </tr>
           <tr>
-            <td class="ranking-rank">24</td>
-            <td><a href="states/meghalaya.html" style="color:var(--text); text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
-            <td class="ranking-val" data-en="29.6 Lakh" data-hi="29.6 लाख">29.6 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="68.6 Lakh" data-hi="68.6 लाख">68.6 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">25</td>
-            <td><a href="states/manipur.html" style="color:var(--text); text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
-            <td class="ranking-val" data-en="28.5 Lakh" data-hi="28.5 लाख">28.5 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="36.7 Lakh" data-hi="36.7 लाख">36.7 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">26</td>
-            <td><a href="states/nagaland.html" style="color:var(--text); text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
-            <td class="ranking-val" data-en="19.7 Lakh" data-hi="19.7 लाख">19.7 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="29.6 Lakh" data-hi="29.6 लाख">29.6 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">27</td>
-            <td><a href="states/goa.html" style="color:var(--text); text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
-            <td class="ranking-val" data-en="14.5 Lakh" data-hi="14.5 लाख">14.5 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="28.5 Lakh" data-hi="28.5 लाख">28.5 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">28</td>
-            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
-            <td class="ranking-val" data-en="13.8 Lakh" data-hi="13.8 लाख">13.8 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="19.7 Lakh" data-hi="19.7 लाख">19.7 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">29</td>
-            <td><a href="states/puducherry.html" style="color:var(--text); text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
-            <td class="ranking-val" data-en="12.4 Lakh" data-hi="12.4 लाख">12.4 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="14.5 Lakh" data-hi="14.5 लाख">14.5 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">30</td>
-            <td><a href="states/mizoram.html" style="color:var(--text); text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
-            <td class="ranking-val" data-en="10.9 Lakh" data-hi="10.9 लाख">10.9 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="13.8 Lakh" data-hi="13.8 लाख">13.8 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">31</td>
-            <td><a href="states/chandigarh.html" style="color:var(--text); text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
-            <td class="ranking-val" data-en="10.5 Lakh" data-hi="10.5 लाख">10.5 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="12.4 Lakh" data-hi="12.4 लाख">12.4 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">32</td>
-            <td><a href="states/sikkim.html" style="color:var(--text); text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
-            <td class="ranking-val" data-en="6.1 Lakh" data-hi="6.1 लाख">6.1 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="10.9 Lakh" data-hi="10.9 लाख">10.9 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">33</td>
-            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
-            <td class="ranking-val" data-en="5.8 Lakh" data-hi="5.8 लाख">5.8 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="10.5 Lakh" data-hi="10.5 लाख">10.5 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">34</td>
-            <td><a href="states/andaman-nicobar.html" style="color:var(--text); text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
-            <td class="ranking-val" data-en="3.8 Lakh" data-hi="3.8 लाख">3.8 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.1 Lakh" data-hi="6.1 लाख">6.1 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">35</td>
-            <td><a href="states/ladakh.html" style="color:var(--text); text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
-            <td class="ranking-val" data-en="2.7 Lakh" data-hi="2.7 लाख">2.7 Lakh</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="5.8 Lakh" data-hi="5.8 लाख">5.8 Lakh</td>
           </tr>
           <tr>
-            <td class="ranking-rank">36</td>
-            <td><a href="states/lakshadweep.html" style="color:var(--text); text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
-            <td class="ranking-val" data-en="64.4 Thousand" data-hi="64.4 हज़ार">64.4 Thousand</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.8 Lakh" data-hi="3.8 लाख">3.8 Lakh</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.7 Lakh" data-hi="2.7 लाख">2.7 Lakh</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="64.4 Thousand" data-hi="64.4 हज़ार">64.4 Thousand</td>
           </tr>
           <!-- END_BUILD_INJECT -->
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Highest Literacy Rate (2011)" data-hi="उच्चतम साक्षरता दर (2011)">Highest Literacy Rate (2011)</h2>
-      <table class="ranking-table">
-        <thead>
+      <!-- Literacy Ranking -->
+      <div class="ranking-section" id="literacy">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Highest Literacy Rate (Census 2011)" data-hi="उच्चतम साक्षरता दर (जनगणना 2011)">Highest Literacy Rate (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Literacy Rate (%)" data-hi="साक्षरता दर (%)">Literacy Rate (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_literacy -->
           <tr>
-            <th class="ranking-rank">#</th>
-            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
-            <th data-en="Literacy Rate" data-hi="साक्षरता दर">Literacy Rate</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- BUILD_INJECT:rankings_literacy -->
-          <tr>
-            <td class="ranking-rank">1</td>
-            <td><a href="states/kerala.html" style="color:var(--text); text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
-            <td class="ranking-val" data-en="94.0%" data-hi="94.0%">94.0%</td>
-          </tr>
-          <tr>
-            <td class="ranking-rank">2</td>
-            <td><a href="states/lakshadweep.html" style="color:var(--text); text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
-            <td class="ranking-val" data-en="91.85%" data-hi="91.85%">91.85%</td>
-          </tr>
-          <tr>
-            <td class="ranking-rank">3</td>
-            <td><a href="states/mizoram.html" style="color:var(--text); text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
-            <td class="ranking-val" data-en="91.33%" data-hi="91.33%">91.33%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="94.0%" data-hi="94.0%">94.0%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">4</td>
-            <td><a href="states/goa.html" style="color:var(--text); text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
-            <td class="ranking-val" data-en="88.7%" data-hi="88.7%">88.7%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="91.85%" data-hi="91.85%">91.85%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">5</td>
-            <td><a href="states/tripura.html" style="color:var(--text); text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
-            <td class="ranking-val" data-en="87.22%" data-hi="87.22%">87.22%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="91.33%" data-hi="91.33%">91.33%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">6</td>
-            <td><a href="states/andaman-nicobar.html" style="color:var(--text); text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
-            <td class="ranking-val" data-en="86.63%" data-hi="86.63%">86.63%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="88.7%" data-hi="88.7%">88.7%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">7</td>
-            <td><a href="states/delhi.html" style="color:var(--text); text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
-            <td class="ranking-val" data-en="86.21%" data-hi="86.21%">86.21%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="87.22%" data-hi="87.22%">87.22%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">8</td>
-            <td><a href="states/chandigarh.html" style="color:var(--text); text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
-            <td class="ranking-val" data-en="86.05%" data-hi="86.05%">86.05%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="86.63%" data-hi="86.63%">86.63%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">9</td>
-            <td><a href="states/puducherry.html" style="color:var(--text); text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
-            <td class="ranking-val" data-en="85.85%" data-hi="85.85%">85.85%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="86.21%" data-hi="86.21%">86.21%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">10</td>
-            <td><a href="states/himachal-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
-            <td class="ranking-val" data-en="82.8%" data-hi="82.8%">82.8%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="86.05%" data-hi="86.05%">86.05%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">11</td>
-            <td><a href="states/maharashtra.html" style="color:var(--text); text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
-            <td class="ranking-val" data-en="82.34%" data-hi="82.34%">82.34%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="85.85%" data-hi="85.85%">85.85%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">12</td>
-            <td><a href="states/sikkim.html" style="color:var(--text); text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
-            <td class="ranking-val" data-en="81.42%" data-hi="81.42%">81.42%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="82.8%" data-hi="82.8%">82.8%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">13</td>
-            <td><a href="states/tamil-nadu.html" style="color:var(--text); text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
-            <td class="ranking-val" data-en="80.09%" data-hi="80.09%">80.09%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="82.34%" data-hi="82.34%">82.34%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">14</td>
-            <td><a href="states/nagaland.html" style="color:var(--text); text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
-            <td class="ranking-val" data-en="79.55%" data-hi="79.55%">79.55%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="81.42%" data-hi="81.42%">81.42%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">15</td>
-            <td><a href="states/uttarakhand.html" style="color:var(--text); text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
-            <td class="ranking-val" data-en="78.82%" data-hi="78.82%">78.82%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="80.09%" data-hi="80.09%">80.09%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">16</td>
-            <td><a href="states/gujarat.html" style="color:var(--text); text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
-            <td class="ranking-val" data-en="78.03%" data-hi="78.03%">78.03%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="79.55%" data-hi="79.55%">79.55%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">17</td>
-            <td><a href="states/manipur.html" style="color:var(--text); text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
-            <td class="ranking-val" data-en="76.94%" data-hi="76.94%">76.94%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="78.82%" data-hi="78.82%">78.82%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">18</td>
-            <td><a href="states/west-bengal.html" style="color:var(--text); text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
-            <td class="ranking-val" data-en="76.26%" data-hi="76.26%">76.26%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="78.03%" data-hi="78.03%">78.03%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">19</td>
-            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
-            <td class="ranking-val" data-en="76.24%" data-hi="76.24%">76.24%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="76.94%" data-hi="76.94%">76.94%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">20</td>
-            <td><a href="states/punjab.html" style="color:var(--text); text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
-            <td class="ranking-val" data-en="75.84%" data-hi="75.84%">75.84%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="76.26%" data-hi="76.26%">76.26%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">21</td>
-            <td><a href="states/haryana.html" style="color:var(--text); text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
-            <td class="ranking-val" data-en="75.55%" data-hi="75.55%">75.55%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="76.24%" data-hi="76.24%">76.24%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">22</td>
-            <td><a href="states/karnataka.html" style="color:var(--text); text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
-            <td class="ranking-val" data-en="75.36%" data-hi="75.36%">75.36%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="75.84%" data-hi="75.84%">75.84%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">23</td>
-            <td><a href="states/meghalaya.html" style="color:var(--text); text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
-            <td class="ranking-val" data-en="74.43%" data-hi="74.43%">74.43%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="75.55%" data-hi="75.55%">75.55%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">24</td>
-            <td><a href="states/ladakh.html" style="color:var(--text); text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
-            <td class="ranking-val" data-en="74.27%" data-hi="74.27%">74.27%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="75.36%" data-hi="75.36%">75.36%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">25</td>
-            <td><a href="states/odisha.html" style="color:var(--text); text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
-            <td class="ranking-val" data-en="72.87%" data-hi="72.87%">72.87%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="74.43%" data-hi="74.43%">74.43%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">26</td>
-            <td><a href="states/assam.html" style="color:var(--text); text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
-            <td class="ranking-val" data-en="72.19%" data-hi="72.19%">72.19%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="74.27%" data-hi="74.27%">74.27%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">27</td>
-            <td><a href="states/chhattisgarh.html" style="color:var(--text); text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
-            <td class="ranking-val" data-en="70.28%" data-hi="70.28%">70.28%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="72.87%" data-hi="72.87%">72.87%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">28</td>
-            <td><a href="states/madhya-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
-            <td class="ranking-val" data-en="69.32%" data-hi="69.32%">69.32%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="72.19%" data-hi="72.19%">72.19%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">29</td>
-            <td><a href="states/uttar-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
-            <td class="ranking-val" data-en="67.68%" data-hi="67.68%">67.68%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="70.28%" data-hi="70.28%">70.28%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">30</td>
-            <td><a href="states/jammu-kashmir.html" style="color:var(--text); text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
-            <td class="ranking-val" data-en="67.16%" data-hi="67.16%">67.16%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="69.32%" data-hi="69.32%">69.32%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">31</td>
-            <td><a href="states/andhra-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
-            <td class="ranking-val" data-en="67.02%" data-hi="67.02%">67.02%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="67.68%" data-hi="67.68%">67.68%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">32</td>
-            <td><a href="states/telangana.html" style="color:var(--text); text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
-            <td class="ranking-val" data-en="66.54%" data-hi="66.54%">66.54%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="67.16%" data-hi="67.16%">67.16%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">33</td>
-            <td><a href="states/jharkhand.html" style="color:var(--text); text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
-            <td class="ranking-val" data-en="66.41%" data-hi="66.41%">66.41%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="67.02%" data-hi="67.02%">67.02%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">34</td>
-            <td><a href="states/rajasthan.html" style="color:var(--text); text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
-            <td class="ranking-val" data-en="66.11%" data-hi="66.11%">66.11%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="66.54%" data-hi="66.54%">66.54%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">35</td>
-            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
-            <td class="ranking-val" data-en="65.38%" data-hi="65.38%">65.38%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="66.41%" data-hi="66.41%">66.41%</td>
           </tr>
           <tr>
-            <td class="ranking-rank">36</td>
-            <td><a href="states/bihar.html" style="color:var(--text); text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
-            <td class="ranking-val" data-en="61.8%" data-hi="61.8%">61.8%</td>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="66.11%" data-hi="66.11%">66.11%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="65.38%" data-hi="65.38%">65.38%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="61.8%" data-hi="61.8%">61.8%</td>
           </tr>
           <!-- END_BUILD_INJECT -->
-        </tbody>
-      </table>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- GSDP Ranking -->
+      <div class="ranking-section" id="gsdp">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Largest State Economies by GSDP (MoSPI 2022-23)" data-hi="GSDP अनुसार सबसे बड़ी राज्य अर्थव्यवस्थाएं (MoSPI 2022-23)">Largest State Economies by GSDP (MoSPI 2022-23)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://www.mospi.gov.in/" target="_blank" rel="noopener">MoSPI / State DES</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="GSDP (Current Prices)" data-hi="GSDP (वर्तमान मूल्य)">GSDP (Current Prices)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_gsdp -->
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹35,27,084 Cr" data-hi="₹35,27,084 करोड़">₹35,27,084 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹23,64,514 Cr" data-hi="₹23,64,514 करोड़">₹23,64,514 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹22,62,000 Cr" data-hi="₹22,62,000 करोड़">₹22,62,000 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹22,58,040 Cr" data-hi="₹22,58,040 करोड़">₹22,58,040 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹22,41,368 Cr" data-hi="₹22,41,368 करोड़">₹22,41,368 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹15,30,000 Cr" data-hi="₹15,30,000 करोड़">₹15,30,000 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹14,14,000 Cr" data-hi="₹14,14,000 करोड़">₹14,14,000 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹13,22,421 Cr" data-hi="₹13,22,421 करोड़">₹13,22,421 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹13,03,524 Cr" data-hi="₹13,03,524 करोड़">₹13,03,524 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹13,02,371 Cr" data-hi="₹13,02,371 करोड़">₹13,02,371 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹10,46,188 Cr" data-hi="₹10,46,188 करोड़">₹10,46,188 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹10,43,759 Cr" data-hi="₹10,43,759 करोड़">₹10,43,759 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹9,94,116 Cr" data-hi="₹9,94,116 करोड़">₹9,94,116 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹7,74,869 Cr" data-hi="₹7,74,869 करोड़">₹7,74,869 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹7,51,396 Cr" data-hi="₹7,51,396 करोड़">₹7,51,396 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹6,37,000 Cr" data-hi="₹6,37,000 करोड़">₹6,37,000 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹4,93,167 Cr" data-hi="₹4,93,167 करोड़">₹4,93,167 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹4,57,608 Cr" data-hi="₹4,57,608 करोड़">₹4,57,608 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹3,93,722 Cr" data-hi="₹3,93,722 करोड़">₹3,93,722 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹3,02,621 Cr" data-hi="₹3,02,621 करोड़">₹3,02,621 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹2,24,102 Cr" data-hi="₹2,24,102 करोड़">₹2,24,102 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹1,91,728 Cr" data-hi="₹1,91,728 करोड़">₹1,91,728 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹91,416 Cr" data-hi="₹91,416 करोड़">₹91,416 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹64,000 Cr" data-hi="₹64,000 करोड़">₹64,000 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹45,635 Cr" data-hi="₹45,635 करोड़">₹45,635 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹42,754 Cr" data-hi="₹42,754 करोड़">₹42,754 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹42,697 Cr" data-hi="₹42,697 करोड़">₹42,697 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹40,500 Cr" data-hi="₹40,500 करोड़">₹40,500 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹39,340 Cr" data-hi="₹39,340 करोड़">₹39,340 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹39,019 Cr" data-hi="₹39,019 करोड़">₹39,019 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹37,845 Cr" data-hi="₹37,845 करोड़">₹37,845 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹35,680 Cr" data-hi="₹35,680 करोड़">₹35,680 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹30,500 Cr" data-hi="₹30,500 करोड़">₹30,500 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹10,300 Cr" data-hi="₹10,300 करोड़">₹10,300 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹4,200 Cr" data-hi="₹4,200 करोड़">₹4,200 Cr</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="₹850 Cr" data-hi="₹850 करोड़">₹850 Cr</td>
+          </tr>
+          <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Unemployment Ranking -->
+      <div class="ranking-section" id="unemployment">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Lowest Unemployment Rates (PLFS 2022-23)" data-hi="न्यूनतम बेरोजगारी दर (PLFS 2022-23)">Lowest Unemployment Rates (PLFS 2022-23)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://www.mospi.gov.in/" target="_blank" rel="noopener">MoSPI (PLFS)</a> | Direction: Lower is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Unemployment Rate (%)" data-hi="बेरोजगारी दर (%)">Unemployment Rate (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_unemployment -->
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.4%" data-hi="1.4%">1.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.6%" data-hi="1.6%">1.6%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1.9%" data-hi="1.9%">1.9%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.0%" data-hi="2.0%">2.0%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.2%" data-hi="2.2%">2.2%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.4%" data-hi="2.4%">2.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.4%" data-hi="2.4%">2.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.4%" data-hi="2.4%">2.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2.7%" data-hi="2.7%">2.7%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.0%" data-hi="3.0%">3.0%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.1%" data-hi="3.1%">3.1%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.1%" data-hi="3.1%">3.1%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.2%" data-hi="3.2%">3.2%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.5%" data-hi="3.5%">3.5%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.7%" data-hi="3.7%">3.7%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.8%" data-hi="3.8%">3.8%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.9%" data-hi="3.9%">3.9%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3.9%" data-hi="3.9%">3.9%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.0%" data-hi="4.0%">4.0%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.1%" data-hi="4.1%">4.1%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.1%" data-hi="4.1%">4.1%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.2%" data-hi="4.2%">4.2%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.4%" data-hi="4.4%">4.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.4%" data-hi="4.4%">4.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.4%" data-hi="4.4%">4.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.4%" data-hi="4.4%">4.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.4%" data-hi="4.4%">4.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.5%" data-hi="4.5%">4.5%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="4.5%" data-hi="4.5%">4.5%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="5.4%" data-hi="5.4%">5.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="5.6%" data-hi="5.6%">5.6%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.1%" data-hi="6.1%">6.1%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.4%" data-hi="6.4%">6.4%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="6.8%" data-hi="6.8%">6.8%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="7.0%" data-hi="7.0%">7.0%</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="9.7%" data-hi="9.7%">9.7%</td>
+          </tr>
+          <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sex Ratio Ranking -->
+      <div class="ranking-section" id="sex-ratio">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Highest Sex Ratio (Census 2011)" data-hi="उच्चतम लिंगानुपात (जनगणना 2011)">Highest Sex Ratio (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Sex Ratio (Females per 1000 Males)" data-hi="लिंगानुपात (प्रति 1000 पुरुष महिलाएँ)">Sex Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_sex_ratio -->
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1084" data-hi="1084">1084</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1037" data-hi="1037">1037</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="996" data-hi="996">996</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="993" data-hi="993">993</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="991" data-hi="991">991</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="989" data-hi="989">989</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="988" data-hi="988">988</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="985" data-hi="985">985</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="979" data-hi="979">979</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="976" data-hi="976">976</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="973" data-hi="973">973</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="973" data-hi="973">973</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="972" data-hi="972">972</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="963" data-hi="963">963</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="960" data-hi="960">960</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="958" data-hi="958">958</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="950" data-hi="950">950</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="948" data-hi="948">948</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="946" data-hi="946">946</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="938" data-hi="938">938</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="931" data-hi="931">931</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="931" data-hi="931">931</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="929" data-hi="929">929</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="928" data-hi="928">928</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="919" data-hi="919">919</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="918" data-hi="918">918</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="912" data-hi="912">912</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="895" data-hi="895">895</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="890" data-hi="890">890</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="889" data-hi="889">889</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="879" data-hi="879">879</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="876" data-hi="876">876</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="868" data-hi="868">868</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="853" data-hi="853">853</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="818" data-hi="818">818</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="774" data-hi="774">774</td>
+          </tr>
+          <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Area Ranking -->
+      <div class="ranking-section" id="area">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Largest States by Geographical Area" data-hi="भौगोलिक क्षेत्रफल अनुसार सबसे बड़े राज्य">Largest States by Geographical Area</h2>
+          <span class="ranking-source-tag">Source: Survey of India / Census | Direction: Neutral</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Area (sq km)" data-hi="क्षेत्रफल (वर्ग किमी)">Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_area -->
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">1</td>
+            <td><a href="states/rajasthan.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Rajasthan" data-hi="राजस्थान">Rajasthan</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3,42,239 sq km" data-hi="3,42,239 वर्ग किमी">3,42,239 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">2</td>
+            <td><a href="states/madhya-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Madhya Pradesh" data-hi="मध्य प्रदेश">Madhya Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3,08,245 sq km" data-hi="3,08,245 वर्ग किमी">3,08,245 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">3</td>
+            <td><a href="states/maharashtra.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Maharashtra" data-hi="महाराष्ट्र">Maharashtra</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3,07,713 sq km" data-hi="3,07,713 वर्ग किमी">3,07,713 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">4</td>
+            <td><a href="states/uttar-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttar Pradesh" data-hi="उत्तर प्रदेश">Uttar Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="2,40,928 sq km" data-hi="2,40,928 वर्ग किमी">2,40,928 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">5</td>
+            <td><a href="states/gujarat.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Gujarat" data-hi="गुजरात">Gujarat</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,96,024 sq km" data-hi="1,96,024 वर्ग किमी">1,96,024 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">6</td>
+            <td><a href="states/karnataka.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Karnataka" data-hi="कर्नाटक">Karnataka</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,91,791 sq km" data-hi="1,91,791 वर्ग किमी">1,91,791 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">7</td>
+            <td><a href="states/andhra-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andhra Pradesh" data-hi="आंध्र प्रदेश">Andhra Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,62,968 sq km" data-hi="1,62,968 वर्ग किमी">1,62,968 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">8</td>
+            <td><a href="states/odisha.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Odisha" data-hi="ओडिशा">Odisha</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,55,707 sq km" data-hi="1,55,707 वर्ग किमी">1,55,707 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">9</td>
+            <td><a href="states/chhattisgarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chhattisgarh" data-hi="छत्तीसगढ़">Chhattisgarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,35,191 sq km" data-hi="1,35,191 वर्ग किमी">1,35,191 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">10</td>
+            <td><a href="states/tamil-nadu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tamil Nadu" data-hi="तमिलनाडु">Tamil Nadu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,30,058 sq km" data-hi="1,30,058 वर्ग किमी">1,30,058 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">11</td>
+            <td><a href="states/telangana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Telangana" data-hi="तेलंगाना">Telangana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,12,077 sq km" data-hi="1,12,077 वर्ग किमी">1,12,077 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">12</td>
+            <td><a href="states/bihar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Bihar" data-hi="बिहार">Bihar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="94,163 sq km" data-hi="94,163 वर्ग किमी">94,163 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">13</td>
+            <td><a href="states/west-bengal.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="West Bengal" data-hi="पश्चिम बंगाल">West Bengal</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="88,752 sq km" data-hi="88,752 वर्ग किमी">88,752 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">14</td>
+            <td><a href="states/arunachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Arunachal Pradesh" data-hi="अरुणाचल प्रदेश">Arunachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="83,743 sq km" data-hi="83,743 वर्ग किमी">83,743 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">15</td>
+            <td><a href="states/jharkhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jharkhand" data-hi="झारखंड">Jharkhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="79,714 sq km" data-hi="79,714 वर्ग किमी">79,714 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">16</td>
+            <td><a href="states/assam.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Assam" data-hi="असम">Assam</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="78,438 sq km" data-hi="78,438 वर्ग किमी">78,438 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">17</td>
+            <td><a href="states/ladakh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Ladakh" data-hi="लद्दाख">Ladakh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="59,146 sq km" data-hi="59,146 वर्ग किमी">59,146 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">18</td>
+            <td><a href="states/himachal-pradesh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Himachal Pradesh" data-hi="हिमाचल प्रदेश">Himachal Pradesh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="55,673 sq km" data-hi="55,673 वर्ग किमी">55,673 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">19</td>
+            <td><a href="states/uttarakhand.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Uttarakhand" data-hi="उत्तराखंड">Uttarakhand</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="53,483 sq km" data-hi="53,483 वर्ग किमी">53,483 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">20</td>
+            <td><a href="states/punjab.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Punjab" data-hi="पंजाब">Punjab</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="50,362 sq km" data-hi="50,362 वर्ग किमी">50,362 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">21</td>
+            <td><a href="states/haryana.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Haryana" data-hi="हरियाणा">Haryana</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="44,212 sq km" data-hi="44,212 वर्ग किमी">44,212 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">22</td>
+            <td><a href="states/jammu-kashmir.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Jammu & Kashmir" data-hi="जम्मू और कश्मीर">Jammu & Kashmir</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="42,241 sq km" data-hi="42,241 वर्ग किमी">42,241 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">23</td>
+            <td><a href="states/kerala.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Kerala" data-hi="केरल">Kerala</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="38,863 sq km" data-hi="38,863 वर्ग किमी">38,863 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">24</td>
+            <td><a href="states/meghalaya.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Meghalaya" data-hi="मेघालय">Meghalaya</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="22,429 sq km" data-hi="22,429 वर्ग किमी">22,429 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">25</td>
+            <td><a href="states/manipur.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Manipur" data-hi="मणिपुर">Manipur</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="22,327 sq km" data-hi="22,327 वर्ग किमी">22,327 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">26</td>
+            <td><a href="states/mizoram.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Mizoram" data-hi="मिज़ोरम">Mizoram</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="21,081 sq km" data-hi="21,081 वर्ग किमी">21,081 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">27</td>
+            <td><a href="states/nagaland.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Nagaland" data-hi="नागालैंड">Nagaland</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="16,579 sq km" data-hi="16,579 वर्ग किमी">16,579 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">28</td>
+            <td><a href="states/tripura.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Tripura" data-hi="त्रिपुरा">Tripura</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="10,486 sq km" data-hi="10,486 वर्ग किमी">10,486 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">29</td>
+            <td><a href="states/andaman-nicobar.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Andaman & Nicobar" data-hi="अंडमान और निकोबार">Andaman & Nicobar</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="8,249 sq km" data-hi="8,249 वर्ग किमी">8,249 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">30</td>
+            <td><a href="states/sikkim.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Sikkim" data-hi="सिक्किम">Sikkim</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="7,096 sq km" data-hi="7,096 वर्ग किमी">7,096 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">31</td>
+            <td><a href="states/goa.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Goa" data-hi="गोवा">Goa</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="3,702 sq km" data-hi="3,702 वर्ग किमी">3,702 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">32</td>
+            <td><a href="states/delhi.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Delhi" data-hi="दिल्ली">Delhi</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="1,483 sq km" data-hi="1,483 वर्ग किमी">1,483 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">33</td>
+            <td><a href="states/dadra-nagar-haveli-daman-diu.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Dadra & Nagar Haveli and Daman & Diu" data-hi="दादरा और नगर हवेली तथा दमन और दीव">Dadra & Nagar Haveli and Daman & Diu</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="603 sq km" data-hi="603 वर्ग किमी">603 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">34</td>
+            <td><a href="states/puducherry.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Puducherry" data-hi="पुडुचेरी">Puducherry</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="479 sq km" data-hi="479 वर्ग किमी">479 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">35</td>
+            <td><a href="states/chandigarh.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Chandigarh" data-hi="चंडीगढ़">Chandigarh</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="114 sq km" data-hi="114 वर्ग किमी">114 sq km</td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--font-mono); font-weight:600; color:var(--teal);">36</td>
+            <td><a href="states/lakshadweep.html" style="color:var(--text); font-weight:500; text-decoration:none;" data-en="Lakshadweep" data-hi="लक्षद्वीप">Lakshadweep</a></td>
+            <td style="font-family:var(--font-mono); font-weight:600;" data-en="32 sq km" data-hi="32 वर्ग किमी">32 sq km</td>
+          </tr>
+          <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer">
@@ -519,9 +1367,18 @@
       <span class="brand-name">IndiaMetrix</span>
       <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
     </div>
+
     <nav class="footer-links" aria-label="Footer">
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
+      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
     </nav>
+
+    <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
     <p class="footer-copy">© 2026 IndiaMetrix.</p>
   </div>
 </footer>

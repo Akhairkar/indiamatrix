@@ -92,5 +92,27 @@
       64.83,
       74.04
     ]
+  },
+  "internet_penetration": {
+    "title": "Internet Penetration (% of Population)",
+    "source": "TRAI / ITU / World Bank",
+    "labels": [
+      "2010",
+      "2014",
+      "2016",
+      "2018",
+      "2020",
+      "2022",
+      "2024"
+    ],
+    "values": [
+      7.5,
+      13.5,
+      22.0,
+      34.4,
+      43.0,
+      48.7,
+      55.2
+    ]
   }
 }

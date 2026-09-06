@@ -1,0 +1,82 @@
+{
+  "id": "lucknow",
+  "state_id": "uttar-pradesh",
+  "name": {
+    "en": "Lucknow",
+    "hi": "लखनऊ"
+  },
+  "indicators": [
+    {
+      "id": "population",
+      "category": "population",
+      "name": {
+        "en": "Population",
+        "hi": "जनसंख्या"
+      },
+      "unit": "count",
+      "geography_level": "district",
+      "geography_id": "lucknow",
+      "year": 2011,
+      "value": 4589838,
+      "display": {
+        "en": "4.59 million",
+        "hi": "4.59 मिलियन"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "neutral",
+      "is_estimate": false
+    },
+    {
+      "id": "literacy-rate",
+      "category": "education",
+      "name": {
+        "en": "Literacy Rate",
+        "hi": "साक्षरता दर"
+      },
+      "unit": "%",
+      "geography_level": "district",
+      "geography_id": "lucknow",
+      "year": 2011,
+      "value": 77.29,
+      "display": {
+        "en": "77.29%",
+        "hi": "77.29%"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "higher_is_better",
+      "is_estimate": false
+    },
+    {
+      "id": "sex-ratio",
+      "category": "demographics",
+      "name": {
+        "en": "Sex Ratio",
+        "hi": "लिंगानुपात"
+      },
+      "unit": "females per 1000 males",
+      "geography_level": "district",
+      "geography_id": "lucknow",
+      "year": 2011,
+      "value": 917,
+      "display": {
+        "en": "917",
+        "hi": "917"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "higher_is_better",
+      "is_estimate": false
+    }
+  ]
+}

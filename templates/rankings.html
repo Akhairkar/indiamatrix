@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rankings | IndiaMetrix</title>
-<meta name="description" content="State rankings for key indicators across India.">
+<title>Indian State Rankings — Economy, Literacy, Population & Demographics | IndiaMetrix</title>
+<meta name="description" content="Verified rankings of Indian states and Union Territories by GDP, literacy rate, population, unemployment, and sex ratio with official sources.">
 <link rel="canonical" href="https://www.indiametrix.in/rankings.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rankings | IndiaMetrix">
-<meta property="og:description" content="State rankings for key indicators across India.">
+<meta property="og:title" content="Indian State Rankings | IndiaMetrix">
+<meta property="og:description" content="Explore state rankings across key socio-economic indicators with full data provenance.">
+<meta property="og:url" content="https://www.indiametrix.in/rankings.html">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta name="theme-color" content="#0D1424">
@@ -20,45 +21,53 @@
 
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-.ranking-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 40px;
-  background: var(--panel-bg);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.ranking-table th, .ranking-table td {
-  padding: 16px;
-  text-align: left;
+.ranking-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
   border-bottom: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
 }
-.ranking-table th {
+.ranking-tab-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 999px;
   font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.ranking-tab-btn:hover, .ranking-tab-btn.is-active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+.ranking-section {
+  margin-bottom: 48px;
+  scroll-margin-top: 80px;
+}
+.ranking-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.ranking-source-tag {
+  font-size: 12px;
+  font-family: var(--font-mono);
   color: var(--text-faint);
-  background: rgba(255,255,255,0.02);
 }
-.ranking-table tr:last-child td {
-  border-bottom: none;
-}
-.ranking-table td {
-  font-size: 16px;
-}
-.ranking-rank {
-  font-family: var(--font-mono);
+.ranking-source-tag a {
   color: var(--teal);
-  font-weight: 600;
-  width: 60px;
-}
-.ranking-val {
-  font-family: var(--font-mono);
-  font-weight: 600;
 }
 </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -83,17 +92,20 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
       <a href="./#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
-      <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
+      <a href="rankings.html" class="is-active" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
       <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
       <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
       <a href="world.html" data-en="World" data-hi="विश्व">World</a>
       <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
       <a href="ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
       <a href="./#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
     </nav>
 
     <div class="header-actions">
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
         <span class="lang-sep" aria-hidden="true">|</span>
@@ -107,50 +119,166 @@
 </header>
 
 <main id="main">
-  <section class="section" style="padding-top:56px;">
+  <section class="section" style="padding-top:56px; padding-bottom:16px;">
     <div class="wrap">
-      <p class="eyebrow" data-en="State Rankings" data-hi="राज्य रैंकिंग">State Rankings</p>
-      <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="India Rankings" data-hi="भारत रैंकिंग">India Rankings</h1>
-      <p class="section-sub" style="max-width:60ch;" data-en="Compare performance across states on key indicators." data-hi="प्रमुख संकेतकों पर राज्यों के प्रदर्शन की तुलना करें।">Compare performance across states on key indicators.</p>
+      <p class="eyebrow" data-en="State Rankings & Benchmarks" data-hi="राज्य रैंकिंग और मानक">State Rankings & Benchmarks</p>
+      <h1 style="font-size:clamp(32px,4.5vw,48px); margin-bottom:12px;" data-en="India State Rankings" data-hi="भारत राज्य रैंकिंग">India State Rankings</h1>
+      <p class="section-sub" style="max-width:65ch;" data-en="Compare performance across all 36 Indian States and Union Territories. All rankings clearly identify the underlying reference year and official publishing agency." data-hi="सभी 36 भारतीय राज्यों और केंद्र शासित प्रदेशों के प्रदर्शन की तुलना करें। सभी रैंकिंग आधार वर्ष और आधिकारिक एजेंसी को स्पष्ट रूप से दर्शाती हैं।">Compare performance across all 36 Indian States and Union Territories. All rankings clearly identify the underlying reference year and official publishing agency.</p>
+
+      <div class="ranking-tabs">
+        <a href="#population" class="ranking-tab-btn" data-en="👥 Population" data-hi="👥 जनसंख्या">👥 Population</a>
+        <a href="#literacy" class="ranking-tab-btn" data-en="🎓 Literacy Rate" data-hi="🎓 साक्षरता">🎓 Literacy Rate</a>
+        <a href="#gsdp" class="ranking-tab-btn" data-en="📊 GSDP (Economy)" data-hi="📊 GSDP (अर्थव्यवस्था)">📊 GSDP (Economy)</a>
+        <a href="#unemployment" class="ranking-tab-btn" data-en="💼 Lowest Unemployment" data-hi="💼 न्यूनतम बेरोजगारी">💼 Lowest Unemployment</a>
+        <a href="#sex-ratio" class="ranking-tab-btn" data-en="⚖️ Sex Ratio" data-hi="⚖️ लिंगानुपात">⚖️ Sex Ratio</a>
+        <a href="#area" class="ranking-tab-btn" data-en="🗺️ Geographical Area" data-hi="🗺️ क्षेत्रफल">🗺️ Geographical Area</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:32px; padding-bottom:32px;">
+  <section class="section" style="padding-top:16px; padding-bottom:48px;">
     <div class="wrap">
       
-      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Most Populated States (2011)" data-hi="सर्वाधिक आबादी वाले राज्य (2011)">Most Populated States (2011)</h2>
-      <table class="ranking-table">
-        <thead>
-          <tr>
-            <th class="ranking-rank">#</th>
-            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
-            <th data-en="Population" data-hi="जनसंख्या">Population</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- BUILD_INJECT:rankings_population -->
-          <!-- END_BUILD_INJECT -->
-        </tbody>
-      </table>
+      <!-- Population Ranking -->
+      <div class="ranking-section" id="population">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Most Populous States (Census 2011)" data-hi="सर्वाधिक आबादी वाले राज्य (जनगणना 2011)">Most Populous States (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Neutral</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Population" data-hi="जनसंख्या">Population</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_population -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-      <h2 style="font-size:24px; margin-bottom:16px;" data-en="Highest Literacy Rate (2011)" data-hi="उच्चतम साक्षरता दर (2011)">Highest Literacy Rate (2011)</h2>
-      <table class="ranking-table">
-        <thead>
-          <tr>
-            <th class="ranking-rank">#</th>
-            <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
-            <th data-en="Literacy Rate" data-hi="साक्षरता दर">Literacy Rate</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- BUILD_INJECT:rankings_literacy -->
-          <!-- END_BUILD_INJECT -->
-        </tbody>
-      </table>
+      <!-- Literacy Ranking -->
+      <div class="ranking-section" id="literacy">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Highest Literacy Rate (Census 2011)" data-hi="उच्चतम साक्षरता दर (जनगणना 2011)">Highest Literacy Rate (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Literacy Rate (%)" data-hi="साक्षरता दर (%)">Literacy Rate (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_literacy -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- GSDP Ranking -->
+      <div class="ranking-section" id="gsdp">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Largest State Economies by GSDP (MoSPI 2022-23)" data-hi="GSDP अनुसार सबसे बड़ी राज्य अर्थव्यवस्थाएं (MoSPI 2022-23)">Largest State Economies by GSDP (MoSPI 2022-23)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://www.mospi.gov.in/" target="_blank" rel="noopener">MoSPI / State DES</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="GSDP (Current Prices)" data-hi="GSDP (वर्तमान मूल्य)">GSDP (Current Prices)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_gsdp -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Unemployment Ranking -->
+      <div class="ranking-section" id="unemployment">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Lowest Unemployment Rates (PLFS 2022-23)" data-hi="न्यूनतम बेरोजगारी दर (PLFS 2022-23)">Lowest Unemployment Rates (PLFS 2022-23)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://www.mospi.gov.in/" target="_blank" rel="noopener">MoSPI (PLFS)</a> | Direction: Lower is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Unemployment Rate (%)" data-hi="बेरोजगारी दर (%)">Unemployment Rate (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_unemployment -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sex Ratio Ranking -->
+      <div class="ranking-section" id="sex-ratio">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Highest Sex Ratio (Census 2011)" data-hi="उच्चतम लिंगानुपात (जनगणना 2011)">Highest Sex Ratio (Census 2011)</h2>
+          <span class="ranking-source-tag">Source: <a href="https://censusindia.gov.in/" target="_blank" rel="noopener">Census of India</a> | Direction: Higher is Better</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Sex Ratio (Females per 1000 Males)" data-hi="लिंगानुपात (प्रति 1000 पुरुष महिलाएँ)">Sex Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_sex_ratio -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Area Ranking -->
+      <div class="ranking-section" id="area">
+        <div class="ranking-meta-header">
+          <h2 style="font-size:22px; font-family:var(--font-display);" data-en="Largest States by Geographical Area" data-hi="भौगोलिक क्षेत्रफल अनुसार सबसे बड़े राज्य">Largest States by Geographical Area</h2>
+          <span class="ranking-source-tag">Source: Survey of India / Census | Direction: Neutral</span>
+        </div>
+        <div class="im-table-wrap">
+          <table class="im-table">
+            <thead>
+              <tr>
+                <th style="width:60px;">#</th>
+                <th data-en="State / UT" data-hi="राज्य / केंद्र शासित प्रदेश">State / UT</th>
+                <th data-en="Area (sq km)" data-hi="क्षेत्रफल (वर्ग किमी)">Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BUILD_INJECT:rankings_area -->
+              <!-- END_BUILD_INJECT -->
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer">
@@ -159,9 +287,18 @@
       <span class="brand-name">IndiaMetrix</span>
       <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
     </div>
+
     <nav class="footer-links" aria-label="Footer">
-      <a href="./#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
+      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
     </nav>
+
+    <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
     <p class="footer-copy">© 2026 IndiaMetrix.</p>
   </div>
 </footer>

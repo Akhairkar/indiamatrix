@@ -1,0 +1,82 @@
+{
+  "id": "ernakulam",
+  "state_id": "kerala",
+  "name": {
+    "en": "Ernakulam",
+    "hi": "एर्नाकुलम"
+  },
+  "indicators": [
+    {
+      "id": "population",
+      "category": "population",
+      "name": {
+        "en": "Population",
+        "hi": "जनसंख्या"
+      },
+      "unit": "count",
+      "geography_level": "district",
+      "geography_id": "ernakulam",
+      "year": 2011,
+      "value": 3282388,
+      "display": {
+        "en": "3.28 million",
+        "hi": "3.28 मिलियन"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "neutral",
+      "is_estimate": false
+    },
+    {
+      "id": "literacy-rate",
+      "category": "education",
+      "name": {
+        "en": "Literacy Rate",
+        "hi": "साक्षरता दर"
+      },
+      "unit": "%",
+      "geography_level": "district",
+      "geography_id": "ernakulam",
+      "year": 2011,
+      "value": 95.89,
+      "display": {
+        "en": "95.89%",
+        "hi": "95.89%"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "higher_is_better",
+      "is_estimate": false
+    },
+    {
+      "id": "sex-ratio",
+      "category": "demographics",
+      "name": {
+        "en": "Sex Ratio",
+        "hi": "लिंगानुपात"
+      },
+      "unit": "females per 1000 males",
+      "geography_level": "district",
+      "geography_id": "ernakulam",
+      "year": 2011,
+      "value": 1027,
+      "display": {
+        "en": "1027",
+        "hi": "1027"
+      },
+      "source_id": "census-india",
+      "source_url": "https://censusindia.gov.in/",
+      "last_checked": "2026-08-15",
+      "last_updated": "2026-08-15",
+      "methodology_note": "Census 2011.",
+      "direction": "higher_is_better",
+      "is_estimate": false
+    }
+  ]
+}

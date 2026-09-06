@@ -75,82 +75,120 @@
     var sNameEn = stateData.name.en || "";
     var sNameHi = stateData.name.hi || "";
 
-    var indIds = ["population", "literacy-rate"];
+    var indConfigs = [
+      { id: "population", nameEn: "Population", nameHi: "जनसंख्या", dir: "neutral" },
+      { id: "literacy-rate", nameEn: "Literacy Rate", nameHi: "साक्षरता दर", dir: "higher_is_better" },
+      { id: "gdp", nameEn: "GSDP (Current Prices)", nameHi: "GSDP (वर्तमान मूल्य)", dir: "higher_is_better" },
+      { id: "unemployment", nameEn: "Unemployment Rate", nameHi: "बेरोजगारी दर", dir: "lower_is_better" },
+      { id: "health", nameEn: "Infant Mortality Rate (IMR)", nameHi: "शिशु मृत्यु दर", dir: "lower_is_better" },
+      { id: "sex-ratio", nameEn: "Sex Ratio", nameHi: "लिंगानुपात", dir: "higher_is_better" },
+      { id: "area", nameEn: "Geographical Area", nameHi: "भौगोलिक क्षेत्रफल", dir: "neutral" }
+    ];
     
-    var html = '<div class="compare-card">';
-    html += '<h2 class="compare-state-name" data-en="' + sNameEn + '" data-hi="' + sNameHi + '">' + sNameEn + '</h2>';
+    var html = '<div class="compare-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:24px; box-shadow:var(--shadow-card);">';
+    html += '<h2 class="compare-state-name" style="font-family:var(--font-display); font-size:24px; color:var(--text); margin-bottom:18px; border-bottom:1px solid var(--border); padding-bottom:12px;" data-en="' + sNameEn + '" data-hi="' + sNameHi + '">' + sNameEn + '</h2>';
 
-    indIds.forEach(function(indId) {
-      var ind1 = getIndicator(stateData, indId);
-      var ind2 = getIndicator(otherStateData, indId);
+    indConfigs.forEach(function(cfg) {
+      var ind1 = getIndicator(stateData, cfg.id);
+      var ind2 = getIndicator(otherStateData, cfg.id);
 
       if (ind1) {
-        var nameEn = ind1.name.en;
-        var nameHi = ind1.name.hi;
+        var nameEn = ind1.name.en || cfg.nameEn;
+        var nameHi = ind1.name.hi || cfg.nameHi;
         var dispEn = ind1.display.en;
         var dispHi = ind1.display.hi;
+        var year = ind1.year || "";
         
         var diffHtml = "";
-        if (ind2) {
-          // Compare values
+        if (ind2 && ind1.value !== null && ind2.value !== null) {
           var v1 = ind1.value;
           var v2 = ind2.value;
           
-          if (v1 > v2) {
-             var diffClass = (indId === "literacy-rate") ? "diff-better" : "";
-             diffHtml = '<span class="diff-val ' + diffClass + '">Higher</span>';
-          } else if (v1 < v2) {
-             var diffClass2 = (indId === "literacy-rate") ? "diff-worse" : "";
-             diffHtml = '<span class="diff-val ' + diffClass2 + '">Lower</span>';
+          if (v1 !== v2) {
+            var isBetter = false;
+            if (cfg.dir === "higher_is_better") {
+              isBetter = (v1 > v2);
+            } else if (cfg.dir === "lower_is_better") {
+              isBetter = (v1 < v2);
+            }
+
+            if (cfg.dir !== "neutral") {
+              var badgeClass = isBetter ? "im-badge--verified" : "im-badge--source";
+              var badgeText = isBetter ? "Favorable" : "Lower";
+              diffHtml = ' <span class="im-badge ' + badgeClass + '" style="font-size:11px;">' + badgeText + '</span>';
+            }
           }
         }
 
-        html += '<div class="ind-row">';
-        html += '<p class="ind-label" data-en="' + nameEn + '" data-hi="' + nameHi + '">' + nameEn + '</p>';
-        html += '<p><span class="ind-val" data-en="' + dispEn + '" data-hi="' + dispHi + '">' + dispEn + '</span>' + diffHtml + '</p>';
+        html += '<div class="ind-row" style="padding:10px 0; border-bottom:1px solid var(--border);">';
+        html += '<p class="ind-label" style="font-size:13px; color:var(--text-muted); margin:0 0 4px;" data-en="' + nameEn + '" data-hi="' + nameHi + '">' + nameEn + '</p>';
+        html += '<p style="margin:0; display:flex; justify-content:space-between; align-items:center;">';
+        html += '<span class="ind-val" style="font-family:var(--font-mono); font-weight:600; font-size:16px; color:var(--text);" data-en="' + dispEn + '" data-hi="' + dispHi + '">' + dispEn + '</span>';
+        html += diffHtml;
+        html += '</p>';
+        html += '<span style="font-size:11px; font-family:var(--font-mono); color:var(--text-faint);">Ref: ' + year + '</span>';
         html += '</div>';
       }
     });
+
+    html += '<div style="margin-top:20px; text-align:center;">';
+    html += '<a href="states/' + stateData.id + '.html" class="im-btn im-btn-sm im-btn-outline" style="width:100%;" data-en="View ' + sNameEn + ' Profile →" data-hi="' + sNameHi + ' प्रोफ़ाइल देखें →">View ' + sNameEn + ' Profile →</a>';
+    html += '</div>';
 
     html += '</div>';
     return html;
   }
 
-  if (compareBtn) {
-    compareBtn.addEventListener("click", function () {
-      var id1 = select1.value;
-      var id2 = select2.value;
-      
-      if (!id1 || !id2) return;
-      
-      errorEl.style.display = "none";
-      resultsDiv.style.display = "none";
+  function executeCompare(id1, id2) {
+    if (!id1 || !id2) return;
+    
+    errorEl.style.display = "none";
+    resultsDiv.style.display = "none";
 
-      Promise.all([
-        fetch("data/indicators/states/" + id1 + ".json").then(res => res.json()),
-        fetch("data/indicators/states/" + id2 + ".json").then(res => res.json())
-      ])
-      .then(function(data) {
-        var state1Data = data[0];
-        var state2Data = data[1];
+    Promise.all([
+      fetch("data/indicators/states/" + id1 + ".json").then(res => res.json()),
+      fetch("data/indicators/states/" + id2 + ".json").then(res => res.json())
+    ])
+    .then(function(data) {
+      var state1Data = data[0];
+      var state2Data = data[1];
 
-        var html = renderStateCard(state1Data, state2Data) + renderStateCard(state2Data, state1Data);
-        resultsDiv.innerHTML = html;
-        resultsDiv.style.display = "grid";
+      var html = renderStateCard(state1Data, state2Data) + renderStateCard(state2Data, state1Data);
+      resultsDiv.innerHTML = html;
+      resultsDiv.style.display = "grid";
 
-        // trigger lang switch logic on newly injected DOM if needed
-        var rootLang = document.documentElement.getAttribute("data-lang") || "en";
-        document.querySelectorAll("#compare-results [data-en]").forEach(function(el) {
-           var val = rootLang === "hi" ? el.getAttribute("data-hi") : el.getAttribute("data-en");
-           if (val) el.textContent = val;
-        });
-
-      })
-      .catch(function(err) {
-        console.error(err);
-        errorEl.style.display = "block";
+      var rootLang = document.documentElement.getAttribute("data-lang") || "en";
+      document.querySelectorAll("#compare-results [data-en]").forEach(function(el) {
+         var val = rootLang === "hi" ? el.getAttribute("data-hi") : el.getAttribute("data-en");
+         if (val) el.textContent = val;
       });
+
+      // Update URL without page reload
+      var newUrl = window.location.pathname + "?s1=" + id1 + "&s2=" + id2;
+      window.history.replaceState({path: newUrl}, "", newUrl);
+    })
+    .catch(function(err) {
+      console.error(err);
+      errorEl.style.display = "block";
     });
   }
+
+  if (compareBtn) {
+    compareBtn.addEventListener("click", function () {
+      executeCompare(select1.value, select2.value);
+    });
+  }
+
+  // Prepopulate from URL parameters if present
+  document.addEventListener("DOMContentLoaded", function () {
+    var params = new URLSearchParams(window.location.search);
+    var s1 = params.get("s1");
+    var s2 = params.get("s2");
+    if (s1 && s2 && select1 && select2) {
+      select1.value = s1;
+      select2.value = s2;
+      executeCompare(s1, s2);
+    }
+  });
 
 })();

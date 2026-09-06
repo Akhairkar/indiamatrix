@@ -62,12 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // We sort states by value descending for better visualization
     const sortedStates = [...statesToRender].map(state => {
         const ind = state.indicators.find(i => i.id === indicatorId);
+        const disp = ind ? (ind.display ? (ind.display[currentLang] || ind.display.en) : (ind.formatted_value ? ind.formatted_value[currentLang] : ind.value)) : "-";
+        const src = ind ? (ind.source_id || ind.source_name || "") : "";
         return {
-            stateName: state.name[currentLang],
+            stateName: state.name[currentLang] || state.name.en,
             value: ind ? ind.value : 0,
-            formattedValue: ind ? ind.formatted_value[currentLang] : "-",
+            formattedValue: disp,
             year: ind ? ind.year : "-",
-            source: ind ? ind.source_name[currentLang] : ""
+            source: src
         };
     }).sort((a, b) => b.value - a.value);
 
