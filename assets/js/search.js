@@ -16,7 +16,7 @@
   // Determine root path offset
   const path = window.location.pathname;
   let rootPrefix = '';
-  if (path.includes('/states/') || path.includes('/stories/')) {
+  if (path.includes('/states/') || path.includes('/stories/') || path.includes('/tools/')) {
     rootPrefix = '../';
   } else if (path.includes('/districts/') && path.split('/').length > 3) {
     // e.g. /districts/maharashtra/pune.html
@@ -28,6 +28,9 @@
   const searchIndex = [
     // Core Platform Tools & Hubs
     { title: 'India Overview', subtitle: 'National Demographics & Economy', url: 'india.html', type: 'Hub', keywords: 'india bharat national gdp population statistics' },
+    { title: 'Interactive Master Tools Hub', subtitle: 'Calculators, Simulators & Projection Engines', url: 'tools/index.html', type: 'Tool', keywords: 'tools calculator simulator projection gsdp literacy power' },
+    { title: 'Economic Power & Country Comparator', subtitle: 'State GSDP vs World Nations & Doubling Clock', url: 'tools/economic-comparator.html', type: 'Tool', keywords: 'economic power calculator gsdp comparator country world sovereign milestone' },
+    { title: 'Demographic & Universal Literacy Projector', subtitle: 'Literacy 100% Target Year & Gender Parity Gap', url: 'tools/demographic-calculator.html', type: 'Tool', keywords: 'demographic literacy calculator projector sex ratio milestone target simulation' },
     { title: 'Data Explorer', subtitle: 'Interactive Data Matrix & Charts', url: 'explorer.html', type: 'Tool', keywords: 'explorer chart visualizer download data query' },
     { title: 'Compare States', subtitle: 'Side-by-side State Indicator Comparison', url: 'compare.html', type: 'Tool', keywords: 'compare comparison difference versus vs' },
     { title: 'State Rankings', subtitle: 'Rankings across 6 Verified Indicators', url: 'rankings.html', type: 'Hub', keywords: 'rankings highest lowest leaderboards top states' },

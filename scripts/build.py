@@ -159,6 +159,18 @@ def main():
                 cards_repl = r'\1' + state_cards_html + r'      \2'
                 out_content = re.sub(cards_pattern, cards_repl, out_content, flags=re.DOTALL)
                 
+                # Action bar with tools integration
+                ab_pattern = r'(<!-- BUILD_INJECT:action_bar -->\n).*?(<!-- END_BUILD_INJECT -->)'
+                ab_html = f'''      <div class="im-action-bar">
+        <button type="button" class="im-cite-btn" onclick="window.copyCitation('{state_name_en} Profile', 'Key Statistics', 'All Indicators', '2023', 'MoSPI & Census', window.location.href)" data-en="📋 Copy Citation" data-hi="📋 उद्धरण कॉपी करें">📋 Copy Citation</button>
+        <button type="button" class="im-issue-btn" onclick="window.reportDataIssue(window.location.pathname)" data-en="⚠️ Report Data Issue" data-hi="⚠️ डेटा समस्या की रिपोर्ट करें">⚠️ Report Data Issue</button>
+        <a href="../compare.html?s1={state_id}" class="im-btn im-btn-sm im-btn-outline" data-en="Compare State →" data-hi="राज्य की तुलना करें →">Compare State →</a>
+        <a href="../tools/economic-comparator.html?state={state_id}" class="im-btn im-btn-sm im-btn-outline" data-en="🌐 Economic Equivalence" data-hi="🌐 आर्थिक समकक्षता">🌐 Economic Equivalence</a>
+        <a href="../tools/demographic-calculator.html?s1={state_id}" class="im-btn im-btn-sm im-btn-outline" data-en="📊 Literacy Projector" data-hi="📊 साक्षरता प्रोजेक्टर">📊 Literacy Projector</a>
+      </div>\n      '''
+                ab_repl = r'\1' + ab_html + r'\2'
+                out_content = re.sub(ab_pattern, ab_repl, out_content, flags=re.DOTALL)
+                
                 # Districts
                 districts_dir = os.path.join(root_dir, 'data', 'districts')
                 state_districts_html = ""

@@ -60,6 +60,7 @@
       <a href="#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
       <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
       <a href="districts/index.html" data-en="Districts" data-hi="ज़िले">Districts</a>
+      <a href="tools/index.html" data-en="Tools" data-hi="टूल्स">Tools</a>
       <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
       <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
       <a href="world.html" data-en="World" data-hi="विश्व">World</a>
@@ -101,18 +102,18 @@
 
         <p class="search-hint">
           <span data-en="Try:" data-hi="आज़माएं:">Try:</span>
-          <a href="#">India GDP</a> • <a href="#">Maharashtra</a> • <a href="#">Literacy Rate</a> • <a href="#">India vs China</a>
+          <a href="indicators/gdp-current-usd.html">India GDP</a> • <a href="states/maharashtra.html">Maharashtra</a> • <a href="rankings.html#rank-literacy-rate">Literacy Rate</a> • <a href="world.html">India vs World</a>
         </p>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
         <div class="orbit-card orbit-card--1">
           <span class="orbit-label">GDP</span>
-          <span class="orbit-value">—</span>
+          <span class="orbit-value">$3.96T</span>
         </div>
         <div class="orbit-card orbit-card--2">
           <span class="orbit-label">Literacy</span>
-          <span class="orbit-value">—</span>
+          <span class="orbit-value">74.0%</span>
         </div>
         <div class="orbit-card orbit-card--3">
           <span class="orbit-label">States</span>
@@ -199,7 +200,7 @@
       <div class="explore-visual" aria-hidden="true">
         <div class="india-panel">
           <div class="india-dotmark india-dotmark--lg"></div>
-          <span class="india-panel-label" data-en="Map view — coming soon" data-hi="मानचित्र दृश्य — जल्द आ रहा है">Map view — coming soon</span>
+          <span class="india-panel-label" data-en="36 States & UTs • Verified Data" data-hi="36 राज्य व केंद्र शासित प्रदेश • सत्यापित डेटा">36 States &amp; UTs • Verified Data</span>
         </div>
       </div>
     </div>
@@ -224,8 +225,8 @@
       <div class="compare-copy">
         <p class="eyebrow" data-en="Compare" data-hi="तुलना">Compare</p>
         <h2 data-en="Compare Anything" data-hi="कुछ भी तुलना करें">Compare Anything</h2>
-        <p class="section-sub" data-en="States, districts, countries or years — side by side, with differences calculated automatically once the comparison engine is live." data-hi="राज्य, ज़िले, देश या वर्ष — तुलना इंजन लाइव होने पर अंतर स्वतः गणना के साथ, साथ-साथ।">States, districts, countries or years — side by side, with differences calculated automatically once the comparison engine is live.</p>
-        <a class="btn btn-outline" href="compare.html" data-en="Compare States →" data-hi="राज्यों की तुलना करें →">Compare States →</a>
+        <p class="section-sub" data-en="States, districts, countries or years — side by side, with differences calculated automatically in our comparison engine." data-hi="राज्य, ज़िले, देश या वर्ष — तुलना इंजन में अंतर स्वतः गणना के साथ, साथ-साथ।">States, districts, countries or years — side by side, with differences calculated automatically in our comparison engine.</p>
+        <a class="btn btn-outline" href="compare.html?s1=maharashtra&s2=gujarat" data-en="Compare Maharashtra vs Gujarat →" data-hi="महाराष्ट्र बनाम गुजरात तुलना करें →">Compare Maharashtra vs Gujarat →</a>
       </div>
 
       <div class="compare-preview">
@@ -235,12 +236,12 @@
           <span class="chip">Gujarat</span>
         </div>
         <ul class="compare-rows">
-          <li><span data-en="GDP" data-hi="जीडीपी">GDP</span><span class="cell-placeholder"></span><span class="cell-placeholder"></span></li>
-          <li><span data-en="Population" data-hi="जनसंख्या">Population</span><span class="cell-placeholder"></span><span class="cell-placeholder"></span></li>
-          <li><span data-en="Literacy" data-hi="साक्षरता">Literacy</span><span class="cell-placeholder"></span><span class="cell-placeholder"></span></li>
-          <li><span data-en="Employment" data-hi="रोज़गार">Employment</span><span class="cell-placeholder"></span><span class="cell-placeholder"></span></li>
+          <li><span data-en="GSDP" data-hi="जीएसडीपी">GSDP</span><span style="font-family:var(--font-mono); font-weight:600;">₹38.79L Cr</span><span style="font-family:var(--font-mono); font-weight:600;">₹22.61L Cr</span></li>
+          <li><span data-en="Population" data-hi="जनसंख्या">Population</span><span style="font-family:var(--font-mono); font-weight:600;">11.24 Cr</span><span style="font-family:var(--font-mono); font-weight:600;">6.04 Cr</span></li>
+          <li><span data-en="Literacy" data-hi="साक्षरता">Literacy</span><span style="font-family:var(--font-mono); font-weight:600;">82.34%</span><span style="font-family:var(--font-mono); font-weight:600;">78.03%</span></li>
+          <li><span data-en="Unemployment" data-hi="बेरोज़गारी">Unemployment</span><span style="font-family:var(--font-mono); font-weight:600;">3.1%</span><span style="font-family:var(--font-mono); font-weight:600;">2.5%</span></li>
         </ul>
-        <p class="preview-note" data-en="Preview only — live comparison data is not yet connected." data-hi="केवल पूर्वावलोकन — लाइव तुलना डेटा अभी कनेक्ट नहीं है।">Preview only — live comparison data is not yet connected.</p>
+        <p class="preview-note"><a href="compare.html?s1=maharashtra&s2=gujarat" style="color:var(--teal); text-decoration:underline;">Live verified data from MoSPI, Census and PLFS →</a></p>
       </div>
     </div>
   </section>
@@ -251,29 +252,94 @@
       <header class="section-head">
         <p class="eyebrow" data-en="Rankings" data-hi="रैंकिंग">Rankings</p>
         <h2 data-en="India Rankings" data-hi="भारत रैंकिंग">India Rankings</h2>
-        <p class="section-sub" data-en="See how states stack up, once ranking data is connected to verified sources." data-hi="सत्यापित स्रोतों से रैंकिंग डेटा जुड़ने पर देखें राज्य कहां खड़े हैं।">See how states stack up, once ranking data is connected to verified sources.</p>
+        <p class="section-sub" data-en="See how Indian states stack up across economic, educational, and demographic metrics." data-hi="देखें कि आर्थिक, शैक्षिक और जनसांख्यिकी मेट्रिक्स में भारतीय राज्य कहां खड़े हैं।">See how Indian states stack up across economic, educational, and demographic metrics.</p>
       </header>
 
       <div class="ranking-grid">
-        <article class="ranking-card">
-          <h3 data-en="Top States by Literacy" data-hi="साक्षरता में शीर्ष राज्य">Top States by Literacy</h3>
-          <p class="ranking-placeholder" data-en="Coming soon" data-hi="जल्द आ रहा है">Coming soon</p>
+        <article class="ranking-card" style="padding:20px; background:var(--surface-1); border:1px solid var(--border); border-radius:10px;">
+          <h3 data-en="Top States by Literacy" data-hi="साक्षरता में शीर्ष राज्य"><a href="rankings.html#rank-literacy-rate" style="color:inherit; text-decoration:none;">Top States by Literacy</a></h3>
+          <p style="font-size:14px; margin-top:8px; line-height:1.6;">
+            <strong>#1 Kerala:</strong> 94.0%<br>
+            <strong>#2 Lakshadweep:</strong> 91.85%<br>
+            <strong>#3 Mizoram:</strong> 91.33%
+          </p>
+          <a href="rankings.html#rank-literacy-rate" style="font-size:12px; color:var(--teal); display:inline-block; margin-top:10px;">Full Literacy Table →</a>
         </article>
-        <article class="ranking-card">
-          <h3 data-en="Top States by GDP" data-hi="जीडीपी में शीर्ष राज्य">Top States by GDP</h3>
-          <p class="ranking-placeholder" data-en="Coming soon" data-hi="जल्द आ रहा है">Coming soon</p>
+        <article class="ranking-card" style="padding:20px; background:var(--surface-1); border:1px solid var(--border); border-radius:10px;">
+          <h3 data-en="Top States by GSDP" data-hi="जीडीपी में शीर्ष राज्य"><a href="rankings.html#rank-gdp" style="color:inherit; text-decoration:none;">Top States by GSDP</a></h3>
+          <p style="font-size:14px; margin-top:8px; line-height:1.6;">
+            <strong>#1 Maharashtra:</strong> ₹38.79L Cr<br>
+            <strong>#2 Tamil Nadu:</strong> ₹23.64L Cr<br>
+            <strong>#3 Gujarat:</strong> ₹22.61L Cr
+          </p>
+          <a href="rankings.html#rank-gdp" style="font-size:12px; color:var(--teal); display:inline-block; margin-top:10px;">Full GSDP Table →</a>
         </article>
-        <article class="ranking-card">
-          <h3 data-en="Top States by Internet Access" data-hi="इंटरनेट पहुंच में शीर्ष राज्य">Top States by Internet Access</h3>
-          <p class="ranking-placeholder" data-en="Coming soon" data-hi="जल्द आ रहा है">Coming soon</p>
+        <article class="ranking-card" style="padding:20px; background:var(--surface-1); border:1px solid var(--border); border-radius:10px;">
+          <h3 data-en="Lowest Unemployment" data-hi="न्यूनतम बेरोज़गारी वाले राज्य"><a href="rankings.html#rank-unemployment-rate" style="color:inherit; text-decoration:none;">Lowest Unemployment</a></h3>
+          <p style="font-size:14px; margin-top:8px; line-height:1.6;">
+            <strong>#1 Sikkim:</strong> 1.9%<br>
+            <strong>#2 Madhya Pradesh:</strong> 2.4%<br>
+            <strong>#3 Gujarat:</strong> 2.5%
+          </p>
+          <a href="rankings.html#rank-unemployment-rate" style="font-size:12px; color:var(--teal); display:inline-block; margin-top:10px;">Full Employment Table →</a>
         </article>
-        <article class="ranking-card">
-          <h3 data-en="Top States by Life Expectancy" data-hi="जीवन प्रत्याशा में शीर्ष राज्य">Top States by Life Expectancy</h3>
-          <p class="ranking-placeholder" data-en="Coming soon" data-hi="जल्द आ रहा है">Coming soon</p>
+        <article class="ranking-card" style="padding:20px; background:var(--surface-1); border:1px solid var(--border); border-radius:10px;">
+          <h3 data-en="Highest Sex Ratio" data-hi="उच्चतम लिंगानुपात"><a href="rankings.html#rank-sex-ratio" style="color:inherit; text-decoration:none;">Highest Sex Ratio</a></h3>
+          <p style="font-size:14px; margin-top:8px; line-height:1.6;">
+            <strong>#1 Kerala:</strong> 1,084<br>
+            <strong>#2 Puducherry:</strong> 1,037<br>
+            <strong>#3 Tamil Nadu:</strong> 996
+          </p>
+          <a href="rankings.html#rank-sex-ratio" style="font-size:12px; color:var(--teal); display:inline-block; margin-top:10px;">Full Demographics Table →</a>
         </article>
       </div>
 
-      <a class="btn btn-outline" href="rankings.html" data-en="Explore Rankings →" data-hi="रैंकिंग एक्सप्लोर करें →">Explore Rankings →</a>
+      <a class="btn btn-outline" href="rankings.html" style="margin-top:24px;" data-en="Explore All Rankings →" data-hi="सभी रैंकिंग एक्सप्लोर करें →">Explore All Rankings →</a>
+    </div>
+  </section>
+
+  <!-- MASTER TOOLS & CALCULATORS -->
+  <section class="section tools-preview" id="tools" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow" data-en="Interactive Engines" data-hi="इंटरएक्टिव इंजनों">Interactive Engines</p>
+        <h2 data-en="Master Data Tools & Simulators" data-hi="मास्टर डेटा टूल्स एवं सिमुलेटर">Master Data Tools & Simulators</h2>
+        <p class="section-sub" data-en="Dynamic calculators and comparative models projecting state trajectories, global benchmarks, and growth milestones." data-hi="राज्यों के विकास, वैश्विक समकक्षों और मील के पत्थरों का अनुमान लगाने वाले गतिशील कैलकुलेटर और मॉडल।">Dynamic calculators and comparative models projecting state trajectories, global benchmarks, and growth milestones.</p>
+      </header>
+
+      <div class="story-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <a href="tools/economic-comparator.html" class="story-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; justify-content:space-between; padding:24px; border:1px solid var(--border); border-radius:12px; background:var(--surface-1);">
+          <div>
+            <span class="story-badge" style="background:var(--saffron); color:#fff; font-size:11px; padding:3px 8px; border-radius:4px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;" data-en="Economic Model" data-hi="आर्थिक मॉडल">Economic Model</span>
+            <h3 style="margin-top:14px; font-size:19px;" data-en="Economic Power & Country Comparator" data-hi="आर्थिक शक्ति एवं देश तुलनित्र">Economic Power & Country Comparator</h3>
+            <p style="font-size:14px; color:var(--text-faint); margin-top:8px; line-height:1.6;" data-en="Convert state GSDP to nominal USD, map closest sovereign nations (e.g. Maharashtra ≈ Switzerland), and calculate GDP doubling time via Rule of 72." data-hi="राज्य जीएसडीपी को अमेरिकी डॉलर में बदलें, समकक्ष संप्रभु देशों का मिलान करें और विकास दर से अर्थव्यवस्था के दोगुना होने का समय निकालें।">Convert state GSDP to nominal USD, map closest sovereign nations (e.g. Maharashtra ≈ Switzerland), and calculate GDP doubling time via Rule of 72.</p>
+          </div>
+          <span style="font-size:13px; font-weight:600; color:var(--teal); margin-top:18px;">Launch Economic Engine →</span>
+        </a>
+
+        <a href="tools/demographic-calculator.html" class="story-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; justify-content:space-between; padding:24px; border:1px solid var(--border); border-radius:12px; background:var(--surface-1);">
+          <div>
+            <span class="story-badge" style="background:var(--teal); color:#fff; font-size:11px; padding:3px 8px; border-radius:4px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;" data-en="Demographic Simulator" data-hi="जनसांख्यिकी सिमुलेटर">Demographic Simulator</span>
+            <h3 style="margin-top:14px; font-size:19px;" data-en="Demographic & Universal Literacy Projector" data-hi="जनसांख्यिकी एवं साक्षरता प्रक्षेपक">Demographic & Universal Literacy Projector</h3>
+            <p style="font-size:14px; color:var(--text-faint); margin-top:8px; line-height:1.6;" data-en="Simulate 100% universal literacy achievement years with adjustable gain rates, compare state-to-state parity gaps, and analyze gender sex ratios." data-hi="साक्षरता दर में वार्षिक वृद्धि के साथ 100% साक्षरता तक पहुंचने के वर्ष का अनुकरण करें, राज्यों के बीच अंतर और लिंगानुपात का विश्लेषण करें।">Simulate 100% universal literacy achievement years with adjustable gain rates, compare state-to-state parity gaps, and analyze gender sex ratios.</p>
+          </div>
+          <span style="font-size:13px; font-weight:600; color:var(--teal); margin-top:18px;">Launch Demographic Projector →</span>
+        </a>
+
+        <a href="explorer.html" class="story-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; justify-content:space-between; padding:24px; border:1px solid var(--border); border-radius:12px; background:var(--surface-1);">
+          <div>
+            <span class="story-badge" style="background:#8e44ad; color:#fff; font-size:11px; padding:3px 8px; border-radius:4px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;" data-en="Data Matrix" data-hi="डेटा मैट्रिक्स">Data Matrix</span>
+            <h3 style="margin-top:14px; font-size:19px;" data-en="Interactive Cross-State Explorer" data-hi="इंटरएक्टिव क्रॉस-स्टेट एक्सप्लोरर">Interactive Cross-State Explorer</h3>
+            <p style="font-size:14px; color:var(--text-faint); margin-top:8px; line-height:1.6;" data-en="Dynamic multi-metric matrix across all 36 States & UTs with sorting, filtering, percentile distribution bars, and one-click CSV export." data-hi="सॉर्टिंग, फ़िल्टरिंग, प्रतिशत वितरण और एक-क्लिक सीएसवी निर्यात के साथ सभी 36 राज्यों और केंद्र शासित प्रदेशों का बहु-मीट्रिक मैट्रिक्स।">Dynamic multi-metric matrix across all 36 States & UTs with sorting, filtering, percentile distribution bars, and one-click CSV export.</p>
+          </div>
+          <span style="font-size:13px; font-weight:600; color:var(--teal); margin-top:18px;">Open Data Explorer →</span>
+        </a>
+      </div>
+
+      <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn btn-outline" href="tools/index.html" data-en="Explore All Master Tools →" data-hi="सभी मास्टर टूल्स देखें →">Explore All Master Tools →</a>
+        <a class="btn btn-outline" href="compare.html" data-en="Side-by-Side Compare →" data-hi="साथ-साथ तुलना करें →">Side-by-Side Compare →</a>
+      </div>
     </div>
   </section>
 
@@ -365,6 +431,7 @@
 
     <nav class="footer-links" aria-label="Footer">
       <a href="about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="tools/index.html" data-en="Interactive Tools" data-hi="इंटरएक्टिव टूल्स">Interactive Tools</a>
       <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
       <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>

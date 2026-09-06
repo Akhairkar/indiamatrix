@@ -13,8 +13,9 @@ def main():
     rankings_files = glob.glob(os.path.join(root_dir, "rankings", "*.html"))
     indicators_files = glob.glob(os.path.join(root_dir, "indicators", "*.html"))
     districts_files = glob.glob(os.path.join(root_dir, "districts", "**", "*.html"), recursive=True)
+    tools_files = glob.glob(os.path.join(root_dir, "tools", "*.html"))
     
-    all_candidates = root_files + states_files + stories_files + rankings_files + indicators_files + districts_files
+    all_candidates = root_files + states_files + stories_files + rankings_files + indicators_files + districts_files + tools_files
     
     current_date = datetime.now().strftime("%Y-%m-%d")
     
@@ -59,6 +60,9 @@ def main():
         elif relative_path.startswith("states/"):
             priority = "0.9"
             changefreq = "monthly"
+        elif relative_path.startswith("tools/"):
+            priority = "0.9"
+            changefreq = "weekly"
         elif relative_path in ["districts/index.html", "compare.html", "ask.html", "history.html", "world.html"]:
             priority = "0.8"
             changefreq = "weekly"
