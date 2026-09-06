@@ -7,7 +7,9 @@
   --bg: #10182B;            /* balanced deep indigo-navy, not near-black */
   --bg-raise: #16213C;
   --surface: #1B2745;
+  --surface-1: #1E2B47;
   --surface-2: #212E4E;
+  --panel-bg: #1B2745;
   --border: rgba(232, 236, 248, 0.10);
   --border-strong: rgba(232, 236, 248, 0.18);
 
@@ -37,7 +39,9 @@
   --bg: #F4F6FB;
   --bg-raise: #FFFFFF;
   --surface: #FFFFFF;
+  --surface-1: #F0F4FF;
   --surface-2: #E9EEF8;
+  --panel-bg: #FFFFFF;
   --border: rgba(16, 24, 43, 0.12);
   --border-strong: rgba(16, 24, 43, 0.22);
 
@@ -59,7 +63,9 @@
     --bg: #F4F6FB;
     --bg-raise: #FFFFFF;
     --surface: #FFFFFF;
+    --surface-1: #F0F4FF;
     --surface-2: #E9EEF8;
+    --panel-bg: #FFFFFF;
     --border: rgba(16, 24, 43, 0.12);
     --border-strong: rgba(16, 24, 43, 0.22);
 
@@ -180,9 +186,19 @@ h1, h2, h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(16, 24, 43, 0.82);
+  background: rgba(16, 24, 43, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(244, 246, 251, 0.92);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) .site-header {
+    background: rgba(244, 246, 251, 0.92);
+  }
 }
 
 .header-row {
@@ -252,6 +268,36 @@ h1, h2, h3 {
   cursor: pointer;
 }
 .hamburger span { height: 2px; width: 16px; background: var(--text); margin: 0 auto; display: block; }
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+.theme-toggle-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 
 /* =========================================================
    Buttons / shared
