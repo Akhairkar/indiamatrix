@@ -250,12 +250,5 @@
     if (heroSearchBtn) {
       heroSearchBtn.addEventListener('click', () => openSearchWith(heroSearchInput.value));
     }
-
-    heroTryLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openSearchWith(link.textContent.trim());
-      });
-    });
   }
 })();

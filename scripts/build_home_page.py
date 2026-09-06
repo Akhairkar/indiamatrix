@@ -1,112 +1,72 @@
-<!DOCTYPE html>
-<html lang="en" data-lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IndiaMetrix — India, Explained Through Data</title>
-<meta name="description" content="IndiaMetrix is an independent data platform for exploring India's economy, population, education, healthcare and more through verified statistics, charts, rankings and comparisons.">
-<link rel="canonical" href="https://www.indiametrix.in/">
+import re
+import os
+import json
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="IndiaMetrix — India, Explained Through Data">
-<meta property="og:description" content="Explore India's economy, population, education, healthcare, states and districts through verified data, charts, rankings and comparisons.">
-<meta property="og:url" content="https://www.indiametrix.in/">
-<meta property="og:locale" content="en_IN">
-<meta property="og:locale:alternate" content="hi_IN">
-<meta property="og:image" content="/assets/images/og-cover.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0D1424">
+def get_svg_map():
+    # Coordinated simplified polygonal SVG map of India on 600x700 viewBox
+    states_coords = {
+        "ladakh": "M 210,35 L 285,45 L 320,85 L 290,115 L 245,100 L 225,65 Z",
+        "jammu-kashmir": "M 165,75 L 225,65 L 245,100 L 210,125 L 165,110 Z",
+        "himachal-pradesh": "M 210,125 L 255,105 L 280,135 L 245,160 L 205,145 Z",
+        "punjab": "M 170,125 L 205,145 L 215,180 L 165,175 Z",
+        "chandigarh": "M 215,165 L 225,165 L 225,175 L 215,175 Z",
+        "uttarakhand": "M 245,160 L 280,135 L 315,170 L 275,195 Z",
+        "haryana": "M 205,170 L 240,170 L 245,215 L 195,205 Z",
+        "delhi": "M 235,195 L 250,195 L 250,210 L 235,210 Z",
+        "rajasthan": "M 115,185 L 195,205 L 225,250 L 180,305 L 110,265 Z",
+        "uttar-pradesh": "M 245,200 L 325,185 L 380,245 L 315,285 L 240,245 Z",
+        "bihar": "M 375,235 L 435,235 L 445,275 L 380,285 Z",
+        "west-bengal": "M 425,275 L 455,275 L 475,340 L 440,375 L 420,335 Z",
+        "jharkhand": "M 370,285 L 430,285 L 425,340 L 375,340 Z",
+        "odisha": "M 360,340 L 425,340 L 435,400 L 385,445 L 345,410 Z",
+        "chhattisgarh": "M 315,315 L 365,315 L 350,420 L 315,400 Z",
+        "madhya-pradesh": "M 205,255 L 315,255 L 325,335 L 230,345 L 195,305 Z",
+        "gujarat": "M 75,265 L 145,265 L 175,325 L 135,365 L 75,325 Z",
+        "maharashtra": "M 155,335 L 255,335 L 285,415 L 205,455 L 155,405 Z",
+        "goa": "M 175,475 L 190,475 L 190,495 L 175,495 Z",
+        "karnataka": "M 180,445 L 235,435 L 245,545 L 195,545 Z",
+        "telangana": "M 245,395 L 315,385 L 305,465 L 245,445 Z",
+        "andhra-pradesh": "M 245,465 L 340,435 L 350,515 L 265,555 Z",
+        "kerala": "M 195,545 L 225,545 L 220,645 L 190,625 Z",
+        "tamil-nadu": "M 225,545 L 275,545 L 270,645 L 220,645 Z",
+        "puducherry": "M 275,575 L 285,575 L 285,585 L 275,585 Z",
+        "sikkim": "M 425,195 L 445,195 L 445,225 L 425,225 Z",
+        "assam": "M 465,225 L 545,225 L 535,265 L 465,265 Z",
+        "arunachal-pradesh": "M 505,165 L 590,165 L 575,220 L 515,210 Z",
+        "nagaland": "M 550,230 L 585,230 L 580,265 L 545,265 Z",
+        "manipur": "M 545,270 L 580,270 L 575,310 L 540,310 Z",
+        "mizoram": "M 525,315 L 555,315 L 550,365 L 520,355 Z",
+        "tripura": "M 495,305 L 520,305 L 520,345 L 495,335 Z",
+        "meghalaya": "M 470,255 L 515,255 L 515,280 L 470,280 Z",
+        "dadra-nagar-haveli-daman-diu": "M 135,365 L 148,365 L 148,378 L 135,378 Z",
+        "lakshadweep": "M 135,590 L 155,590 L 155,620 L 135,620 Z",
+        "andaman-nicobar": "M 515,520 L 535,520 L 535,620 L 515,620 Z"
+    }
+    
+    svg = '<svg viewBox="0 0 620 680" class="india-vector-map" aria-label="Interactive Map of Indian States" role="img">\n'
+    svg += '  <defs>\n'
+    svg += '    <filter id="glow-teal" x="-20%" y="-20%" width="140%" height="140%">\n'
+    svg += '      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2BB7A0" flood-opacity="0.6"/>\n'
+    svg += '    </filter>\n'
+    svg += '  </defs>\n'
+    svg += '  <g class="map-subcontinent" stroke="rgba(232,236,248,0.18)" stroke-width="1.2">\n'
+    
+    for sid, d in states_coords.items():
+        name = sid.replace("-", " ").title()
+        svg += f'    <path d="{d}" data-state-id="{sid}" id="map-path-{sid}"><title>{name} - Click for profile</title></path>\n'
+        
+    svg += '  </g>\n'
+    svg += '</svg>\n'
+    return svg
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+def build():
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    index_path = os.path.join(root, "index.html")
+    with open(index_path, "r", encoding="utf-8") as f:
+        html = f.read()
 
-<link rel="stylesheet" href="assets/css/style.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "IndiaMetrix",
-  "url": "https://www.indiametrix.in/",
-  "description": "An independent India data intelligence platform for statistics, rankings and comparisons.",
-  "inLanguage": ["en", "hi"]
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
-</head>
-<body>
-
-<a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="bg-field" aria-hidden="true">
-  <div class="bg-grid"></div>
-  <div class="bg-glow bg-glow--saffron"></div>
-  <div class="bg-glow bg-glow--teal"></div>
-  <div class="bg-dotmap"></div>
-</div>
-
-<header class="site-header">
-  <div class="wrap header-row">
-    <a class="brand" href="./" aria-label="IndiaMetrix home">
-      <span class="brand-mark" aria-hidden="true">IM</span>
-      <span class="brand-text">
-        <span class="brand-name">IndiaMetrix</span>
-        <span class="brand-tag" data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</span>
-      </span>
-    </a>
-
-    <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="#explore" data-en="Explore" data-hi="एक्सप्लोर">Explore</a>
-      <a href="rankings.html" data-en="Rankings" data-hi="रैंकिंग">Rankings</a>
-      <a href="districts/index.html" data-en="Districts" data-hi="ज़िले">Districts</a>
-      <a href="tools/index.html" data-en="Tools" data-hi="टूल्स">Tools</a>
-      <a href="compare.html" data-en="Compare" data-hi="तुलना">Compare</a>
-      <a href="history.html" data-en="History" data-hi="इतिहास">History</a>
-      <a href="world.html" data-en="World" data-hi="विश्व">World</a>
-      <a href="explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
-      <a href="ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
-      <a href="#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
-    </nav>
-
-    <div class="header-actions">
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-btn is-active" data-set-lang="en">EN</button>
-        <span class="lang-sep" aria-hidden="true">|</span>
-        <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
-      </div>
-      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">🌓</button>
-      <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow" data-en="Independent India Data Platform" data-hi="स्वतंत्र भारत डेटा प्लेटफ़ॉर्म">Independent India Data Platform</p>
-        <h1 data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</h1>
-        <p class="hero-sub" data-en="Explore India's economy, population, education, healthcare, employment, states, districts and more — through clear data, charts and comparisons." data-hi="भारत की अर्थव्यवस्था, जनसंख्या, शिक्षा, स्वास्थ्य, रोज़गार, राज्यों और ज़िलों को स्पष्ट डेटा, चार्ट और तुलनाओं के ज़रिए एक्सप्लोर करें।">Explore India's economy, population, education, healthcare, employment, states, districts and more — through clear data, charts and comparisons.</p>
-
-        <form class="search-box" role="search" onsubmit="return false;">
-          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" data-en-placeholder="Search India, a state, district, indicator or comparison..." data-hi-placeholder="भारत, राज्य, ज़िला, संकेतक या तुलना खोजें..." placeholder="Search India, a state, district, indicator or comparison..." aria-label="Search IndiaMetrix">
-          <button type="button" commandfor="search-dialog" command="show-modal" data-en="Search" data-hi="खोजें">Search</button>
-        </form>
-
-        <p class="search-hint">
-          <span data-en="Try:" data-hi="आज़माएं:">Try:</span>
-          <a href="indicators/gdp-current-usd.html">India GDP</a> • <a href="states/maharashtra.html">Maharashtra</a> • <a href="rankings.html#rank-literacy-rate">Literacy Rate</a> • <a href="world.html">India vs World</a>
-        </p>
-      </div>
-
-            <div class="hero-visual">
+    # 1. Update Hero Visual
+    new_hero_visual = """      <div class="hero-visual">
         <a href="indicators/gdp-current-usd.html" class="orbit-card orbit-card--1" title="India GDP Deep Dive">
           <span class="orbit-label">National GDP</span>
           <span class="orbit-value">$3.96T</span>
@@ -139,11 +99,11 @@
           </svg>
           <span style="font-family: var(--font-mono); font-size: 11px; color: var(--teal); margin-top: 6px; letter-spacing: 0.08em; text-transform: uppercase;">Verified Data Matrix</span>
         </div>
-      </div>
-    </div>
-  </section>
+      </div>"""
+    html = re.sub(r'<div class="hero-visual" aria-hidden="true">.*?</div>\s*</div>\s*</section>', new_hero_visual + '\n    </div>\n  </section>', html, flags=re.DOTALL)
 
-    <!-- INDIA AT A GLANCE -->
+    # 2. Update India at a Glance
+    new_glance = """  <!-- INDIA AT A GLANCE -->
   <section class="section glance" id="glance">
     <div class="wrap">
       <header class="section-head">
@@ -210,9 +170,12 @@
         </a>
       </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- INDIA AT A GLANCE -->.*?<!-- EXPLORE INDIA -->', new_glance + '\n\n  <!-- EXPLORE INDIA -->', html, flags=re.DOTALL)
 
-    <!-- EXPLORE INDIA -->
+    # 3. Update Explore India with SVG Map
+    svg_map = get_svg_map()
+    new_explore = f"""  <!-- EXPLORE INDIA -->
   <section class="section explore" id="explore">
     <div class="wrap explore-grid">
       <div class="explore-copy">
@@ -248,52 +211,7 @@
           </div>
 
           <div class="home-map-svg-wrap" id="home-map-container">
-            <svg viewBox="0 0 620 680" class="india-vector-map" aria-label="Interactive Map of Indian States" role="img">
-  <defs>
-    <filter id="glow-teal" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2BB7A0" flood-opacity="0.6"/>
-    </filter>
-  </defs>
-  <g class="map-subcontinent" stroke="rgba(232,236,248,0.18)" stroke-width="1.2">
-    <path d="M 210,35 L 285,45 L 320,85 L 290,115 L 245,100 L 225,65 Z" data-state-id="ladakh" id="map-path-ladakh"><title>Ladakh - Click for profile</title></path>
-    <path d="M 165,75 L 225,65 L 245,100 L 210,125 L 165,110 Z" data-state-id="jammu-kashmir" id="map-path-jammu-kashmir"><title>Jammu Kashmir - Click for profile</title></path>
-    <path d="M 210,125 L 255,105 L 280,135 L 245,160 L 205,145 Z" data-state-id="himachal-pradesh" id="map-path-himachal-pradesh"><title>Himachal Pradesh - Click for profile</title></path>
-    <path d="M 170,125 L 205,145 L 215,180 L 165,175 Z" data-state-id="punjab" id="map-path-punjab"><title>Punjab - Click for profile</title></path>
-    <path d="M 215,165 L 225,165 L 225,175 L 215,175 Z" data-state-id="chandigarh" id="map-path-chandigarh"><title>Chandigarh - Click for profile</title></path>
-    <path d="M 245,160 L 280,135 L 315,170 L 275,195 Z" data-state-id="uttarakhand" id="map-path-uttarakhand"><title>Uttarakhand - Click for profile</title></path>
-    <path d="M 205,170 L 240,170 L 245,215 L 195,205 Z" data-state-id="haryana" id="map-path-haryana"><title>Haryana - Click for profile</title></path>
-    <path d="M 235,195 L 250,195 L 250,210 L 235,210 Z" data-state-id="delhi" id="map-path-delhi"><title>Delhi - Click for profile</title></path>
-    <path d="M 115,185 L 195,205 L 225,250 L 180,305 L 110,265 Z" data-state-id="rajasthan" id="map-path-rajasthan"><title>Rajasthan - Click for profile</title></path>
-    <path d="M 245,200 L 325,185 L 380,245 L 315,285 L 240,245 Z" data-state-id="uttar-pradesh" id="map-path-uttar-pradesh"><title>Uttar Pradesh - Click for profile</title></path>
-    <path d="M 375,235 L 435,235 L 445,275 L 380,285 Z" data-state-id="bihar" id="map-path-bihar"><title>Bihar - Click for profile</title></path>
-    <path d="M 425,275 L 455,275 L 475,340 L 440,375 L 420,335 Z" data-state-id="west-bengal" id="map-path-west-bengal"><title>West Bengal - Click for profile</title></path>
-    <path d="M 370,285 L 430,285 L 425,340 L 375,340 Z" data-state-id="jharkhand" id="map-path-jharkhand"><title>Jharkhand - Click for profile</title></path>
-    <path d="M 360,340 L 425,340 L 435,400 L 385,445 L 345,410 Z" data-state-id="odisha" id="map-path-odisha"><title>Odisha - Click for profile</title></path>
-    <path d="M 315,315 L 365,315 L 350,420 L 315,400 Z" data-state-id="chhattisgarh" id="map-path-chhattisgarh"><title>Chhattisgarh - Click for profile</title></path>
-    <path d="M 205,255 L 315,255 L 325,335 L 230,345 L 195,305 Z" data-state-id="madhya-pradesh" id="map-path-madhya-pradesh"><title>Madhya Pradesh - Click for profile</title></path>
-    <path d="M 75,265 L 145,265 L 175,325 L 135,365 L 75,325 Z" data-state-id="gujarat" id="map-path-gujarat"><title>Gujarat - Click for profile</title></path>
-    <path d="M 155,335 L 255,335 L 285,415 L 205,455 L 155,405 Z" data-state-id="maharashtra" id="map-path-maharashtra"><title>Maharashtra - Click for profile</title></path>
-    <path d="M 175,475 L 190,475 L 190,495 L 175,495 Z" data-state-id="goa" id="map-path-goa"><title>Goa - Click for profile</title></path>
-    <path d="M 180,445 L 235,435 L 245,545 L 195,545 Z" data-state-id="karnataka" id="map-path-karnataka"><title>Karnataka - Click for profile</title></path>
-    <path d="M 245,395 L 315,385 L 305,465 L 245,445 Z" data-state-id="telangana" id="map-path-telangana"><title>Telangana - Click for profile</title></path>
-    <path d="M 245,465 L 340,435 L 350,515 L 265,555 Z" data-state-id="andhra-pradesh" id="map-path-andhra-pradesh"><title>Andhra Pradesh - Click for profile</title></path>
-    <path d="M 195,545 L 225,545 L 220,645 L 190,625 Z" data-state-id="kerala" id="map-path-kerala"><title>Kerala - Click for profile</title></path>
-    <path d="M 225,545 L 275,545 L 270,645 L 220,645 Z" data-state-id="tamil-nadu" id="map-path-tamil-nadu"><title>Tamil Nadu - Click for profile</title></path>
-    <path d="M 275,575 L 285,575 L 285,585 L 275,585 Z" data-state-id="puducherry" id="map-path-puducherry"><title>Puducherry - Click for profile</title></path>
-    <path d="M 425,195 L 445,195 L 445,225 L 425,225 Z" data-state-id="sikkim" id="map-path-sikkim"><title>Sikkim - Click for profile</title></path>
-    <path d="M 465,225 L 545,225 L 535,265 L 465,265 Z" data-state-id="assam" id="map-path-assam"><title>Assam - Click for profile</title></path>
-    <path d="M 505,165 L 590,165 L 575,220 L 515,210 Z" data-state-id="arunachal-pradesh" id="map-path-arunachal-pradesh"><title>Arunachal Pradesh - Click for profile</title></path>
-    <path d="M 550,230 L 585,230 L 580,265 L 545,265 Z" data-state-id="nagaland" id="map-path-nagaland"><title>Nagaland - Click for profile</title></path>
-    <path d="M 545,270 L 580,270 L 575,310 L 540,310 Z" data-state-id="manipur" id="map-path-manipur"><title>Manipur - Click for profile</title></path>
-    <path d="M 525,315 L 555,315 L 550,365 L 520,355 Z" data-state-id="mizoram" id="map-path-mizoram"><title>Mizoram - Click for profile</title></path>
-    <path d="M 495,305 L 520,305 L 520,345 L 495,335 Z" data-state-id="tripura" id="map-path-tripura"><title>Tripura - Click for profile</title></path>
-    <path d="M 470,255 L 515,255 L 515,280 L 470,280 Z" data-state-id="meghalaya" id="map-path-meghalaya"><title>Meghalaya - Click for profile</title></path>
-    <path d="M 135,365 L 148,365 L 148,378 L 135,378 Z" data-state-id="dadra-nagar-haveli-daman-diu" id="map-path-dadra-nagar-haveli-daman-diu"><title>Dadra Nagar Haveli Daman Diu - Click for profile</title></path>
-    <path d="M 135,590 L 155,590 L 155,620 L 135,620 Z" data-state-id="lakshadweep" id="map-path-lakshadweep"><title>Lakshadweep - Click for profile</title></path>
-    <path d="M 515,520 L 535,520 L 535,620 L 515,620 Z" data-state-id="andaman-nicobar" id="map-path-andaman-nicobar"><title>Andaman Nicobar - Click for profile</title></path>
-  </g>
-</svg>
-
+            {svg_map}
           </div>
 
           <!-- Dynamic Floating State HUD -->
@@ -303,9 +221,41 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- EXPLORE INDIA -->.*?<!-- CATEGORIES -->', new_explore + '\n\n  <!-- CATEGORIES -->', html, flags=re.DOTALL)
 
-    <!-- CATEGORIES -->
+    # 4. Update Categories with Static 18 Clickable Cards
+    categories = [
+        {"icon": "📊", "en": "Economy", "hi": "अर्थव्यवस्था", "enDesc": "GDP, growth, trade and inflation.", "hiDesc": "जीडीपी, विकास, व्यापार और महंगाई।", "url": "indicators/gdp-current-usd.html"},
+        {"icon": "👥", "en": "Population", "hi": "जनसंख्या", "enDesc": "Census, density and demographics.", "hiDesc": "जनगणना, घनत्व और जनसांख्यिकी।", "url": "indicators/population.html"},
+        {"icon": "🎓", "en": "Education", "hi": "शिक्षा", "enDesc": "Literacy, enrolment and outcomes.", "hiDesc": "साक्षरता, नामांकन और परिणाम।", "url": "indicators/literacy-rate.html"},
+        {"icon": "🏥", "en": "Healthcare", "hi": "स्वास्थ्य", "enDesc": "Life expectancy, access and outcomes.", "hiDesc": "जीवन प्रत्याशा, पहुंच और परिणाम।", "url": "indicators/life-expectancy.html"},
+        {"icon": "💼", "en": "Employment", "hi": "रोज़गार", "enDesc": "Jobs, wages and labour force data.", "hiDesc": "रोज़गार, वेतन और श्रम बल डेटा।", "url": "indicators/unemployment-rate.html"},
+        {"icon": "🌾", "en": "Agriculture", "hi": "कृषि", "enDesc": "Crops, yield and rural livelihoods.", "hiDesc": "फसलें, उपज और ग्रामीण आजीविका।", "url": "explorer.html"},
+        {"icon": "🏗️", "en": "Infrastructure", "hi": "बुनियादी ढांचा", "enDesc": "Roads, housing and connectivity.", "hiDesc": "सड़कें, आवास और कनेक्टिविटी।", "url": "explorer.html"},
+        {"icon": "⚡", "en": "Energy", "hi": "ऊर्जा", "enDesc": "Power generation, access and mix.", "hiDesc": "बिजली उत्पादन, पहुंच और मिश्रण।", "url": "indicators/1-1_access-electricity-tot.html"},
+        {"icon": "🌳", "en": "Environment", "hi": "पर्यावरण", "enDesc": "Emissions, forests and air quality.", "hiDesc": "उत्सर्जन, वन और वायु गुणवत्ता।", "url": "explorer.html"},
+        {"icon": "🛡️", "en": "Crime & Safety", "hi": "अपराध व सुरक्षा", "enDesc": "Crime rates and public safety.", "hiDesc": "अपराध दर और सार्वजनिक सुरक्षा।", "url": "explorer.html"},
+        {"icon": "👶", "en": "Women & Children", "hi": "महिला व बच्चे", "enDesc": "Health, safety and welfare indicators.", "hiDesc": "स्वास्थ्य, सुरक्षा और कल्याण संकेतक।", "url": "rankings.html#rank-sex-ratio"},
+        {"icon": "🤝", "en": "Social Development", "hi": "सामाजिक विकास", "enDesc": "Human development and welfare.", "hiDesc": "मानव विकास और कल्याण।", "url": "history.html"},
+        {"icon": "📱", "en": "Digital India", "hi": "डिजिटल इंडिया", "enDesc": "Internet, mobile and digital access.", "hiDesc": "इंटरनेट, मोबाइल और डिजिटल पहुंच।", "url": "stories/digital.html"},
+        {"icon": "🏦", "en": "Banking & Finance", "hi": "बैंकिंग व वित्त", "enDesc": "Credit, inclusion and markets.", "hiDesc": "ऋण, समावेशन और बाज़ार।", "url": "tools/economic-comparator.html"},
+        {"icon": "🏛️", "en": "Government & Governance", "hi": "सरकार व शासन", "enDesc": "Budgets, policy and administration.", "hiDesc": "बजट, नीति और प्रशासन।", "url": "methodology.html"},
+        {"icon": "🗺️", "en": "States & Districts", "hi": "राज्य व ज़िले", "enDesc": "Regional profiles across India.", "hiDesc": "भारत भर के क्षेत्रीय प्रोफ़ाइल।", "url": "districts/index.html"},
+        {"icon": "🌍", "en": "India vs World", "hi": "भारत बनाम विश्व", "enDesc": "Global rankings and benchmarks.", "hiDesc": "वैश्विक रैंकिंग और मानक।", "url": "world.html"},
+        {"icon": "📈", "en": "Poverty", "hi": "गरीबी", "enDesc": "Income, deprivation and inequality.", "hiDesc": "आय, अभाव और असमानता।", "url": "explorer.html"}
+    ]
+    
+    cat_cards = ""
+    for c in categories:
+        cat_cards += f"""        <a href="{c['url']}" class="category-card" style="text-decoration:none; color:inherit;">
+          <span class="category-icon" aria-hidden="true">{c['icon']}</span>
+          <h3 data-en="{c['en']}" data-hi="{c['hi']}">{c['en']}</h3>
+          <p data-en="{c['enDesc']}" data-hi="{c['hiDesc']}">{c['enDesc']}</p>
+          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
+        </a>\n"""
+
+    new_categories = f"""  <!-- CATEGORIES -->
   <section class="section categories" id="categories">
     <div class="wrap">
       <header class="section-head">
@@ -315,119 +265,13 @@
       </header>
 
       <div class="category-grid" id="category-grid">
-        <a href="indicators/gdp-current-usd.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">📊</span>
-          <h3 data-en="Economy" data-hi="अर्थव्यवस्था">Economy</h3>
-          <p data-en="GDP, growth, trade and inflation." data-hi="जीडीपी, विकास, व्यापार और महंगाई।">GDP, growth, trade and inflation.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="indicators/population.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">👥</span>
-          <h3 data-en="Population" data-hi="जनसंख्या">Population</h3>
-          <p data-en="Census, density and demographics." data-hi="जनगणना, घनत्व और जनसांख्यिकी।">Census, density and demographics.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="indicators/literacy-rate.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🎓</span>
-          <h3 data-en="Education" data-hi="शिक्षा">Education</h3>
-          <p data-en="Literacy, enrolment and outcomes." data-hi="साक्षरता, नामांकन और परिणाम।">Literacy, enrolment and outcomes.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="indicators/life-expectancy.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🏥</span>
-          <h3 data-en="Healthcare" data-hi="स्वास्थ्य">Healthcare</h3>
-          <p data-en="Life expectancy, access and outcomes." data-hi="जीवन प्रत्याशा, पहुंच और परिणाम।">Life expectancy, access and outcomes.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="indicators/unemployment-rate.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">💼</span>
-          <h3 data-en="Employment" data-hi="रोज़गार">Employment</h3>
-          <p data-en="Jobs, wages and labour force data." data-hi="रोज़गार, वेतन और श्रम बल डेटा।">Jobs, wages and labour force data.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="explorer.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🌾</span>
-          <h3 data-en="Agriculture" data-hi="कृषि">Agriculture</h3>
-          <p data-en="Crops, yield and rural livelihoods." data-hi="फसलें, उपज और ग्रामीण आजीविका।">Crops, yield and rural livelihoods.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="explorer.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🏗️</span>
-          <h3 data-en="Infrastructure" data-hi="बुनियादी ढांचा">Infrastructure</h3>
-          <p data-en="Roads, housing and connectivity." data-hi="सड़कें, आवास और कनेक्टिविटी।">Roads, housing and connectivity.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="indicators/1-1_access-electricity-tot.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">⚡</span>
-          <h3 data-en="Energy" data-hi="ऊर्जा">Energy</h3>
-          <p data-en="Power generation, access and mix." data-hi="बिजली उत्पादन, पहुंच और मिश्रण।">Power generation, access and mix.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="explorer.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🌳</span>
-          <h3 data-en="Environment" data-hi="पर्यावरण">Environment</h3>
-          <p data-en="Emissions, forests and air quality." data-hi="उत्सर्जन, वन और वायु गुणवत्ता।">Emissions, forests and air quality.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="explorer.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🛡️</span>
-          <h3 data-en="Crime & Safety" data-hi="अपराध व सुरक्षा">Crime & Safety</h3>
-          <p data-en="Crime rates and public safety." data-hi="अपराध दर और सार्वजनिक सुरक्षा।">Crime rates and public safety.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="rankings.html#rank-sex-ratio" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">👶</span>
-          <h3 data-en="Women & Children" data-hi="महिला व बच्चे">Women & Children</h3>
-          <p data-en="Health, safety and welfare indicators." data-hi="स्वास्थ्य, सुरक्षा और कल्याण संकेतक।">Health, safety and welfare indicators.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="history.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🤝</span>
-          <h3 data-en="Social Development" data-hi="सामाजिक विकास">Social Development</h3>
-          <p data-en="Human development and welfare." data-hi="मानव विकास और कल्याण।">Human development and welfare.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="stories/digital.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">📱</span>
-          <h3 data-en="Digital India" data-hi="डिजिटल इंडिया">Digital India</h3>
-          <p data-en="Internet, mobile and digital access." data-hi="इंटरनेट, मोबाइल और डिजिटल पहुंच।">Internet, mobile and digital access.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="tools/economic-comparator.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🏦</span>
-          <h3 data-en="Banking & Finance" data-hi="बैंकिंग व वित्त">Banking & Finance</h3>
-          <p data-en="Credit, inclusion and markets." data-hi="ऋण, समावेशन और बाज़ार।">Credit, inclusion and markets.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="methodology.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🏛️</span>
-          <h3 data-en="Government & Governance" data-hi="सरकार व शासन">Government & Governance</h3>
-          <p data-en="Budgets, policy and administration." data-hi="बजट, नीति और प्रशासन।">Budgets, policy and administration.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="districts/index.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🗺️</span>
-          <h3 data-en="States & Districts" data-hi="राज्य व ज़िले">States & Districts</h3>
-          <p data-en="Regional profiles across India." data-hi="भारत भर के क्षेत्रीय प्रोफ़ाइल।">Regional profiles across India.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="world.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">🌍</span>
-          <h3 data-en="India vs World" data-hi="भारत बनाम विश्व">India vs World</h3>
-          <p data-en="Global rankings and benchmarks." data-hi="वैश्विक रैंकिंग और मानक।">Global rankings and benchmarks.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-        <a href="explorer.html" class="category-card" style="text-decoration:none; color:inherit;">
-          <span class="category-icon" aria-hidden="true">📈</span>
-          <h3 data-en="Poverty" data-hi="गरीबी">Poverty</h3>
-          <p data-en="Income, deprivation and inequality." data-hi="आय, अभाव और असमानता।">Income, deprivation and inequality.</p>
-          <span class="category-cta" data-en="Explore →" data-hi="एक्सप्लोर करें →">Explore →</span>
-        </a>
-      </div>
+{cat_cards}      </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- CATEGORIES -->.*?<!-- COMPARE -->', new_categories + '\n\n  <!-- COMPARE -->', html, flags=re.DOTALL)
 
-    <!-- COMPARE -->
+    # 5. Update Compare with Live Interactive Tool
+    new_compare = """  <!-- COMPARE -->
   <section class="section compare" id="compare">
     <div class="wrap compare-grid">
       <div class="compare-copy">
@@ -449,9 +293,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- COMPARE -->.*?<!-- RANKINGS -->', new_compare + '\n\n  <!-- RANKINGS -->', html, flags=re.DOTALL)
 
-    <!-- RANKINGS -->
+    # 6. Update Rankings with Visual Horizontal Bar Charts
+    new_rankings = """  <!-- RANKINGS -->
   <section class="section rankings" id="rankings">
     <div class="wrap">
       <header class="section-head">
@@ -536,9 +382,11 @@
 
       <a class="btn btn-outline" href="rankings.html" data-en="Explore All Rankings &amp; Tables →" data-hi="सभी रैंकिंग व तालिकाएं देखें →">Explore All Rankings &amp; Tables →</a>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- RANKINGS -->.*?<!-- MASTER TOOLS & CALCULATORS -->', new_rankings + '\n\n  <!-- MASTER TOOLS & CALCULATORS -->', html, flags=re.DOTALL)
 
-    <!-- MASTER TOOLS & CALCULATORS -->
+    # 7. Update Master Tools Section with Quick Mini Calculator
+    new_tools = """  <!-- MASTER TOOLS & CALCULATORS -->
   <section class="section tools-preview" id="tools" style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
       <header class="section-head">
@@ -618,43 +466,11 @@
         <a class="btn btn-outline" href="compare.html" data-en="Side-by-Side Compare →" data-hi="साथ-साथ तुलना करें →">Side-by-Side Compare →</a>
       </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- MASTER TOOLS & CALCULATORS -->.*?<!-- DATA STORIES -->', new_tools + '\n\n  <!-- DATA STORIES -->', html, flags=re.DOTALL)
 
-  <!-- DATA STORIES -->
-  <section class="section stories" id="stories">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</p>
-        <h2 data-en="Told Through Data" data-hi="डेटा के ज़रिए कही गई कहानियां">Told Through Data</h2>
-        <p class="section-sub" data-en="Editorial reads that turn verified statistics into context and narrative." data-hi="संपादकीय लेख जो सत्यापित आंकड़ों को संदर्भ और कथा में बदलते हैं।">Editorial reads that turn verified statistics into context and narrative.</p>
-      </header>
-
-      <div class="story-grid">
-        <a href="stories/population.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
-          <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
-          <h3 data-en="India's Changing Population" data-hi="भारत की बदलती जनसंख्या">India's Changing Population</h3>
-          <p data-en="How growth, ageing and migration are reshaping the country." data-hi="विकास, वृद्धावस्था और प्रवासन देश को कैसे बदल रहे हैं।">How growth, ageing and migration are reshaping the country.</p>
-        </a>
-        <a href="stories/literacy.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
-          <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
-          <h3 data-en="The Story of India's Literacy" data-hi="भारत की साक्षरता की कहानी">The Story of India's Literacy</h3>
-          <p data-en="Decades of progress, and the gaps that remain." data-hi="दशकों की प्रगति, और शेष बचीं खाइयां।">Decades of progress, and the gaps that remain.</p>
-        </a>
-        <a href="stories/growth.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
-          <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="New" data-hi="नया">New</span>
-          <h3 data-en="How Indian States Compare" data-hi="भारतीय राज्यों की तुलना कैसी है">How Indian States Compare</h3>
-          <p data-en="A first look at the states pulling ahead — and why." data-hi="आगे बढ़ रहे राज्यों पर एक पहली नज़र — और क्यों।">A first look at the states pulling ahead — and why.</p>
-        </a>
-        <a href="stories/digital.html" class="story-card" style="text-decoration:none; color:inherit; display:block;">
-          <span class="story-badge" style="background:var(--teal); color:#fff;" data-en="Interactive" data-hi="इंटरैक्टिव">Interactive</span>
-          <h3 data-en="Digital India Revolution" data-hi="डिजिटल भारत क्रांति">Digital India Revolution</h3>
-          <p data-en="Tracking the growth of internet subscribers and mobile broadband across Indian states." data-hi="भारतीय राज्यों में इंटरनेट उपभोक्ताओं और मोबाइल ब्रॉडबैंड की वृद्धि का विश्लेषण।">Tracking the growth of internet subscribers and mobile broadband across Indian states.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <!-- WHY INDIAMETRIX -->
+    # 8. Update Why IndiaMetrix with Clickable Links
+    new_why = """  <!-- WHY INDIAMETRIX -->
   <section class="section why" id="about">
     <div class="wrap">
       <header class="section-head">
@@ -681,74 +497,16 @@
         </a>
       </div>
     </div>
-  </section>
+  </section>"""
+    html = re.sub(r'<!-- WHY INDIAMETRIX -->.*?<!-- TRUST / SOURCES -->', new_why + '\n\n  <!-- TRUST / SOURCES -->', html, flags=re.DOTALL)
 
-  <!-- TRUST / SOURCES -->
-  <section class="section trust">
-    <div class="wrap trust-inner">
-      <p class="trust-lead" data-en="Built for people who want to understand India through data." data-hi="उनके लिए बनाया गया जो डेटा के ज़रिए भारत को समझना चाहते हैं।">Built for people who want to understand India through data.</p>
-      <div class="trust-tags">
-        <span data-en="Government Data" data-hi="सरकारी डेटा">Government Data</span>
-        <span data-en="Official Statistics" data-hi="आधिकारिक आंकड़े">Official Statistics</span>
-        <span data-en="International Institutions" data-hi="अंतरराष्ट्रीय संस्थान">International Institutions</span>
-        <span data-en="Public Datasets" data-hi="सार्वजनिक डेटासेट">Public Datasets</span>
-      </div>
-      <p class="trust-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
-    </div>
-  </section>
+    # 9. Add assets/js/home.js script tag before assets/js/search.js
+    if 'src="assets/js/home.js"' not in html:
+        html = html.replace('<script src="assets/js/search.js"></script>', '<script src="assets/js/home.js"></script>\n<script src="assets/js/search.js"></script>')
 
-</main>
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print("Upgraded index.html successfully.")
 
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <span class="brand-name">IndiaMetrix</span>
-      <p data-en="India, Explained Through Data." data-hi="डेटा के ज़रिए भारत को समझें।">India, Explained Through Data.</p>
-    </div>
-
-    <nav class="footer-links" aria-label="Footer">
-      <a href="about.html" data-en="About" data-hi="परिचय">About</a>
-      <a href="tools/index.html" data-en="Interactive Tools" data-hi="इंटरएक्टिव टूल्स">Interactive Tools</a>
-      <a href="sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
-      <a href="methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
-      <a href="terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
-      <a href="disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-    </nav>
-
-    <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
-    <p class="footer-copy">© 2026 IndiaMetrix.</p>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
-
-<!-- Search Dialog -->
-<dialog id="search-dialog" class="im-search-dialog" closedby="any">
-  <div class="search-dialog-header">
-    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" class="search-dialog-input" placeholder="Search for states, indicators..." autofocus>
-    <button commandfor="search-dialog" command="close" class="search-dialog-close" aria-label="Close search">×</button>
-  </div>
-  <div class="search-dialog-body">
-    <p class="search-hint" style="margin-bottom: 12px; font-weight: 600;">Suggested Searches</p>
-    <ul class="search-suggestions">
-      <li><a href="india.html">India Overview</a></li>
-      <li><a href="explorer.html">Data Explorer</a></li>
-      <li><a href="compare.html">Compare States</a></li>
-      <li><a href="rankings.html">State Rankings</a></li>
-    </ul>
-  </div>
-</dialog>
-
-<!-- Invokers Polyfill -->
-<script type="module">
-  if (!('commandForElement' in HTMLButtonElement.prototype)) {
-    import('https://esm.run/invokers-polyfill');
-  }
-</script>
-<script src="assets/js/home.js"></script>
-<script src="assets/js/search.js"></script>
-</body>
-</html>
+if __name__ == "__main__":
+    build()
