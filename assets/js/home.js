@@ -720,25 +720,50 @@
     const maxPop = Math.max(...Object.values(STATES_DATA).map(s => s.pop));
 
     function getMetricColor(state, metric) {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light' ||
+        (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: light)').matches);
+
       if (metric === 'gdp') {
         const r = state.gdp / maxGdp;
-        if (r > 0.6) return '#F2A93B';
-        if (r > 0.3) return '#D97706';
-        if (r > 0.15) return '#0D9488';
-        if (r > 0.05) return '#1B2745';
-        return '#141E33';
+        if (isLight) {
+          if (r > 0.6) return '#D97706';
+          if (r > 0.3) return '#F59E0B';
+          if (r > 0.15) return '#0D9488';
+          if (r > 0.05) return '#64748B';
+          return '#94A3B8';
+        } else {
+          if (r > 0.6) return '#F2A93B';
+          if (r > 0.3) return '#D97706';
+          if (r > 0.15) return '#2BB7A0';
+          if (r > 0.05) return '#28385A';
+          return '#202D4C';
+        }
       } else if (metric === 'lit') {
         const l = state.lit;
-        if (l >= 90) return '#2BB7A0';
-        if (l >= 80) return '#0D9488';
-        if (l >= 70) return '#213955';
-        return '#1B2745';
+        if (isLight) {
+          if (l >= 90) return '#0D9488';
+          if (l >= 80) return '#14B8A6';
+          if (l >= 70) return '#64748B';
+          return '#94A3B8';
+        } else {
+          if (l >= 90) return '#2BB7A0';
+          if (l >= 80) return '#0D9488';
+          if (l >= 70) return '#28385A';
+          return '#202D4C';
+        }
       } else {
         const p = state.pop / maxPop;
-        if (p > 0.5) return '#E67E22';
-        if (p > 0.25) return '#D97706';
-        if (p > 0.1) return '#0D9488';
-        return '#1B2745';
+        if (isLight) {
+          if (p > 0.5) return '#EA580C';
+          if (p > 0.25) return '#F97316';
+          if (p > 0.1) return '#0D9488';
+          return '#94A3B8';
+        } else {
+          if (p > 0.5) return '#F2A93B';
+          if (p > 0.25) return '#E67E22';
+          if (p > 0.1) return '#2BB7A0';
+          return '#202D4C';
+        }
       }
     }
 
@@ -753,6 +778,13 @@
         }
       });
     }
+
+    // Update map colors if theme is toggled
+    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(updateMapColors, 60);
+      });
+    });
 
     function showStateHUD(sid) {
       const st = STATES_DATA[sid];

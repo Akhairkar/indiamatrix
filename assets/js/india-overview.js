@@ -62,9 +62,15 @@
           legend: { display: false }
         },
         scales: {
+          x: {
+            grid: { color: document.documentElement.getAttribute('data-theme') === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' },
+            ticks: { color: document.documentElement.getAttribute('data-theme') === 'light' ? '#334155' : '#94a3b8' }
+          },
           y: {
             beginAtZero: false,
+            grid: { color: document.documentElement.getAttribute('data-theme') === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.06)' },
             ticks: {
+              color: document.documentElement.getAttribute('data-theme') === 'light' ? '#334155' : '#94a3b8',
               callback: function(value) {
                 return (value / 1000000000).toFixed(2) + 'B';
               }
@@ -75,16 +81,50 @@
     });
   }
 
+  var FALLBACK_INDIA_HISTORY = {
+  "_readme": "Historical trend for India's Population. Data from World Bank.",
+  "indicator_id": "population",
+  "name": { "en": "Population Trend", "hi": "जनसंख्या का रुझान" },
+  "source_id": "world-bank",
+  "source_url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IN",
+  "history": [
+    { "year": 2014, "value": 1307246509, "display": { "en": "1.31 billion", "hi": "1.31 अरब" } },
+    { "year": 2015, "value": 1322866505, "display": { "en": "1.32 billion", "hi": "1.32 अरब" } },
+    { "year": 2016, "value": 1338636340, "display": { "en": "1.34 billion", "hi": "1.34 अरब" } },
+    { "year": 2017, "value": 1354195680, "display": { "en": "1.35 billion", "hi": "1.35 अरब" } },
+    { "year": 2018, "value": 1369003306, "display": { "en": "1.37 billion", "hi": "1.37 अरब" } },
+    { "year": 2019, "value": 1383112050, "display": { "en": "1.38 billion", "hi": "1.38 अरब" } },
+    { "year": 2020, "value": 1396814904, "display": { "en": "1.40 billion", "hi": "1.40 अरब" } },
+    { "year": 2021, "value": 1407563842, "display": { "en": "1.41 billion", "hi": "1.41 अरब" } },
+    { "year": 2022, "value": 1417173173, "display": { "en": "1.42 billion", "hi": "1.42 अरब" } },
+    { "year": 2023, "value": 1428627663, "display": { "en": "1.43 billion", "hi": "1.43 अरब" } },
+    { "year": 2024, "value": 1450935791, "display": { "en": "1.45 billion", "hi": "1.45 अरब" } }
+  ]
+};
+
+  function loadHistory(data) {
+    window.__indiaHistoryData = data;
+    renderChart(data);
+  }
+
   fetch("data/indicators/india-population-history.json")
     .then(function (res) {
       if (res.ok) return res.json();
       throw new Error("Could not load history");
     })
     .then(function (data) {
-      window.__indiaHistoryData = data;
-      renderChart(data);
+      loadHistory(data);
     })
     .catch(function (e) {
-      console.error(e);
+      console.warn("Using offline fallback for India population history:", e);
+      loadHistory(FALLBACK_INDIA_HISTORY);
     });
+})
+  document.querySelectorAll('.theme-toggle-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setTimeout(function() {
+        if (window.__indiaHistoryData) renderChart(window.__indiaHistoryData);
+      }, 60);
+    });
+  });
 })();

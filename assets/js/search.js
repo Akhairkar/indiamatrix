@@ -228,12 +228,25 @@
     });
   }
 
+  // Dialog close and backdrop handlers
+  if (searchDialog) {
+    const closeBtn = searchDialog.querySelector('.search-dialog-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => searchDialog.close());
+    }
+    searchDialog.addEventListener('click', (e) => {
+      if (e.target === searchDialog) {
+        searchDialog.close();
+      }
+    });
+  }
+
   // Hero Search integration
   if (heroSearchInput && searchDialog) {
     const openSearchWith = (val) => {
       if (typeof searchDialog.showModal === 'function') {
         searchDialog.showModal();
-        searchInput.value = val;
+        searchInput.value = val || '';
         searchInput.dispatchEvent(new Event('input'));
         searchInput.focus();
       }
