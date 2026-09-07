@@ -92,30 +92,55 @@ document.addEventListener("DOMContentLoaded", function () {
       const wrapper = document.createElement("div");
       wrapper.style.background = "var(--panel-bg)";
       wrapper.style.border = "1px solid var(--border)";
-      wrapper.style.borderRadius = "12px";
-      wrapper.style.padding = "24px";
+      wrapper.style.borderRadius = "14px";
+      wrapper.style.padding = "26px";
       wrapper.style.boxShadow = "var(--shadow-card)";
 
-      // Title
-      const title = document.createElement("h3");
-      title.style.marginBottom = "8px";
-      title.style.color = "var(--text)";
-      title.textContent = item.name;
-      wrapper.appendChild(title);
+      // Header row
+      const headRow = document.createElement("div");
+      headRow.style.display = "flex";
+      headRow.style.justifyContent = "space-between";
+      headRow.style.alignItems = "flex-start";
+      headRow.style.flexWrap = "wrap";
+      headRow.style.gap = "12px";
+      headRow.style.marginBottom = "14px";
 
-      // Source
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h3");
+      title.style.margin = "0 0 4px";
+      title.style.color = "var(--text)";
+      title.style.fontSize = "19px";
+      title.textContent = item.name;
+      titleWrap.appendChild(title);
+
       const source = document.createElement("p");
       source.style.fontSize = "12px";
       source.style.color = "var(--text-faint)";
-      source.style.marginBottom = "24px";
+      source.style.margin = "0";
       source.style.fontFamily = "var(--font-mono)";
-      source.textContent = `Source: ${item.source}`;
-      wrapper.appendChild(source);
+      source.textContent = `Accredited Source: ${item.source}`;
+      titleWrap.appendChild(source);
+
+      headRow.appendChild(titleWrap);
+
+      // India Metric Pill
+      const pill = document.createElement("div");
+      pill.style.background = isLight ? "rgba(217, 119, 6, 0.1)" : "rgba(242, 169, 59, 0.15)";
+      pill.style.border = "1px solid var(--saffron)";
+      pill.style.borderRadius = "6px";
+      pill.style.padding = "6px 12px";
+      pill.style.textAlign = "right";
+      pill.innerHTML = `
+        <span style="font-size:11px; font-family:var(--font-mono); color:var(--text-faint); display:block; text-transform:uppercase;">India Benchmark</span>
+        <span style="font-size:15px; font-weight:700; font-family:var(--font-mono); color:var(--saffron);">${item.india.toLocaleString()}</span>
+      `;
+      headRow.appendChild(pill);
+      wrapper.appendChild(headRow);
 
       // Canvas container
       const canvasContainer = document.createElement("div");
       canvasContainer.style.position = "relative";
-      canvasContainer.style.height = "300px";
+      canvasContainer.style.height = "320px";
       canvasContainer.style.width = "100%";
 
       const canvas = document.createElement("canvas");
@@ -140,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   "#64748B", // World (Gray)
                 ],
                 borderRadius: 6,
+                maxBarThickness: 48
               },
             ],
           },
@@ -149,21 +175,49 @@ document.addEventListener("DOMContentLoaded", function () {
             plugins: {
               legend: { display: false },
               tooltip: {
-                backgroundColor: isLight ? "#FFFFFF" : "#1a2332",
-                titleColor: isLight ? "#10182B" : "#e2e8f0",
-                bodyColor: isLight ? "#10182B" : "#e2e8f0",
-                borderColor: isLight ? "rgba(16, 24, 43, 0.15)" : "#334155",
-                borderWidth: 1,
+                backgroundColor: isLight ? "#FFFFFF" : "#10182B",
+                titleColor: isLight ? "#10182B" : "#E8ECF8",
+                bodyColor: isLight ? "#10182B" : "#E8ECF8",
+                borderColor: isLight ? "rgba(16, 24, 43, 0.18)" : "rgba(43, 183, 160, 0.35)",
+                borderWidth: 1.5,
+                padding: 14,
+                cornerRadius: 8,
+                titleFont: { family: "Inter", size: 14, weight: "700" },
+                bodyFont: { family: "JetBrains Mono", size: 12.5 },
+                callbacks: {
+                  title: function(items) {
+                    return items[0].label;
+                  },
+                  label: function(ctx) {
+                    const val = ctx.raw;
+                    return `• ${item.name}: ${val.toLocaleString()}`;
+                  },
+                  afterLabel: function(ctx) {
+                    const idx = ctx.dataIndex;
+                    if (idx === 0) { // India
+                      const diffChina = (((item.india - item.china) / (item.china || 1)) * 100).toFixed(1);
+                      const diffWorld = (((item.india - item.world) / (item.world || 1)) * 100).toFixed(1);
+                      return `• vs China: ${diffChina >= 0 ? '+' : ''}${diffChina}%\n• vs World Avg: ${diffWorld >= 0 ? '+' : ''}${diffWorld}%`;
+                    } else if (idx === 1) { // China
+                      const diff = (((item.china - item.india) / (item.india || 1)) * 100).toFixed(1);
+                      return `• vs India: ${diff >= 0 ? '+' : ''}${diff}%`;
+                    } else if (idx === 2) { // USA
+                      const diff = (((item.usa - item.india) / (item.india || 1)) * 100).toFixed(1);
+                      return `• vs India: ${diff >= 0 ? '+' : ''}${diff}%`;
+                    }
+                    return '';
+                  }
+                }
               },
             },
             scales: {
               x: {
                 grid: { display: false },
-                ticks: { color: tickColor, font: { weight: "600" } },
+                ticks: { color: tickColor, font: { family: "Inter", weight: "600", size: 13 } },
               },
               y: {
                 grid: { color: gridColor },
-                ticks: { color: tickColor, font: { family: "JetBrains Mono" } },
+                ticks: { color: tickColor, font: { family: "JetBrains Mono", size: 11 } },
               },
             },
           },

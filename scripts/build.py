@@ -217,55 +217,13 @@ def main():
         print(f"Built all 36 states/*.html successfully.")
 
     # 3. Build Indicator Profiles
-    out_indicators_dir = os.path.join(root_dir, 'indicators')
-    os.makedirs(out_indicators_dir, exist_ok=True)
-        
-    indicator_template_path = os.path.join(root_dir, 'templates', 'indicator.html')
-    if os.path.exists(indicator_template_path):
-        with open(indicator_template_path, 'r', encoding='utf-8') as f:
-            indicator_template = f.read()
-            
-        all_indicators = list(overview_data)
-        
-        wb_dir = os.path.join(root_dir, 'data', 'indicators', 'worldbank')
-        if os.path.exists(wb_dir):
-            for filename in os.listdir(wb_dir):
-                if filename.endswith('.json'):
-                    with open(os.path.join(wb_dir, filename), 'r', encoding='utf-8') as f:
-                        all_indicators.append(json.load(f))
-                        
-        for ind in all_indicators:
-            ind_id = ind['id']
-            name_en = ind['name'].get('en', '')
-            name_hi = ind['name'].get('hi', '')
-            disp_en = ind['display'].get('en', '')
-            disp_hi = ind['display'].get('hi', '')
-            year = ind['year']
-            src_url = ind['source_url']
-            src_name = source_name(ind['source_id'])
-            methodology_note = ind.get('methodology_note', '')
-            last_updated = ind.get('last_updated', '')
+    # 3. Build Indicator Profiles (Master Intelligence Pages)
+    try:
+        from build_indicators import build_all_indicators
+    except ImportError:
+        from scripts.build_indicators import build_all_indicators
+    build_all_indicators(root_dir)
 
-            out_content = indicator_template
-            
-            out_content = out_content.replace('{{id}}', str(ind_id))
-            out_content = out_content.replace('{{name_en}}', str(name_en))
-            out_content = out_content.replace('{{name_hi}}', str(name_hi))
-            out_content = out_content.replace('{{disp_en}}', str(disp_en))
-            out_content = out_content.replace('{{disp_hi}}', str(disp_hi))
-            out_content = out_content.replace('{{year}}', str(year))
-            out_content = out_content.replace('{{source_url}}', str(src_url))
-            out_content = out_content.replace('{{source_name}}', str(src_name))
-            out_content = out_content.replace('{{methodology_note}}', str(methodology_note))
-            out_content = out_content.replace('{{last_updated}}', str(last_updated))
-            
-            out_content = re.sub(r'<!-- BUILD_INJECT:.*?-->', '', out_content)
-            out_content = re.sub(r'<!-- END_BUILD_INJECT -->', '', out_content)
-            
-            out_path = os.path.join(out_indicators_dir, f"{ind_id}.html")
-            with open(out_path, 'w', encoding='utf-8') as f:
-                f.write(out_content)
-        print(f"Built indicators/*.html successfully.")
 
     # 4. Build District Profiles
     districts_dir = os.path.join(root_dir, 'data', 'districts')

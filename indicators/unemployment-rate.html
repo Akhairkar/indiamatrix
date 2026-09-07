@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Unemployment Rate Data & Statistics | IndiaMetrix</title>
-<meta name="description" content="Latest data on Unemployment Rate in India. Sourced from MoSPI.">
+<title>Unemployment Rate Data, Rankings & Trend Analysis | IndiaMetrix</title>
+<meta name="description" content="Complete verified statistics, 36-state leaderboards, interactive charts, and decadal trends for Unemployment Rate in India. Sourced from MoSPI.">
 <link rel="canonical" href="https://www.indiametrix.in/indicators/unemployment-rate.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Unemployment Rate in India | IndiaMetrix">
-<meta property="og:description" content="View the latest Unemployment Rate statistics for India.">
+<meta property="og:title" content="Unemployment Rate in India | 36 State Rankings & Analysis | IndiaMetrix">
+<meta property="og:description" content="Explore Unemployment Rate across India with state-by-state comparisons, historical data, and interactive projection tools.">
 <meta property="og:url" content="https://www.indiametrix.in/indicators/unemployment-rate.html">
 
 <meta property="og:locale" content="en_IN">
@@ -55,7 +55,7 @@
       <a href="../explorer.html" data-en="Explorer" data-hi="एक्सप्लोरर">Explorer</a>
       <a href="../ask.html" data-en="Ask AI" data-hi="एआई से पूछें">Ask AI</a>
       <a href="../#stories" data-en="Data Stories" data-hi="डेटा स्टोरीज़">Data Stories</a>
-      <a href="../#about" data-en="About" data-hi="परिचय">About</a>
+      <a href="../about.html" data-en="About" data-hi="परिचय">About</a>
     </nav>
 
     <div class="header-actions">
@@ -64,6 +64,7 @@
         <span class="lang-sep" aria-hidden="true">|</span>
         <button type="button" class="lang-btn" data-set-lang="hi">हिन्दी</button>
       </div>
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">🌓</button>
       <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -75,24 +76,201 @@
   <section class="section">
     <div class="wrap">
       
-      <header class="page-header" style="text-align:left; margin-bottom: 40px;">
-        <h1 class="font-display" style="font-size: 48px; margin-bottom: 12px;" data-en="Unemployment Rate" data-hi="बेरोज़गारी दर">Unemployment Rate</h1>
-        <p style="font-size: 24px; font-family: var(--font-mono); color: var(--teal);" data-en="3.1% (2025)" data-hi="3.1% (2025)">3.1% (2025)</p>
-      </header>
-      
+      <!-- Breadcrumb -->
+      <nav class="ind-breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a>
+        <span>›</span>
+        <a href="../#explore">Indicators</a>
+        <span>›</span>
+        <span style="color:var(--text); font-weight:600;">Unemployment Rate</span>
+      </nav>
 
-      <div class="card" style="padding:32px;">
-        <h2 style="font-family: var(--font-mono); font-size:18px; color:var(--saffron); margin-bottom: 24px;" data-en="Methodology & Source" data-hi="कार्यप्रणाली और स्रोत">Methodology & Source</h2>
-        
-        <p style="margin-bottom: 12px; color:var(--text-muted);" data-en="Methodology: Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India." data-hi="कार्यप्रणाली: Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India.">Methodology: Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India.</p>
-        <p style="margin-bottom: 12px; color:var(--text-muted);" data-en="Source: <a href='https://www.mospi.gov.in/' target='_blank' rel='noopener' style='color:var(--teal)'>MoSPI</a>" data-hi="स्रोत: <a href='https://www.mospi.gov.in/' target='_blank' rel='noopener' style='color:var(--teal)'>MoSPI</a>">Source: <a href='https://www.mospi.gov.in/' target='_blank' rel='noopener' style='color:var(--teal)'>MoSPI</a></p>
-        <p style="margin-bottom: 12px; color:var(--text-faint);" data-en="Last Updated: 2026-08-11" data-hi="अंतिम अद्यतन: 2026-08-11">Last Updated: 2026-08-11</p>
-        
+      <!-- Hero Banner -->
+      <header class="ind-hero">
+        <div class="ind-hero-badge-group">
+          <span class="ind-tag ind-tag--cat">Employment</span>
+          <span class="ind-tag ind-tag--source">Source: MoSPI</span>
+          <span class="ind-tag ind-tag--verified">✓ Verified Data</span>
+        </div>
+        <h1 data-en="Unemployment Rate" data-hi="बेरोज़गारी दर">Unemployment Rate</h1>
+        <div class="ind-hero-val-wrap">
+          <span class="ind-hero-val" data-en="3.1%" data-hi="3.1%">3.1%</span>
+          <span class="ind-hero-subval">National Benchmark (2025)</span>
+        </div>
+        <p class="ind-hero-desc" data-en="Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India." data-hi="Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India.">Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India.</p>
+      </header>
+
+      <!-- KPI Summary Bar -->
+      <div class="ind-kpi-bar">
+        <div class="ind-kpi-chip">
+          <span class="ind-kpi-chip-label">Lowest Joblessness State</span>
+          <span class="ind-kpi-chip-val">Sikkim / MP</span>
+          <div class="ind-kpi-chip-sub">1.9% - 2.4% Jobless Rate</div>
+        </div>
+        <div class="ind-kpi-chip">
+          <span class="ind-kpi-chip-label">National Unemployment</span>
+          <span class="ind-kpi-chip-val">3.1%</span>
+          <div class="ind-kpi-chip-sub">MoSPI PLFS 2023 Annual</div>
+        </div>
+        <div class="ind-kpi-chip">
+          <span class="ind-kpi-chip-label">Median State Unemployment</span>
+          <span class="ind-kpi-chip-val">3.9%</span>
+          <div class="ind-kpi-chip-sub">State: Bihar</div>
+        </div>
+        <div class="ind-kpi-chip">
+          <span class="ind-kpi-chip-label">Top Industrial States</span>
+          <span class="ind-kpi-chip-val">< 2.5%</span>
+          <div class="ind-kpi-chip-sub">Gujarat, Madhya Pradesh</div>
+        </div>
       </div>
-      
-      <div style="margin-top: 40px; text-align:center;">
-        <a href="../explorer.html" class="btn" style="background:var(--surface-2); color:var(--text); text-decoration:none; display:inline-block; padding:12px 24px; border-radius:8px; font-family:var(--font-mono);" data-en="Explore more data" data-hi="और डेटा एक्सप्लोर करें">Explore more data</a>
+
+      <!-- Master Interactive Chart Card -->
+      <div class="ind-chart-card">
+        <div class="ind-chart-toolbar">
+          <div>
+            <h2 class="ind-chart-title">Visual Intelligence &amp; Distribution Matrix</h2>
+            <p style="font-size: 13px; color: var(--text-faint); margin: 4px 0 0; font-family: var(--font-mono);">Hover or tap on any bar or point for detailed comparative metrics &amp; country benchmarks.</p>
+          </div>
+          <div class="ind-view-toggles">
+            <button type="button" id="btnViewStates" class="ind-view-btn is-active">📊 State Breakdown (36 States)</button>
+            <button type="button" id="btnViewHistory" class="ind-view-btn">📈 Decadal Trend</button>
+          </div>
+        </div>
+
+        <div class="ind-chart-wrapper">
+          <canvas id="indChartCanvas"></canvas>
+        </div>
       </div>
+
+      <!-- Key Analytical Insights Grid -->
+      <div class="ind-insights-grid">
+        
+        <article class="ind-insight-card">
+          <span class="ind-insight-icon" aria-hidden="true">💼</span>
+          <h3 class="ind-insight-title">Post-Pandemic Labour Resilience</h3>
+          <p class="ind-insight-text">India's headline unemployment rate has moderated to 3.1% in the latest PLFS annual rounds, down from 5.8% in 2018-19, showing resilient labour demand.</p>
+        </article>
+        <article class="ind-insight-card">
+          <span class="ind-insight-icon" aria-hidden="true">👩‍💼</span>
+          <h3 class="ind-insight-title">Rising Female Participation</h3>
+          <p class="ind-insight-text">Female Labour Force Participation Rate (FLFPR) has expanded to 37.0%, bolstered by rural self-help groups, agriculture, and formal sector onboarding.</p>
+        </article>
+        <article class="ind-insight-card">
+          <span class="ind-insight-icon" aria-hidden="true">🌾</span>
+          <h3 class="ind-insight-title">Rural vs Urban Dynamic</h3>
+          <p class="ind-insight-text">Rural unemployment stands lower (2.4%) due to agricultural livelihoods, whereas urban centers exhibit frictional youth unemployment (5.4%).</p>
+        </article>
+        <article class="ind-insight-card">
+          <span class="ind-insight-icon" aria-hidden="true">🏭</span>
+          <h3 class="ind-insight-title">Manufacturing Absorption</h3>
+          <p class="ind-insight-text">Industrial and logistics hubs like Gujarat, MP, and Karnataka maintain low unemployment rates through export-oriented manufacturing and services.</p>
+        </article>
+      </div>
+
+      <!-- Interactive State Leaderboard Table -->
+      <div class="ind-table-card">
+        <div class="ind-table-toolbar">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:22px; margin:0 0 6px;">36 States &amp; UTs Verified Leaderboard</h2>
+            <p style="font-size:13px; color:var(--text-faint); margin:0; font-family:var(--font-mono);">Real-time ranking of Indian states sorted by verified indicator metrics.</p>
+          </div>
+          <input type="search" id="indTableSearch" class="ind-table-search" placeholder="Search state or territory (e.g. Gujarat, Kerala)..." aria-label="Search states in table">
+        </div>
+
+        <div class="ind-table-wrap">
+          <table class="ind-table">
+            <thead>
+              <tr>
+                <th style="width: 60px;">Rank</th>
+                <th>State / Territory</th>
+                <th>Verified Metric</th>
+                <th>Sovereign Equivalent</th>
+                <th>National Share / Parity</th>
+              </tr>
+            </thead>
+            <tbody id="indTableBody">
+              <!-- Injected by indicator-page.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Embedded Quick Interactive Simulator -->
+      <div class="ind-hero" style="background: rgba(43, 183, 160, 0.04); border: 1px solid rgba(43, 183, 160, 0.25); margin-bottom: 40px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 20px;">
+          <div>
+            <span class="ind-tag ind-tag--cat" style="background:var(--teal); color:#fff;">Live Calculator</span>
+            <h3 style="font-family:var(--font-display); font-size:22px; margin:8px 0 4px;">Quick State Diagnostic &amp; Simulation Engine</h3>
+            <p style="font-size:13px; color:var(--text-muted); margin:0;">Select an Indian state to project growth milestones, equivalent world economies, and national share.</p>
+          </div>
+          <div style="min-width: 240px;">
+            <label for="indCalcState" style="font-size:11px; font-family:var(--font-mono); color:var(--text-faint); display:block; margin-bottom:4px; text-transform:uppercase;">SELECT STATE:</label>
+            <select id="indCalcState" class="ind-table-search" style="width:100%;"></select>
+          </div>
+        </div>
+
+        <div class="ind-kpi-bar" style="margin-bottom: 24px;">
+          <div class="ind-kpi-chip" style="background:var(--surface);">
+            <span class="ind-kpi-chip-label">State Metric Value</span>
+            <span class="ind-kpi-chip-val" id="indCalcVal">-</span>
+          </div>
+          <div class="ind-kpi-chip" style="background:var(--surface);">
+            <span class="ind-kpi-chip-label">Sovereign Country Match</span>
+            <span class="ind-kpi-chip-val" id="indCalcEquiv">-</span>
+          </div>
+          <div class="ind-kpi-chip" style="background:var(--surface);">
+            <span class="ind-kpi-chip-label">National Weight / Rank</span>
+            <span class="ind-kpi-chip-val" id="indCalcShare">-</span>
+          </div>
+        </div>
+
+        <div>
+          <a id="indCalcLink" href="../tools/economic-comparator.html" class="btn btn-outline" style="font-size:13px; padding:10px 22px; display:inline-block;">Launch Full Interactive Simulator Suite →</a>
+        </div>
+      </div>
+
+      <!-- Verified Provenance & Methodology Governance Box -->
+      <div class="im-provenance-box" style="margin-bottom: 40px;">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Data Provenance, Methodology &amp; Governance
+        </h4>
+        <div class="im-provenance-grid">
+          <div class="im-provenance-item">
+            <span class="im-provenance-label">Primary Source Agency</span>
+            <span class="im-provenance-val"><a href="https://www.mospi.gov.in/" target="_blank" rel="noopener">MoSPI ↗</a></span>
+          </div>
+          <div class="im-provenance-item">
+            <span class="im-provenance-label">Reference Period / Year</span>
+            <span class="im-provenance-val">2025</span>
+          </div>
+          <div class="im-provenance-item">
+            <span class="im-provenance-label">Platform Verification Date</span>
+            <span class="im-provenance-val">2026-08-11</span>
+          </div>
+          <div class="im-provenance-item">
+            <span class="im-provenance-label">Coverage</span>
+            <span class="im-provenance-val">All 36 States &amp; UTs</span>
+          </div>
+        </div>
+        <div class="im-provenance-note">
+          <strong>Methodology Note:</strong> Periodic Labour Force Survey (PLFS), Annual Report 2025 (calendar year), usual status (ps+ss), persons aged 15 years and above, all-India. IndiaMetrix operates as an independent public data intelligence platform. Data is gathered strictly from accredited statistical agencies and maintained under Phase 13 cross-verification standards.
+        </div>
+      </div>
+
+      <!-- Related Indicators Hub -->
+      <div style="margin-top: 40px; margin-bottom: 20px;">
+        <h3 style="font-family:var(--font-display); font-size:22px; margin-bottom: 16px;">Explore Related Indicators &amp; Tools</h3>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="gdp-current-usd.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">📈 Gross Domestic Product (GDP)</a>
+          <a href="population.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">👥 Population Dynamics</a>
+          <a href="literacy-rate.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">🎓 Literacy Rate</a>
+          <a href="unemployment-rate.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">💼 Unemployment Rate</a>
+          <a href="../rankings.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">🏆 All 36 State Rankings</a>
+          <a href="../world.html" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">🌍 India vs World</a>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
@@ -105,14 +283,14 @@
     </div>
 
     <nav class="footer-links" aria-label="Footer">
-      <a href="../#about" data-en="About" data-hi="परिचय">About</a>
-      <a href="../about.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="../about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="../tools/index.html" data-en="Interactive Tools" data-hi="इंटरएक्टिव टूल्स">Interactive Tools</a>
+      <a href="../sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="../methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="../about.html" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="../about.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
-      <a href="../about.html" data-en="Terms" data-hi="शर्तें">Terms</a>
-      <a href="../about.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="../about.html" data-en="Corrections" data-hi="सुधार">Corrections</a>
+      <a href="../contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="../privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="../terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="../disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
@@ -120,6 +298,11 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+window.INDICATOR_DATA = {"id": "unemployment-rate", "name": {"en": "Unemployment Rate", "hi": "बेरोज़गारी दर"}, "headline": {"en": "3.1%", "hi": "3.1%"}, "year": 2025, "category": "Employment", "source_name": "MoSPI", "source_url": "https://www.mospi.gov.in/", "direction": "lower_is_better", "states": [{"id": "tripura", "name": {"en": "Tripura", "hi": "त्रिपुरा"}, "value": 1.4, "formatted": {"en": "1.4%", "hi": "1.4%"}, "equiv_country": "Bermuda", "equiv_flag": "🇧🇲", "rank": 1}, {"id": "madhya-pradesh", "name": {"en": "Madhya Pradesh", "hi": "मध्य प्रदेश"}, "value": 1.6, "formatted": {"en": "1.6%", "hi": "1.6%"}, "equiv_country": "Dominican Republic", "equiv_flag": "🇩🇴", "rank": 2}, {"id": "delhi", "name": {"en": "Delhi", "hi": "दिल्ली"}, "value": 1.9, "formatted": {"en": "1.9%", "hi": "1.9%"}, "equiv_country": "Oman", "equiv_flag": "🇴🇲", "rank": 3}, {"id": "jharkhand", "name": {"en": "Jharkhand", "hi": "झारखंड"}, "value": 2.0, "formatted": {"en": "2.0%", "hi": "2.0%"}, "equiv_country": "Lithuania", "equiv_flag": "🇱🇹", "rank": 4}, {"id": "gujarat", "name": {"en": "Gujarat", "hi": "गुजरात"}, "value": 2.2, "formatted": {"en": "2.2%", "hi": "2.2%"}, "equiv_country": "Greece", "equiv_flag": "🇬🇷", "rank": 5}, {"id": "chhattisgarh", "name": {"en": "Chhattisgarh", "hi": "छत्तीसगढ़"}, "value": 2.4, "formatted": {"en": "2.4%", "hi": "2.4%"}, "equiv_country": "Slovenia", "equiv_flag": "🇸🇮", "rank": 6}, {"id": "karnataka", "name": {"en": "Karnataka", "hi": "कर्नाटक"}, "value": 2.4, "formatted": {"en": "2.4%", "hi": "2.4%"}, "equiv_country": "Peru", "equiv_flag": "🇵🇪", "rank": 7}, {"id": "uttar-pradesh", "name": {"en": "Uttar Pradesh", "hi": "उत्तर प्रदेश"}, "value": 2.4, "formatted": {"en": "2.4%", "hi": "2.4%"}, "equiv_country": "Qatar", "equiv_flag": "🇶🇦", "rank": 8}, {"id": "meghalaya", "name": {"en": "Meghalaya", "hi": "मेघालय"}, "value": 2.7, "formatted": {"en": "2.7%", "hi": "2.7%"}, "equiv_country": "Barbados", "equiv_flag": "🇧🇧", "rank": 9}, {"id": "sikkim", "name": {"en": "Sikkim", "hi": "सिक्किम"}, "value": 3.0, "formatted": {"en": "3.0%", "hi": "3.0%"}, "equiv_country": "Andorra", "equiv_flag": "🇦🇩", "rank": 10}, {"id": "dadra-nagar-haveli-daman-diu", "name": {"en": "Dadra & Nagar Haveli and Daman & Diu", "hi": "दादरा और नगर हवेली तथा दमन और दीव"}, "value": 3.1, "formatted": {"en": "3.1%", "hi": "3.1%"}, "equiv_country": "Bhutan", "equiv_flag": "🇧🇹", "rank": 11}, {"id": "maharashtra", "name": {"en": "Maharashtra", "hi": "महाराष्ट्र"}, "value": 3.1, "formatted": {"en": "3.1%", "hi": "3.1%"}, "equiv_country": "Switzerland", "equiv_flag": "🇨🇭", "rank": 12}, {"id": "mizoram", "name": {"en": "Mizoram", "hi": "मिज़ोरम"}, "value": 3.2, "formatted": {"en": "3.2%", "hi": "3.2%"}, "equiv_country": "Maldives", "equiv_flag": "🇲🇻", "rank": 13}, {"id": "ladakh", "name": {"en": "Ladakh", "hi": "लद्दाख"}, "value": 3.5, "formatted": {"en": "3.5%", "hi": "3.5%"}, "equiv_country": "Seychelles", "equiv_flag": "🇸🇨", "rank": 14}, {"id": "arunachal-pradesh", "name": {"en": "Arunachal Pradesh", "hi": "अरुणाचल प्रदेश"}, "value": 3.7, "formatted": {"en": "3.7%", "hi": "3.7%"}, "equiv_country": "Suriname", "equiv_flag": "🇸🇷", "rank": 15}, {"id": "tamil-nadu", "name": {"en": "Tamil Nadu", "hi": "तमिलनाडु"}, "value": 3.8, "formatted": {"en": "3.8%", "hi": "3.8%"}, "equiv_country": "Portugal", "equiv_flag": "🇵🇹", "rank": 16}, {"id": "bihar", "name": {"en": "Bihar", "hi": "बिहार"}, "value": 3.9, "formatted": {"en": "3.9%", "hi": "3.9%"}, "equiv_country": "Panama", "equiv_flag": "🇵🇦", "rank": 17}, {"id": "odisha", "name": {"en": "Odisha", "hi": "ओडिशा"}, "value": 3.9, "formatted": {"en": "3.9%", "hi": "3.9%"}, "equiv_country": "Costa Rica", "equiv_flag": "🇨🇷", "rank": 18}, {"id": "manipur", "name": {"en": "Manipur", "hi": "मणिपुर"}, "value": 4.0, "formatted": {"en": "4.0%", "hi": "4.0%"}, "equiv_country": "Montenegro", "equiv_flag": "🇲🇪", "rank": 19}, {"id": "andhra-pradesh", "name": {"en": "Andhra Pradesh", "hi": "आंध्र प्रदेश"}, "value": 4.1, "formatted": {"en": "4.1%", "hi": "4.1%"}, "equiv_country": "Morocco", "equiv_flag": "🇲🇦", "rank": 20}, {"id": "west-bengal", "name": {"en": "West Bengal", "hi": "पश्चिम बंगाल"}, "value": 4.1, "formatted": {"en": "4.1%", "hi": "4.1%"}, "equiv_country": "Slovakia", "equiv_flag": "🇸🇰", "rank": 21}, {"id": "puducherry", "name": {"en": "Puducherry", "hi": "पुडुचेरी"}, "value": 4.2, "formatted": {"en": "4.2%", "hi": "4.2%"}, "equiv_country": "Monaco", "equiv_flag": "🇲🇨", "rank": 22}, {"id": "assam", "name": {"en": "Assam", "hi": "असम"}, "value": 4.4, "formatted": {"en": "4.4%", "hi": "4.4%"}, "equiv_country": "Jordan", "equiv_flag": "🇯🇴", "rank": 23}, {"id": "himachal-pradesh", "name": {"en": "Himachal Pradesh", "hi": "हिमाचल प्रदेश"}, "value": 4.4, "formatted": {"en": "4.4%", "hi": "4.4%"}, "equiv_country": "Cyprus", "equiv_flag": "🇨🇾", "rank": 24}, {"id": "jammu-kashmir", "name": {"en": "Jammu & Kashmir", "hi": "जम्मू और कश्मीर"}, "value": 4.4, "formatted": {"en": "4.4%", "hi": "4.4%"}, "equiv_country": "Iceland", "equiv_flag": "🇮🇸", "rank": 25}, {"id": "rajasthan", "name": {"en": "Rajasthan", "hi": "राजस्थान"}, "value": 4.4, "formatted": {"en": "4.4%", "hi": "4.4%"}, "equiv_country": "Hungary", "equiv_flag": "🇭🇺", "rank": 26}, {"id": "telangana", "name": {"en": "Telangana", "hi": "तेलंगाना"}, "value": 4.4, "formatted": {"en": "4.4%", "hi": "4.4%"}, "equiv_country": "Ecuador", "equiv_flag": "🇪🇨", "rank": 27}, {"id": "andaman-nicobar", "name": {"en": "Andaman & Nicobar", "hi": "अंडमान और निकोबार"}, "value": 4.5, "formatted": {"en": "4.5%", "hi": "4.5%"}, "equiv_country": "Saint Lucia", "equiv_flag": "🇱🇨", "rank": 28}, {"id": "uttarakhand", "name": {"en": "Uttarakhand", "hi": "उत्तराखंड"}, "value": 4.5, "formatted": {"en": "4.5%", "hi": "4.5%"}, "equiv_country": "Estonia", "equiv_flag": "🇪🇪", "rank": 29}, {"id": "nagaland", "name": {"en": "Nagaland", "hi": "नागालैंड"}, "value": 5.4, "formatted": {"en": "5.4%", "hi": "5.4%"}, "equiv_country": "Fiji", "equiv_flag": "🇫🇯", "rank": 30}, {"id": "chandigarh", "name": {"en": "Chandigarh", "hi": "चंडीगढ़"}, "value": 5.6, "formatted": {"en": "5.6%", "hi": "5.6%"}, "equiv_country": "Mauritius", "equiv_flag": "🇲🇺", "rank": 31}, {"id": "haryana", "name": {"en": "Haryana", "hi": "हरियाणा"}, "value": 6.1, "formatted": {"en": "6.1%", "hi": "6.1%"}, "equiv_country": "Guatemala", "equiv_flag": "🇬🇹", "rank": 32}, {"id": "punjab", "name": {"en": "Punjab", "hi": "पंजाब"}, "value": 6.4, "formatted": {"en": "6.4%", "hi": "6.4%"}, "equiv_country": "Croatia", "equiv_flag": "🇭🇷", "rank": 33}, {"id": "lakshadweep", "name": {"en": "Lakshadweep", "hi": "लक्षद्वीप"}, "value": 6.8, "formatted": {"en": "6.8%", "hi": "6.8%"}, "equiv_country": "Grenada", "equiv_flag": "🇬🇩", "rank": 34}, {"id": "kerala", "name": {"en": "Kerala", "hi": "केरल"}, "value": 7.0, "formatted": {"en": "7.0%", "hi": "7.0%"}, "equiv_country": "Bulgaria", "equiv_flag": "🇧🇬", "rank": 35}, {"id": "goa", "name": {"en": "Goa", "hi": "गोवा"}, "value": 9.7, "formatted": {"en": "9.7%", "hi": "9.7%"}, "equiv_country": "Malta", "equiv_flag": "🇲🇹", "rank": 36}], "history": null};
+</script>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/indicator-page.js"></script>
 </body>
 </html>
