@@ -68,20 +68,66 @@
 </header>
 
 <main id="main">
-  <section class="section">
+  <div class="wrap" style="padding-top:20px;">
+    <nav aria-label="Breadcrumb" style="font-size:13px; color:var(--text-faint); margin-bottom:16px; font-family:var(--font-mono);">
+      <!-- BUILD_INJECT:breadcrumb -->
+      <a href="../../" style="color:var(--text-muted); text-decoration:none;" data-en="Home" data-hi="होम">Home</a> &gt; 
+      <a href="../../districts/index.html" style="color:var(--text-muted); text-decoration:none;" data-en="Districts" data-hi="ज़िले">Districts</a> &gt; 
+      <a href="../../states/{{state_id}}.html" style="color:var(--text-muted); text-decoration:none;">{{state_name_en}}</a> &gt; 
+      <span style="color:var(--teal);" aria-current="page">{{district_name_en}}</span>
+      <!-- END_BUILD_INJECT -->
+    </nav>
+  </div>
+
+  <section class="section" style="padding-top:10px; padding-bottom:28px;">
     <div class="wrap">
-      <header class="page-header" style="text-align:left; margin-bottom: 40px;">
-        <a href="../../states/{{state_id}}.html" style="color:var(--saffron); text-decoration:none; font-family:var(--font-mono); display:inline-block; margin-bottom:16px;">&larr; Back to {{state_id}}</a>
+      <header class="page-header" style="text-align:left; margin-bottom: 24px;">
+        <p class="eyebrow" data-en="District Demographic Intelligence" data-hi="जिला जनसांख्यिकीय डेटा">District Demographic Intelligence</p>
         <!-- BUILD_INJECT:district_name -->
         <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="{{district_name_en}}" data-hi="{{district_name_hi}}">{{district_name_en}}</h1>
         <!-- END_BUILD_INJECT -->
+        <!-- BUILD_INJECT:district_summary -->
+        <!-- END_BUILD_INJECT -->
       </header>
 
+      <!-- Action Bar -->
+      <div class="im-action-bar" style="margin-bottom:32px;">
+        <a href="../../states/{{state_id}}.html" class="im-btn im-btn--secondary" data-en="&larr; View {{state_name_en}} State Profile" data-hi="&larr; {{state_name_hi}} राज्य प्रोफ़ाइल देखें">&larr; View {{state_name_en}} State Profile</a>
+        <a href="../../compare.html?s1={{state_id}}" class="im-btn im-btn--secondary" data-en="Compare in State Engine &rarr;" data-hi="राज्य तुलना में देखें &rarr;">Compare in State Engine &rarr;</a>
+        <a href="../../districts/index.html" class="im-btn im-btn--secondary" data-en="All Indian Districts Directory &rarr;" data-hi="सभी भारतीय जिले डायरेक्टरी &rarr;">All Indian Districts Directory &rarr;</a>
+      </div>
+
+      <!-- KPI Grid -->
+      <h2 style="font-size:20px; margin-bottom:16px;" data-en="Verified Census Indicators" data-hi="सत्यापित जनगणना संकेतक">Verified Census Indicators</h2>
       <div class="dashboard-grid">
         <!-- BUILD_INJECT:district_cards -->
         <!-- END_BUILD_INJECT -->
       </div>
       
+      <!-- Benchmark Comparison Table -->
+      <!-- BUILD_INJECT:benchmark_table -->
+      <!-- END_BUILD_INJECT -->
+
+      <!-- District Insights & Takeaways -->
+      <!-- BUILD_INJECT:district_insights -->
+      <!-- END_BUILD_INJECT -->
+
+      <!-- Peer Districts in this State -->
+      <!-- BUILD_INJECT:peer_districts -->
+      <!-- END_BUILD_INJECT -->
+
+      <!-- District FAQs Section -->
+      <!-- BUILD_INJECT:district_faqs -->
+      <!-- END_BUILD_INJECT -->
+
+      <!-- Data Provenance & Methodology Box -->
+      <div class="im-provenance-box" style="margin-top:40px;">
+        <strong data-en="Data Governance &amp; Official Verification:" data-hi="डेटा प्रशासन एवं आधिकारिक सत्यापन:">Data Governance &amp; Official Verification:</strong>
+        <p style="margin:6px 0 0; color:var(--text-muted);" data-en="All district demographic figures are sourced from the Census of India (Office of the Registrar General &amp; Census Commissioner, Ministry of Home Affairs). Effective literacy rate is calculated among the population aged 7 and older. Sex ratio reflects the number of females per 1,000 males." data-hi="सभी जिला जनसांख्यिकी आंकड़े भारत की जनगणना (रजिस्ट्रार जनरल और जनगणना आयुक्त कार्यालय, गृह मंत्रालय) से लिए गए हैं। प्रभावी साक्षरता दर की गणना 7 वर्ष और उससे अधिक आयु की जनसंख्या में की जाती है। लिंगानुपात प्रति 1,000 पुरुषों पर महिलाओं की संख्या को दर्शाता है।">
+          All district demographic figures are sourced from the Census of India (Office of the Registrar General &amp; Census Commissioner, Ministry of Home Affairs). Effective literacy rate is calculated among the population aged 7 and older. Sex ratio reflects the number of females per 1,000 males.
+        </p>
+      </div>
+
     </div>
   </section>
 </main>
@@ -94,21 +140,22 @@
     </div>
 
     <nav class="footer-links" aria-label="Footer">
-      <a href="../../#about" data-en="About" data-hi="परिचय">About</a>
-      <a href="../../#" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
+      <a href="../../about.html" data-en="About" data-hi="परिचय">About</a>
+      <a href="../../sources.html" data-en="Data Sources" data-hi="डेटा स्रोत">Data Sources</a>
       <a href="../../methodology.html" data-en="Methodology" data-hi="कार्यप्रणाली">Methodology</a>
-      <a href="../../#" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="../../#" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
-      <a href="../../#" data-en="Terms" data-hi="शर्तें">Terms</a>
-      <a href="../../#" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
-      <a href="../../#" data-en="Corrections" data-hi="सुधार">Corrections</a>
+      <a href="../../contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="../../privacy.html" data-en="Privacy Policy" data-hi="गोपनीयता नीति">Privacy Policy</a>
+      <a href="../../terms.html" data-en="Terms" data-hi="शर्तें">Terms</a>
+      <a href="../../disclaimer.html" data-en="Disclaimer" data-hi="अस्वीकरण">Disclaimer</a>
     </nav>
 
     <p class="footer-disclaimer" data-en="IndiaMetrix is an independent data platform and is not affiliated with the Government of India." data-hi="IndiaMetrix एक स्वतंत्र डेटा प्लेटफ़ॉर्म है और भारत सरकार से संबद्ध नहीं है।">IndiaMetrix is an independent data platform and is not affiliated with the Government of India.</p>
-    <p class="footer-copy">© 2026 IndiaMetrix.</p>
+    <p class="footer-copy">&copy; 2026 IndiaMetrix.</p>
   </div>
 </footer>
 
 <script src="../../assets/js/main.js"></script>
+<!-- BUILD_INJECT:schemas -->
+<!-- END_BUILD_INJECT -->
 </body>
 </html>

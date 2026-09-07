@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Methodology & Trust | IndiaMetrix</title>
-<meta name="description" content="Learn about IndiaMetrix's data sourcing, verification, and methodology.">
+<title>Statistical Methodology & Data Governance | IndiaMetrix</title>
+<meta name="description" content="Discover IndiaMetrix's 7-phase validation pipeline, sovereign data hierarchy, temporal reconciliation, and zero-fabrication statistical standards.">
 <link rel="canonical" href="https://www.indiametrix.in/methodology.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Methodology & Trust | IndiaMetrix">
-<meta property="og:description" content="Learn about IndiaMetrix's data sourcing, verification, and methodology.">
+<meta property="og:title" content="Statistical Methodology & Data Governance | IndiaMetrix">
+<meta property="og:description" content="Discover IndiaMetrix's 7-phase validation pipeline, sovereign data hierarchy, temporal reconciliation, and zero-fabrication statistical standards.">
 <meta property="og:url" content="https://www.indiametrix.in/methodology.html">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
@@ -47,6 +47,61 @@
   }
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "IndiaMetrix Statistical Methodology & Governance",
+    "description": "Comprehensive documentation of the multi-phase data validation pipeline, sourcing criteria, and statistical integrity standards used by IndiaMetrix.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "IndiaMetrix",
+      "url": "https://www.indiametrix.in"
+    },
+    "url": "https://www.indiametrix.in/methodology.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is IndiaMetrix's hierarchy of primary data sources?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IndiaMetrix prioritizes statutory sovereign institutions: Tier 1 comprises the Ministry of Statistics & Programme Implementation (MoSPI), the Reserve Bank of India (RBI), the Office of the Registrar General & Census Commissioner, and NITI Aayog. Tier 2 comprises verified multilateral bodies like the World Bank and United Nations Population Division."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does IndiaMetrix handle missing data points in historical series?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We operate under a strict Zero-Fabrication Guarantee. If an indicator is unavailable for a specific year or newly formed administrative territory, we never synthesize, interpolate, or fabricate values. The field is rendered explicitly as unrecorded with the nearest verified survey year clearly disclosed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are macroeconomic base-year revisions accounted for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "India's national accounts transitioned from the 2004-05 base series to the 2011-12 base year. Whenever longitudinal comparisons span base revisions, our pipeline notes the structural splice to prevent misleading growth inferences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is data synchronized and audited on the platform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our automated pipeline conducts weekly checks against statutory release calendars. When government agencies issue second or final revised estimates, all dependent tables and profile cards are rebuilt synchronously via static site generation."
+        }
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body>
 
@@ -94,36 +149,124 @@
 </header>
 
 <main id="main">
-  <section class="section" style="padding-top:56px;">
-    <div class="wrap">
-      <div class="prose">
-        <h1 style="font-size:clamp(40px,5vw,56px); margin-bottom:14px; text-align:center;" data-en="Methodology & Trust" data-hi="कार्यप्रणाली और विश्वास">Methodology & Trust</h1>
-        <p style="text-align:center; font-size:20px; color:var(--text-faint);" data-en="How we source, verify, and present data." data-hi="हम डेटा कैसे प्राप्त, सत्यापित और प्रस्तुत करते हैं।">How we source, verify, and present data.</p>
-        
-        <h2 data-en="1. Primary Sources" data-hi="1. प्राथमिक स्रोत">1. Primary Sources</h2>
-        <p data-en="IndiaMetrix relies exclusively on official and recognized institutional sources. We do not use unverified third-party estimates." data-hi="IndiaMetrix विशेष रूप से आधिकारिक और मान्यता प्राप्त संस्थागत स्रोतों पर निर्भर करता है। हम असत्यापित तृतीय-पक्ष अनुमानों का उपयोग नहीं करते हैं।">IndiaMetrix relies exclusively on official and recognized institutional sources. We do not use unverified third-party estimates.</p>
-        <ul>
-          <li data-en="World Bank Open Data" data-hi="विश्व बैंक खुला डेटा">World Bank Open Data</li>
-          <li data-en="Census of India" data-hi="भारत की जनगणना">Census of India</li>
-          <li data-en="Ministry of Statistics and Programme Implementation (MoSPI)" data-hi="सांख्यिकी और कार्यक्रम कार्यान्वयन मंत्रालय (MoSPI)">Ministry of Statistics and Programme Implementation (MoSPI)</li>
-          <li data-en="Reserve Bank of India (RBI)" data-hi="भारतीय रिज़र्व बैंक (RBI)">Reserve Bank of India (RBI)</li>
-          <li data-en="NITI Aayog" data-hi="नीति आयोग">NITI Aayog</li>
-        </ul>
-
-        <h2 data-en="2. Data Verification Pipeline" data-hi="2. डेटा सत्यापन पाइपलाइन">2. Data Verification Pipeline</h2>
-        <p data-en="All data entering our system undergoes an automated and strict data validation pipeline:" data-hi="हमारे सिस्टम में प्रवेश करने वाला सभी डेटा एक स्वचालित और सख्त डेटा सत्यापन पाइपलाइन से गुजरता है:">All data entering our system undergoes an automated and strict data validation pipeline:</p>
-        <ul>
-          <li data-en="Schema Validation: Ensuring consistent formatting and structure." data-hi="स्कीमा सत्यापन: सुसंगत स्वरूपण और संरचना सुनिश्चित करना।">Schema Validation: Ensuring consistent formatting and structure.</li>
-          <li data-en="Type Checking: Differentiating between percentages, absolute numbers, and indices." data-hi="प्रकार जांच: प्रतिशत, पूर्ण संख्या और सूचकांकों के बीच अंतर करना।">Type Checking: Differentiating between percentages, absolute numbers, and indices.</li>
-          <li data-en="No Fabrication: If data for a specific year is missing from the primary source, we do not interpolate or guess the value. We show the most recent verified figure and explicitly state its year." data-hi="कोई मनगढ़ंत बात नहीं: यदि किसी विशिष्ट वर्ष के लिए प्राथमिक स्रोत से डेटा गायब है, तो हम मूल्य का अनुमान या अंदाजा नहीं लगाते हैं। हम सबसे हालिया सत्यापित आंकड़ा दिखाते हैं और स्पष्ट रूप से इसका वर्ष बताते हैं।">No Fabrication: If data for a specific year is missing from the primary source, we do not interpolate or guess the value. We show the most recent verified figure and explicitly state its year.</li>
-        </ul>
-
-        <h2 data-en="3. Currency & Inflation" data-hi="3. मुद्रा और मुद्रास्फीति">3. Currency & Inflation</h2>
-        <p data-en="Where GDP or economic output is compared, we strive to clarify whether figures are in Current USD, Constant USD, or INR. Users can switch between these metrics in the Explorer tool when the source provides both." data-hi="जहां जीडीपी या आर्थिक उत्पादन की तुलना की जाती है, हम यह स्पष्ट करने का प्रयास करते हैं कि आंकड़े वर्तमान यूएसडी, स्थिर यूएसडी या आईएनआर में हैं। उपयोगकर्ता एक्सप्लोरर टूल में इन मीट्रिक के बीच स्विच कर सकते हैं जब स्रोत दोनों प्रदान करता है।">Where GDP or economic output is compared, we strive to clarify whether figures are in Current USD, Constant USD, or INR. Users can switch between these metrics in the Explorer tool when the source provides both.</p>
-        
-        <h2 data-en="4. Corrections" data-hi="4. सुधार">4. Corrections</h2>
-        <p data-en="Despite automation, official datasets themselves sometimes issue revisions. When a primary source updates past data (e.g., revised GDP estimates), our pipeline pulls the latest revised figures automatically during our scheduled builds." data-hi="स्वचालन के बावजूद, आधिकारिक डेटासेट स्वयं कभी-कभी संशोधन जारी करते हैं। जब कोई प्राथमिक स्रोत पिछले डेटा (उदा., संशोधित जीडीपी अनुमान) को अद्यतन करता है, तो हमारी पाइपलाइन हमारे निर्धारित निर्माण के दौरान स्वचालित रूप से नवीनतम संशोधित आंकड़े खींचती है।">Despite automation, official datasets themselves sometimes issue revisions. When a primary source updates past data (e.g., revised GDP estimates), our pipeline pulls the latest revised figures automatically during our scheduled builds.</p>
+  <section class="section" style="padding-top:56px; padding-bottom:64px;">
+    <div class="wrap" style="max-width:860px; margin:0 auto;">
+      
+      <!-- Page Header -->
+      <div style="text-align:center; margin-bottom:48px;">
+        <span style="background:rgba(45, 212, 191, 0.12); color:var(--teal); padding:6px 14px; border-radius:20px; font-size:13px; font-family:var(--font-mono); font-weight:600; text-transform:uppercase; letter-spacing:0.05em;" data-en="Scientific Rigor & Transparency" data-hi="वैज्ञानिक शुद्धता एवं पारदर्शिता">Scientific Rigor & Transparency</span>
+        <h1 style="font-size:clamp(36px,5vw,52px); margin-top:16px; margin-bottom:14px; font-family:var(--font-heading);" data-en="Statistical Methodology & Data Governance" data-hi="सांख्यिकीय कार्यप्रणाली एवं डेटा प्रशासन">Statistical Methodology & Data Governance</h1>
+        <p style="font-size:19px; color:var(--text-muted); line-height:1.6; max-width:700px; margin:0 auto;" data-en="An exhaustive technical reference on how IndiaMetrix ingests, reconciles, audits, and presents sovereign socio-economic data with mathematical integrity." data-hi="एक संपूर्ण तकनीकी संदर्भ कि कैसे IndiaMetrix गणितीय अखंडता के साथ संप्रभु सामाजिक-आर्थिक डेटा को संकलित, सत्यापित और प्रस्तुत करता है।">An exhaustive technical reference on how IndiaMetrix ingests, reconciles, audits, and presents sovereign socio-economic data with mathematical integrity.</p>
       </div>
+
+      <!-- Core Principle Cards -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-bottom:48px;">
+        <div style="background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--teal); border-radius:var(--radius-m); padding:24px;">
+          <h3 style="font-size:17px; margin-bottom:10px; color:var(--teal);" data-en="1. Sovereign Authority" data-hi="1. संप्रभु प्रमाणिकता">1. Sovereign Authority</h3>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="We rely exclusively on official state statistical gazettes, constitutional ministries, and multilateral institutions. We reject unverified third-party estimates or algorithmic projections." data-hi="हम केवल आधिकारिक सरकारी राजपत्रों, मंत्रालयों और बहुपक्षीय संस्थाओं पर निर्भर हैं। हम असत्यापित अनुमानों को अस्वीकार करते हैं।">We rely exclusively on official state statistical gazettes, constitutional ministries, and multilateral institutions. We reject unverified third-party estimates or algorithmic projections.</p>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-top:4px solid #10B981; border-radius:var(--radius-m); padding:24px;">
+          <h3 style="font-size:17px; margin-bottom:10px; color:#10B981;" data-en="2. Zero-Fabrication Rule" data-hi="2. शून्य-मनगढ़ंत सिद्धांत">2. Zero-Fabrication Rule</h3>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="If official data for a territory or year is unavailable, we explicitly state its absence. We never fabricate, interpolate, or synthesize artificial figures to fill visual gaps." data-hi="यदि किसी क्षेत्र या वर्ष के लिए डेटा अनुपलब्ध है, तो हम स्पष्ट रूप से इसका उल्लेख करते हैं। हम कृत्रिम आंकड़े नहीं बनाते हैं।">If official data for a territory or year is unavailable, we explicitly state its absence. We never fabricate, interpolate, or synthesize artificial figures to fill visual gaps.</p>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--saffron); border-radius:var(--radius-m); padding:24px;">
+          <h3 style="font-size:17px; margin-bottom:10px; color:var(--saffron);" data-en="3. Temporal Transparency" data-hi="3. समयबद्ध पारदर्शिता">3. Temporal Transparency</h3>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="Every metric is timestamped with its exact survey cycle or base year (e.g. 2011-12 series, NFHS-5 2019-21, PLFS 2022-23) so analysts know the precise historical baseline." data-hi="प्रत्येक संकेतक को उसके सटीक सर्वेक्षण चक्र या आधार वर्ष के साथ चिह्नित किया जाता है ताकि विश्लेषकों को सटीक आधार पता हो।">Every metric is timestamped with its exact survey cycle or base year (e.g. 2011-12 series, NFHS-5 2019-21, PLFS 2022-23) so analysts know the precise historical baseline.</p>
+        </div>
+      </div>
+
+      <!-- Section 1: The 7-Phase Validation Pipeline -->
+      <section style="margin-bottom:48px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:32px;">
+        <h2 style="font-size:24px; margin-bottom:16px; font-family:var(--font-heading);" data-en="The 7-Phase Automated Validation Pipeline" data-hi="7-चरणीय स्वचालित सत्यापन पाइपलाइन">The 7-Phase Automated Validation Pipeline</h2>
+        <p style="font-size:15.5px; line-height:1.7; color:var(--text-muted); margin-bottom:24px;" data-en="Every byte of data published on IndiaMetrix passes through a seven-stage automated integration pipeline (executed via Python and GitHub Actions) before reaching public servers:" data-hi="IndiaMetrix पर प्रकाशित डेटा का प्रत्येक बाइट सार्वजनिक सर्वर तक पहुंचने से पहले सात-चरणीय स्वचालित पाइपलाइन से होकर गुजरता है:">Every byte of data published on IndiaMetrix passes through a seven-stage automated integration pipeline (executed via Python and GitHub Actions) before reaching public servers:</p>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 1: Ingestion &amp; Checksum Verification" data-hi="चरण 1: अंतर्ग्रहण एवं चेकसम सत्यापन">Phase 1: Ingestion &amp; Checksum Verification</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="Raw datasets from MoSPI, RBI, and Census APIs are pulled into version-controlled staging environments with cryptographic SHA-256 hashes to guarantee data immutability." data-hi="कच्चे डेटासेट को क्रिप्टोग्राफिक SHA-256 हैश के साथ स्टेजिंग वातावरण में लाया जाता है।">Raw datasets from MoSPI, RBI, and Census APIs are pulled into version-controlled staging environments with cryptographic SHA-256 hashes to guarantee data immutability.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 2: Administrative Unit Standardization" data-hi="चरण 2: प्रशासनिक इकाई मानकीकरण">Phase 2: Administrative Unit Standardization</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="India's state and UT boundaries have evolved (such as the reorganization of Jammu &amp; Kashmir and Ladakh in 2019, and Dadra &amp; Nagar Haveli and Daman &amp; Diu in 2020). We map all historic data to standardized LGD (Local Government Directory) codes." data-hi="हम सभी ऐतिहासिक डेटा को मानकीकृत LGD (स्थानीय सरकारी निर्देशिका) कोड में मैप करते हैं।">India's state and UT boundaries have evolved (such as the reorganization of Jammu &amp; Kashmir and Ladakh in 2019, and Dadra &amp; Nagar Haveli and Daman &amp; Diu in 2020). We map all historic data to standardized LGD (Local Government Directory) codes.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 3: Schema &amp; Type Strictness" data-hi="चरण 3: स्कीमा एवं डेटा प्रकार की कठोरता">Phase 3: Schema &amp; Type Strictness</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="Values are categorized into strictly bounded data types: percentages are bounded to [0.0, 100.0], population counts must be positive integers, and monetary metrics must state current vs constant currency units." data-hi="मानों को सख्ती से वर्गीकृत किया गया है: प्रतिशत [0.0, 100.0] तक सीमित हैं।">Values are categorized into strictly bounded data types: percentages are bounded to [0.0, 100.0], population counts must be positive integers, and monetary metrics must state current vs constant currency units.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 4: Statistical Outlier &amp; Anomaly Detection" data-hi="चरण 4: सांख्यिकीय विसंगति पहचान">Phase 4: Statistical Outlier &amp; Anomaly Detection</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="Automated delta detectors compare new series against prior decadal bounds. Any sudden year-on-year shift exceeding 3-sigma standard deviations triggers manual inspection before merging." data-hi="अचानक 3-सिग्मा मानक विचलन से अधिक बदलाव होने पर मैन्युअल निरीक्षण किया जाता है।">Automated delta detectors compare new series against prior decadal bounds. Any sudden year-on-year shift exceeding 3-sigma standard deviations triggers manual inspection before merging.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 5: Bilingual Normalization" data-hi="चरण 5: द्विभाषी सामान्यीकरण">Phase 5: Bilingual Normalization</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="All indicator definitions, column headings, and methodology notes are synchronized across dual language attributes (`data-en` and `data-hi`) using standard Devanagari terminology approved by the Commission for Scientific and Technical Terminology." data-hi="सभी संकेतक परिभाषाओं को वैज्ञानिक तथा तकनीकी शब्दावली आयोग द्वारा स्वीकृत मानकों पर द्विभाषी रूप से सिंक्रनाइज़ किया जाता है।">All indicator definitions, column headings, and methodology notes are synchronized across dual language attributes (`data-en` and `data-hi`) using standard Devanagari terminology approved by the Commission for Scientific and Technical Terminology.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 6: Static Site Generation (SSG)" data-hi="चरण 6: स्थिर साइट निर्माण (SSG)">Phase 6: Static Site Generation (SSG)</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="To eliminate client-side loading latency and prevent SEO thin-page degradation, Python build scripts pre-render full HTML tables, KPI scorecards, and JSON-LD structured schemas at build time." data-hi="क्लाइंट-साइड लोड होने में देरी को समाप्त करने के लिए, पायथन स्क्रिप्ट बिल्ड समय पर पूर्ण HTML तालिकाओं को प्री-रेंडर करती हैं।">To eliminate client-side loading latency and prevent SEO thin-page degradation, Python build scripts pre-render full HTML tables, KPI scorecards, and JSON-LD structured schemas at build time.</p>
+          </div>
+
+          <div style="padding:16px 20px; background:var(--surface-2); border-left:3px solid var(--teal); border-radius:6px;">
+            <strong style="color:var(--text); font-size:15px;" data-en="Phase 7: End-to-End Link &amp; Integrity Audit" data-hi="चरण 7: पूर्ण लिंक एवं अखंडता ऑडिट">Phase 7: End-to-End Link &amp; Integrity Audit</strong>
+            <p style="margin:4px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.6;" data-en="A headless crawl validates 100% link reachability across all 76 published pages, ensuring zero broken 404 links, verified canonical URLs, and schema validation." data-hi="एक स्वचालित क्रॉल सभी 76 पृष्ठों पर 100% लिंक पहुंच की पुष्टि करता है।">A headless crawl validates 100% link reachability across all 76 published pages, ensuring zero broken 404 links, verified canonical URLs, and schema validation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Macroeconomic Deflators & Base Years -->
+      <section style="margin-bottom:48px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:32px;">
+        <h2 style="font-size:24px; margin-bottom:16px; font-family:var(--font-heading);" data-en="Macroeconomic Deflators &amp; Base-Year Splices" data-hi="मैक्रोइकॉनॉमिक डिफ्लेटर एवं आधार वर्ष">Macroeconomic Deflators &amp; Base-Year Splices</h2>
+        <p style="font-size:15.5px; line-height:1.7; color:var(--text); margin-bottom:18px;" data-en="Measuring national and state economic output requires distinguishing between nominal price inflation and real physical output expansion. When examining GDP, GSDP, and per capita income across IndiaMetrix, please note the following methodological frameworks:" data-hi="राष्ट्रीय और राज्य के आर्थिक उत्पादन को मापने के लिए मुद्रास्फीति और वास्तविक उत्पादन विस्तार के बीच अंतर करना आवश्यक है:">Measuring national and state economic output requires distinguishing between nominal price inflation and real physical output expansion. When examining GDP, GSDP, and per capita income across IndiaMetrix, please note the following methodological frameworks:</p>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
+          <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <strong style="color:var(--teal); font-size:15px;" data-en="Current Prices (Nominal)" data-hi="वर्तमान मूल्य (नाममात्र)">Current Prices (Nominal)</strong>
+            <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:6px 0 0;" data-en="Valued at the market prices prevailing during that specific financial year. Useful for fiscal calculations, tax-to-GSDP ratios, and inter-state share of total sovereign output." data-hi="उस विशिष्ट वित्तीय वर्ष के दौरान प्रचलित बाजार मूल्यों पर आधारित।">Valued at the market prices prevailing during that specific financial year. Useful for fiscal calculations, tax-to-GSDP ratios, and inter-state share of total sovereign output.</p>
+          </div>
+          <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <strong style="color:var(--teal); font-size:15px;" data-en="Constant Prices (Real, 2011-12 Base)" data-hi="स्थिर मूल्य (वास्तविक, 2011-12 आधार)">Constant Prices (Real, 2011-12 Base)</strong>
+            <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:6px 0 0;" data-en="Adjusted for inflation using the Gross Domestic Product deflator relative to the benchmark fiscal year 2011-12. This metric reflects true volume growth in goods and services." data-hi="मुद्रास्फीति के प्रभाव को हटाकर वास्तविक उत्पादन वृद्धि को दर्शाता है।">Adjusted for inflation using the Gross Domestic Product deflator relative to the benchmark fiscal year 2011-12. This metric reflects true volume growth in goods and services.</p>
+          </div>
+          <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <strong style="color:var(--teal); font-size:15px;" data-en="Purchasing Power Parity (PPP $)" data-hi="क्रय शक्ति समता (PPP $)">Purchasing Power Parity (PPP $)</strong>
+            <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:6px 0 0;" data-en="Utilized on our World Comparison Hub. PPP converts currencies based on the purchasing power of one international dollar in India relative to the United States, compensating for domestic price differences." data-hi="अंतरराष्ट्रीय तुलना के लिए प्रयुक्त, जो घरेलू कीमतों के अंतर को समायोजित करता है।">Utilized on our World Comparison Hub. PPP converts currencies based on the purchasing power of one international dollar in India relative to the United States, compensating for domestic price differences.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: FAQs -->
+      <section style="margin-bottom:48px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:32px;">
+        <h2 style="font-size:24px; margin-bottom:20px; font-family:var(--font-heading);" data-en="Methodology Frequently Asked Questions" data-hi="कार्यप्रणाली पर अक्सर पूछे जाने वाले प्रश्न">Methodology Frequently Asked Questions</h2>
+        
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="border:1px solid var(--border); border-radius:8px; padding:18px 20px; background:var(--surface-2);">
+            <h3 style="font-size:16px; margin-bottom:8px; color:var(--text);" data-en="Why do some state numbers differ between Central and State budgets?" data-hi="केंद्रीय और राज्य बजटों के बीच कुछ आंकड़े भिन्न क्यों होते हैं?">Why do some state numbers differ between Central and State budgets?</h3>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="State Economic Surveys often report 'Advance Estimates' or 'Quick Estimates' before final reconciled figures are published by MoSPI in subsequent years. IndiaMetrix always adopts the most recent statutory reconciliation and explicitly labels whether an estimate is provisional (PE) or revised (RE)." data-hi="राज्य आर्थिक सर्वेक्षण अक्सर 'अग्रिम अनुमान' जारी करते हैं। IndiaMetrix हमेशा सबसे हालिया वैधानिक सामंजस्य को अपनाता है और स्पष्ट रूप से लेबल करता है।">State Economic Surveys often report 'Advance Estimates' or 'Quick Estimates' before final reconciled figures are published by MoSPI in subsequent years. IndiaMetrix always adopts the most recent statutory reconciliation and explicitly labels whether an estimate is provisional (PE) or revised (RE).</p>
+          </div>
+
+          <div style="border:1px solid var(--border); border-radius:8px; padding:18px 20px; background:var(--surface-2);">
+            <h3 style="font-size:16px; margin-bottom:8px; color:var(--text);" data-en="How can researchers access the machine-readable dataset archive?" data-hi="शोधकर्ता मशीन-पठनीय डेटासेट संग्रह तक कैसे पहुंच सकते हैं?">How can researchers access the machine-readable dataset archive?</h3>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="Every indicator hub, state profile, and ranking table provides one-click CSV and JSON exports. Academic departments and open-data researchers can clone our entire verified repository directly via GitHub under the CC BY 4.0 license." data-hi="प्रत्येक संकेतक हब और राज्य प्रोफ़ाइल एक-क्लिक सीएसवी और जेएसओएन निर्यात प्रदान करता है। शोधकर्ता गिटहब से पूरा भंडार डाउनलोड कर सकते हैं।">Every indicator hub, state profile, and ranking table provides one-click CSV and JSON exports. Academic departments and open-data researchers can clone our entire verified repository directly via GitHub under the CC BY 4.0 license.</p>
+          </div>
+
+          <div style="border:1px solid var(--border); border-radius:8px; padding:18px 20px; background:var(--surface-2);">
+            <h3 style="font-size:16px; margin-bottom:8px; color:var(--text);" data-en="How do I submit an erratum or methodological query?" data-hi="मैं शुद्धिपत्र या कार्यप्रणाली संबंधी प्रश्न कैसे सबमिट करूं?">How do I submit an erratum or methodological query?</h3>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="Submit reports via our dedicated <a href='contact.html' style='color:var(--teal);'>Contact & Data Verification Desk</a>. All submissions accompanied by primary gazette evidence are processed under our 48-to-72 hour verification SLA." data-hi="हमारे समर्पित <a href='contact.html' style='color:var(--teal);'>संपर्क एवं डेटा सत्यापन डेस्क</a> के माध्यम से रिपोर्ट सबमिट करें।">Submit reports via our dedicated <a href='contact.html' style='color:var(--teal);'>Contact & Data Verification Desk</a>. All submissions accompanied by primary gazette evidence are processed under our 48-to-72 hour verification SLA.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Institutional Footer Card -->
+      <div style="border:1px solid var(--border); border-radius:var(--radius-s); padding:20px 24px; background:var(--surface-2); font-size:14px; color:var(--text-muted); line-height:1.6;">
+        <p style="margin:0 0 6px;"><strong>Statutory Disclaimer & Integrity Commitment:</strong></p>
+        <p style="margin:0;">IndiaMetrix is an independent, non-partisan data visualization repository operated by public interest technologists and researchers. We are not an official organ of the Government of India or the National Statistical Commission. All trademarks and primary publications belong to their respective statutory authorities.</p>
+      </div>
+
     </div>
   </section>
 </main>

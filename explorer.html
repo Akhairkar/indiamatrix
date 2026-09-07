@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Explorer | IndiaMetrix</title>
-<meta name="description" content="Search, filter, and compare data across Indian states. Download custom datasets instantly.">
+<title>India States Data Explorer: Custom Filters, Indicators &amp; Datasets | IndiaMetrix</title>
+<meta name="description" content="Interactive data explorer for Indian states. Search, filter, and compare population, GSDP, literacy, and health indicators with instant CSV dataset export.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.indiametrix.in/explorer.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Data Explorer | IndiaMetrix">
-<meta property="og:description" content="Search, filter, and compare data across Indian states. Download custom datasets instantly.">
+<meta property="og:title" content="India States Data Explorer: Custom Filters, Indicators &amp; Datasets | IndiaMetrix">
+<meta property="og:description" content="Interactive data explorer for Indian states. Search, filter, and compare population, GSDP, literacy, and health indicators with instant CSV dataset export.">
 <meta property="og:url" content="https://www.indiametrix.in/explorer.html">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
@@ -154,7 +155,11 @@
 <main id="main">
   <section class="section" style="padding-top:56px;">
     <div class="wrap">
-      <p class="eyebrow" data-en="Interactive Tool" data-hi="इंटरैक्टिव टूल">Interactive Tool</p>
+      <nav aria-label="Breadcrumb" style="font-family:var(--font-mono); font-size:13px; color:var(--text-faint); margin-bottom:16px;">
+        <a href="./" style="color:var(--text-muted); text-decoration:none;" data-en="Home" data-hi="होम">Home</a> / 
+        <span style="color:var(--teal);" aria-current="page" data-en="Data Explorer" data-hi="एक्सप्लोरर">Data Explorer</span>
+      </nav>
+      <p class="eyebrow" data-en="Sub-National Intelligence Explorer" data-hi="उप-राष्ट्रीय डेटा एक्सप्लोरर">Sub-National Intelligence Explorer</p>
       <h1 style="font-size:clamp(30px,4.4vw,46px); max-width:18ch; margin-bottom:14px;" data-en="Data Explorer" data-hi="डेटा एक्सप्लोरर">Data Explorer</h1>
       <p class="section-sub" style="max-width:60ch;" data-en="Filter, visualize, and download custom datasets across all states and indicators." data-hi="सभी राज्यों और संकेतकों में कस्टम डेटासेट फ़िल्टर, विज़ुअलाइज़ और डाउनलोड करें।">Filter, visualize, and download custom datasets across all states and indicators.</p>
     </div>
@@ -223,6 +228,80 @@
     </div>
   </section>
 
+  <!-- Explorer Features & Analytics -->
+  <section class="section" style="padding-top:20px; padding-bottom:48px;">
+    <div class="wrap">
+      <h2 style="font-family:var(--font-display); font-size:22px; margin-bottom:16px;" data-en="How to Use the Data Explorer" data-hi="डेटा एक्सप्लोरर का उपयोग कैसे करें">How to Use the Data Explorer</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-bottom:40px;">
+        <div class="im-callout" style="margin:0; border-left:4px solid var(--teal);">
+          <h3 style="font-size:16px; margin:0 0 6px; color:var(--teal);" data-en="Multi-Indicator Correlation" data-hi="बहु-संकेतक सहसंबंध">Multi-Indicator Correlation</h3>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="Select multiple indicators simultaneously to uncover correlations between economic productivity (GSDP), human capital investments (literacy), and demographic balances across regions." data-hi="आर्थिक उत्पादकता (GSDP), मानव पूंजी निवेश (साक्षरता) और जनसांख्यिकीय संतुलन के बीच सहसंबंधों को उजागर करने के लिए एक साथ कई संकेतकों का चयन करें।">Select multiple indicators simultaneously to uncover correlations between economic productivity (GSDP), human capital investments (literacy), and demographic balances across regions.</p>
+        </div>
+        <div class="im-callout" style="margin:0; border-left:4px solid #10B981;">
+          <h3 style="font-size:16px; margin:0 0 6px; color:#10B981;" data-en="Regional &amp; Cohort Filtering" data-hi="क्षेत्रीय एवं समूह फ़िल्टरिंग">Regional &amp; Cohort Filtering</h3>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="Isolate specific state cohorts such as southern industrial hubs, northern agricultural states, or northeastern hill economies to compare balanced regional peer groups." data-hi="संतुलित क्षेत्रीय समूहों की तुलना करने के लिए विशिष्ट राज्यों जैसे दक्षिणी औद्योगिक केंद्र, उत्तरी कृषि राज्य या पूर्वोत्तर राज्यों को अलग करें।">Isolate specific state cohorts such as southern industrial hubs, northern agricultural states, or northeastern hill economies to compare balanced regional peer groups.</p>
+        </div>
+        <div class="im-callout" style="margin:0; border-left:4px solid var(--saffron);">
+          <h3 style="font-size:16px; margin:0 0 6px; color:var(--saffron);" data-en="Verified Dataset Downloads" data-hi="सत्यापित डेटासेट डाउनलोड">Verified Dataset Downloads</h3>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="Export tailored slices of official government data in CSV format for academic research, data journalism, policy formulation, and econometric modeling." data-hi="शैक्षणिक अनुसंधान, डेटा पत्रकारिता, नीति निर्माण और अर्थमितीय मॉडलिंग के लिए CSV प्रारूप में आधिकारिक सरकारी डेटा निर्यात करें।">Export tailored slices of official government data in CSV format for academic research, data journalism, policy formulation, and econometric modeling.</p>
+        </div>
+      </div>
+
+      
+      <!-- Data Indicator Glossary & Methodological Definitions -->
+      <div style="margin-top:40px; margin-bottom:40px;">
+        <h2 style="font-family:var(--font-display); font-size:22px; margin-bottom:16px;" data-en="Indicator Measurement Standards &amp; Data Governance" data-hi="संकेतक माप मानक एवं डेटा प्रशासन">Indicator Measurement Standards &amp; Data Governance</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Gross State Domestic Product (GSDP)" data-hi="सकल राज्य घरेलू उत्पाद (GSDP)">Gross State Domestic Product (GSDP)</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="Measures the aggregate monetary value of all final goods and services produced within a state's borders in a given financial year. Compiled by State Directorates of Economics and Statistics (DES) and reconciled by the Ministry of Statistics and Programme Implementation (MoSPI) under current price series." data-hi="किसी राज्य की सीमाओं के भीतर उत्पादित सभी अंतिम वस्तुओं और सेवाओं का कुल मौद्रिक मूल्य।">Measures the aggregate monetary value of all final goods and services produced within a state's borders in a given financial year. Compiled by State Directorates of Economics and Statistics (DES) and reconciled by the Ministry of Statistics and Programme Implementation (MoSPI) under current price series.</p>
+          </div>
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Effective Literacy Rate" data-hi="प्रभावी साक्षरता दर">Effective Literacy Rate</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="Calculated exclusively for the population aged 7 years and older who can both read and write with understanding in any recognized Indian language. Raw crude literacy figures including infants are excluded pursuant to Census of India standard guidelines." data-hi="विशेष रूप से 7 वर्ष और उससे अधिक आयु की जनसंख्या के लिए गणना की जाती है।">Calculated exclusively for the population aged 7 years and older who can both read and write with understanding in any recognized Indian language. Raw crude literacy figures including infants are excluded pursuant to Census of India standard guidelines.</p>
+          </div>
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Periodic Labour Force Survey (PLFS)" data-hi="आवधिक श्रम बल सर्वेक्षण (PLFS)">Periodic Labour Force Survey (PLFS)</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="Annual and quarterly nationwide workforce survey administered by the National Sample Survey Office (NSSO). Unemployment rate reflects Usual Status (Principal Activity Status + Subsidiary Economic Status) for working-age citizens aged 15 years and above." data-hi="राष्ट्रीय नमूना सर्वेक्षण कार्यालय (NSSO) द्वारा आयोजित कार्यबल सर्वेक्षण।">Annual and quarterly nationwide workforce survey administered by the National Sample Survey Office (NSSO). Unemployment rate reflects Usual Status (Principal Activity Status + Subsidiary Economic Status) for working-age citizens aged 15 years and above.</p>
+          </div>
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Infant Mortality Rate (IMR)" data-hi="शिशु मृत्यु दर (IMR)">Infant Mortality Rate (IMR)</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="The probability of a child dying before completing their first year of life, expressed per 1,000 live births. Sourced from the Sample Registration System (SRS) Bulletins published by the Office of the Registrar General of India." data-hi="प्रति 1,000 जीवित जन्मों पर एक वर्ष की आयु पूरी करने से पहले मरने वाले बच्चों की संख्या।">The probability of a child dying before completing their first year of life, expressed per 1,000 live births. Sourced from the Sample Registration System (SRS) Bulletins published by the Office of the Registrar General of India.</p>
+          </div>
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Sex Ratio at Enumeration" data-hi="जनगणना में लिंगानुपात">Sex Ratio at Enumeration</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="Expressed as the number of females per 1,000 males residing within the jurisdiction. Serves as a vital demographic barometer for gender equity, survival ratios, and regional demographic transitions across decennial census milestones." data-hi="प्रति 1,000 पुरुषों पर महिलाओं की संख्या। लैंगिक समानता और जनसांख्यिकीय बदलाव के लिए महत्वपूर्ण।">Expressed as the number of females per 1,000 males residing within the jurisdiction. Serves as a vital demographic barometer for gender equity, survival ratios, and regional demographic transitions across decennial census milestones.</p>
+          </div>
+          <div class="im-callout" style="margin:0;">
+            <strong style="color:var(--teal);" data-en="Geographical Area &amp; Density" data-hi="भौगोलिक क्षेत्रफल एवं घनत्व">Geographical Area &amp; Density</strong>
+            <p style="margin:6px 0 0; font-size:13.5px; color:var(--text-muted); line-height:1.5;" data-en="Territorial surface measurements supplied by the Survey of India and Ministry of Home Affairs. Used to calculate population density (persons per square kilometer) and assess land utilization efficiency across states." data-hi="सर्वे ऑफ इंडिया द्वारा प्रदान किए गए क्षेत्रीय माप। जनसंख्या घनत्व की गणना के लिए उपयोग किया जाता है।">Territorial surface measurements supplied by the Survey of India and Ministry of Home Affairs. Used to calculate population density (persons per square kilometer) and assess land utilization efficiency across states.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs -->
+      <h2 style="font-family:var(--font-display); font-size:22px; margin-bottom:16px;" data-en="Frequently Asked Questions about Data Explorer" data-hi="डेटा एक्सप्लोरर के बारे में अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions about Data Explorer</h2>
+      <div style="display:flex; flex-direction:column; gap:16px; max-width:850px;">
+        <div class="im-callout" style="margin:0;">
+          <h3 style="font-size:16px; margin:0 0 6px; color:var(--teal);" data-en="Can I download custom filtered datasets from IndiaMetrix?" data-hi="क्या मैं IndiaMetrix से अनुकूलित डेटासेट डाउनलोड कर सकता हूँ?">Can I download custom filtered datasets from IndiaMetrix?</h3>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="Yes. Clicking the 'Export CSV' button downloads the exact table view currently rendered on screen, formatted with clean headers and source attributions." data-hi="हाँ। 'Export CSV' बटन पर क्लिक करने से वर्तमान में स्क्रीन पर रेंडर किया गया सटीक टेबल दृश्य डाउनलोड हो जाता है।">Yes. Clicking the 'Export CSV' button downloads the exact table view currently rendered on screen, formatted with clean headers and source attributions.</p>
+        </div>
+        <div class="im-callout" style="margin:0;">
+          <h3 style="font-size:16px; margin:0 0 6px; color:var(--teal);" data-en="How often are the state figures updated?" data-hi="राज्यों के आंकड़े कितनी बार अपडेट किए जाते हैं?">How often are the state figures updated?</h3>
+          <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="Indicators are reconciled whenever official agencies (MoSPI, Census Commissioner, Reserve Bank of India) publish updated survey rounds or annual economic estimates." data-hi="जब भी आधिकारिक एजेंसियां ​​(MoSPI, जनगणना आयुक्त, RBI) अद्यतन सर्वेक्षण या वार्षिक आर्थिक अनुमान जारी करती हैं, संकेतकों को अपडेट किया जाता है।">Indicators are reconciled whenever official agencies (MoSPI, Census Commissioner, Reserve Bank of India) publish updated survey rounds or annual economic estimates.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+      <!-- Research Export & Programmatic Access -->
+      <div style="margin-top:32px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:24px;">
+        <h3 style="font-size:18px; margin-bottom:8px; color:var(--teal);" data-en="Research Export &amp; Programmatic Data Access" data-hi="अनुसंधान निर्यात एवं प्रोग्रामेटिक डेटा पहुंच">Research Export &amp; Programmatic Data Access</h3>
+        <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;" data-en="The IndiaMetrix Explorer supports high-volume tabular filtering and client-side CSV downloads for researchers, economists, and university classrooms. All datasets are validated against primary sovereign releases and conform to standard RFC 4180 CSV specifications with UTF-8 encoding." data-hi="IndiaMetrix एक्सप्लोरर शोधकर्ताओं और छात्रों के लिए उच्च-मात्रा सारणीबद्ध फ़िल्टरिंग और CSV डाउनलोड का समर्थन करता है। सभी डेटासेट RFC 4180 विनिर्देशों के अनुरूप हैं।">The IndiaMetrix Explorer supports high-volume tabular filtering and client-side CSV downloads for researchers, economists, and university classrooms. All datasets are validated against primary sovereign releases and conform to standard RFC 4180 CSV specifications with UTF-8 encoding.</p>
+      </div>
+
 </main>
 
 <footer class="site-footer">
@@ -251,5 +330,49 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/explorer.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "IndiaMetrix Data Explorer",
+  "url": "https://www.indiametrix.in/explorer.html",
+  "applicationCategory": "DataAnalysisApplication",
+  "description": "Interactive data exploration tool for filtering, visualizing, and exporting sub-national Indian demographic and economic datasets."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.indiametrix.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Data Explorer", "item": "https://www.indiametrix.in/explorer.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I download custom filtered datasets from IndiaMetrix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Clicking the 'Export CSV' button downloads the exact table view currently rendered on screen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are the state figures updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indicators are reconciled whenever official agencies publish updated survey rounds or annual estimates."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>
