@@ -129,14 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentBaseYear = 2026; // Current simulation horizon
     const targetUniversalYear = currentBaseYear + yearsToUniversal;
 
+    const isHi = document.documentElement.getAttribute('data-lang') === 'hi' || document.documentElement.lang === 'hi';
+    const s1Name = isHi ? (s1.name.hi || s1.name.en) : s1.name.en;
+    const s2Name = isHi ? (s2.name.hi || s2.name.en) : s2.name.en;
+
     // 2. State-to-State Catch-up
     const gapBetweenStates = (lit2 - lit1).toFixed(2);
     let catchupText = "";
     if (lit1 >= lit2) {
-      catchupText = `Already leads ${s2.name.en} by ${Math.abs(gapBetweenStates)}% ✅`;
+      catchupText = isHi ? `${s2Name} से ${Math.abs(gapBetweenStates)}% आगे है ✅` : `Already leads ${s2.name.en} by ${Math.abs(gapBetweenStates)}% ✅`;
     } else {
       const yearsCatchup = Math.ceil(Math.abs(gapBetweenStates) / annualGain);
-      catchupText = `~${yearsCatchup} years to match ${s2.name.en}'s ${lit2}% (by ~${currentBaseYear + yearsCatchup})`;
+      catchupText = isHi ? `${s2Name} के ${lit2}% के बराबर पहुँचने में ~${yearsCatchup} वर्ष (~${currentBaseYear + yearsCatchup} तक)` : `~${yearsCatchup} years to match ${s2.name.en}'s ${lit2}% (by ~${currentBaseYear + yearsCatchup})`;
     }
 
     // 3. Gender / Sex Ratio Analysis
@@ -144,19 +148,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sexDiff = sex1 - naturalBenchmark;
     let sexStatus = "";
     if (sexDiff >= 0) {
-      sexStatus = `Favorable (+${sexDiff} above 950 benchmark)`;
+      sexStatus = isHi ? `सकारात्मक (950 मानक से +${sexDiff} अधिक)` : `Favorable (+${sexDiff} above 950 benchmark)`;
     } else {
-      sexStatus = `Deficit (${Math.abs(sexDiff)} below 950 benchmark)`;
+      sexStatus = isHi ? `कमी (950 मानक से ${Math.abs(sexDiff)} कम)` : `Deficit (${Math.abs(sexDiff)} below 950 benchmark)`;
     }
 
     // Update DOM
-    document.getElementById('res-s1-name').textContent = s1.name.en;
+    const s1NameEl = document.getElementById('res-s1-name');
+    if (s1NameEl) s1NameEl.textContent = s1Name;
+
     document.getElementById('res-current-lit').textContent = `${lit1}%`;
     document.getElementById('res-lit-gap').textContent = `${gapToUniversal}%`;
     document.getElementById('res-universal-year').textContent = `~${targetUniversalYear}`;
-    document.getElementById('res-years-to-100').textContent = `${yearsToUniversal} years required at +${annualGain}%/yr`;
+    document.getElementById('res-years-to-100').textContent = isHi ? `+${annualGain}%/वर्ष पर ${yearsToUniversal} वर्ष आवश्यक` : `${yearsToUniversal} years required at +${annualGain}%/yr`;
 
-    document.getElementById('res-benchmark-name').textContent = s2.name.en;
+    const bNameEl = document.getElementById('res-benchmark-name');
+    if (bNameEl) bNameEl.textContent = s2Name;
+
     document.getElementById('res-benchmark-gap').textContent = `${gapBetweenStates > 0 ? '+' : ''}${gapBetweenStates}%`;
     document.getElementById('res-catchup-pace').textContent = catchupText;
 
@@ -167,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bar = document.getElementById('lit-progress-bar');
     if (bar) {
       bar.style.width = `${Math.min(100, lit1)}%`;
-      document.getElementById('bar-label').textContent = `${s1.name.en}: ${lit1}%`;
+      document.getElementById('bar-label').textContent = `${s1Name}: ${lit1}%`;
     }
 
     // Quick links
@@ -176,4 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkCompare = document.getElementById('link-compare-states');
     if (linkCompare) linkCompare.href = `../compare.html?s1=${s1.id}&s2=${s2.id}`;
   }
+
+  document.querySelectorAll("[data-set-lang]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(calculate, 50);
+    });
+  });
 });

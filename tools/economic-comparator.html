@@ -73,9 +73,9 @@
 <main id="main">
   <div class="wrap" style="padding-top:20px;">
     <nav aria-label="Breadcrumb" style="font-size:13px; color:var(--text-faint); margin-bottom:12px;">
-      <a href="../" style="color:var(--text-muted); text-decoration:none;">Home</a> &gt; 
-      <a href="index.html" style="color:var(--text-muted); text-decoration:none;">Tools</a> &gt; 
-      <span style="color:var(--text);" aria-current="page">Economic Power &amp; Country Equivalence</span>
+      <a href="../" style="color:var(--text-muted); text-decoration:none;" data-en="Home" data-hi="होम">Home</a> &gt; 
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none;" data-en="Tools" data-hi="टूल्स">Tools</a> &gt; 
+      <span style="color:var(--text);" aria-current="page" data-en="Economic Power &amp; Country Equivalence" data-hi="आर्थिक शक्ति एवं देश समकक्षता">Economic Power &amp; Country Equivalence</span>
     </nav>
   </div>
 
@@ -94,7 +94,7 @@
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; align-items:flex-end;">
           <div>
-            <label for="state-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;">
+            <label for="state-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;" data-en="Select State / Union Territory:" data-hi="राज्य / केंद्र शासित प्रदेश चुनें:">
               Select State / Union Territory:
             </label>
             <select id="state-select" style="width:100%; padding:12px 14px; background:var(--surface-2); color:var(--text); border:1px solid var(--border); border-radius:8px; font-size:15px; font-family:var(--font-sans);">
@@ -104,7 +104,7 @@
 
           <div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <label for="growth-rate" style="font-size:13px; font-weight:600; color:var(--text-muted);">
+              <label for="growth-rate" style="font-size:13px; font-weight:600; color:var(--text-muted);" data-en="Projected Annual Growth Rate (%):" data-hi="अनुमानित वार्षिक विकास दर (%):">
                 Projected Annual Growth Rate (%):
               </label>
               <span id="growth-display" style="font-family:var(--font-mono); font-weight:700; color:var(--teal);">8.0%</span>
@@ -122,53 +122,53 @@
         
         <!-- Result 1: GSDP -->
         <div class="im-kpi-card">
-          <div class="im-kpi-label">State GSDP Output (<span id="res-state-name">Maharashtra</span>)</div>
+          <div class="im-kpi-label"><span data-en="State GSDP Output" data-hi="राज्य GSDP उत्पादन">State GSDP Output</span> (<span id="res-state-name">Maharashtra</span>)</div>
           <div class="im-kpi-value" id="res-gsdp-inr">₹38.79 Lakh Cr</div>
           <div style="font-family:var(--font-mono); font-size:16px; color:var(--teal); font-weight:600; margin-top:4px;" id="res-gsdp-usd">$464.6 Billion</div>
           <div class="im-kpi-provenance">
-            <span>📅 Ref Year: 2022-23</span>
-            <span>🏛️ Source: MoSPI</span>
+            <span data-en="📅 Ref Year: 2022-23" data-hi="📅 संदर्भ वर्ष: 2022-23">📅 Ref Year: 2022-23</span>
+            <span data-en="🏛️ Source: MoSPI" data-hi="🏛️ स्रोत: MoSPI">🏛️ Source: MoSPI</span>
           </div>
         </div>
 
         <!-- Result 2: Country Equivalent -->
         <div class="im-kpi-card" style="border-color:var(--teal-soft); background:rgba(45, 212, 191, 0.04);">
-          <div class="im-kpi-label">Equivalent Sovereign Economy</div>
+          <div class="im-kpi-label" data-en="Equivalent Sovereign Economy" data-hi="समकक्ष संप्रभु अर्थव्यवस्था">Equivalent Sovereign Economy</div>
           <div class="im-kpi-value" id="res-country-name" style="font-size:24px;">🇨🇭 Switzerland</div>
           <div style="font-family:var(--font-mono); font-size:14px; color:var(--text-muted); margin-top:4px;" id="res-country-gdp">$515 Billion Nominal GDP</div>
           <div class="im-kpi-provenance">
-            <span>🌍 Global Benchmark</span>
-            <span>🏛️ World Bank WDI</span>
+            <span data-en="🌍 Global Benchmark" data-hi="🌍 वैश्विक मानक">🌍 Global Benchmark</span>
+            <span data-en="🏛️ World Bank WDI" data-hi="🏛️ विश्व बैंक WDI">🏛️ World Bank WDI</span>
           </div>
         </div>
 
         <!-- Result 3: Per Capita -->
         <div class="im-kpi-card">
-          <div class="im-kpi-label">Estimated Per Capita GSDP</div>
+          <div class="im-kpi-label" data-en="Estimated Per Capita GSDP" data-hi="अनुमानित प्रति व्यक्ति GSDP">Estimated Per Capita GSDP</div>
           <div class="im-kpi-value" id="res-per-capita">₹3,45,188</div>
-          <div style="font-size:12px; color:var(--text-faint); margin-top:4px;">Based on Census population &amp; state GSDP</div>
+          <div style="font-size:12px; color:var(--text-faint); margin-top:4px;" data-en="Based on Census population &amp; state GSDP" data-hi="जनगणना जनसंख्या और राज्य GSDP पर आधारित">Based on Census population &amp; state GSDP</div>
           <div class="im-kpi-provenance">
-            <span>🔢 Derived Indicator</span>
-            <span>📊 MoSPI / Census 2011</span>
+            <span data-en="🔢 Derived Indicator" data-hi="🔢 व्युत्पन्न संकेतक">🔢 Derived Indicator</span>
+            <span data-en="📊 MoSPI / Census 2011" data-hi="📊 MoSPI / जनगणना 2011">📊 MoSPI / Census 2011</span>
           </div>
         </div>
 
         <!-- Result 4: National Share & Doubling -->
         <div class="im-kpi-card">
-          <div class="im-kpi-label">Share of India GDP &amp; Doubling Time</div>
+          <div class="im-kpi-label" data-en="Share of India GDP &amp; Doubling Time" data-hi="भारत के GDP में हिस्सा एवं दोगुना होने का समय">Share of India GDP &amp; Doubling Time</div>
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin:6px 0 10px;">
             <div>
-              <div style="font-size:11px; color:var(--text-faint);">Share of India:</div>
+              <div style="font-size:11px; color:var(--text-faint);" data-en="Share of India:" data-hi="भारत का हिस्सा:">Share of India:</div>
               <div style="font-family:var(--font-mono); font-size:24px; font-weight:700; color:var(--text);" id="res-national-share">14.24%</div>
             </div>
             <div style="text-align:right;">
-              <div style="font-size:11px; color:var(--text-faint);">Doubling Time:</div>
+              <div style="font-size:11px; color:var(--text-faint);" data-en="Doubling Time:" data-hi="दोगुना होने का समय:">Doubling Time:</div>
               <div style="font-family:var(--font-mono); font-size:24px; font-weight:700; color:var(--teal);" id="res-doubling-time">9.0 years</div>
             </div>
           </div>
           <div class="im-kpi-provenance">
-            <span>Formula: Rule of 72</span>
-            <span>⚡ Annual Compounding</span>
+            <span data-en="Formula: Rule of 72" data-hi="सूत्र: 72 का नियम">Formula: Rule of 72</span>
+            <span data-en="⚡ Annual Compounding" data-hi="⚡ वार्षिक चक्रवृद्धि">⚡ Annual Compounding</span>
           </div>
         </div>
 
@@ -176,8 +176,8 @@
 
       <!-- Milestone Projection Section -->
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
-        <h2 style="font-size:18px; margin-bottom:6px;">Milestone Economic Projections</h2>
-        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+        <h2 style="font-size:18px; margin-bottom:6px;" data-en="Milestone Economic Projections" data-hi="प्रमुख आर्थिक प्रक्षेपण">Milestone Economic Projections</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;" data-en="Estimated calendar year when this state economy will cross global benchmark thresholds at your selected growth rate:" data-hi="अनुमानित कैलेंडर वर्ष जब यह राज्य अर्थव्यवस्था आपकी चुनी गई विकास दर पर वैश्विक मानक सीमाओं को पार करेगी:">
           Estimated calendar year when this state economy will cross global benchmark thresholds at your selected growth rate:
         </p>
         <div id="milestone-projections" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
@@ -187,8 +187,8 @@
 
       <!-- Reference Benchmark Matrix: Top 10 States vs World Nations -->
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
-        <h2 style="font-size:18px; margin-bottom:8px;">Top 10 Indian States vs. Equivalent Nations Benchmark Matrix</h2>
-        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+        <h2 style="font-size:18px; margin-bottom:8px;" data-en="Top 10 Indian States vs. Equivalent Nations Benchmark Matrix" data-hi="शीर्ष 10 भारतीय राज्य बनाम समकक्ष देश मानक मैट्रिक्स">Top 10 Indian States vs. Equivalent Nations Benchmark Matrix</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;" data-en="Direct nominal comparison of India's largest state economies with sovereign world economies (MoSPI 2022-23 vs World Bank nominal GDP):" data-hi="संप्रभु विश्व अर्थव्यवस्थाओं के साथ भारत की सबसे बड़ी राज्य अर्थव्यवस्थाओं की प्रत्यक्ष तुलना (MoSPI 2022-23 बनाम विश्व बैंक नॉमिनल जीडीपी):">
           Direct nominal comparison of India's largest state economies with sovereign world economies (MoSPI 2022-23 vs World Bank nominal GDP):
         </p>
         
@@ -196,12 +196,12 @@
           <table class="im-table">
             <thead>
               <tr>
-                <th>Rank</th>
-                <th>State</th>
-                <th>GSDP (₹ Lakh Cr)</th>
-                <th>GSDP (USD $B)</th>
-                <th>Equivalent Sovereign Country</th>
-                <th>Country GDP ($B)</th>
+                <th data-en="Rank" data-hi="रैंक">Rank</th>
+                <th data-en="State" data-hi="राज्य">State</th>
+                <th data-en="GSDP (₹ Lakh Cr)" data-hi="GSDP (₹ लाख करोड़)">GSDP (₹ Lakh Cr)</th>
+                <th data-en="GSDP (USD $B)" data-hi="GSDP (USD $B)">GSDP (USD $B)</th>
+                <th data-en="Equivalent Sovereign Country" data-hi="समकक्ष संप्रभु देश">Equivalent Sovereign Country</th>
+                <th data-en="Country GDP ($B)" data-hi="देश GDP ($B)">Country GDP ($B)</th>
               </tr>
             </thead>
             <tbody>
@@ -292,15 +292,15 @@
 
       <!-- Action bar & links -->
       <div class="im-action-bar" style="margin-bottom:32px;">
-        <a id="view-state-link" href="../states/maharashtra.html" class="im-btn im-btn--primary">View State Profile &rarr;</a>
-        <a id="compare-state-link" href="../compare.html?s1=maharashtra" class="im-btn im-btn--secondary">Compare in Comparison Engine &rarr;</a>
-        <a href="../rankings.html#rank-gdp" class="im-btn im-btn--secondary">Explore GSDP Rankings &rarr;</a>
+        <a id="view-state-link" href="../states/maharashtra.html" class="im-btn im-btn--primary" data-en="View State Profile &rarr;" data-hi="राज्य प्रोफ़ाइल देखें &rarr;">View State Profile &rarr;</a>
+        <a id="compare-state-link" href="../compare.html?s1=maharashtra" class="im-btn im-btn--secondary" data-en="Compare in Comparison Engine &rarr;" data-hi="तुलना इंजन में तुलना करें &rarr;">Compare in Comparison Engine &rarr;</a>
+        <a href="../rankings.html#rank-gdp" class="im-btn im-btn--secondary" data-en="Explore GSDP Rankings &rarr;" data-hi="GSDP रैंकिंग एक्सप्लोर करें &rarr;">Explore GSDP Rankings &rarr;</a>
       </div>
 
       <!-- Provenance Box -->
       <div class="im-provenance-box">
-        <strong>Data Governance &amp; Methodology:</strong>
-        <p style="margin:4px 0 0; color:var(--text-muted);">
+        <strong data-en="Data Governance &amp; Methodology:" data-hi="डेटा प्रशासन एवं कार्यप्रणाली:">Data Governance &amp; Methodology:</strong>
+        <p style="margin:4px 0 0; color:var(--text-muted);" data-en="State GSDP figures are sourced from the Ministry of Statistics and Programme Implementation (MoSPI) for reference year 2022-23 (current prices). Dollar equivalence is calculated at nominal USD/INR conversion rate of ~₹83.5. World Country GDP figures are sourced from World Bank World Development Indicators (WDI). Doubling time is computed via the standard financial Rule of 72 (\(T \approx 72 / r\))." data-hi="राज्य GSDP के आंकड़े सांख्यिकी और कार्यक्रम कार्यान्वयन मंत्रालय (MoSPI) से संदर्भ वर्ष 2022-23 (मौजूदा कीमतों) के लिए लिए गए हैं। डॉलर समतुल्यता की गणना ~₹83.5 की दर से की गई है। विश्व देशों के GDP के आंकड़े विश्व बैंक के विश्व विकास संकेतक (WDI) से लिए गए हैं। दोगुना होने के समय की गणना वित्तीय नियम 72 (\(T \approx 72 / r\)) से की जाती है।">
           State GSDP figures are sourced from the Ministry of Statistics and Programme Implementation (MoSPI) for reference year 2022-23 (current prices). Dollar equivalence is calculated at nominal USD/INR conversion rate of ~₹83.5. World Country GDP figures are sourced from World Bank World Development Indicators (WDI). Doubling time is computed via the standard financial Rule of 72 (\(T \approx 72 / r\)).
         </p>
       </div>

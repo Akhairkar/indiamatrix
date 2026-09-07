@@ -73,17 +73,17 @@
 <main id="main">
   <div class="wrap" style="padding-top:20px;">
     <nav aria-label="Breadcrumb" style="font-size:13px; color:var(--text-faint); margin-bottom:12px;">
-      <a href="../" style="color:var(--text-muted); text-decoration:none;">Home</a> &gt; 
-      <a href="index.html" style="color:var(--text-muted); text-decoration:none;">Tools</a> &gt; 
-      <span style="color:var(--text);" aria-current="page">Demographic &amp; Universal Literacy Projector</span>
+      <a href="../" style="color:var(--text-muted); text-decoration:none;" data-en="Home" data-hi="होम">Home</a> &gt; 
+      <a href="index.html" style="color:var(--text-muted); text-decoration:none;" data-en="Tools" data-hi="टूल्स">Tools</a> &gt; 
+      <span style="color:var(--text);" aria-current="page" data-en="Demographic &amp; Universal Literacy Projector" data-hi="जनसांख्यिकी एवं सार्वभौमिक साक्षरता प्रक्षेपक">Demographic &amp; Universal Literacy Projector</span>
     </nav>
   </div>
 
   <section class="section" style="padding-top:16px; padding-bottom:28px;">
     <div class="wrap" style="text-align: center;">
-      <p class="eyebrow" data-en="Educational & Demographic Modeling" data-hi="शैक्षिक और जनसांख्यिकीय मॉडलिंग">Educational &amp; Demographic Modeling</p>
-      <h1 style="font-size:clamp(30px,4.2vw,46px); margin-bottom:14px;" data-en="Demographic &amp; Universal Literacy Projector" data-hi="जनसांख्यिकीय एवं सार्वभौमिक साक्षरता प्रोजेक्टर">Demographic &amp; Universal Literacy Projector</h1>
-      <p class="section-sub" style="margin: 0 auto; max-width:68ch;" data-en="Simulate when Indian states will reach 100% universal literacy. Calculate state-to-state educational gap closing times and evaluate sex ratio balance against natural benchmarks." data-hi="अनुकरण करें कि भारतीय राज्य कब 100% सार्वभौमिक साक्षरता तक पहुंचेंगे और शैक्षिक अंतर को बंद करने का समय ज्ञात करें।">Simulate when Indian states will reach 100% universal literacy. Calculate state-to-state educational gap closing times and evaluate sex ratio balance against natural benchmarks.</p>
+      <p class="eyebrow" data-en="Educational &amp; Demographic Modeling" data-hi="शैक्षिक और जनसांख्यिकीय मॉडलिंग">Educational &amp; Demographic Modeling</p>
+      <h1 style="font-size:clamp(30px,4.2vw,46px); margin-bottom:14px;" data-en="Demographic &amp; Universal Literacy Projector" data-hi="जनसांख्यिकीय एवं सार्वभौमिक साक्षरता प्रक्षेपक">Demographic &amp; Universal Literacy Projector</h1>
+      <p class="section-sub" style="margin: 0 auto; max-width:68ch;" data-en="Simulate when Indian states will reach 100% universal literacy. Calculate state-to-state educational gap closing times and evaluate sex ratio balance against natural benchmarks." data-hi="अनुकरण करें कि भारतीय राज्य कब 100% सार्वभौमिक साक्षरता तक पहुंचेंगे और राज्यों के बीच शैक्षिक अंतर समाप्त होने का समय ज्ञात करें।">Simulate when Indian states will reach 100% universal literacy. Calculate state-to-state educational gap closing times and evaluate sex ratio balance against natural benchmarks.</p>
     </div>
   </section>
 
@@ -94,7 +94,7 @@
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:flex-end;">
           <div>
-            <label for="state-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;">
+            <label for="state-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;" data-en="Target State to Project:" data-hi="प्रक्षेपण हेतु लक्षित राज्य:">
               Target State to Project:
             </label>
             <select id="state-select" style="width:100%; padding:12px 14px; background:var(--surface-2); color:var(--text); border:1px solid var(--border); border-radius:8px; font-size:15px; font-family:var(--font-sans);">
@@ -103,7 +103,7 @@
           </div>
 
           <div>
-            <label for="benchmark-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;">
+            <label for="benchmark-select" style="display:block; font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:8px;" data-en="Benchmark Comparison State:" data-hi="मानक तुलनात्मक राज्य:">
               Benchmark Comparison State:
             </label>
             <select id="benchmark-select" style="width:100%; padding:12px 14px; background:var(--surface-2); color:var(--text); border:1px solid var(--border); border-radius:8px; font-size:15px; font-family:var(--font-sans);">
@@ -113,7 +113,7 @@
 
           <div>
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-              <label for="pace-rate" style="font-size:13px; font-weight:600; color:var(--text-muted);">
+              <label for="pace-rate" style="font-size:13px; font-weight:600; color:var(--text-muted);" data-en="Annual Literacy Gain (% pts/yr):" data-hi="वार्षिक साक्षरता वृद्धि (% अंक/वर्ष):">
                 Annual Literacy Gain (% pts/yr):
               </label>
               <span id="pace-display" style="font-family:var(--font-mono); font-weight:700; color:var(--teal);">+1.5%/yr</span>
@@ -131,34 +131,34 @@
         
         <!-- Result 1: Target Year for 100% -->
         <div class="im-kpi-card" style="border-color:var(--teal-soft); background:rgba(45, 212, 191, 0.04);">
-          <div class="im-kpi-label">Universal (100%) Literacy Milestone</div>
+          <div class="im-kpi-label" data-en="Universal (100%) Literacy Milestone" data-hi="सार्वभौमिक (100%) साक्षरता लक्ष्य">Universal (100%) Literacy Milestone</div>
           <div class="im-kpi-value" id="res-universal-year" style="color:var(--teal);">~2051</div>
           <div style="font-size:12px; color:var(--text-muted); margin-top:4px;" id="res-years-to-100">25 years required at +1.5%/yr</div>
           <div class="im-kpi-provenance">
-            <span>Current: <strong id="res-current-lit">61.8%</strong></span>
-            <span>Gap: <strong id="res-lit-gap">38.2%</strong></span>
+            <span><span data-en="Current:" data-hi="वर्तमान:">Current:</span> <strong id="res-current-lit">61.8%</strong></span>
+            <span><span data-en="Gap:" data-hi="अंतर:">Gap:</span> <strong id="res-lit-gap">38.2%</strong></span>
           </div>
         </div>
 
         <!-- Result 2: Catch-up Gap -->
         <div class="im-kpi-card">
-          <div class="im-kpi-label">Benchmark Gap vs <span id="res-benchmark-name">Kerala</span></div>
+          <div class="im-kpi-label"><span data-en="Benchmark Gap vs" data-hi="के विरुद्ध मानक अंतर">Benchmark Gap vs</span> <span id="res-benchmark-name">Kerala</span></div>
           <div class="im-kpi-value" id="res-benchmark-gap" style="font-size:26px;">+32.2%</div>
           <div style="font-size:13px; color:var(--text-muted); margin-top:4px;" id="res-catchup-pace">~22 years to match Kerala's 94.0%</div>
           <div class="im-kpi-provenance">
-            <span>State-to-State Convergence</span>
-            <span>Census 2011 Baseline</span>
+            <span data-en="State-to-State Convergence" data-hi="राज्यों के बीच अभिसरण">State-to-State Convergence</span>
+            <span data-en="Census 2011 Baseline" data-hi="जनगणना 2011 आधार">Census 2011 Baseline</span>
           </div>
         </div>
 
         <!-- Result 3: Sex Ratio Balance -->
         <div class="im-kpi-card">
-          <div class="im-kpi-label">Sex Ratio &amp; Gender Demographics</div>
+          <div class="im-kpi-label" data-en="Sex Ratio &amp; Gender Demographics" data-hi="लिंगानुपात एवं लैंगिक जनसांख्यिकी">Sex Ratio &amp; Gender Demographics</div>
           <div class="im-kpi-value" id="res-sex-ratio">918</div>
           <div style="font-size:12px; color:var(--text-muted); margin-top:4px;" id="res-sex-status">Deficit (32 below 950 benchmark)</div>
           <div class="im-kpi-provenance">
-            <span>Females per 1,000 Males</span>
-            <span>Census 2011</span>
+            <span data-en="Females per 1,000 Males" data-hi="प्रति 1,000 पुरुषों पर महिलाएं">Females per 1,000 Males</span>
+            <span data-en="Census 2011" data-hi="जनगणना 2011">Census 2011</span>
           </div>
         </div>
 
@@ -167,24 +167,24 @@
       <!-- Literacy Progress Bar -->
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <h2 style="font-size:16px; margin:0;">Universal Literacy Progress Tracker</h2>
+          <h2 style="font-size:16px; margin:0;" data-en="Universal Literacy Progress Tracker" data-hi="सार्वभौमिक साक्षरता प्रगति ट्रैकर">Universal Literacy Progress Tracker</h2>
           <span style="font-family:var(--font-mono); font-size:13px; font-weight:600; color:var(--teal);" id="bar-label">Bihar: 61.8%</span>
         </div>
         <div style="width:100%; height:16px; background:var(--surface-2); border-radius:8px; overflow:hidden; border:1px solid var(--border);">
           <div id="lit-progress-bar" style="height:100%; width:61.8%; background:linear-gradient(90deg, #f59e0b, #2dd4bf); transition:width 0.4s ease;"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-faint); margin-top:6px; font-family:var(--font-mono);">
-          <span>0% (Illiterate)</span>
+          <span data-en="0% (Illiterate)" data-hi="0% (निरक्षर)">0% (Illiterate)</span>
           <span>50%</span>
-          <span>74% (National Avg)</span>
-          <span>100% (Universal)</span>
+          <span data-en="74% (National Avg)" data-hi="74% (राष्ट्रीय औसत)">74% (National Avg)</span>
+          <span data-en="100% (Universal)" data-hi="100% (सार्वभौमिक)">100% (Universal)</span>
         </div>
       </div>
 
       <!-- Educational Benchmark Comparison Table -->
       <div style="background:var(--surface-1); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:32px;">
-        <h2 style="font-size:18px; margin-bottom:8px;">Highest vs. Lowest Literacy States in India</h2>
-        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+        <h2 style="font-size:18px; margin-bottom:8px;" data-en="Highest vs. Lowest Literacy States in India" data-hi="भारत में उच्चतम बनाम न्यूनतम साक्षरता वाले राज्य">Highest vs. Lowest Literacy States in India</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;" data-en="Official Census of India baseline literacy figures highlighting state-level disparities:" data-hi="राज्य स्तरीय असमानताओं को दर्शाते भारत की जनगणना के आधिकारिक आंकड़े:">
           Official Census of India baseline literacy figures highlighting state-level disparities:
         </p>
         
@@ -192,51 +192,51 @@
           <table class="im-table">
             <thead>
               <tr>
-                <th>Group</th>
-                <th>State</th>
-                <th>Literacy Rate</th>
-                <th>Gap to Universal (100%)</th>
-                <th>Sex Ratio</th>
+                <th data-en="Group" data-hi="समूह">Group</th>
+                <th data-en="State" data-hi="राज्य">State</th>
+                <th data-en="Literacy Rate" data-hi="साक्षरता दर">Literacy Rate</th>
+                <th data-en="Gap to Universal (100%)" data-hi="सार्वभौमिक (100%) से अंतर">Gap to Universal (100%)</th>
+                <th data-en="Sex Ratio" data-hi="लिंगानुपात">Sex Ratio</th>
               </tr>
             </thead>
             <tbody>
               <tr style="background:rgba(45, 212, 191, 0.03);">
-                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;">Top 1</span></td>
+                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;" data-en="Top 1" data-hi="शीर्ष 1">Top 1</span></td>
                 <td><a href="../states/kerala.html"><strong>Kerala</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700; color:var(--teal);">94.00%</td>
                 <td style="font-family:var(--font-mono);">6.00%</td>
                 <td style="font-family:var(--font-mono);">1,084</td>
               </tr>
               <tr style="background:rgba(45, 212, 191, 0.03);">
-                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;">Top 2</span></td>
+                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;" data-en="Top 2" data-hi="शीर्ष 2">Top 2</span></td>
                 <td><a href="../states/lakshadweep.html"><strong>Lakshadweep</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700; color:var(--teal);">91.85%</td>
                 <td style="font-family:var(--font-mono);">8.15%</td>
                 <td style="font-family:var(--font-mono);">946</td>
               </tr>
               <tr style="background:rgba(45, 212, 191, 0.03);">
-                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;">Top 3</span></td>
+                <td><span class="im-badge" style="background:rgba(52, 211, 153, 0.1); color:#34d399;" data-en="Top 3" data-hi="शीर्ष 3">Top 3</span></td>
                 <td><a href="../states/mizoram.html"><strong>Mizoram</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700; color:var(--teal);">91.33%</td>
                 <td style="font-family:var(--font-mono);">8.67%</td>
                 <td style="font-family:var(--font-mono);">976</td>
               </tr>
               <tr style="background:rgba(239, 68, 68, 0.03);">
-                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;">Lowest 3</span></td>
+                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;" data-en="Lowest 3" data-hi="निम्नतम 3">Lowest 3</span></td>
                 <td><a href="../states/rajasthan.html"><strong>Rajasthan</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700;">66.11%</td>
                 <td style="font-family:var(--font-mono);">33.89%</td>
                 <td style="font-family:var(--font-mono);">928</td>
               </tr>
               <tr style="background:rgba(239, 68, 68, 0.03);">
-                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;">Lowest 2</span></td>
+                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;" data-en="Lowest 2" data-hi="निम्नतम 2">Lowest 2</span></td>
                 <td><a href="../states/arunachal-pradesh.html"><strong>Arunachal Pradesh</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700;">65.38%</td>
                 <td style="font-family:var(--font-mono);">34.62%</td>
                 <td style="font-family:var(--font-mono);">938</td>
               </tr>
               <tr style="background:rgba(239, 68, 68, 0.03);">
-                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;">Lowest 1</span></td>
+                <td><span class="im-badge" style="background:rgba(239, 68, 68, 0.1); color:#f87171;" data-en="Lowest 1" data-hi="निम्नतम 1">Lowest 1</span></td>
                 <td><a href="../states/bihar.html"><strong>Bihar</strong></a></td>
                 <td style="font-family:var(--font-mono); font-weight:700;">61.80%</td>
                 <td style="font-family:var(--font-mono);">38.20%</td>
@@ -249,15 +249,15 @@
 
       <!-- Action bar & links -->
       <div class="im-action-bar" style="margin-bottom:32px;">
-        <a id="link-s1-profile" href="../states/bihar.html" class="im-btn im-btn--primary">View State Profile &rarr;</a>
-        <a id="link-compare-states" href="../compare.html?s1=bihar&s2=kerala" class="im-btn im-btn--secondary">Compare in Comparison Engine &rarr;</a>
-        <a href="../rankings.html#rank-literacy-rate" class="im-btn im-btn--secondary">Full Literacy Leaderboard &rarr;</a>
+        <a id="link-s1-profile" href="../states/bihar.html" class="im-btn im-btn--primary" data-en="View State Profile &rarr;" data-hi="राज्य प्रोफ़ाइल देखें &rarr;">View State Profile &rarr;</a>
+        <a id="link-compare-states" href="../compare.html?s1=bihar&s2=kerala" class="im-btn im-btn--secondary" data-en="Compare in Comparison Engine &rarr;" data-hi="तुलना इंजन में तुलना करें &rarr;">Compare in Comparison Engine &rarr;</a>
+        <a href="../rankings.html#rank-literacy-rate" class="im-btn im-btn--secondary" data-en="Full Literacy Leaderboard &rarr;" data-hi="पूर्ण साक्षरता लीडरबोर्ड &rarr;">Full Literacy Leaderboard &rarr;</a>
       </div>
 
       <!-- Provenance Box -->
       <div class="im-provenance-box">
-        <strong>Data Governance &amp; Projection Methodology:</strong>
-        <p style="margin:4px 0 0; color:var(--text-muted);">
+        <strong data-en="Data Governance &amp; Projection Methodology:" data-hi="डेटा प्रशासन एवं प्रक्षेपण कार्यप्रणाली:">Data Governance &amp; Projection Methodology:</strong>
+        <p style="margin:4px 0 0; color:var(--text-muted);" data-en="Baseline literacy rates and sex ratios are sourced from the Census of India 2011 (Registrar General and Census Commissioner of India). Projections are linear simulations based on configurable annual percentage point progress. IndiaMetrix does not fabricate data; all projected years are explicitly labeled as mathematical simulations derived from official census figures." data-hi="आधारभूत साक्षरता दर और लिंगानुपात भारत की जनगणना 2011 से लिए गए हैं। प्रक्षेपण विन्यास योग्य वार्षिक प्रतिशत बिंदु प्रगति पर आधारित रैखिक अनुकरण हैं। IndiaMetrix कोई कृत्रिम डेटा नहीं बनाता; सभी प्रक्षेपित वर्ष आधिकारिक जनगणना आंकड़ों से प्राप्त गणितीय सिमुलेशन हैं।">
           Baseline literacy rates and sex ratios are sourced from the Census of India 2011 (Registrar General and Census Commissioner of India). Projections are linear simulations based on configurable annual percentage point progress. IndiaMetrix does not fabricate data; all projected years are explicitly labeled as mathematical simulations derived from official census figures.
         </p>
       </div>

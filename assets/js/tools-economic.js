@@ -205,35 +205,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Rule of 72 Doubling Time
     const doublingYears = (72 / growthRate).toFixed(1);
 
+    const isHi = document.documentElement.getAttribute('data-lang') === 'hi' || document.documentElement.lang === 'hi';
+    const stateName = isHi ? (state.name.hi || state.name.en) : state.name.en;
+
     // Update DOM
-    document.getElementById('res-state-name').textContent = state.name.en;
-    document.getElementById('res-gsdp-inr').textContent = gdpInd?.display?.en || `₹${(gsdpCr/100000).toFixed(2)} Lakh Cr`;
-    document.getElementById('res-gsdp-usd').textContent = `$${gsdpUsdBillion.toFixed(1)} Billion`;
+    const stateNameEl = document.getElementById('res-state-name');
+    if (stateNameEl) stateNameEl.textContent = stateName;
+
+    document.getElementById('res-gsdp-inr').textContent = isHi ? (gdpInd?.display?.hi || `₹${(gsdpCr/100000).toFixed(2)} लाख करोड़`) : (gdpInd?.display?.en || `₹${(gsdpCr/100000).toFixed(2)} Lakh Cr`);
+    document.getElementById('res-gsdp-usd').textContent = isHi ? `$${gsdpUsdBillion.toFixed(1)} बिलियन` : `$${gsdpUsdBillion.toFixed(1)} Billion`;
     
     document.getElementById('res-country-name').textContent = `${country.flag} ${country.country}`;
-    document.getElementById('res-country-gdp').textContent = `$${country.gdp_usd} Billion (Nominal GDP)`;
+    document.getElementById('res-country-gdp').textContent = isHi ? `$${country.gdp_usd} बिलियन (नॉमिनल GDP)` : `$${country.gdp_usd} Billion (Nominal GDP)`;
     
     document.getElementById('res-per-capita').textContent = `₹${perCapitaInr.toLocaleString('en-IN')} ($${perCapitaUsd.toLocaleString()})`;
     document.getElementById('res-national-share').textContent = `${nationalShare}%`;
-    document.getElementById('res-doubling-time').textContent = `${doublingYears} years`;
+    document.getElementById('res-doubling-time').textContent = isHi ? `${doublingYears} वर्ष` : `${doublingYears} years`;
 
     // Target Projections ($250B, $500B, $1 Trillion)
     const baseYear = 2023;
     const targets = [
-      { label: "$250 Billion", val: 250 },
-      { label: "$500 Billion", val: 500 },
-      { label: "$1 Trillion ($1,000B)", val: 1000 }
+      { label: "$250 Billion", labelHi: "$250 बिलियन", val: 250 },
+      { label: "$500 Billion", labelHi: "$500 बिलियन", val: 500 },
+      { label: "$1 Trillion ($1,000B)", labelHi: "$1 ट्रिलियन ($1,000B)", val: 1000 }
     ];
 
     const projContainer = document.getElementById('milestone-projections');
     if (projContainer) {
       projContainer.innerHTML = targets.map(t => {
+        const curTargetLabel = isHi ? t.labelHi : t.label;
         if (gsdpUsdBillion >= t.val) {
           return `
             <div style="background:rgba(45, 212, 191, 0.08); border:1px solid rgba(45, 212, 191, 0.3); border-radius:8px; padding:12px; text-align:center;">
-              <div style="font-size:12px; color:var(--teal); font-weight:600;">${t.label}</div>
-              <div style="font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--teal); margin-top:4px;">ACHIEVED ✅</div>
-              <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">Currently $${gsdpUsdBillion.toFixed(1)}B</div>
+              <div style="font-size:12px; color:var(--teal); font-weight:600;">${curTargetLabel}</div>
+              <div style="font-family:var(--font-mono); font-size:18px; font-weight:700; color:var(--teal); margin-top:4px;">${isHi ? "प्राप्त ✅" : "ACHIEVED ✅"}</div>
+              <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">${isHi ? `वर्तमान में $${gsdpUsdBillion.toFixed(1)}B` : `Currently $${gsdpUsdBillion.toFixed(1)}B`}</div>
             </div>
           `;
         }
@@ -243,9 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetYear = Math.round(baseYear + yearsNeeded);
         return `
           <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
-            <div style="font-size:12px; color:var(--text-muted); font-weight:600;">${t.label}</div>
+            <div style="font-size:12px; color:var(--text-muted); font-weight:600;">${curTargetLabel}</div>
             <div style="font-family:var(--font-mono); font-size:20px; font-weight:700; color:var(--text); margin-top:4px;">~${targetYear}</div>
-            <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">In ~${Math.ceil(yearsNeeded)} years at ${growthRate}%/yr</div>
+            <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">${isHi ? `${growthRate}%/वर्ष पर ~${Math.ceil(yearsNeeded)} वर्षों में` : `In ~${Math.ceil(yearsNeeded)} years at ${growthRate}%/yr`}</div>
           </div>
         `;
       }).join('');
@@ -257,4 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const compareLink = document.getElementById('compare-state-link');
     if (compareLink) compareLink.href = `../compare.html?s1=${state.id}`;
   }
+
+  document.querySelectorAll("[data-set-lang]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setTimeout(calculate, 50);
+    });
+  });
 });
