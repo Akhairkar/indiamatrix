@@ -76,6 +76,49 @@ def build_all_indicators(root_dir):
         "west-bengal": {"country": "Slovakia", "flag": "🇸🇰"}
     }
 
+    indicator_seo_meta = {
+        "gdp-current-usd": {
+            "title": "India GDP Statistics: 36 State GSDP Rankings | IndiaMetrix",
+            "desc": "Explore India's $3.96 Trillion nominal GDP, state-by-state GSDP contributions, historical decadal growth trends, and sovereign comparisons on IndiaMetrix."
+        },
+        "population": {
+            "title": "India Population Statistics & State Census | IndiaMetrix",
+            "desc": "Analyze India's 1.46 billion population records, state demographics, decadal Census growth trends, and state-wise population shares on IndiaMetrix."
+        },
+        "literacy-rate": {
+            "title": "India Literacy Rate: State Rankings & Trends | IndiaMetrix",
+            "desc": "Explore official India literacy rate data (74.04%), 36 state and UT educational rankings, gender literacy gaps, and historical trends on IndiaMetrix."
+        },
+        "unemployment-rate": {
+            "title": "India Unemployment Rate: State PLFS Rankings | IndiaMetrix",
+            "desc": "Examine official MoSPI PLFS unemployment data for India (3.1%), state-wise job market rankings, urban-rural distributions, and trend analysis on IndiaMetrix."
+        },
+        "life-expectancy": {
+            "title": "India Life Expectancy Data & State Health | IndiaMetrix",
+            "desc": "Explore India's 72.0-year life expectancy benchmarks, state public health records, historical mortality trends, and global comparisons on IndiaMetrix."
+        },
+        "internet-users": {
+            "title": "India Internet Users: Digital State Trends | IndiaMetrix",
+            "desc": "Discover India's digital adoption metrics, 55.9% internet penetration rate, state-wise connectivity rankings, and telecom growth trends on IndiaMetrix."
+        },
+        "1-1_access-electricity-tot": {
+            "title": "India Electricity Access: State Power Data | IndiaMetrix",
+            "desc": "Track total electricity access in India (84.5%), state electrification progress, rural-urban coverage disparities, and energy access trends on IndiaMetrix."
+        },
+        "1-2_access-electricity-rural": {
+            "title": "Rural Electricity Access in India: Data | IndiaMetrix",
+            "desc": "Analyze rural electrification rates across Indian states, grid expansion milestones, infrastructure distribution benchmarks, and time-series on IndiaMetrix."
+        },
+        "1-3_access-electricity-urban": {
+            "title": "Urban Electricity Access in India: Data | IndiaMetrix",
+            "desc": "Analyze urban electrification rates across Indian states, urban power grid reliability benchmarks, infrastructure metrics, and time-series on IndiaMetrix."
+        },
+        "2-1_access-cft-tot": {
+            "title": "India Clean Cooking Fuel Access Statistics | IndiaMetrix",
+            "desc": "Explore access to clean fuels and technology for cooking in India, state-level household adoption rates, energy transition metrics, and trends on IndiaMetrix."
+        }
+    }
+
     # Load 36 states data
     with open(os.path.join(root_dir, "data", "explorer.json"), "r", encoding="utf-8") as f:
         explorer_data = json.load(f)
@@ -522,6 +565,12 @@ def build_all_indicators(root_dir):
 
         # Replace in template
         out = template
+        meta_info = indicator_seo_meta.get(ind_id, {
+            "title": f"{name_en} Data & Trends | IndiaMetrix",
+            "desc": f"Explore verified statistics, state rankings, and historical time-series for {name_en} on IndiaMetrix."
+        })
+        out = out.replace('{{seo_title}}', meta_info['title'])
+        out = out.replace('{{seo_desc}}', meta_info['desc'])
         out = out.replace('{{id}}', str(ind_id))
         out = out.replace('{{name_en}}', str(name_en))
         out = out.replace('{{name_hi}}', str(name_hi))

@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Host
+Host: https://www.indiametrix.in
+
+# Sitemaps
 Sitemap: https://www.indiametrix.in/sitemap.xml

@@ -88,6 +88,37 @@ def main():
         INDIA_AREA = 3287263
         INDIA_GDP_CR = 27241000  # Approx All-India GDP Current Prices 2022-23 in Cr
 
+        def make_state_title(name):
+            if name == 'Goa':
+                return 'Goa State Statistics, GSDP & Census Data | IndiaMetrix'
+            if name == 'Dadra & Nagar Haveli and Daman & Diu':
+                return 'Dadra & Nagar Haveli Statistics & Census | IndiaMetrix'
+            clean_name = name.replace(' and ', ' & ')
+            if len(name) <= 10:
+                return f'{name} Statistics, GSDP & Census Data | IndiaMetrix'
+            elif len(name) <= 15:
+                return f'{name} Statistics, GSDP & Census | IndiaMetrix'
+            else:
+                return f'{clean_name} Statistics & Census | IndiaMetrix'
+
+        def make_state_desc(name, pop_disp, gdp_disp, lit_disp, unemp_disp):
+            if name == 'Dadra & Nagar Haveli and Daman & Diu':
+                return f"Explore verified Census & MoSPI data for Dadra & Nagar Haveli: Population ({pop_disp}), GSDP ({gdp_disp}), Literacy ({lit_disp}), and PLFS unemployment ({unemp_disp})."
+            if name == 'Goa':
+                return f"Explore verified Census and MoSPI statistics for Goa State: Population ({pop_disp}), GSDP ({gdp_disp}), Literacy ({lit_disp}), and PLFS unemployment ({unemp_disp})."
+            return f"Explore verified Census and MoSPI statistics for {name}: Population ({pop_disp}), GSDP ({gdp_disp}), Literacy ({lit_disp}), and PLFS unemployment ({unemp_disp})."
+
+        def make_district_title(name):
+            if len(name) <= 5:
+                return f"{name} District Census & Demographics Data | IndiaMetrix"
+            elif name == "Bengaluru Urban":
+                return f"{name} District Census Data | IndiaMetrix"
+            else:
+                return f"{name} District Census & Demographics | IndiaMetrix"
+
+        def make_district_desc(name, state_name, lit_disp, pop_disp):
+            return f"Explore Census demographics, official literacy rate ({lit_disp}), population ({pop_disp}), and sex ratio for {name} district ({state_name}) on IndiaMetrix."
+
         for filename in sorted(os.listdir(states_dir)):
             if filename.endswith('.json'):
                 state_json_path = os.path.join(states_dir, filename)
@@ -177,14 +208,40 @@ def main():
                 out_content = state_template
                 
                 # SEO (Title, Description, Canonical, OG Tags)
+                st_title = make_state_title(state_name_en)
+                st_desc = make_state_desc(state_name_en, pop_disp, gdp_disp, lit_disp, unemp_disp)
                 seo_pattern = r'(<!-- BUILD_INJECT:seo -->\n).*?(<!-- END_BUILD_INJECT -->)'
-                seo_repl_str = f'''<title>{state_name_en} Statistics (2026): Population, Economy, GSDP &amp; Literacy | IndiaMetrix</title>
-<meta name="description" content="Explore verified Census and MoSPI statistics for {state_name_en}: Population ({pop_disp}), GSDP ({gdp_disp}), Literacy ({lit_disp}), and PLFS unemployment ({unemp_disp}).">
+                seo_repl_str = f'''<title>{st_title}</title>
+<meta name="description" content="{st_desc}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.indiametrix.in/states/{state_id}.html">
-<meta property="og:title" content="{state_name_en} Data, Statistics &amp; Demographics | IndiaMetrix">
-<meta property="og:description" content="Explore verified demographics, GSDP economy, literacy rate, unemployment, and health statistics for {state_name_en} on IndiaMetrix.">
-<meta property="og:url" content="https://www.indiametrix.in/states/{state_id}.html">'''
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IndiaMetrix">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:title" content="{st_title}">
+<meta property="og:description" content="{st_desc}">
+<meta property="og:url" content="https://www.indiametrix.in/states/{state_id}.html">
+<meta property="og:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{state_name_en} Statistics - IndiaMetrix">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@IndiaMetrix">
+<meta name="twitter:title" content="{st_title}">
+<meta name="twitter:description" content="{st_desc}">
+<meta name="twitter:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta name="twitter:image:alt" content="{state_name_en} Statistics - IndiaMetrix">
+
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+
+<link rel="alternate" hreflang="en-IN" href="https://www.indiametrix.in/states/{state_id}.html">
+<link rel="alternate" hreflang="hi-IN" href="https://www.indiametrix.in/states/{state_id}.html">
+<link rel="alternate" hreflang="x-default" href="https://www.indiametrix.in/states/{state_id}.html">'''
                 out_content = re.sub(seo_pattern, lambda m: m.group(1) + seo_repl_str + '\n' + m.group(2), out_content, flags=re.DOTALL)
                 
                 # Breadcrumb
@@ -651,7 +708,7 @@ def main():
           </div>
           <div class="im-callout" style="margin:0;">
             <h3 style="font-size:16px; margin:0 0 6px; color:var(--teal);" data-en="Where can I explore state and national comparisons for {dist_name_en}?" data-hi="{dist_name_hi} के लिए राज्य और राष्ट्रीय तुलना कहां देखी जा सकती है?">Where can I explore state and national comparisons for {dist_name_en}?</h3>
-            <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="You can explore state-level economic and social data on the <a href='../../states/{state_id}.html' style='color:var(--teal);'>{state_name_en} Profile</a>, run head-to-head metrics on the <a href='../../compare.html?s1={state_id}' style='color:var(--teal);'>State Comparison Engine</a>, or browse the complete <a href='../../districts/index.html' style='color:var(--teal);'>Districts Directory</a>." data-hi="आप <a href='../../states/{state_id}.html' style='color:var(--teal);'>{state_name_hi} प्रोफ़ाइल</a> पर राज्य-स्तरीय आर्थिक और सामाजिक डेटा देख सकते हैं, <a href='../../compare.html?s1={state_id}' style='color:var(--teal);'>राज्य तुलना इंजन</a> पर तुलना कर सकते हैं, या संपूर्ण <a href='../../districts/index.html' style='color:var(--teal);'>जिले डायरेक्टरी</a> ब्राउज़ कर सकते हैं।">You can explore state-level economic and social data on the <a href="../../states/{state_id}.html" style="color:var(--teal);">{state_name_en} Profile</a>, run head-to-head metrics on the <a href="../../compare.html?s1={state_id}" style="color:var(--teal);">State Comparison Engine</a>, or browse the complete <a href="../../districts/index.html" style="color:var(--teal);">Districts Directory</a>.</p>
+            <p style="margin:0; font-size:14px; line-height:1.6; color:var(--text-muted);" data-en="You can explore state-level economic and social data on the {state_name_en} Profile, run head-to-head metrics on the State Comparison Engine, or browse the complete Districts Directory." data-hi="आप {state_name_hi} प्रोफ़ाइल पर राज्य-स्तरीय आर्थिक और सामाजिक डेटा देख सकते हैं, राज्य तुलना इंजन पर तुलना कर सकते हैं, या संपूर्ण जिले डायरेक्टरी ब्राउज़ कर सकते हैं।">You can explore state-level economic and social data on the <a href="../../states/{state_id}.html" style="color:var(--teal);">{state_name_en} Profile</a>, run head-to-head metrics on the <a href="../../compare.html?s1={state_id}" style="color:var(--teal);">State Comparison Engine</a>, or browse the complete <a href="../../districts/index.html" style="color:var(--teal);">Districts Directory</a>.</p>
           </div>
         </div>
       </div>'''
@@ -724,13 +781,39 @@ def main():
             out_content = district_template
             
             # SEO
-            seo_content = f'''<title>{dist_name_en} District Demographics (2026): Population, Literacy &amp; Sex Ratio | IndiaMetrix</title>
-<meta name="description" content="Explore Census demographics, official literacy rate ({dist_lit_disp_en}), population ({dist_pop_disp_en}), and sex ratio for {dist_name_en} district ({state_name_en}) on IndiaMetrix.">
+            dist_title = make_district_title(dist_name_en)
+            dist_desc = make_district_desc(dist_name_en, state_name_en, dist_lit_disp_en, dist_pop_disp_en)
+            seo_content = f'''<title>{dist_title}</title>
+<meta name="description" content="{dist_desc}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">
-<meta property="og:title" content="{dist_name_en} District Demographics &amp; Census Data | IndiaMetrix">
-<meta property="og:description" content="Explore Census demographics, official literacy rate ({dist_lit_disp_en}), population ({dist_pop_disp_en}), and sex ratio for {dist_name_en} district ({state_name_en}) on IndiaMetrix.">
-<meta property="og:url" content="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">'''
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IndiaMetrix">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:title" content="{dist_title}">
+<meta property="og:description" content="{dist_desc}">
+<meta property="og:url" content="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">
+<meta property="og:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{dist_name_en} District Demographics - IndiaMetrix">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@IndiaMetrix">
+<meta name="twitter:title" content="{dist_title}">
+<meta name="twitter:description" content="{dist_desc}">
+<meta name="twitter:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta name="twitter:image:alt" content="{dist_name_en} District Demographics - IndiaMetrix">
+
+<link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+
+<link rel="alternate" hreflang="en-IN" href="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">
+<link rel="alternate" hreflang="hi-IN" href="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">
+<link rel="alternate" hreflang="x-default" href="https://www.indiametrix.in/districts/{state_id}/{dist_id}.html">'''
             out_content = re.sub(r'(<!-- BUILD_INJECT:seo -->\n).*?(<!-- END_BUILD_INJECT -->)', lambda m: m.group(1) + seo_content + '\n' + m.group(2), out_content, flags=re.DOTALL)
             
             # District Name

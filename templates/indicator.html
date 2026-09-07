@@ -4,17 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- BUILD_INJECT:seo -->
-<title>{{name_en}} Data, Rankings & Trend Analysis | IndiaMetrix</title>
-<meta name="description" content="Complete verified statistics, 36-state leaderboards, interactive charts, and decadal trends for {{name_en}} in India. Sourced from {{source_name}}.">
+<title>{{seo_title}}</title>
+<meta name="description" content="{{seo_desc}}">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.indiametrix.in/indicators/{{id}}.html">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{name_en}} in India | 36 State Rankings & Analysis | IndiaMetrix">
-<meta property="og:description" content="Explore {{name_en}} across India with state-by-state comparisons, historical data, and interactive projection tools.">
-<meta property="og:url" content="https://www.indiametrix.in/indicators/{{id}}.html">
-<!-- END_BUILD_INJECT -->
+<meta property="og:site_name" content="IndiaMetrix">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:title" content="{{seo_title}}">
+<meta property="og:description" content="{{seo_desc}}">
+<meta property="og:url" content="https://www.indiametrix.in/indicators/{{id}}.html">
+<meta property="og:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{seo_title}}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@IndiaMetrix">
+<meta name="twitter:title" content="{{seo_title}}">
+<meta name="twitter:description" content="{{seo_desc}}">
+<meta name="twitter:image" content="https://www.indiametrix.in/assets/images/og-cover.png">
+<meta name="twitter:image:alt" content="{{seo_title}}">
+
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+
+<link rel="alternate" hreflang="en-IN" href="https://www.indiametrix.in/indicators/{{id}}.html">
+<link rel="alternate" hreflang="hi-IN" href="https://www.indiametrix.in/indicators/{{id}}.html">
+<link rel="alternate" hreflang="x-default" href="https://www.indiametrix.in/indicators/{{id}}.html">
+<!-- END_BUILD_INJECT -->
 <meta name="theme-color" content="#0D1424">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +51,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "{{name_en}} across Indian States & Union Territories",
-  "description": "Comprehensive verified statistics, 36-state leaderboards, and historical time series for {{name_en}} in India.",
+  "description": "{{seo_desc}}",
   "url": "https://www.indiametrix.in/indicators/{{id}}.html",
   "creator": {
     "@type": "Organization",
@@ -59,8 +80,31 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the national benchmark for {{name_en}} in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{name_en}} in India stands at {{disp_en}} (reference year {{year}}), verified through official {{source_name}} publications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I explore state-by-state comparisons for {{name_en}}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IndiaMetrix provides a complete 36-state verified leaderboard and decadal trend visualization for {{name_en}} on this dashboard."
+      }
+    }
+  ]
+}
+</script>
 <!-- END_BUILD_INJECT -->
-
 </head>
 <body>
 
@@ -334,11 +378,11 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 window.INDICATOR_DATA = {{indicator_data_json}};
 </script>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/indicator-page.js"></script>
+<script defer src="../assets/js/main.js"></script>
+<script defer src="../assets/js/indicator-page.js"></script>
 </body>
 </html>

@@ -49,9 +49,10 @@ def linkify_file(filepath, root_dir, states):
         if s_id != current_state_id:
             keywords[state_name] = f"{to_states}{s_id}.html"
 
-    tokens = re.split(r'(<!--.*?-->|<[^>]*>)', html, flags=re.DOTALL)
+    tokens = re.split(r'(<!--.*?-->|<(?:[^"\'>]|"[^"]*"|\'[^\']*\')*>)', html, flags=re.DOTALL)
     ignore_tags = {'a', 'script', 'style', 'button', 'option', 'title', 'h1', 'h2', 'nav', 'header', 'footer', 'select', 'textarea'}
     current_ignored_tag = None
+    a_depth = 0
     
     sorted_kws = sorted(keywords.keys(), key=len, reverse=True)
     used_kws = set()
@@ -72,14 +73,18 @@ def linkify_file(filepath, root_dir, states):
                 is_closing = token.startswith('</')
                 if tag_name in ignore_tags:
                     if not is_closing:
-                        if current_ignored_tag is None:
+                        if tag_name == 'a':
+                            a_depth += 1
+                        elif current_ignored_tag is None:
                             current_ignored_tag = tag_name
                     else:
-                        if current_ignored_tag == tag_name:
+                        if tag_name == 'a':
+                            a_depth = max(0, a_depth - 1)
+                        elif current_ignored_tag == tag_name:
                             current_ignored_tag = None
             continue
             
-        if current_ignored_tag is not None:
+        if current_ignored_tag is not None or a_depth > 0:
             new_tokens.append(token)
             continue
             
