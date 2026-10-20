@@ -37,15 +37,6 @@
       "world": 13000
     },
     {
-      "id": "literacy_rate",
-      "name": "Literacy Rate (%)",
-      "source": "World Bank / UNESCO",
-      "india": 76.3,
-      "china": 99.8,
-      "usa": 99,
-      "world": 86.3
-    },
-    {
       "id": "internet_penetration",
       "name": "Internet Penetration (%)",
       "source": "ITU, 2023",
@@ -53,15 +44,6 @@
       "china": 74.4,
       "usa": 91.8,
       "world": 67
-    },
-    {
-      "id": "poverty_headcount",
-      "name": "Poverty Headcount Ratio at $2.15 a day (%)",
-      "source": "World Bank, 2021",
-      "india": 12.9,
-      "china": 0.1,
-      "usa": 1.2,
-      "world": 8.5
     },
     {
       "id": "health_expenditure",

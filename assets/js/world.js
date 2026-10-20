@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "name": "GDP (Trillion USD)",
         "source": "World Bank, 2025",
         "india": 3.96,
-        "china": 17.7,
-        "usa": 27.3,
-        "world": 105.4
+        "china": 19.5,
+        "usa": 30.77,
+        "world": 118.35
       },
       {
         "id": "population",
@@ -41,15 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "world": 13000
       },
       {
-        "id": "literacy_rate",
-        "name": "Literacy Rate (%)",
-        "source": "World Bank / UNESCO",
-        "india": 76.3,
-        "china": 99.8,
-        "usa": 99.0,
-        "world": 86.3
-      },
-      {
         "id": "internet_penetration",
         "name": "Internet Penetration (%)",
         "source": "ITU, 2023",
@@ -57,15 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "china": 74.4,
         "usa": 91.8,
         "world": 67.0
-      },
-      {
-        "id": "poverty_headcount",
-        "name": "Poverty Headcount Ratio at $2.15 a day (%)",
-        "source": "World Bank, 2021",
-        "india": 12.9,
-        "china": 0.1,
-        "usa": 1.2,
-        "world": 8.5
       },
       {
         "id": "health_expenditure",

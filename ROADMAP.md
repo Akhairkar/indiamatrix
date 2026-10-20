@@ -62,7 +62,7 @@ Start with **50–100 high-value indicators** with traceable provenance; grow to
 - Enforce the single-commit, 10–20-change batch workflow.
 
 ### Phase 1 — Data and URL reliability
-**Status: PARTIAL — B1 data-side fixes committed; live domain remains unverified**
+**Status: PARTIAL — B1 and B2 data-side fixes committed; GitHub Pages URL migration remains**
 - Recheck the existing data schema and audit script against real indicator files.
 - Identify conflicting values/years and missing time-series keys; reconcile only from documented sources.
 - Verify live deployment base URL, custom-domain configuration, canonical tags, robots and sitemap before making URL changes.
