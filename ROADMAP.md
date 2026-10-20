@@ -1,316 +1,168 @@
-# IndiaMetrix — Master Roadmap (CORRECTED — verified against actual repo, 2026-08-12)
+# IndiaMetrix — Master Roadmap
+**Replaced and consolidated:** 20 October 2026  
+**Repository:** `Akhairkar/indiamatrix` · **Default branch:** `main`
 
-> **This file replaces the previous ROADMAP.md, which had drifted badly out of sync with**
-> **the actual code and data in the repo — some phases were marked DONE despite being**
-> **broken or unimplemented, and some phases were marked PENDING despite being fully built.**
-> **Every status below was verified by opening the actual file, running the actual script,**
-> **or diffing the actual data — not by re-reading old notes. Do not trust a status in this**
-> **file (or any future one) without spot-checking it the same way.**
+IndiaMetrix is an independent India data-intelligence platform: make trustworthy Indian public data understandable through clear explanations, comparable indicators, interactive charts, maps, downloadable datasets, and transparent sources. It is not affiliated with the Government of India.
 
-IndiaMetrix is an independent India Data Intelligence Platform. It is **not** a metals/rates
-site, and it is **not** an attempt to copy NDAP, India Data Portal, or any government portal.
-The mission: *understand India through data* — verified statistics, charts, rankings,
-comparisons, historical trends, and state/district profiles, told clearly for general users,
-students, researchers, journalists, content creators, businesses, and policy enthusiasts.
+This document supersedes the older phase-by-phase roadmap. It is the single source of truth for future work. Older notes, changelog entries, and generated pages may describe intended functionality rather than verified current behaviour; use this roadmap's status ledger and the actual files as the starting point.
 
----
+## Working rules
 
-## How to use this file
+1. **One batch = 10–20 related changes where practical.** Before each batch, tell the user what will change and which files/features are in scope.
+2. **One commit per batch.** Stage the whole batch in one Git tree, create one commit, then push that commit once. Do not create a sequence of small commits for the same batch.
+3. Do not begin the next batch until the user says “Next” or otherwise authorizes it.
+4. Keep work inside this repository. Do not change SarkariSewaIndia or Landrecordes.
+5. Do not repeatedly run broad audits. Use targeted checks relevant to the batch, plus one concise final verification.
+6. Never invent statistics, sources, APIs, district values, map boundaries, freshness, or working features. A data value must carry its true reference year and source.
+7. Do not call a phase complete merely because a file exists. Mark it complete only after checking the implementation and a relevant output/build.
+8. Preserve the static HTML/CSS/JS architecture unless a concrete requirement proves a backend is necessary. Do not expose API keys in browser code.
+9. No broad destructive SEO changes. Keep URL changes, redirects, noindex rules, and mass title/canonical changes out of scope unless separately justified and approved.
+10. No AdSense application or ad-box insertion as part of this roadmap. Prepare trustworthy site structure only; add advertising only after explicit approval.
 
-- Each phase is a self-contained unit of work. Read the whole file before starting new work —
-  several phases below are **partially built in ways the old roadmap never recorded**, so
-  skipping this reading step risks redoing work or building on a broken foundation (e.g. the
-  AI chat feature looks "done" from the file list alone but does not function at all).
-- Never mark a phase `DONE` unless the corresponding code/data actually exists AND actually
-  works — "the file exists" is not the same as "the feature works." Verify by running the
-  script or opening the page, not by inspecting file names.
-- If a phase is partially done, say so explicitly with a percentage-style breakdown (see
-  Phase 4, 9, 10 below for the format) — a bare "IN PROGRESS" hides too much.
-- When you finish part of a phase, update this file **in the same session**, with today's date
-  and exactly what was verified. Do not defer roadmap updates to "next session."
+## Verified baseline at roadmap reset
 
----
+The repository contains a substantial static site, despite the README's stale claim that it contains only the homepage. Existing modules include India overview, state pages, rankings, comparison, history, world comparison, stories, Explorer, Ask IndiaMetrix, source registry, data validation, build scripts, and a daily-update workflow.
 
-## Phase 0 — Homepage — DONE (2026-08-11) — verified accurate
+- India overview has six sourced headline indicators; a population history chart is present.
+- All 36 state/UT profile pages exist, but their state JSON records currently contain only population and literacy rate, both tied to Census 2011. The pages therefore need meaningful, sourced depth rather than more thin URLs.
+- Rankings and state comparison are implemented, but their usefulness is limited by the two-indicator state dataset.
+- History includes population, GDP and life expectancy; the literacy story expects a literacy history key that is missing, so that story's chart needs repair.
+- India-vs-world data currently covers only a small subset of the intended topics; GDP figures on different pages need year-aware reconciliation.
+- Three data stories exist; the planned digital-transformation story is missing.
+- Explorer and CSV export are implemented, but the dataset is narrow.
+- Data audit and World Bank adapter scripts exist; successful scheduled workflow execution has not yet been confirmed.
+- Ask IndiaMetrix must be treated as **not production-ready** until the current implementation is rechecked. Never place a Gemini/LLM key in client-side JavaScript; if an LLM is approved later, it needs a protected server-side endpoint and source-grounded answers.
+- SEO files and a sitemap exist, but the custom-domain vs GitHub Pages URL setup needs a live configuration check before changing canonical URLs or absolute links.
+- The old README and NEXT_SESSION handover contradict the actual repository state. This reset updates those documents and makes future handovers batch-specific.
 
-- Static homepage (`index.html`, `assets/css/style.css`, `assets/js/main.js`)
-- Bilingual UI (English/Hindi), client-side switch
-- Hero, India at a Glance (placeholder cards, see Phase 2), Explore India, 18 Category cards
-  (all explicitly labelled "planned" — honest, not a hidden overclaim), Compare/Rankings/Data
-  Stories previews, Why IndiaMetrix, Trust section, Footer
-- No real statistics on the homepage itself — all placeholder text is honest
-  ("Data coming soon" / "डेटा जल्द आ रहा है")
-- Basic on-page SEO present: single H1, meta description, canonical tag, OG tags, JSON-LD
-  `WebSite` schema
+This baseline is a starting inventory, not a claim that every live page or automation was exhaustively tested on this date.
 
-## Phase 1 — Foundation — MOSTLY DONE — verified accurate
+## Product priorities
 
-- DONE — `ARCHITECTURE.md` exists, records the static-HTML decision — confirmed on disk.
-- DONE — `DATA_MODEL.md` exists, documents indicator/source schema and `year` handling —
-  confirmed on disk, and the schema it documents is what `audit.py` actually enforces
-  (checked — they match).
-- DONE — `data/sources.json` exists with 11 real publisher entries (Census of India, MoSPI,
-  RBI, NITI Aayog, data.gov.in, MoHFW, NCRB, MoEFCC, MeitY, World Bank, UN Data) — confirmed.
-- DONE — URL architecture documented in `DATA_MODEL.md`.
-- STILL PENDING — Design system extraction into a documented component library (tokens
-  exist in `style.css` but aren't promoted into reusable, documented components).
-- STILL PENDING — Core reusable components (data card, chart wrapper, ranking row,
-  comparison table, source citation badge) — every page currently hand-styles its own inline
-  `style="..."` blocks instead of using shared components. This is now overdue — Phases 4-11
-  were built without this, so there are 40+ pages each redefining the same card/badge CSS
-  inline. Worth doing before Phase 3 (500+ indicator pages) multiplies the problem.
+**Default strategy: data-first foundation, then visual exploration, then growth.** The differentiator should be trust and usability, not a large number of low-value pages.
 
-## Phase 2 — India Overview — DONE (2026-08-11) — verified accurate
+### Data domains to build toward
 
-- `india.html` has 6 real, sourced headline indicators (population, GDP, literacy rate,
-  unemployment rate, life expectancy, internet users) — confirmed every value traces to
-  `data/indicators/india-overview.json`, and every `source_id` used
-  (`world-bank`, `census-india`, `mospi`) is a valid entry in `data/sources.json`.
-- `scripts/build.py` injects these values from the JSON into `india.html` at build time —
-  confirmed this is a real pipeline, not hand-copied numbers.
-- Homepage "India at a Glance" links to `india.html`; homepage cards remain honest
-  placeholders — confirmed.
-- NOT PREVIOUSLY CREDITED — `india.html` already has one working historical trend
-  chart (Population Trend, Chart.js, sourced from
-  `data/indicators/india-population-history.json`). The old roadmap listed this as fully
-  pending; it is 1 of 6 done.
-- PENDING — Trend charts for the other 5 indicators (GDP, literacy, unemployment, life
-  expectancy, internet users). Note: `data/history.json` (used by the separate Phase 8
-  history page) already has GDP and life expectancy time series — those two could be wired
-  into `india.html` quickly by reusing existing data, no new sourcing needed.
-- NEW ISSUE FOUND — `world.html` (Phase 9) shows India's GDP as **$3.5 trillion**
-  (World Bank, 2023) while `india.html` shows **$3.96 trillion** (World Bank, 2025). Same
-  site, same metric, two different numbers on two different pages. Needs reconciling —
-  either update `data/world.json` to the same 2025 figure, or explicitly label both with
-  their year so the difference reads as "different year" rather than "inconsistent data."
+1. Economy and public finance: GDP/GSDP, per-capita income, inflation, labour-market indicators, state finances and exports.
+2. People and education: population, age structure where reliable, literacy, school participation, dropout and higher education.
+3. Health and nutrition: life expectancy, maternal/child health, immunisation, health infrastructure and nutrition.
+4. Agriculture and water: production/yield, irrigation, rainfall, groundwater, reservoirs and mandi prices where licence/access allows.
+5. Infrastructure, energy and environment: electricity, renewable energy, roads, forest cover, air quality and water stress.
+6. Society and governance: crime, courts, elections/representation, public expenditure and welfare indicators where definitions are comparable.
+7. Digital development: internet access, digital services and technology adoption.
 
-## Phase 3 — Indicators (Target 500-1,000+) — PENDING — verified accurate, not started
+Start with **50–100 high-value indicators** with traceable provenance; grow toward 200–300 and later 500+ only as sourcing and validation capacity allows. These are targets, not current counts. State/district coverage is indicator-specific: never manufacture a complete map from partial data.
 
-- Confirmed: only 78 total indicator records exist across the entire repo (36 states x 2
-  each + 6 India-overview + a few history series). None of the 18 promised categories
-  (Economy, Healthcare, Agriculture, Infrastructure, Energy, Poverty, Crime & Safety, etc.)
-  have a single dedicated page or indicator file.
-- Homepage itself is honest about this — it literally says "18 planned categories" and
-  "500+ verified indicators... planned," not implying they exist yet.
-- **This is the correct next phase to actually do properly**, since Phases 4, 6, 7 already
-  got built ahead of schedule on top of only 2 indicators per state — expanding Phase 3
-  first will make those pages meaningfully better without extra plumbing work.
+## Phased execution plan
 
-## Phase 4 — State Profiles — PARTIALLY BUILT, NOT MATCHING SPEC — status was WRONG (said PENDING)
+### Phase 0 — Roadmap and repository truth reset
+**Status: DONE — this documentation batch**
+- Replace stale roadmap content with this master plan.
+- Align README and next-session notes with the actual modules already present.
+- Enforce the single-commit, 10–20-change batch workflow.
 
-**What actually exists:** All 36 state/UT pages (`states/*.html`) are built, styled, and
-linked from navigation, rankings, and compare tools.
+### Phase 1 — Data and URL reliability
+**Priority: P0 · Next technical batch**
+- Recheck the existing data schema and audit script against real indicator files.
+- Identify conflicting values/years and missing time-series keys; reconcile only from documented sources.
+- Verify live deployment base URL, custom-domain configuration, canonical tags, robots and sitemap before making URL changes.
+- Check scheduled workflow status/logs if available; distinguish “workflow configured” from “workflow successfully running.”
+- Standardize the meaning of reference year, last checked, last updated, estimate, methodology and source.
+**Acceptance:** no unexplained same-metric conflicts; broken data keys identified; URL strategy is confirmed before edits; no unsupported freshness claims.
 
-**What's actually in them — verified via `data/indicators/states/*.json`:**
-- Every single state file has **exactly 2 indicators**: Population and Literacy Rate.
-- Both are sourced from **Census 2011** — a 15-year-old dataset — for every one of the 36
-  states, with no newer figure available or flagged as pending.
-- None of the other promised categories are present: economy, healthcare, employment,
-  agriculture, infrastructure, environment, digital development, social indicators,
-  state-level rankings, or historical trends.
-- Every record's `last_checked` / `last_updated` field says `2026-08-12` (today), even
-  though the underlying value hasn't changed since 2011. This is not fabrication (the value
-  itself is real and correctly dated `"year": 2011`), but it visually implies more freshness
-  and rigor than what's actually there — a reader skimming "last checked today" could
-  reasonably assume the number itself was refreshed today.
+### Phase 2 — Reusable UI and data provenance
+**Priority: P0**
+- Extract shared visual patterns for indicator cards, source labels, charts, ranking rows, comparison tables and data-quality notices.
+- Make source, reference year, definition/methodology and limitations consistent across overview, state, history, world, ranking and story pages.
+- Make the independent-platform disclaimer visible on interior pages.
+**Acceptance:** shared patterns work in Hindi and English, on mobile and desktop, and existing pages retain their intended navigation.
 
-**To actually finish Phase 4:**
-1. Add at least GDP/GSDP, unemployment rate, and one health indicator per state (these are
-   the same World Bank / MoSPI / Census sources already registered — no new source vetting
-   needed, just new indicator records following the existing JSON schema).
-2. Either source updated post-2011 population/literacy figures where available (e.g. NFHS-5,
-   PLFS-derived estimates) or add a visible note on each state page explaining that Census
-   2011 remains the latest full count pending Census 2021's delayed release — `india.html`
-   already does this exact thing correctly for the national literacy figure; reuse that
-   pattern on state pages.
-3. Only after (1) is done should `rankings.html` and `compare.html` be considered complete
-   for state data — right now they can only ever rank/compare 2 metrics.
+### Phase 3 — Repair current broken or misleading features
+**Priority: P0**
+- Repair literacy history/story chart using reliable data or clearly show why a series is unavailable.
+- Reconcile India/world metric year differences and display comparable years explicitly.
+- Fix links that point to dead anchors or pages that are only planned.
+- Check current Ask IndiaMetrix behaviour; disable misleading “AI” claims until the implementation works safely.
+**Acceptance:** each repaired feature has a visible, meaningful outcome and no fabricated fallback.
 
-## Phase 5 — District Profiles — PENDING — verified accurate, not started
+### Phase 4 — Core indicator expansion
+**Priority: P1**
+- Select an initial 50–100 indicator catalogue based on user value, data availability, stable definitions and source rights.
+- Add data records through the existing schema and source registry, not hand-copied values in HTML.
+- Prioritize national and state-level economy, labour, education, health, agriculture and digital access.
+- Add historical series only where definitions and years are comparable.
+**Acceptance:** every published indicator has source, reference year, unit, methodology/definition and validation; missing observations are explicit.
 
-- No `districts/` folder, no district JSON, nothing. Roadmap status was correct here.
+### Phase 5 — State profiles and comparison/rankings
+**Priority: P1**
+- Expand state profiles beyond the current two indicators where sourced data supports it.
+- Make rankings and comparison selector options data-driven, show years and units, and explain differences in definitions.
+- Add “not comparable / data unavailable” states instead of silently dropping records.
+**Acceptance:** rankings and comparisons use consistent units and years or explicitly disclose the mismatch.
 
-## Phase 6 — Rankings — BUILT, status was WRONG (said PENDING)
+### Phase 6 — Charts and Data Explorer
+**Priority: P1**
+- Reuse a consistent chart layer for trend lines, ranked bars, multi-state comparison, composition charts and scatter/correlation where the data supports it.
+- Add filters for indicator, geography and time where those dimensions exist.
+- Improve CSV export with source, unit, reference year, and indicator metadata.
+- Keep charts accessible with labels, table alternatives and clear missing-data states.
+**Acceptance:** charts accurately represent underlying data, mobile layout works, and exports preserve provenance.
 
-- `rankings.html` (31KB) exists, is statically pre-built by `scripts/build_rankings.py`, and
-  is fully wired into navigation — confirmed functional.
-- Limitation carried over from Phase 4: since state data only has 2 indicators, rankings can
-  only ever be "by population" or "by literacy rate" until Phase 4 is actually finished.
+### Phase 7 — India map and district coverage
+**Priority: P1/P2**
+- Confirm licensing, boundaries and a reliable geography-to-data mapping before implementing choropleths.
+- Build India → state → district drill-down only for indicators with verified district-level data.
+- Include legends, reference year, source, missing-data treatment and map/table alternatives.
+- Add district profiles incrementally; do not generate empty SEO pages merely to claim nationwide coverage.
+**Acceptance:** every mapped value is traceable, geography matches the data, and incomplete coverage is visible.
 
-## Phase 7 — Comparison Engine — BUILT, status was WRONG (said PENDING)
+### Phase 8 — Stories, search and reports
+**Priority: P2**
+- Repair and deepen the three existing data stories; add the digital-transformation story only when its data is sourced.
+- Add a universal search across indicators, states, districts, stories and tools.
+- Add shareable comparison views and a lightweight report/export flow after the underlying data layer is stable.
+**Acceptance:** stories make claims supported by visible data; search returns real destinations; reports include sources and years.
 
-- `compare.html` + `assets/js/compare.js` are fully functional — state-vs-state comparison
-  with a real dropdown of all 36 states, confirmed working against the state JSON files.
-- Same Phase-4-data limitation applies: only 2 indicators to compare per state pair.
+### Phase 9 — Ask IndiaMetrix, safely
+**Priority: P2 · Depends on Phases 1–6**
+- First decide whether an LLM is needed or a deterministic data-answer engine is sufficient.
+- If using an LLM, route requests through a server-side function with secrets stored server-side, rate limits, input limits and cost controls.
+- Ground answers in IndiaMetrix records, return source links and years, and say when the data is insufficient.
+- Never expose a provider key in a static JS file.
+**Acceptance:** tested end-to-end without client-side secrets; answer claims link to supporting data; unsupported questions are declined or qualified.
 
-## Phase 8 — Historical Data — PARTIALLY DONE — status was WRONG (said fully DONE)
+### Phase 10 — SEO, performance and publishing quality
+**Priority: P1, after content quality**
+- Verify domain/canonical/sitemap/robots consistency before editing URLs.
+- Include only useful, canonical pages in the sitemap; refresh lastmod only when content materially changes.
+- Add valid structured data only where it matches visible page content.
+- Improve internal links and page performance without mass URL changes or thin-page proliferation.
+- Build useful About, Contact, Privacy, Terms and Disclaimer pages before any monetization review.
+**Acceptance:** no known broken internal links or sitemap-only URLs; page metadata matches the live domain; no empty policy placeholders.
 
-- `data/history.json` has real time series (1960-2023, World Bank) for **Population, GDP,
-  and Life Expectancy** — confirmed rendered correctly on `history.html` via Chart.js.
-- **Literacy history is missing entirely** from `data/history.json`, despite being one of
-  the four series the roadmap explicitly promised ("population history, literacy history,
-  GDP history, life expectancy history").
-- **Direct consequence, confirmed by reading the code:** `stories/literacy.html` looks for
-  `data["literacy_rate"]` in `assets/js/stories.js` — that key does not exist in
-  `history.json`, so the chart on that story page silently fails to render (no error shown
-  to the user, it just never appears). This is a live bug on a page that's linked from the
-  homepage, not a theoretical gap.
-- **To finish:** add a `literacy_rate` series to `history.json` (Census/NSSO historical
-  literacy figures are available back to at least 1991, 2001, 2011) and verify the
-  `stories/literacy.html` chart renders after the fix.
+### Phase 11 — Growth and advanced analytics
+**Priority: P2/P3**
+- Add data-quality scores, cross-indicator analysis, downloadable reports, embed/share links and guided explainers where user demand justifies them.
+- Consider update alerts only after the relevant source pipeline is reliable.
+- Expand toward 200–300 then 500+ indicators based on measured demand and maintenance capacity.
+**Acceptance:** advanced features are useful, explainable, maintainable and backed by data rights and a working update process.
 
-## Phase 9 — India vs World — PARTIALLY DONE — status was WRONG (said fully DONE)
+## Batch ledger
 
-- `world.html` + `data/world.json` exist and work, but only cover **3 of the ~11 promised
-  comparison indicators**: GDP, Population, Life Expectancy (vs. China, USA, World).
-- Missing: GDP per capita, literacy, internet penetration, poverty, healthcare, education,
-  environment — all explicitly named in the original phase description.
-- Also carries the GDP figure inconsistency noted under Phase 2 above (2023 data here vs.
-  2025 data on `india.html`).
+Update this section at the end of every batch.
 
-## Phase 10 — Data Stories — PARTIALLY DONE — status was WRONG (said fully DONE)
+| Batch | Scope | Status |
+|---|---|---|
+| R0 | Replace roadmap; align README and handover notes | DONE — documentation only |
+| B1 | Data/URL reliability investigation and prioritized fixes | NOT STARTED |
+| B2 | Shared UI and provenance conventions | NOT STARTED |
+| B3 | Existing feature/data integrity repairs | NOT STARTED |
+| B4+ | Indicator expansion, state comparison, Explorer, maps, stories, AI, SEO and growth | PLANNED |
 
-- 3 of the 4 promised stories exist and are wired up: `stories/population.html`,
-  `stories/literacy.html` (chart broken — see Phase 8), `stories/growth.html`.
-- **Missing entirely:** "India's digital transformation" — the fourth story named in the
-  original phase description was never built.
+## Definition of done for every batch
 
-## Phase 11 — Data Explorer — DONE — verified accurate
-
-- `explorer.html` + `assets/js/explorer.js` are fully functional: filter/visualize across all
-  36 states, and a working CSV download (`downloadCSV()` — confirmed it builds a real CSV
-  blob from state/indicator/value/year/source and triggers a download).
-- `data/explorer.json` (59KB) is a real compiled file built by
-  `scripts/build_explorer_data.py` — confirmed it aggregates all 36 state JSON files
-  correctly.
-- Same underlying limitation: only 2 indicators per state to explore, so the tool is
-  functionally complete but data-thin until Phase 4 is finished.
-
-## Phase 12 — Automated Data System — BUILT BUT UNVERIFIED — status may be optimistic
-
-- `scripts/run_pipeline.py`, `scripts/adapters/base_adapter.py`, and a real
-  `worldbank_adapter.py` (uses `urllib.request` against the actual World Bank API, no fake
-  data) all exist and read correctly as a real pipeline: fetch -> audit -> rebuild rankings
-  -> rebuild explorer data -> rebuild HTML -> linkify -> sitemap.
-- `.github/workflows/daily_update.yml` exists, runs on a daily cron, and calls
-  `run_pipeline.py`.
-- **Not verified — could not test:** whether the workflow has actually run successfully on
-  GitHub (this can't be checked from a local zip export). The workflow's dependency step
-  only runs `pip install --upgrade pip` — if any adapter needs a package beyond the Python
-  standard library, the workflow will fail silently at import time. Currently the only
-  adapter (`worldbank_adapter.py`) uses only `urllib.request`, so it should be fine as-is —
-  but the **next new adapter that uses `requests` or similar will break the workflow** unless
-  a `requirements.txt` + install step is added first.
-- The pipeline also re-runs `scripts/linkify.py` on every automated run — but since linkify
-  currently only touches `stories/` in practice (see Phase 16), the automation won't fix the
-  state-page gap on its own; that needs the target directory list in `linkify.py` fixed and
-  re-verified first.
-
-## Phase 13 — Data Validation — DONE — verified accurate
-
-- `scripts/audit.py` is real and was run directly: it checks duplicate IDs, missing required
-  fields, non-numeric values, invalid years, missing units, unregistered source IDs, and
-  range validation (percentages 0-100, life expectancy 40-100, no unexpected negatives).
-- Ran it against the current repo — **passed with zero errors** across all 36 state files
-  plus india-overview.
-- On failure it correctly writes `validation_report.md` and exits with a non-zero code,
-  which `run_pipeline.py` checks — confirmed this would actually halt the automated pipeline
-  on bad data, not just log a warning.
-
-## Phase 14 — AI Layer ("Ask IndiaMetrix") — NOT FUNCTIONAL — status was WRONG (said DONE)
-
-- `ask.html` + `assets/js/ask.js` exist and are wired into navigation, but:
-  1. `GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"` — a literal placeholder. Every real user
-     who opens this page and asks a question gets "System Error: API Key not configured."
-  2. **Architectural problem, not just a missing key:** the fetch call goes directly from
-     client-side JavaScript to `https://generativelanguage.googleapis.com/...?key=API_KEY`.
-     If a real key is ever pasted in here, it will be visible to anyone who opens browser
-     dev tools or views page source — it will leak within hours of going live. The original
-     phase description explicitly said "using an open LLM API or Gemini API **with a
-     serverless function**" — that serverless proxy was never built; the key was put
-     directly in client code instead.
-- **To actually finish this phase:** do not just add a key to `ask.js`. Build a small
-  serverless function (Cloudflare Worker, Vercel function, or similar — static GitHub Pages
-  hosting needs an external endpoint for this) that holds the key server-side, forwards the
-  user's question, and returns the answer. `ask.js` should call that function's URL, never
-  Google's API directly.
-- The RAG-style system prompt logic itself (restricting answers to `explorer.json`, refusing
-  off-topic questions) is well written and can be reused as-is once the proxy exists.
-
-## Phase 15 — SEO System — MOSTLY DONE, one gap — status was contradictory (listed twice)
-
-- The old roadmap had this phase listed twice — once PENDING, once DONE, left over from an
-  edit. Removing that confusion here.
-- `sitemap.xml`, `robots.txt`, canonical tags, and clean URL structure are present.
-- **Gap found:** `methodology.html` exists as a real page but is **missing from
-  `sitemap.xml`** entirely (diffed all 47 sitemap URLs against 48 actual top-level/state/
-  story HTML files — this was the only one missing).
-- **Needs verifying, not confirmable from the zip alone:** `robots.txt` points to
-  `https://www.indiametrix.in/sitemap.xml` and the internal-linking script (Phase 16) writes
-  absolute paths like `/states/maharashtra.html`. Both of these are only correct if the site
-  is actually served from that custom domain — there is **no `CNAME` file anywhere in this
-  repo**, which GitHub Pages normally needs to serve a custom domain. If the custom domain
-  isn't configured in the GitHub Pages settings, the site is actually being served at
-  something like `username.github.io/indiamatrix/`, and every absolute path in this repo
-  (sitemap URLs, internal links) would be broken in production. **Check the actual GitHub
-  Pages settings for this repo before trusting any of the absolute URLs in this codebase.**
-
-## Phase 16 — Internal Linking — HALF DONE — status was WRONG (said fully DONE across "articles and state pages")
-
-- `scripts/linkify.py` is a real, well-written script (proper HTML tokenizer, respects
-  `<a>`/`<script>`/`<style>`/heading tags, one link per keyword per file).
-- Ran it in analysis: it targets exactly two directories — `states/` and `stories/`.
-- Confirmed by grep: **`stories/*.html` has real injected links** (checked `growth.html` —
-  Maharashtra, Gujarat, Tamil Nadu, Karnataka, Uttar Pradesh, Madhya Pradesh, GDP, and
-  Population are all correctly hyperlinked in the prose).
-- Confirmed by grep: **all 36 `states/*.html` files have zero `internal-link` class
-  occurrences** — even though the same keywords (GDP, Population, Literacy Rate) do appear
-  as plain text in those pages. The script's target list includes `states/`, so either it
-  was run once before the state pages existed, or something about the state page template
-  prevented matches — either way, the promised "across articles and state pages" outcome is
-  only true for articles.
-- **To fix:** re-run `python scripts/linkify.py` after confirming the `states/` directory
-  path resolves correctly, then re-check with `grep -c "internal-link" states/*.html`.
-- This also depends on resolving the absolute-path domain question under Phase 15 — no point
-  re-running it broadly until it's confirmed the `/states/...`-style links will actually
-  resolve on the live site.
-
-## Phase 17 — Trust / Data Provenance — PARTIALLY BUILT, status understates progress
-
-- `india.html` and `states/*.html` both already show a live "Source: [Publisher] ->" link per
-  indicator, pointing to the real source URL — confirmed on both page types.
-- What's still genuinely missing: a dedicated, sitewide "last updated" / "last checked"
-  display standard applied consistently (the JSON has `last_checked`/`last_updated` fields
-  per Phase 4's note above, but they aren't rendered anywhere on the page itself — only the
-  data `year` is shown), and an explicit "IndiaMetrix is independent of the Government of
-  India" statement — confirmed this exists in the homepage's Trust section but not on
-  interior pages like state profiles.
-
-## Phase 18 — AdSense Readiness — PENDING — verified accurate, not started
-
-- Confirmed: no `about.html`, `privacy.html`, `terms.html`, `contact.html`, or
-  `disclaimer.html` exist anywhere in the repo.
-- Footer links to these on every page currently point to `href="../#"` (a dead anchor to the
-  top of the current page) — clickable, but goes nowhere. This is consistent with the phase
-  being genuinely not started, but is a live broken-link UX issue on every single page today,
-  worth a one-line fix (e.g. `aria-disabled` styling or a "coming soon" tooltip) even before
-  the real pages are written.
-
----
-
-## Non-negotiable principles (apply to every future phase)
-
-1. Never invent or fabricate statistics — placeholder clearly, or omit.
-2. Every indexable page must provide genuine, non-thin value. **Phase 4's 36 state pages are
-   currently borderline on this rule — 2 stale indicators per page, sitewide, is exactly
-   the kind of thinness this principle was written to prevent. Fix before Phase 18.**
-3. IndiaMetrix is independent and not affiliated with the Government of India — keep visible
-   sitewide, not just on the homepage (see Phase 17).
-4. Automation claims must match what is actually implemented — no faked "live" or "daily
-   updated" labels before the automated system in Phase 12 is confirmed actually running
-   successfully on GitHub (not just present in the repo).
-5. New rule, added this session: before marking any phase DONE, the person or model
-   doing so must state which file they opened or which command they ran to confirm it — not
-   just that the relevant files exist by name. This roadmap's previous version was wrong on
-   6 of 18 phases specifically because file-existence was mistaken for feature-completeness.
-6. Only changed files are packaged into delivery ZIPs going forward, not the whole project.
+- The intended 10–20 related changes are grouped into one coherent batch (smaller batches are acceptable for documentation or when a safe scope is smaller).
+- All changes are committed together in **one commit** and pushed once.
+- Only relevant targeted checks are run; results and any limitations are stated.
+- This roadmap and `NEXT_SESSION.md` are updated in the same batch when status or next steps change.
+- The final note lists the changed files, single commit link, what was verified, and the next batch proposed. Do not start that next batch until authorized.

@@ -2,56 +2,39 @@
 
 **India, Explained Through Data.**
 
-IndiaMetrix is an independent India Data Intelligence Platform. It makes Indian
-public/government data easy to understand through verified data, charts, rankings,
-comparisons, historical trends, state/district profiles, India-vs-world comparisons and
-data stories.
+IndiaMetrix is an independent India data-intelligence platform designed to make public data easier to understand through sourced indicators, charts, rankings, comparisons, historical trends, state and district profiles, data stories, and exploratory tools.
 
 IndiaMetrix is not affiliated with the Government of India.
 
-## Status
+## Current repository status
 
-This repository currently contains **the homepage only**. See `ROADMAP.md` for the full
-18-phase long-term plan and `NEXT_SESSION.md` for what to build next.
+This repository contains more than the homepage. Existing modules include the India overview, state/UT profiles, rankings, state comparison, historical trends, India-vs-world comparisons, data stories, Data Explorer with CSV export, Ask IndiaMetrix, data/source registries, validation/build scripts, and a scheduled update workflow. The existence of a module does not guarantee every part is production-ready; see the master roadmap for known gaps and verification status.
 
-## Project structure
+**Start here:**
+- `ROADMAP.md` — authoritative product plan, verified baseline, priorities, acceptance criteria and batch ledger.
+- `NEXT_SESSION.md` — the next proposed batch and the delivery protocol.
+- `DATA_MODEL.md` — indicator and source data conventions.
+- `ARCHITECTURE.md` — architecture decisions.
 
-```
-indiametrix/
-├── index.html
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-├── ROADMAP.md
-├── NEXT_SESSION.md
-├── CHANGELOG.md
-├── README.md
-└── .gitignore
-```
+## Technology
+
+- Static HTML, CSS and JavaScript, with Python scripts for data validation and page generation.
+- Bilingual interface (Hindi and English).
+- Data records should retain the source, reference year, unit, methodology/definition and data-quality caveats.
+- Never put API keys or other provider secrets in client-side JavaScript.
 
 ## Local preview
 
-No build step is required — it's plain HTML/CSS/JS. From the project root:
+From the repository root:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080` in a browser.
+Then open `http://localhost:8080`.
 
-## Tech notes
+## Contribution and delivery workflow
 
-- Pure HTML/CSS/JS, no framework, no backend — kept deliberately simple at this stage.
-- Fonts: Fraunces (display), Inter (body/Latin), Noto Sans Devanagari (Hindi), JetBrains
-  Mono (data/labels), loaded from Google Fonts.
-- Bilingual UI (English / Hindi) via `data-en` / `data-hi` attributes and a small JS
-  switcher in `assets/js/main.js`; the selected language persists in `localStorage`.
-- All indicator values shown are explicit placeholders — no fabricated statistics.
+Work is delivered in batches of roughly 10–20 related changes. Each batch is combined into **one commit and one push**, not a chain of small commits. Tell the user the intended scope before starting a batch, run only relevant targeted checks, update the roadmap/handover as needed, and wait for authorization before beginning the next batch.
 
-## Contributing to future sessions
-
-Read `ROADMAP.md` and `NEXT_SESSION.md` before starting new work. From the second
-session onward, only changed files should be delivered/packaged — not the whole project.
+Only change files relevant to the current batch. Never invent statistics or mark features complete merely because their files exist.
