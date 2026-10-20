@@ -1,9 +1,10 @@
 # Data Model — IndiaMetrix
 
-This defines the shape of the data every future phase builds on. Nothing in this file is
-live yet — it's the agreed schema for Phase 2 onward.
+This document describes the indicator and source records used by the current static site. It is an active contract for records in `data/indicators/`, state profiles, and district profiles—not merely a future-phase proposal.
 
-## Indicator (core record)
+## Indicator record
+
+A collection file uses an `indicators` array; a single-record dataset may store one indicator object directly. Both forms use the following fields:
 
 ```json
 {
@@ -11,67 +12,47 @@ live yet — it's the agreed schema for Phase 2 onward.
   "category": "education",
   "name": { "en": "Literacy Rate", "hi": "साक्षरता दर" },
   "unit": "%",
-  "geography_level": "country | state | district",
-  "geography_id": "india | maharashtra | maharashtra/nagpur",
+  "geography_level": "country",
+  "geography_id": "india",
   "year": 2011,
-  "value": null,
+  "value": 74.04,
+  "display": { "en": "74.04%", "hi": "74.04%" },
   "source_id": "census-india",
   "source_url": "https://censusindia.gov.in/",
-  "last_checked": null,
-  "last_updated": null,
-  "methodology_note": "",
+  "last_checked": "2026-08-11",
+  "last_updated": "2026-08-11",
+  "methodology_note": "Latest full Census figure; population aged 7 and above.",
   "is_estimate": false
 }
 ```
 
-Field rules:
+## Field rules
 
-- `value` must be `null` (not a fabricated number) until a real, sourced figure is
-  entered.
-- `year` is always the year the data actually refers to — never the current year, unless
-  that happens to be the data year too. Never advance `year` just because time has
-  passed; the automated system (Phase 12) must preserve the true data year and instead
-  update `last_checked`.
-- `source_id` must reference an entry in `data/sources.json`.
-- `geography_id` for states/districts uses lowercase-hyphenated slugs, e.g.
-  `uttar-pradesh`, `maharashtra/nagpur`.
+- `year` is an integer for the year the value refers to, not the year it was accessed or published.
+- `value` must be a finite number. Do not fabricate a value; use `null` only where the data contract explicitly permits an unavailable observation, and never publish a made-up display value.
+- `unit` must be explicit. Use `%` for percentages and keep the underlying value on a 0–100 scale.
+- `display.en` and `display.hi` should both be present and readable. They are presentation strings; do not use them as the source of calculations.
+- `source_id` must reference an entry in `data/sources.json`; `source_url` must point to the relevant source or indicator page.
+- `last_checked` records when the source was checked. `last_updated` records when the local value was last materially changed. Do not update the reference year merely because time has passed.
+- `methodology_note` should explain the population, period, definition or limitation needed to interpret the value. Set `is_estimate: true` when a value is an estimate and explain its basis.
+- State and district records must use the actual geography and year to which each source value applies. Do not infer district-level values from state-level data.
 
-## Source (registry record)
+## Source registry
 
-See `data/sources.json` for the live registry. Each entry:
+Every `source_id` must match an entry in `data/sources.json`. Each source record includes its name, publisher, canonical URL, category, update frequency, and notes. A registry entry alone does not mean a dataset has been fetched or validated.
 
-```json
-{
-  "id": "census-india",
-  "name": "Census of India",
-  "publisher": "Office of the Registrar General & Census Commissioner, India",
-  "url": "https://censusindia.gov.in/",
-  "category": ["population", "social-development"],
-  "update_frequency": "decennial",
-  "notes": "Most recent full census: 2011. 2021 census was delayed."
-}
-```
+## URL patterns
 
-## Planned URL patterns
+| Page type | Pattern | Example |
+|---|---|---|
+| India overview | `/` | `/` |
+| Indicator | `/indicators/:indicator` | `/indicators/literacy-rate.html` |
+| State profile | `/states/:state` | `/states/maharashtra.html` |
+| District profile | `/districts/:state/:district` | `/districts/maharashtra/nagpur.html` |
+| Data story | `/stories/:slug` | `/stories/population.html` |
 
-| Page type          | Pattern                                  | Example                                  |
-|---------------------|-------------------------------------------|-------------------------------------------|
-| India overview      | `/`                                       | `/`                                        |
-| Category            | `/categories/:category`                   | `/categories/education`                    |
-| Indicator           | `/indicators/:indicator`                  | `/indicators/literacy-rate`                |
-| State profile        | `/states/:state`                          | `/states/maharashtra`                      |
-| District profile     | `/districts/:state/:district`             | `/districts/maharashtra/nagpur`            |
-| Ranking              | `/rankings/:indicator`                    | `/rankings/literacy-rate`                  |
-| Comparison (states)  | `/compare/:state-a-vs-state-b`            | `/compare/maharashtra-vs-gujarat`          |
-| Comparison (countries) | `/compare/:country-a-vs-country-b`      | `/compare/india-vs-china`                  |
-| Data story           | `/stories/:slug`                          | `/stories/indias-changing-population`      |
+Hindi and English content share a URL with the language switcher; avoid creating duplicate language URLs without a deliberate SEO plan.
 
-Slugs are always lowercase, hyphenated, English — Hindi content is served at the same URL
-with the language switched client-side (consistent with the homepage pattern already
-built in Phase 0), not on separate `/hi/` routes, to avoid splitting SEO authority.
+## Validation
 
-## Non-negotiables carried over from ROADMAP.md
-
-- No `value` is ever fabricated or estimated without `is_estimate: true` and a
-  methodology note.
-- No page is generated for an indicator that has no real sourced value yet.
+`python scripts/audit.py` checks indicator collections and single-record JSON files recursively under `data/indicators/` and `data/districts/`. It validates required fields, numeric values, reference years, units, source registry membership, source URLs, bilingual display values, and basic value ranges.

@@ -3,9 +3,9 @@ import sys
 import subprocess
 import argparse
 
-# Ensure we can import adapters
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from adapters.worldbank_adapter import WorldBankAdapter
+
 
 def run_command(cmd, desc):
     print(f"\n==========================================")
@@ -15,8 +15,22 @@ def run_command(cmd, desc):
     if result.returncode != 0:
         print(f"\n[PIPELINE ERROR]: Failure during {desc} (Exit code {result.returncode})")
         sys.exit(result.returncode)
-    else:
-        print(f"--> [PASS]: {desc}")
+    print(f"--> [PASS]: {desc}")
+
+
+def run_integrity_checks():
+    run_command("python scripts/detect_conflicts.py", "Data Conflict & Outlier Detection")
+    run_command("python scripts/audit.py", "Data Verification & Governance Audit")
+
+
+def run_build_steps():
+    run_command("python scripts/build_rankings.py", "Generate Verified Indicator Rankings")
+    run_command("python scripts/build_explorer_data.py", "Compile Explorer, Search & AI Index")
+    run_command("python scripts/build.py", "Build Static HTML Profiles & Pages")
+    run_command("python scripts/linkify.py", "Contextual Internal Linking Engine")
+    run_command("python scripts/audit_orphans.py", "Internal Link Reachability & Orphan Audit")
+    run_command("python scripts/sitemap.py", "XML Sitemap & Content Value Gate Generation")
+
 
 def main():
     parser = argparse.ArgumentParser(description="IndiaMetrix Complete Automated Data Pipeline")
@@ -27,47 +41,37 @@ def main():
     print("==========================================")
     print("      INDIAMETRIX MASTER PIPELINE         ")
     print("==========================================")
-    
-    data_changed = False
-    if not args.skip_fetch:
-        adapters = [WorldBankAdapter()]
-        for adapter in adapters:
-            try:
-                if adapter.run():
-                    data_changed = True
-            except Exception as e:
-                print(f"Warning: Adapter {adapter.__class__.__name__} failed: {e}")
 
+    data_changed = False
+    adapter_failed = False
+    if not args.skip_fetch:
+        for adapter in (WorldBankAdapter(),):
+            try:
+                result = adapter.run()
+                if result is None:
+                    adapter_failed = True
+                elif result:
+                    data_changed = True
+            except Exception as exc:
+                print(f"[PIPELINE ERROR] Adapter {adapter.__class__.__name__} failed: {exc}")
+                adapter_failed = True
+
+    if adapter_failed:
+        print("[PIPELINE ERROR] One or more data adapters failed; refusing to report a successful update.")
+        sys.exit(1)
+
+    # Validate on every scheduled run, including days with no source changes.
+    run_integrity_checks()
     if not data_changed and not args.force and not args.skip_fetch:
-        print("\nNo remote data changed. Run with --force or --skip-fetch to execute full validation & build.")
+        print("No remote data changed. Integrity checks passed; skipping page regeneration.")
         return
 
-    # 1. Data Integrity & Conflict Detection
-    run_command("python scripts/detect_conflicts.py", "Data Conflict & Outlier Detection")
-
-    # 2. Comprehensive Schema & Rule Audit
-    run_command("python scripts/audit.py", "Data Verification & Governance Audit")
-
-    # 3. Compile Master Data Stores
-    run_command("python scripts/build_rankings.py", "Generate Verified Indicator Rankings")
-    run_command("python scripts/build_explorer_data.py", "Compile Explorer, Search & AI Index")
-
-    # 4. Build HTML Pages
-    run_command("python scripts/build.py", "Build Static HTML Profiles & Pages")
-
-    # 5. Contextual Internal Linking
-    run_command("python scripts/linkify.py", "Contextual Internal Linking Engine")
-
-    # 6. Orphan & Crawlability Audit
-    run_command("python scripts/audit_orphans.py", "Internal Link Reachability & Orphan Audit")
-
-    # 7. Sitemap & SEO Indexing
-    run_command("python scripts/sitemap.py", "XML Sitemap & Content Value Gate Generation")
-
+    run_build_steps()
     print("\n==========================================")
-    print("ALL 7 PIPELINE PHASES PASSED WITH ZERO ERRORS!")
+    print("ALL PIPELINE PHASES PASSED.")
     print("IndiaMetrix is ready for deployment.")
     print("==========================================")
+
 
 if __name__ == "__main__":
     main()

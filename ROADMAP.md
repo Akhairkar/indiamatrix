@@ -26,11 +26,11 @@ The repository contains a substantial static site, despite the README's stale cl
 - India overview has six sourced headline indicators; a population history chart is present.
 - All 36 state/UT profile pages exist, but their state JSON records currently contain only population and literacy rate, both tied to Census 2011. The pages therefore need meaningful, sourced depth rather than more thin URLs.
 - Rankings and state comparison are implemented, but their usefulness is limited by the two-indicator state dataset.
-- History includes population, GDP and life expectancy; the literacy story expects a literacy history key that is missing, so that story's chart needs repair.
+- `data/history.json` already contains population, GDP, life-expectancy, literacy-rate and internet-penetration series. The earlier suspected missing literacy key was not missing in the current repository; chart bindings and story claims must be checked independently.
 - India-vs-world data currently covers only a small subset of the intended topics; GDP figures on different pages need year-aware reconciliation.
 - Three data stories exist; the planned digital-transformation story is missing.
 - Explorer and CSV export are implemented, but the dataset is narrow.
-- Data audit and World Bank adapter scripts exist; successful scheduled workflow execution has not yet been confirmed.
+- The daily update workflow had successful runs on 11–20 October 2026. However, before B1, adapter errors could be swallowed and unchanged-data days skipped validation, so a green workflow alone did not prove that fetching and validation had succeeded.
 - Ask IndiaMetrix must be treated as **not production-ready** until the current implementation is rechecked. Never place a Gemini/LLM key in client-side JavaScript; if an LLM is approved later, it needs a protected server-side endpoint and source-grounded answers.
 - SEO files and a sitemap exist, but the custom-domain vs GitHub Pages URL setup needs a live configuration check before changing canonical URLs or absolute links.
 - The old README and NEXT_SESSION handover contradict the actual repository state. This reset updates those documents and makes future handovers batch-specific.
@@ -62,11 +62,11 @@ Start with **50–100 high-value indicators** with traceable provenance; grow to
 - Enforce the single-commit, 10–20-change batch workflow.
 
 ### Phase 1 — Data and URL reliability
-**Priority: P0 · Next technical batch**
+**Status: PARTIAL — B1 data-side fixes committed; live domain remains unverified**
 - Recheck the existing data schema and audit script against real indicator files.
 - Identify conflicting values/years and missing time-series keys; reconcile only from documented sources.
 - Verify live deployment base URL, custom-domain configuration, canonical tags, robots and sitemap before making URL changes.
-- Check scheduled workflow status/logs if available; distinguish “workflow configured” from “workflow successfully running.”
+- Check scheduled workflow status/logs if available; distinguish “workflow configured” from “workflow successfully running.” B1 confirms recent green runs and fixes failure signalling plus no-change-day validation.
 - Standardize the meaning of reference year, last checked, last updated, estimate, methodology and source.
 **Acceptance:** no unexplained same-metric conflicts; broken data keys identified; URL strategy is confirmed before edits; no unsupported freshness claims.
 
@@ -134,7 +134,7 @@ Start with **50–100 high-value indicators** with traceable provenance; grow to
 ### Phase 10 — SEO, performance and publishing quality
 **Priority: P1, after content quality**
 - Verify domain/canonical/sitemap/robots consistency before editing URLs.
-- Include only useful, canonical pages in the sitemap; refresh lastmod only when content materially changes.
+- Include only useful, canonical pages in the sitemap. Emit `lastmod` only when reliable content-change dates are available; do not stamp every URL with the sitemap build date.
 - Add valid structured data only where it matches visible page content.
 - Improve internal links and page performance without mass URL changes or thin-page proliferation.
 - Build useful About, Contact, Privacy, Terms and Disclaimer pages before any monetization review.
@@ -154,9 +154,9 @@ Update this section at the end of every batch.
 | Batch | Scope | Status |
 |---|---|---|
 | R0 | Replace roadmap; align README and handover notes | DONE — documentation only |
-| B1 | Data/URL reliability investigation and prioritized fixes | NOT STARTED |
-| B2 | Shared UI and provenance conventions | NOT STARTED |
-| B3 | Existing feature/data integrity repairs | NOT STARTED |
+| B1 | Recursive data audit, adapter failure handling, World Bank retrieval, GDP comparison and sitemap freshness | DONE — live domain verification deferred |
+| B2 | Verify live domain/canonical configuration and reconcile remaining world-comparison years/definitions | PROPOSED — awaiting authorization |
+| B3 | Shared UI and provenance conventions; repair unsupported story claims after source review | PLANNED |
 | B4+ | Indicator expansion, state comparison, Explorer, maps, stories, AI, SEO and growth | PLANNED |
 
 ## Definition of done for every batch

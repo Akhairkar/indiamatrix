@@ -1,6 +1,5 @@
 import os
 import glob
-from datetime import datetime
 
 def main():
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,8 +15,6 @@ def main():
     tools_files = glob.glob(os.path.join(root_dir, "tools", "*.html"))
     
     all_candidates = root_files + states_files + stories_files + rankings_files + indicators_files + districts_files + tools_files
-    
-    current_date = datetime.now().strftime("%Y-%m-%d")
     
     sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -81,7 +78,6 @@ def main():
 
         sitemap_content += "  <url>\n"
         sitemap_content += f"    <loc>{url_loc}</loc>\n"
-        sitemap_content += f"    <lastmod>{current_date}</lastmod>\n"
         sitemap_content += f"    <changefreq>{changefreq}</changefreq>\n"
         sitemap_content += f"    <priority>{priority}</priority>\n"
         sitemap_content += "  </url>\n"
